@@ -1,0 +1,79 @@
+/**
+ * 中央居中
+ * $offset
+ * $overwrite
+ * $top
+ * $right
+ * $bottom
+ * $left
+ */
+@mixin fix-center($offset: -100%, $overwrite: false, $top: false, $right: false, $bottom: false, $left: false) {
+  position: absolute;
+  margin: auto;
+  @if ($overwrite == false) {
+    left: $offset;
+    top: $offset;
+    right: $offset;
+    bottom: $offset;
+  } @else {
+    @if ($top) {
+      top: $top;
+    }
+    @if ($right) {
+      right: $right;
+    }
+    @if ($bottom) {
+      bottom: $bottom;
+    }
+    @if ($left) {
+      left: $left;
+    }
+  }
+}
+
+/**
+ * flex容器内部元素对齐方法
+ * $mainAxis
+ * $crossAxis
+ * 可选参数:false(默认), center(居中), flex-end(尾部)
+ */
+@mixin flex-box-align($mainAxis:false, $crossAxis:false) {
+  @if ($mainAxis != false) {
+    justify-content: $mainAxis;
+  }
+  @if ($crossAxis != false) {
+    align-items: $crossAxis;
+  }
+}
+
+/**
+ * 方形容器
+ */
+@mixin square-wrap($width:100%) {
+  height: 0;
+  width: $width;
+  padding-bottom: $width;
+}
+
+@mixin square-wrap-vw($vw) {
+  $max: round($vw*16 /9 *100)/100;
+  $min: round($vw*3 /2 *100)/100;
+
+  width: $vw + vw;
+  height: $vw + vw;
+  min-width: $min + vh;
+  max-width: $max + vh;
+  min-height: $min + vh;
+  max-height: $max + vh;
+}
+
+/**
+ * 硬件加速
+ */
+@mixin gpu-speedUp() {
+  position: relative;
+  z-index: 1;
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+}
