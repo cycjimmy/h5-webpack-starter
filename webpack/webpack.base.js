@@ -76,7 +76,7 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 2048,
+              limit: 4096,
               name: 'images/[name].[hash:6].[ext]',
             }
           },
@@ -126,25 +126,6 @@ module.exports = {
               name: 'images/icons/[name].[hash:6].[ext]',
             }
           }
-        ],
-      },
-
-      // logo
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
-        include: [
-          path.resolve('static', 'logos'),
-        ],
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/logos/[name].[hash:6].[ext]',
-            }
-          },
         ],
       },
 

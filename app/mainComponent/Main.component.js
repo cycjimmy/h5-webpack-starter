@@ -6,6 +6,7 @@ import * as mainStyle from './main.scss';
 
 // component
 import Slide1Component from '../slide1Component/Slide1.component';
+import Slide2Component from '../slide2Component/Slide2.component';
 
 export default class MainSctComponent {
   constructor() {
@@ -13,17 +14,9 @@ export default class MainSctComponent {
   }
 
   load() {
-    let
-      eContext = this.context
-    ;
-
     // load flow
     return new Promise(resolve => {
-      let
-        _style = mainStyle
-      ;
-
-      new Templates(main, eContext, {
+      new Templates(main, this.context, {
         _style,
       }).load();
 
@@ -35,7 +28,7 @@ export default class MainSctComponent {
         return new Promise(resolve => {
           // Swiper
           new Swiper(this.context, {
-            pagination: '.swiper-pagination',
+            pagination: '.' + _style.pagination,
             paginationClickable: true,
             direction: 'vertical',
           });
@@ -48,7 +41,13 @@ export default class MainSctComponent {
       .then(() => {
         return Promise.all([
           new Slide1Component().load(),
+          new Slide2Component().load(),
         ]);
       });
   };
 };
+
+// private
+let
+  _style = mainStyle
+;
