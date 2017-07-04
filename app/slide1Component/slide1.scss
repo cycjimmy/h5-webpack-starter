@@ -1,0 +1,44 @@
+@keyframes rotation {
+  0% {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
+}
+
+.title {
+  font-size: .24rem;
+  font-weight: bold;
+}
+
+// logo animation
+$picH: 1.2rem;
+.logo {
+  position: relative;
+  height: $picH;
+  width: $picH;
+  margin-bottom: $picH / 6;
+
+  transform: scale(.9);
+  transition: transform .4s;
+
+  &.enlarge {
+    transform: scale(1);
+  }
+}
+
+.logoImg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: $picH;
+  width: $picH;
+
+  perspective: $picH / 6;
+  animation: rotation 4s linear 0s infinite normal both;
+
+  &.animationPaused {
+    animation-play-state: paused;
+  }
+}

@@ -1,0 +1,29 @@
+@import "../theme/_variables";
+@import "../theme/_utilities";
+
+.wrapper {
+  position: relative;
+}
+
+.slide1,
+.slide2,
+.slide3,
+.slide4,
+.slide5,
+.slide6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.slide1 {
+  flex-direction: column;
+}
+
+.pagination {
+  :global(.swiper-pagination-bullet-active) {
+    background-color: lighten($bgc, 10%);
+  }
+}
