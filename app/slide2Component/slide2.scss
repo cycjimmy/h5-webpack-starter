@@ -1,26 +1,29 @@
 @import "../theme/_variables";
 @import "../theme/_utilities";
 
-.wrapper {
-  position: relative;
+.title {
+  font-size: .2rem;
+  font-weight: bold;
 }
 
-.slide1,
-.slide2,
-.slide3,
-.slide4,
-.slide5,
-.slide6 {
+.container {
+  position: relative;
+  width: 80vw;
+  height: 60vw;
+  margin: .2rem auto;
+  overflow: hidden;
+}
+
+.content1,
+.content2,
+.content3,
+.content4 {
   display: flex;
   justify-content: center;
   align-items: center;
 
+  background-color: lighten($bgc, 4%);
   text-align: center;
-}
-
-.slide1,
-.slide2 {
-  flex-direction: column;
 }
 
 .pagination {

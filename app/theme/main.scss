@@ -31,6 +31,20 @@ body {
     height: 100%;
     overflow: hidden;
   }
+
+  .loading-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: darken($bgc, 4%);
+    z-index: 9999;
+
+    .loading-pic {
+      @include fix-center(0);
+      width: .9rem;
+      height: .9rem;
+    }
+  }
 }
 
 

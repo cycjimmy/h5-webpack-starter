@@ -14,17 +14,13 @@ export default class Slide1Component {
   }
 
   load() {
-    let
-      eContext = this.context
-    ;
-
     // load flow
     return new Promise(resolve => {
       let
         _style = slide1Style
       ;
 
-      new Templates(slide1, eContext, {
+      new Templates(slide1, this.context, {
         _style,
         logoSvg,
       }).load();
@@ -36,7 +32,7 @@ export default class Slide1Component {
       .then(() => {
         return new Promise(resolve => {
           // load service
-          new Slide1Service(eContext).load();
+          new Slide1Service(this.context).load();
 
           setTimeout(() => {
             resolve();

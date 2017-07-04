@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "H5 webpack starter for webpack, gulp, es6/7, sass, pug, swiper",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/cycjimmy/h5-webpack-starter#readme",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "fastclick": "^1.0.6",
     "swiper": "^3.4.2"
   },

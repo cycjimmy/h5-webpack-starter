@@ -5,7 +5,10 @@ html(lang='en')
     include includes/meta.pug
 
     //- swiper global style
+    link(rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css")
     link(rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css")
 
   body
+    .loading-overlay
+      img.loading-pic(src=require('../images/loading.svg'))
     .swiper-container.main-screen

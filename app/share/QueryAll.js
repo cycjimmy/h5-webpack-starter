@@ -31,13 +31,13 @@ export default class QueryAll {
     }
   };
 
-  //事件绑定
+  // 事件绑定
   on(eventType, fn) {
     let
       aEvents = eventType.split(' ')
     ;
 
-    this.nodeList.map(el => {
+    this.nodeList.forEach(el => {
       for (let event of aEvents) {
         el.addEventListener(event, fn);
       }
@@ -47,9 +47,9 @@ export default class QueryAll {
   };
 
 
-  //添加样式
+  // 添加样式
   addClass(className) {
-    this.nodeList.map((el) => {
+    this.nodeList.forEach((el) => {
       if (el.classList) {
         el.classList.add(className);
       } else {
@@ -60,9 +60,9 @@ export default class QueryAll {
     return this;
   };
 
-  //删除样式
+  // 删除样式
   removeClass(className) {
-    this.nodeList.map((el) => {
+    this.nodeList.forEach((el) => {
       if (el.classList) {
         el.classList.remove(className);
       } else {
@@ -73,9 +73,9 @@ export default class QueryAll {
     return this;
   };
 
-  //是否存在样式
+  // 是否存在样式
   hasClass(className) {
-    this.nodeList.map((el) => {
+    this.nodeList.forEach((el) => {
       if (el.classList) {
         el.classList.contains(className);
       } else {
@@ -85,4 +85,12 @@ export default class QueryAll {
 
     return this;
   };
+
+  // 元素删除
+  remove() {
+    this.nodeList.forEach(el => {
+      el.parentNode.removeChild(el);
+    });
+  };
+
 };
