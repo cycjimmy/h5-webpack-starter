@@ -7,6 +7,7 @@ import * as mainStyle from './main.scss';
 // component
 import Slide1Component from '../slide1Component/Slide1.component';
 import Slide2Component from '../slide2Component/Slide2.component';
+import Slide3Component from '../slide3Component/Slide3.component';
 
 export default class MainSctComponent {
   constructor() {
@@ -30,7 +31,14 @@ export default class MainSctComponent {
           new Swiper(this.context, {
             pagination: '.' + _style.pagination,
             paginationClickable: true,
+            bulletActiveClass : _style.bulletActive,
+
             direction: 'vertical',
+            mousewheelControl: true,
+            wrapperClass: _style.wrapper,
+
+            hashnav:true,
+            hashnavWatchState:true,
           });
 
           setTimeout(() => {
@@ -42,6 +50,7 @@ export default class MainSctComponent {
         return Promise.all([
           new Slide1Component().load(),
           new Slide2Component().load(),
+          new Slide3Component().load(),
         ]);
       });
   };

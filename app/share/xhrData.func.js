@@ -2,8 +2,7 @@
  * xhr-Promise封装
  * @param type 类型
  * @param mode 传输方式(xhr, jsonp, script)
- * @param funcName 后端方法名
- * @param customUrl 用户自定义地址
+ * @param url 地址
  * @param dataType data类型
  * @param data 传值内容
  * @param timeout 超时设定
@@ -13,27 +12,15 @@
 export default function ({
   type = 'POST',
   mode = 'xhr',
-  funcName = '',
-  customUrl = '',
+  url = '',
   dataType = '',
   data = '',
-  timeout = 1500,
+  timeout = 5000,
   ontimeoutFn = () => {
   },
 },) {
 
   return new Promise((resolve, reject) => {
-
-    let sUrl;    //url字符串
-
-    //赋值sUrl
-    if (customUrl) {
-      sUrl = customUrl + '/' + funcName;
-    } else {
-      let
-        relativeDir = JSON.parse(sessionStorage.getItem('relativeDir')) || '';
-      sUrl = relativeDir + '/' + funcName;
-    }
 
     if (mode === 'xhr') {
       //使用xhr传输
@@ -41,7 +28,7 @@ export default function ({
         xhr = new XMLHttpRequest()
         ;
 
-      xhr.open(type, sUrl, true);
+      xhr.open(type, url, true);
       xhr.onreadystatechange = handler;
       xhr.timeout = timeout;                          //0：没有时间限制
       xhr.ontimeout = ontimeoutFn;
@@ -90,7 +77,7 @@ export default function ({
         //直接运行script
 
         //赋值oScript.src
-        oScript.src = sUrl + '?' + data;
+        oScript.src = url + '?' + data;
 
         let
           //回调传出
@@ -143,7 +130,7 @@ export default function ({
         };
 
         //赋值oScript.src
-        oScript.src = sUrl + '?' + data + '&callback=' + callbackName;
+        oScript.src = url + '?' + data + '&callback=' + callbackName;
 
         //超时处理
         if (timeout) {

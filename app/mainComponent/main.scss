@@ -19,12 +19,14 @@
 }
 
 .slide1,
-.slide2 {
+.slide2,
+.slide3 {
   flex-direction: column;
 }
 
 .pagination {
-  :global(.swiper-pagination-bullet-active) {
-    background-color: lighten($bgc, 10%);
+  .bulletActive{
+    opacity: 1;
+    background: lighten($bgc, 10%);
   }
 }

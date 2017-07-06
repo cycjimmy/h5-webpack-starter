@@ -29,8 +29,13 @@ export default class Slide2Component {
           ;
 
           new Swiper(slideContainer, {
+            nested: true,                            // 嵌套
+            roundLengths : true,                     // 取整
+
             pagination: '.' + _style.pagination,
             paginationClickable: true,
+            bulletActiveClass : _style.bulletActive,
+
             spaceBetween: 30,
           });
 
