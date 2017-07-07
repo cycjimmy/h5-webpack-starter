@@ -39,6 +39,7 @@ export default class MainSctComponent {
 
             hashnav:true,
             hashnavWatchState:true,
+            replaceState:true,
           });
 
           setTimeout(() => {

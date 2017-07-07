@@ -2,7 +2,8 @@ import QueryAll from '../share/QueryAll';
 import * as slide3Style from './slide3.scss';
 
 // service
-import Html5ImgCompress from '../share/html5ImgCompress/html5ImgCompress';
+// import Html5ImgCompress from '../share/html5ImgCompress/html5ImgCompress';
+import H5ImageCompressService from '../share/H5ImageCompress/H5ImageCompress.service';
 import xhrData from '../share/xhrData.func';
 
 
@@ -25,7 +26,7 @@ export default class Slide3Service {
   eventBind() {
     // 选择图片
     new QueryAll('.' + _style.chooseInput, this.context).on('change', e => {
-      new Html5ImgCompress(e.target.files[0], {
+      new H5ImageCompressService(e.target.files[0], {
         before: file => {
           console.log('压缩前...');
           this.base64 = '';
@@ -48,7 +49,7 @@ export default class Slide3Service {
         notSupport: (file) => {
           console.error('压缩失败,浏览器不支持！');
         },
-      });
+      }).init();
     });
 
     // 开始上传
