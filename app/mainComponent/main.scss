@@ -12,16 +12,11 @@
 .slide5,
 .slide6 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   text-align: center;
-}
-
-.slide1,
-.slide2,
-.slide3 {
-  flex-direction: column;
 }
 
 .pagination {

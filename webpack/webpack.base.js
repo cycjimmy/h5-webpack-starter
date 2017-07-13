@@ -114,6 +114,27 @@ module.exports = {
         ],
       },
 
+      // media
+      {
+        test: /\.(wav|mp3|mpeg|mp4|webm|ogv)$/i,
+        exclude: [
+          path.resolve('node_modules'),
+        ],
+        include: [
+          path.resolve('app'),
+          path.resolve('static'),
+        ],
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 4096,
+              name: 'media/[name].[hash:6].[ext]',
+            }
+          },
+        ],
+      },
+
       // Svg icons
       {
         test: /\.svg$/,

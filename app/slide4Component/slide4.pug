@@ -1,0 +1,20 @@
+//-
+   _style: 样式文件
+   videoMp4: mp4视频文件
+
+h2(class=_style.title) H5 Canvas Video
+
+div(class=_style.videoWrapper)
+  div(class=_style.videoResponsive)
+    video(class=_style.video)
+      source(src=videoMp4 type="video/mp4")
+      | Your browser does not support HTML5 video.
+
+    canvas(class=_style.canvas)
+
+    div(class=_style.videoTimeline)
+      div(class=_style.videoTimelinePassed)
+
+h2(class=_style.title) H5 Video
+video(class=_style.nativeVideo playsinline x-webkit-airplay webkit-playsinline)
+  source(src=videoMp4 type="video/mp4")

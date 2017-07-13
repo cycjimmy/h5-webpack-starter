@@ -8,6 +8,7 @@ import * as mainStyle from './main.scss';
 import Slide1Component from '../slide1Component/Slide1.component';
 import Slide2Component from '../slide2Component/Slide2.component';
 import Slide3Component from '../slide3Component/Slide3.component';
+import Slide4Component from '../slide4Component/Slide4.component';
 
 export default class MainSctComponent {
   constructor() {
@@ -52,6 +53,7 @@ export default class MainSctComponent {
           new Slide1Component().load(),
           new Slide2Component().load(),
           new Slide3Component().load(),
+          new Slide4Component().load(),
         ]);
       });
   };
