@@ -1,16 +1,13 @@
 import Templates from '../share/Templates';
 
-import * as slide1 from './slide3.pug';
-import * as slide1Style from './slide3.scss';
+import * as slide3 from './slide3.pug';
+import * as slide3Style from './slide3.scss';
 import * as mainStyle from '../mainComponent/main.scss';
-import * as logoSvg from '../../static/images/myLogo.svg';
-
-
 
 // service
 import Slide3Service from './Slide3.service';
 
-export default class Slide1Component {
+export default class Slide3Component {
   constructor() {
     this.context = document.querySelector('.' + mainStyle.slide3);
   }
@@ -19,12 +16,11 @@ export default class Slide1Component {
     // load flow
     return new Promise(resolve => {
       let
-        _style = slide1Style
+        _style = slide3Style
       ;
 
-      new Templates(slide1, this.context, {
+      new Templates(slide3, this.context, {
         _style,
-        logoSvg,
       }).load();
 
       setTimeout(() => {
