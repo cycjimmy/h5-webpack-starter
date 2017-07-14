@@ -12,9 +12,19 @@ div(class=_style.videoWrapper)
 
     canvas(class=_style.canvas)
 
-    div(class=_style.videoTimeline)
-      div(class=_style.videoTimelinePassed)
+    //- videoTimeline
+      div(class=_style.videoTimeline)
+        div(class=_style.videoTimelinePassed)
 
 h2(class=_style.title) H5 Video
-video(class=_style.nativeVideo playsinline x-webkit-airplay webkit-playsinline)
-  source(src=videoMp4 type="video/mp4")
+div(class=_style.nativeVideoWrap)
+  video.video-js.vjs-default-skin(
+  class=_style.nativeVideo
+  controls
+  preload="auto"
+  playsinline
+  webkit-playsinline
+  x-webkit-airplay
+  style="object-fit: fill"
+  )
+    source(src=videoMp4 type="video/mp4")

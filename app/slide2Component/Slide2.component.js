@@ -25,7 +25,7 @@ export default class Slide2Component {
       .then(() => {
         return new Promise(resolve => {
           let
-            slideContainer = this.context.querySelector('.' + slide2Style.container)
+            slideContainer = this.context.querySelector('.' + _style.container)
           ;
 
           new Swiper(slideContainer, {

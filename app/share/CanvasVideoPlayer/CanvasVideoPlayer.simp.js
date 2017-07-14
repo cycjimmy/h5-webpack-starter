@@ -9,22 +9,18 @@ export default class CanvasVideoPlayer {
    * options
    * @param videoSelector
    * @param canvasSelector
-   * @param framesPerSecond
    * @param hideVideo
    * @param autoplay
    * @param audio
-   * @param timelineSelector
    * @param resetOnLastFrame
    * @param loop
    */
   constructor({
                 videoSelector,
                 canvasSelector,
-                framesPerSecond = 25,
                 hideVideo = true,
                 autoplay = false,
                 audio = false,
-                timelineSelector = false,
                 resetOnLastFrame = false,
                 loop = false
               }) {
@@ -32,19 +28,15 @@ export default class CanvasVideoPlayer {
     this.options = {
       videoSelector: videoSelector,
       canvasSelector: canvasSelector,
-      framesPerSecond: framesPerSecond,
       hideVideo: hideVideo,
       autoplay: autoplay,
       audio: audio,
-      timelineSelector: timelineSelector,
       resetOnLastFrame: resetOnLastFrame,
-      loop: loop
+      loop: loop,
     };
 
     this.video = document.querySelector(this.options.videoSelector);
     this.canvas = document.querySelector(this.options.canvasSelector);
-    this.timeline = document.querySelector(this.options.timelineSelector);
-    this.timelinePassed = document.querySelector(this.options.timelineSelector + '> div');
 
     this.load();
   };
@@ -57,16 +49,6 @@ export default class CanvasVideoPlayer {
 
     if (!this.options.canvasSelector || !this.canvas) {
       console.error('No "canvasSelector" property, or the element is not found');
-      return;
-    }
-
-    if (this.options.timelineSelector && !this.timeline) {
-      console.error('Element for the "timelineSelector" selector not found');
-      return;
-    }
-
-    if (this.options.timelineSelector && !this.timelinePassed) {
-      console.error('Element for the "timelinePassed" not found');
       return;
     }
 
@@ -96,7 +78,6 @@ export default class CanvasVideoPlayer {
 
     // Canvas context
     this.ctx = this.canvas.getContext('2d');
-
     this.playing = false;
 
     this.resizeTimeoutReference = false;
@@ -152,17 +133,6 @@ export default class CanvasVideoPlayer {
     if (this.options.autoplay) {
       this.play();
     }
-
-    // Click on the video seek video
-    // if (this.options.timelineSelector) {
-    //   this.timeline.addEventListener('click', (e) => {
-    //     let
-    //       offset = e.clientX - _getOffset(this.canvas).left
-    //       , percentage = offset / this.timeline.offsetWidth
-    //     ;
-    //     this.jumpTo(percentage);
-    //   });
-    // }
 
     // Cache canvas size on resize (doing it only once in a second)
     window.addEventListener('resize', cvpHandlers.windowResizeHandler = () => {
@@ -233,42 +203,13 @@ export default class CanvasVideoPlayer {
 
   loop() {
 
-    let
-      time = Date.now()
-      , elapsed = (time - this.lastTime) / 1000
-    ;
-
-    // Render
-    if (elapsed >= (1 / this.options.framesPerSecond)) {
-      this.video.currentTime = this.video.currentTime + elapsed;
-      this.lastTime = time;
-      // Resync audio and video if they drift more than 300ms apart
-      if (this.audio && Math.abs(this.audio.currentTime - this.video.currentTime) > 0.3) {
-        this.audio.currentTime = this.video.currentTime;
-      }
-    }
-
-    // If we are at the end of the video stop
-    if (this.video.currentTime >= this.video.duration) {
-      this.playing = false;
-
-      if (this.options.resetOnLastFrame === true) {
-        this.video.currentTime = 0;
-      }
-
-      if (this.options.loop === true) {
-        this.video.currentTime = 0;
-        this.play();
-      }
-    }
-
     if (this.playing) {
       this.animationFrame = myRequestAnimationFrame(() => {
         this.loop();
       });
     }
     else {
-      cancelAnimationFrame(this.animationFrame);
+      myCancelAnimationFrame(this.animationFrame);
     }
   };
 
@@ -290,6 +231,10 @@ let
     window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
     window.mozRequestAnimationFrame
+  , myCancelAnimationFrame =
+    window.cancelAnimationFrame ||
+    window.webkitCancelAnimationFrame ||
+    window.mozCancelAnimationFrame
 ;
 
 /**
