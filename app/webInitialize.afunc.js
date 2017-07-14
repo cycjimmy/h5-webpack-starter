@@ -12,6 +12,6 @@ export default () => {
     new MainComponent().load(),
 
   ])
-    .catch(err => console.error('Failed to init', err));
+    // .catch(err => console.error('Failed to init', err));
 };
 

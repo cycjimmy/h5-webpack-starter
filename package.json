@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "H5 webpack starter for webpack, gulp, es6/7, sass, pug, swiper",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,8 @@
     "animate.css": "^3.5.2",
     "exif-js": "^2.2.1",
     "fastclick": "^1.0.6",
-    "swiper": "^3.4.2"
+    "swiper": "^3.4.2",
+    "video.js": "^6.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",

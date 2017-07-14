@@ -32,7 +32,7 @@ export default class Slide4Component {
       .then(() => {
         return new Promise(resolve => {
           // load service
-          new Slide4Service().load();
+          new Slide4Service(this.context).load();
 
           setTimeout(() => {
             resolve();
