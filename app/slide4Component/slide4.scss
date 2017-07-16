@@ -15,7 +15,7 @@
 
 .videoResponsive {
   position: relative;
-  width: 100%;
+  //width: 100%;
   padding-bottom: 56.25%;
 }
 
@@ -29,6 +29,11 @@
   background: #000;
   z-index: 5;
   cursor: pointer;
+}
+
+.video {
+  display: none;
+  object-fit: fill;
 }
 
 .videoTimeline {
