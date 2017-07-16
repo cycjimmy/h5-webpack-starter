@@ -12,15 +12,44 @@ export default class Slide4Service {
   };
 
   load() {
-    new CanvasVideoPlayer({
-      videoSelector: '.' + _style.video,
-      canvasSelector: '.' + _style.canvas,
-      // timelineSelector: '.' + _style.videoTimeline,
-      // audio: true,
-      autoplay: true,
+    // new CanvasVideoPlayer({
+    //   videoSelector: '.' + _style.video,
+    //   canvasSelector: '.' + _style.canvas,
+    //   // timelineSelector: '.' + _style.videoTimeline,
+    //   // audio: true,
+    //   autoplay: true,
+    // });
+
+    // 原生画布渲染VIDEO
+
+    let
+      oVideo = document.querySelector('.' + _style.video)
+      , oCanvas = document.querySelector('.' + _style.canvas)
+      , nCanvasWidth = oCanvas.clientWidth
+      , nCanvasHeight = oCanvas.clientHeight
+    ;
+
+    oCanvas.setAttribute('width', nCanvasWidth);
+    oCanvas.setAttribute('height', nCanvasHeight);
+
+    let
+      ctx = oCanvas.getContext('2d')
+    ;
+
+    console.log(nCanvasWidth, nCanvasHeight, oVideo);
+
+    oCanvas.addEventListener('click', () => {
+      oVideo.play();
     });
 
-
+    oVideo.addEventListener('play', () => {
+      // myRequestAnimationFrame(() => {
+      //   ctx.drawImage(oVideo, 0, 0, nCanvasWidth, nCanvasHeight);
+      // });
+      setInterval(()=>{
+        ctx.drawImage(oVideo, 0, 0, nCanvasWidth, nCanvasHeight);
+      },20);
+    }, false);
 
 
     window.videojs(this.context.querySelector('.' + _style.nativeVideo), {
@@ -41,4 +70,8 @@ export default class Slide4Service {
 
 let
   _style = slide4Style
+  , myRequestAnimationFrame =
+    window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame
 ;
