@@ -2,7 +2,7 @@ import * as slide4Style from './slide4.scss';
 
 // service
 import JSMpeg from '../share/jsmpeg/jsmpeg';
-import videoTs from './media/big_buck_bunny.ts';
+import * as videoTs from './media/big_buck_bunny.ts';
 
 
 export default class Slide4Service {
@@ -19,22 +19,36 @@ export default class Slide4Service {
       , player = new JSMpeg.Player(videoUrl, {
         canvas: canvas,
         progressive: true,
+        loop: false,
         chunkSize: 1024 * 512,
       })
     ;
 
+    // TODO 判断视频是否完成
+    setInterval(() => {
+      console.log('isPlaying: '+player.isPlaying+'\nwantsToPlay: '+player.wantsToPlay+'\nunpauseOnShow: '+player.unpauseOnShow);
+    }, 1000);
+
     console.log(player);
 
-    // 解锁音频
-    document.body.addEventListener('touchstart', () => {
+    let unlockEvent = () => {
       player.audioOut.unlock(() => {
         console.log('audioOut unlocked!');
+        document.body.removeEventListener('touchstart', unlockEvent);
       });
-    });
+    };
+
+    // 解锁音频
+    document.body.addEventListener('touchstart', unlockEvent);
 
     canvas.addEventListener('click', () => {
-      console.log('play');
-      player.play();
+      if (player.isPlaying) {
+        console.log('pause');
+        player.pause();
+      } else {
+        console.log('play');
+        player.play();
+      }
     });
   };
 };
