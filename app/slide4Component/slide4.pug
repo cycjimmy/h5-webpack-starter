@@ -6,35 +6,4 @@ h2(class=_style.title) H5 Canvas Video
 
 div(class=_style.videoWrapper)
   div(class=_style.videoResponsive)
-    video(
-    class=_style.video
-    width="1"
-    height="1"
-    preload="auto"
-    playsinline
-    webkit-playsinline
-    x-webkit-airplay
-    x5-video-player-type="h5"
-    x5-video-player-fullscreen="true"
-    )
-      source(src=videoMp4 type="video/mp4")
-      | Your browser does not support HTML5 video.
-
     canvas(class=_style.canvas)
-
-    //- videoTimeline
-      div(class=_style.videoTimeline)
-        div(class=_style.videoTimelinePassed)
-
-h2(class=_style.title) H5 Video
-div(class=_style.nativeVideoWrap)
-  video.video-js.vjs-default-skin(
-  class=_style.nativeVideo
-  controls
-  preload="auto"
-  playsinline
-  webkit-playsinline
-  x-webkit-airplay
-  style="object-fit: fill"
-  )
-    source(src=videoMp4 type="video/mp4")

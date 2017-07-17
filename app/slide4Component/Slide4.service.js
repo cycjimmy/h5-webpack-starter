@@ -1,9 +1,8 @@
 import * as slide4Style from './slide4.scss';
 
 // service
-// import CanvasVideoPlayer from '../share/CanvasVideoPlayer/CanvasVideoPlayer';
-import CanvasVideoPlayer from '../share/CanvasVideoPlayer/CanvasVideoPlayer.simp';
-// import VideoJs from 'video.js/dist/video.es';
+import JSMpeg from '../share/jsmpeg/jsmpeg';
+import videoTs from './media/big_buck_bunny.ts';
 
 
 export default class Slide4Service {
@@ -12,66 +11,34 @@ export default class Slide4Service {
   };
 
   load() {
-    // new CanvasVideoPlayer({
-    //   videoSelector: '.' + _style.video,
-    //   canvasSelector: '.' + _style.canvas,
-    //   // timelineSelector: '.' + _style.videoTimeline,
-    //   // audio: true,
-    //   autoplay: true,
-    // });
 
-    // 原生画布渲染VIDEO
-
+    // JSMpeg
     let
-      oVideo = document.querySelector('.' + _style.video)
-      , oCanvas = document.querySelector('.' + _style.canvas)
-      , nCanvasWidth = oCanvas.clientWidth
-      , nCanvasHeight = oCanvas.clientHeight
+      canvas = document.querySelector('.' + _style.canvas)
+      , videoUrl = videoTs
+      , player = new JSMpeg.Player(videoUrl, {
+        canvas: canvas,
+        progressive: true,
+        chunkSize: 1024 * 512,
+      })
     ;
 
-    oCanvas.setAttribute('width', nCanvasWidth);
-    oCanvas.setAttribute('height', nCanvasHeight);
+    console.log(player);
 
-    let
-      ctx = oCanvas.getContext('2d')
-    ;
-
-    console.log(nCanvasWidth, nCanvasHeight, oVideo);
-
-    oCanvas.addEventListener('click', () => {
-      oVideo.play();
+    // 解锁音频
+    document.body.addEventListener('touchstart', () => {
+      player.audioOut.unlock(() => {
+        console.log('audioOut unlocked!');
+      });
     });
 
-    oVideo.addEventListener('play', () => {
-      // myRequestAnimationFrame(() => {
-      //   ctx.drawImage(oVideo, 0, 0, nCanvasWidth, nCanvasHeight);
-      // });
-      setInterval(()=>{
-        ctx.drawImage(oVideo, 0, 0, nCanvasWidth, nCanvasHeight);
-      },20);
-    }, false);
-
-
-    window.videojs(this.context.querySelector('.' + _style.nativeVideo), {
-      // VideoJs('myVideo', {
-      autoplay: false,
-      controlBar: {
-        captionsButton: false,
-        chaptersButton: false,
-        liveDisplay: false,
-        playbackRateMenuButton: false,
-        subtitlesButton: false
-      }
-    }, function () {
-      // This is functionally the same as the previous example.
+    canvas.addEventListener('click', () => {
+      console.log('play');
+      player.play();
     });
   };
 };
 
 let
   _style = slide4Style
-  , myRequestAnimationFrame =
-    window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame
 ;
