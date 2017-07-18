@@ -121,8 +121,7 @@ module.exports = {
           path.resolve('node_modules'),
         ],
         include: [
-          path.resolve('app'),
-          path.resolve('static'),
+          path.resolve('static', 'media'),
         ],
         use: [
           {
