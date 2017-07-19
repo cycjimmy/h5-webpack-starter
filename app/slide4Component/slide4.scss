@@ -1,16 +1,11 @@
 @import "../theme/_variables";
 @import "../theme/_utilities";
 
-.title {
-  font-size: .2rem;
-  font-weight: bold;
-}
-
 .videoWrapper {
   position: relative;
-  margin: $space auto;
-  width: 70vw;
-  max-width: 5rem;
+  //margin: $space auto;
+  width: 100%;
+  max-width: 6.4rem;
 }
 
 .videoResponsive {
@@ -18,4 +13,49 @@
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
+}
+
+.videoChooseWrap {
+  display: flex;
+  width: 100%;
+  max-width: 6.4rem;
+  text-align: center;
+}
+
+.videoChoose {
+  flex: 1;
+  display: block;
+  margin: $space 0 $space $space;
+  padding: $space * .5;
+
+  border: .01rem solid darken($fontColor, 10%);
+  border-radius: $radius;
+
+  &:last-child {
+    margin-right: $space;
+  }
+}
+
+.title {
+  padding: $space;
+  font-size: .2rem;
+  font-weight: bold;
+}
+
+.explicationWrap {
+  padding: $space;
+  max-width: 6.4rem;
+}
+
+.explicationTitle {
+  font-size: $fontL;
+}
+
+.explicationList {
+  margin: $space /2 0;
+
+  > a {
+    color: darken($fontColor, 20%);
+    text-decoration: underline;
+  }
 }

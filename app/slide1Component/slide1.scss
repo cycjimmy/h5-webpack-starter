@@ -1,3 +1,6 @@
+@import "../theme/variables";
+@import "../theme/utilities";
+
 @keyframes rotation {
   0% {
     transform: rotate3d(1, 1, 1, 0deg);
@@ -40,5 +43,19 @@ $picH: 1.2rem;
 
   &.animationPaused {
     animation-play-state: paused;
+  }
+}
+
+.gotoGithub {
+  margin-top: $space * 2;
+  padding: $space * .8 $space * 1.6;
+
+  border: .01rem solid $fontColor;
+  border-radius: $radius;
+  font-size: $fontL;
+
+  &:hover {
+    color: $bgc;
+    background-color: $fontColor;
   }
 }

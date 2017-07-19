@@ -2,7 +2,19 @@
    _style: 样式文件
    videoMp4: mp4视频文件
 
-h2(class=_style.title) H5 Canvas Video
-
 div(class=_style.videoWrapper)
   div(class=_style.videoResponsive)
+div(class=_style.videoChooseWrap)
+  a(class=_style.videoChoose href="javascript:;") Video1
+  a(class=_style.videoChoose href="javascript:;") Video2
+h2(class=_style.title) H5 Canvas Video
+dl(class=_style.explicationWrap)
+  dt(class=_style.explicationTitle) 说明:
+  dd(class=_style.explicationList)
+    | 播放器基于
+    a(href="https://github.com/phoboslab/jsmpeg") jsmpeg
+    | 修改而成(
+    a(href="https://github.com/cycjimmy/h5-webpack-starter/tree/master/app/share/jsmpeg") 改后源码地址
+    | )
+  dd(class=_style.explicationList) 视频必须压制成MPEG1+MP2的TS格式
+  dd(class=_style.explicationList) 苹果设备自动播放时无声音，需要引导用户点击视频右下角的声音图标解锁声音(非自动播放模式下没有类似问题)
