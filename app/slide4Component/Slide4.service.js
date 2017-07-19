@@ -29,10 +29,13 @@ export default class Slide4Service {
         }
 
         // 销毁原有实例
-        destroyOtherVideoIns();
-        setTimeout(() => {
-          oVideoInstances[index] = initVideoIns(oVideoEl, oVideoUrls[index], oVideoPosters[index]);
-        }, 0);
+        destroyOtherVideoIns()
+          .then(() => {
+            // 创建新实例
+            oVideoInstances[index] = initVideoIns(oVideoEl, oVideoUrls[index], oVideoPosters[index]);
+
+            console.log(oVideoInstances);
+          });
       });
     });
 
@@ -57,12 +60,15 @@ let
     chunkSize: 384 * 1024,
   })
 
-  , destroyOtherVideoIns = () => {
+  , destroyOtherVideoIns = () => new Promise(resolve => {
     oVideoInstances.forEach((el, index) => {
       if (el) {
         el.destroy();
         oVideoInstances[index] = null;
       }
     });
-  }
+    setTimeout(() => {
+      resolve();
+    }, 0);
+  })
 ;

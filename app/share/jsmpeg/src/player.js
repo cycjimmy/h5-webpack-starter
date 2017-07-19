@@ -1,4 +1,5 @@
 import JSMpeg from '../jsmpeg';
+import TS from './ts';
 
 /**
  * @param url
@@ -39,14 +40,14 @@ let Player = function (url, options, cbUI) {
     this.renderer = !options.disableGl && JSMpeg.Renderer.WebGL.IsSupported()
       ? new JSMpeg.Renderer.WebGL(options)
       : new JSMpeg.Renderer.Canvas2D(options);
-    this.demuxer.connect(JSMpeg.Demuxer.TS.STREAM.VIDEO_1, this.video);
+    this.demuxer.connect(TS.STREAM.VIDEO_1, this.video);
     this.video.connect(this.renderer);
   }
 
   if (options.audio !== false && JSMpeg.AudioOutput.WebAudio.IsSupported()) {
     this.audio = new JSMpeg.Decoder.MP2Audio(options);
     this.audioOut = new JSMpeg.AudioOutput.WebAudio(options);
-    this.demuxer.connect(JSMpeg.Demuxer.TS.STREAM.AUDIO_1, this.audio);
+    this.demuxer.connect(TS.STREAM.AUDIO_1, this.audio);
     this.audio.connect(this.audioOut);
   }
 

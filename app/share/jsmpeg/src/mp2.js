@@ -2,15 +2,16 @@
 // http://keyj.emphy.de/kjmp2/
 
 import JSMpeg from '../jsmpeg';
+import BitBuffer from './buffer';
 import BaseDecoder from './decoder';
 
 let MP2 = function(options) {
-	JSMpeg.Decoder.Base.call(this, options);
+  BaseDecoder.call(this, options);
 
 	var bufferSize = options.audioBufferSize || 128*1024;
 	var bufferMode = options.streaming
-		? JSMpeg.BitBuffer.MODE.EVICT
-		: JSMpeg.BitBuffer.MODE.EXPAND;
+		? BitBuffer.MODE.EVICT
+		: BitBuffer.MODE.EXPAND;
 
 	this.bits = new JSMpeg.BitBuffer(bufferSize, bufferMode);
 

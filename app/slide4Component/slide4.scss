@@ -17,22 +17,23 @@
 
 .videoChooseWrap {
   display: flex;
-  width: 100%;
+  padding: $space;
+  align-items: stretch;
+  height: .36rem;
+  width: 100vw - $space*2;
   max-width: 6.4rem;
-  text-align: center;
 }
 
 .videoChoose {
   flex: 1;
-  display: block;
-  margin: $space 0 $space $space;
-  padding: $space * .5;
-
+  display: flex;
+  @include flex-box-align(center, center);
+  margin-right: $space;
   border: .01rem solid darken($fontColor, 10%);
   border-radius: $radius;
 
   &:last-child {
-    margin-right: $space;
+    margin-right: 0;
   }
 }
 
