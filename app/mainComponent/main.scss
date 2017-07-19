@@ -5,22 +5,25 @@
   position: relative;
 }
 
-.slide1,
-.slide2,
-.slide3,
-.slide4,
-.slide5,
-.slide6 {
+.slide {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
+.slide1,
+.slide2,
+.slide3 {
   text-align: center;
 }
 
+.slide4 {
+  justify-content: flex-start;
+}
+
 .pagination {
-  .bulletActive{
+  .bulletActive {
     opacity: 1;
     background: lighten($bgc, 10%);
   }

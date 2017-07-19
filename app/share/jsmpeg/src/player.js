@@ -3,7 +3,7 @@ import JSMpeg from '../jsmpeg';
 /**
  * @param url
  * @param options
- * @param cbUI {play: function, pause: function} 插入UI回调
+ * @param cbUI {play: function, pause: function, stop: function} 插入UI回调
  * @constructor
  */
 let Player = function (url, options, cbUI) {
@@ -122,6 +122,10 @@ Player.prototype.stop = function (ev) {
   this.seek(0);
   if (this.video && this.options.decodeFirstFrame !== false) {
     this.video.decode();
+  }
+
+  if (this.cbUI.stop) {
+    this.cbUI.stop();
   }
 };
 
