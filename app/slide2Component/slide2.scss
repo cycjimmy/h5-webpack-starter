@@ -10,6 +10,8 @@
   position: relative;
   width: 80vw;
   height: 60vw;
+  max-width: 5rem;
+  max-height: 4rem;
   margin: .2rem auto;
   overflow: hidden;
 }
@@ -27,7 +29,7 @@
 }
 
 .pagination {
-  .bulletActive{
+  .bulletActive {
     opacity: 1;
     background: lighten($bgc, 10%);
   }

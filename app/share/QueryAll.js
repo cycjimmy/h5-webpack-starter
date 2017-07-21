@@ -21,7 +21,7 @@ export default class QueryAll {
     if (isString(selectorOrEls)) {
       elements = context.querySelectorAll(selectorOrEls);
     } else {
-      elements = new Array(selectorOrEls);
+      elements = selectorOrEls;
     }
 
     if (Array.from) {

@@ -2,6 +2,7 @@ import * as slide4Style from './slide4.scss';
 
 // service
 import JSMpeg from '../share/jsmpeg/jsmpeg';
+import touchActive from '../share/touchActiveMockClick.func';
 
 // media
 import * as videoTs0 from '../../static/media/big_buck_bunny.ts';
@@ -16,7 +17,18 @@ export default class Slide4Service {
 
   load() {
     let
-      oVideoEl = this.context.querySelector('.' + _style.videoResponsive)
+      oVideoWrapper = this.context.querySelector('.' + _style.videoWrapper)
+    ;
+
+    // 初始化第一个视频
+    oVideoInstances[0] = initVideoIns(oVideoWrapper, oVideoUrls[0], oVideoPosters[0]);
+
+    this.eventBind();
+  };
+
+  eventBind() {
+    let
+      oVideoWrapper = this.context.querySelector('.' + _style.videoWrapper)
       , aVideoChooseBtns = this.context.querySelectorAll('.' + _style.videoChoose)
     ;
 
@@ -24,7 +36,7 @@ export default class Slide4Service {
       btn.addEventListener('click', () => {
         // 否有本身实例正在激活
         if (oVideoInstances[index]) {
-          console.log('该视频激活状态');
+          console.log('The video has been activated!');
           return;
         }
 
@@ -32,15 +44,15 @@ export default class Slide4Service {
         destroyOtherVideoIns()
           .then(() => {
             // 创建新实例
-            oVideoInstances[index] = initVideoIns(oVideoEl, oVideoUrls[index], oVideoPosters[index]);
+            oVideoInstances[index] = initVideoIns(oVideoWrapper, oVideoUrls[index], oVideoPosters[index]);
 
-            console.log(oVideoInstances);
+            // 立即播放
+            // oVideoInstances[index].player.play();
           });
       });
     });
 
-    // 初始化第一个视频
-    oVideoInstances[0] = initVideoIns(oVideoEl, oVideoUrls[0], oVideoPosters[0]);
+    touchActive(aVideoChooseBtns);
   };
 };
 
@@ -51,9 +63,10 @@ let
   , oVideoUrls = [videoTs0, videoTs1]
   , oVideoPosters = [videoPoster0, videoPoster1]
 
-  , initVideoIns = (videoEl, videoUrl, videoPoster) => new JSMpeg.VideoElement(videoEl, videoUrl, {
+  , initVideoIns = (videoWrapper, videoUrl, videoPoster) => new JSMpeg.VideoElement(videoWrapper, videoUrl, {
     poster: videoPoster,
     decodeFirstFrame: false,
+    // aspectPercent: '56.25%',
     loop: false,
     // autoplay: true,
     progressive: true,
