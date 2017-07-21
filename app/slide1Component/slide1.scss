@@ -48,11 +48,13 @@ $picH: 1.2rem;
 
 .gotoGithub {
   margin-top: $space * 2;
-  padding: $space * .8 $space * 1.6;
+  padding: 0 $space * 1.6;
+  height: .4rem;
 
   border: .01rem solid $fontColor;
   border-radius: $radius;
   font-size: $fontL;
+  line-height: .4rem;
 
   &:hover {
     color: $bgc;

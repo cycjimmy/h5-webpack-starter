@@ -3,18 +3,16 @@
    videoMp4: mp4视频文件
 
 div(class=_style.videoWrapper)
-  div(class=_style.videoResponsive)
 div(class=_style.videoChooseWrap)
   a(class=_style.videoChoose href="javascript:;") Video1
   a(class=_style.videoChoose href="javascript:;") Video2
-h2(class=_style.title) H5 Canvas Video
 dl(class=_style.explicationWrap)
-  dt(class=_style.explicationTitle) 说明:
+  dt(class=_style.explicationTitle) H5 Canvas Video Introduce:
   dd(class=_style.explicationList)
-    | 播放器基于
+    | The player is based on &nbsp;
     a(href="https://github.com/phoboslab/jsmpeg") jsmpeg
-    | 修改而成(
-    a(href="https://github.com/cycjimmy/h5-webpack-starter/tree/master/app/share/jsmpeg") 改后源码地址
+    | .(
+    a(href="https://github.com/cycjimmy/h5-webpack-starter/tree/master/app/share/jsmpeg") my source
     | )
-  dd(class=_style.explicationList) 视频必须压制成MPEG1+MP2的TS格式
-  dd(class=_style.explicationList) 苹果设备自动播放时无声音，需要引导用户点击视频右下角的声音图标解锁声音(非自动播放模式下没有类似问题)
+  dd(class=_style.explicationList) The video must be compressed into the TS format of MPEG1 / MP2.
+  dd(class=_style.explicationList) Apple device automatically plays without sound, you need to guide the user to click on the video in the lower right corner of the video icon to unlock the sound.(no similar problem in non-autoplay mode)

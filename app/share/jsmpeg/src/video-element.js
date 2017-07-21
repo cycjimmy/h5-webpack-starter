@@ -1,6 +1,6 @@
 import Player from './player';
 
-let VideoElement = function (element, videoUrl, options) {
+let VideoElement = function (wrapper, videoUrl, options) {
   // Setup the div container, canvas and play button
   var addStyles = function (element, styles) {
     for (var name in styles) {
@@ -8,16 +8,26 @@ let VideoElement = function (element, videoUrl, options) {
     }
   };
 
-  this.container = element;
+  this.wrapper = wrapper;
 
+  this.container = document.createElement('div');
   addStyles(this.container, {
     position: 'relative',
+    width: '100%',
     minWidth: '80px',
+    height: '0',
+    paddingBottom: options.aspectPercent || '56.25%',
   });
+  this.wrapper.appendChild(this.container);
+
+  // 赋值wrapper高度，防止销毁时页面抖动
+  this.setWrapperHeight = () => {
+    this.wrapper.style.height = this.container.offsetHeight + 'px';
+  };
+  this.setWrapperHeight();
+  window.addEventListener('resize', this.setWrapperHeight);
 
   this.canvas = document.createElement('canvas');
-  // this.canvas.width = 960;
-  // this.canvas.height = 540;
   addStyles(this.canvas, {
     position: 'absolute',
     top: '0',
@@ -59,13 +69,13 @@ let VideoElement = function (element, videoUrl, options) {
       this.playButton.style.display = 'block';
     },
     stop: () => {
-      if(this.poster){
+      if (this.poster) {
         this.poster.style.display = 'block';
       }
     },
   });
 
-  element.playerInstance = this.player;
+  wrapper.playerInstance = this.player;
 
   // Setup the poster element, if any
   if (options.poster && !options.autoplay && !this.player.options.streaming) {
@@ -143,7 +153,8 @@ VideoElement.prototype.onClick = function (ev) {
 // 自定义清理
 VideoElement.prototype.destroy = function () {
   this.player.destroy();
-  this.container.innerHTML = '';
+  this.wrapper.innerHTML = '';
+  window.removeEventListener('resize', this.setWrapperHeight);
 };
 
 VideoElement.PLAY_BUTTON = `

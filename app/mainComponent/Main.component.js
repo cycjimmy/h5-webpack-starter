@@ -32,15 +32,15 @@ export default class MainSctComponent {
           new Swiper(this.context, {
             pagination: '.' + _style.pagination,
             paginationClickable: true,
-            bulletActiveClass : _style.bulletActive,
+            bulletActiveClass: _style.bulletActive,
 
             direction: 'vertical',
             mousewheelControl: true,
             wrapperClass: _style.wrapper,
 
-            hashnav:true,
-            hashnavWatchState:true,
-            replaceState:true,
+            hashnav: true,
+            hashnavWatchState: true,
+            replaceState: true,
           });
 
           setTimeout(() => {
