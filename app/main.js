@@ -7,6 +7,9 @@ import webInitialize from './webInitialize.afunc';
 // service
 import loadingOverlayService from './loadingOverlay.service';
 
+// wechat config
+// import './wechatConfig';
+
 if (DEVELOPMENT) {
   console.log('Development Mode');
 }
