@@ -110,7 +110,7 @@ module.exports = webpackMerge(webpackBase, {
     }),
 
     new ExtractTextPlugin({
-      filename: 'style/[name].[chunkhash:8].min.css',
+      filename: '[name].[chunkhash:8].min.css',
       disable: false,
       allChunks: true,
     }),
