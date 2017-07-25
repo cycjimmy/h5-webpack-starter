@@ -4,9 +4,6 @@ import './theme/main.scss';
 import FastClick from 'fastclick';
 import webInitialize from './webInitialize.afunc';
 
-// service
-import loadingOverlayService from './loadingOverlay.service';
-
 // wechat config
 // import './wechatConfig';
 
@@ -32,8 +29,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // web init
   webInitialize();
 }, false);
-
-
-window.addEventListener('load', () => {
-  new loadingOverlayService().load();
-});
