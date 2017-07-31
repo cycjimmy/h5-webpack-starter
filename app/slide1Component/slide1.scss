@@ -17,12 +17,23 @@
 
 // logo animation
 $picH: 1.2rem;
-.logo {
+.logoWrap {
   position: relative;
   height: $picH;
   width: $picH;
   margin-bottom: $picH / 6;
+}
 
+.logo,
+.logoImg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: $picH;
+  width: $picH;
+}
+
+.logo {
   transform: scale(.9);
   transition: transform .4s;
 
@@ -32,11 +43,8 @@ $picH: 1.2rem;
 }
 
 .logoImg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: $picH;
-  width: $picH;
+  background: url(../../static/images/myLogo.svg) no-repeat;
+  background-size: 100% 100%;
 
   perspective: $picH / 6;
   animation: rotation 4s linear 0s infinite normal both;

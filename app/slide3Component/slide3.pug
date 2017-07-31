@@ -1,15 +1,15 @@
 //-
    _style: 样式文件
 
-h2(class=_style.title) Image upload controls
+h2.ani(class=_style.title, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay=".2s") Image upload controls
 
-div(class=_style.btnsWrapper)
+.ani(class=_style.btnsWrapper, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay=".5s")
   a(class=_style.chooseBtn href="javascript:;")
     | Select
     input(class=_style.chooseInput type="file" accept="image/*")
 
   a(class=_style.uploadBtn href="javascript:;") Upload
 
-div
+.ani(swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay=".6s")
   div(class=_style.showBox)
   div(class=_style.showInfo)

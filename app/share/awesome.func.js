@@ -39,6 +39,12 @@ const isString = (str) => {
 const isObject = o => Object.prototype.toString.call(o) === '[object Object]';
 
 /**
+ * 判断是否nodeList
+ * @param nodeList
+ */
+const isNodeList = nodeList => Object.prototype.toString.call(nodeList) === '[object NodeList]';
+
+/**
  * 取得url相对路径根目录
  * @returns {string|*}
  */
@@ -125,6 +131,7 @@ export {
   strToCamel,
   isString,
   isObject,
+  isNodeList,
   getUrlRelativeDir,
   dispatch,
   siblingFilter,

@@ -9,11 +9,15 @@ import {
 import * as main from './main.pug';
 import * as mainStyle from './main.scss';
 
+// audio
+import * as audioSrc from '../../static/media/Richard Clayderman - LOVE IS BLUE.mp3';
+
 // component
 import Slide1Component from '../slide1Component/Slide1.component';
 import Slide2Component from '../slide2Component/Slide2.component';
 import Slide3Component from '../slide3Component/Slide3.component';
 import Slide4Component from '../slide4Component/Slide4.component';
+import AudioComponent from '../share/audioComponent/Audio.component';
 
 // service
 import loadingOverlayService from '../loadingOverlay.service';
@@ -51,11 +55,11 @@ export default class MainSctComponent {
             replaceState: true,
 
             onInit: (swiper) => {
-              new loadingOverlayService().load();
               setTimeout(() => {
+                new loadingOverlayService().load();
                 swiperAnimateCache(swiper);
                 swiperAnimate(swiper);
-              }, 200);
+              }, 500);
             },
             onSlideChangeEnd: (swiper) => {
               swiperAnimate(swiper);
@@ -73,6 +77,11 @@ export default class MainSctComponent {
           new Slide2Component().load(),
           new Slide3Component().load(),
           new Slide4Component().load(),
+
+          new AudioComponent({
+            context: this.context,
+            audioSrc: audioSrc,
+          }).load(),
         ]);
       });
   };
