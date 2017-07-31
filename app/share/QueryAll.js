@@ -10,7 +10,10 @@
  *
  */
 
-import {isString} from './awesome.func';
+import {
+  isString,
+  isNodeList,
+} from './awesome.func';
 
 export default class QueryAll {
   constructor(selectorOrEls, context = document) {
@@ -22,6 +25,10 @@ export default class QueryAll {
       elements = context.querySelectorAll(selectorOrEls);
     } else {
       elements = selectorOrEls;
+    }
+
+    if (!isNodeList(elements)) {
+      elements = new Array(elements);
     }
 
     if (Array.from) {
@@ -92,5 +99,4 @@ export default class QueryAll {
       el.parentNode.removeChild(el);
     });
   };
-
 };

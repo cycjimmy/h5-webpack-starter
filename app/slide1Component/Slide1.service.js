@@ -12,23 +12,28 @@ export default class Slide1Service {
 
   eventBind() {
     let
-      oLogo = this.context.querySelector('.' + slide1Style.logo)   // logo wrap
-      , oLogoImg = oLogo.firstElementChild                         // logo img
+      oLogo = this.context.querySelector('.' + _style.logo)   // logo wrap
+      , oLogoImg = oLogo.firstElementChild                    // logo img
     ;
 
     new QueryAll(oLogoImg)
       .on('touchstart mouseover mousedown', () => {
-        oLogoImg.classList.add(slide1Style.animationPaused);
-        oLogo.classList.add(slide1Style.enlarge);
+        oLogoImg.classList.add(_style.animationPaused);
+        oLogo.classList.add(_style.enlarge);
       })
       .on('touchmove touchend touchcancel mouseout mouseup', () => {
-        if (oLogoImg.classList.contains(slide1Style.animationPaused)) {
-          oLogoImg.classList.remove(slide1Style.animationPaused);
+        if (oLogoImg.classList.contains(_style.animationPaused)) {
+          oLogoImg.classList.remove(_style.animationPaused);
         }
-        if (oLogo.classList.contains(slide1Style.enlarge)) {
-          oLogo.classList.remove(slide1Style.enlarge);
+        if (oLogo.classList.contains(_style.enlarge)) {
+          oLogo.classList.remove(_style.enlarge);
         }
       });
 
   };
 };
+
+// private
+let
+  _style = slide1Style
+;

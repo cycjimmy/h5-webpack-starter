@@ -1,0 +1,44 @@
+@import "../../theme/variables";
+@import "../../theme/utilities";
+
+.musicControlWrapper {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  top: 0;
+  width: 15vw;
+  height: 15vw;
+  display: flex;
+  @include flex-box-align(center, center);
+}
+
+@keyframes reverseRotataZ {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
+
+.musicControl {
+  display: block;
+  width: 9vw;
+  height: 9vw;
+
+  &.play {
+    background: url(./audioPlay.svg) no-repeat;
+    background-size: 100% 100%;
+
+    animation: reverseRotataZ 2s linear infinite;
+  }
+
+  &.pause {
+    background: url(./audioPause.svg) no-repeat;
+    background-size: 100% 100%;
+  }
+
+  audio {
+    display: none;
+  }
+}

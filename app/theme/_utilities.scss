@@ -74,6 +74,6 @@
   position: relative;
   z-index: 1;
   backface-visibility: hidden;
-  perspective: 1000;
+  perspective: 1px;
   transform: translate3d(0, 0, 0);
 }

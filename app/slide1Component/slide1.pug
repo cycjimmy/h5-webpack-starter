@@ -2,7 +2,8 @@
    _style: 样式文件
    logoSvg: logo图片
 
-div(class=_style.logo)
-  img(class=_style.logoImg src=logoSvg)
-h1(class=_style.title) H5 Webpack Starter
-a(class=_style.gotoGithub, href="https://github.com/cycjimmy/h5-webpack-starter") View on Github
+section.ani(class=_style.logoWrap, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay=".3s")
+  div(class=_style.logo)
+    div(class=_style.logoImg)
+h1.ani(class=_style.title, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay=".5s") H5 Webpack Starter
+a.ani(class=_style.gotoGithub, href="https://github.com/cycjimmy/h5-webpack-starter", swiper-animate-effect="fadeInUp", swiper-animate-duration="0.7s", swiper-animate-delay=".8s") View on Github

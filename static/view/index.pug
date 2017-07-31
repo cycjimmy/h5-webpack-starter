@@ -1,8 +1,51 @@
 doctype html
 html(lang='en')
   head
-    title H5 Webpack Starter
     include includes/meta.pug
+    title H5 Webpack Starter
+    base(href="./")
+
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html, body {
+        position: relative;
+        height: 100%;
+      }
+
+      html {
+        font-size: 100px;
+        line-height: 1.4;
+      }
+
+      body {
+        font-size: 15px;
+        font-family: -apple-system-font, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      }
+
+      .loading-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: #0a4f56;
+      }
+
+      .loading-pic {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 20vw;
+        height: 20vw;
+      }
+
+
 
     //- swiper global style
     link(rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css")

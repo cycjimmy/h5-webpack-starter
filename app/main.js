@@ -4,9 +4,6 @@ import './theme/main.scss';
 import FastClick from 'fastclick';
 import webInitialize from './webInitialize.afunc';
 
-// wechat config
-// import './wechatConfig';
-
 if (DEVELOPMENT) {
   console.log('Development Mode');
 }
