@@ -17,6 +17,7 @@ import Slide1Component from '../slide1Component/Slide1.component';
 import Slide2Component from '../slide2Component/Slide2.component';
 import Slide3Component from '../slide3Component/Slide3.component';
 import Slide4Component from '../slide4Component/Slide4.component';
+import Slide5Component from '../slide5Component/Slide5.component';
 import AudioComponent from '../share/audioComponent/Audio.component';
 
 // service
@@ -77,6 +78,7 @@ export default class MainSctComponent {
           new Slide2Component().load(),
           new Slide3Component().load(),
           new Slide4Component().load(),
+          new Slide5Component().load(),
 
           new AudioComponent({
             context: this.context,

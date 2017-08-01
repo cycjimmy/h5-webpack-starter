@@ -45,14 +45,16 @@ html(lang='en')
         height: 20vw;
       }
 
-
-
     //- swiper global style
     link(rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css")
     link(rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css")
 
+    //- WeChat JSSDK
+      script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
+
     //- videoJs
       script(src="//cdn.bootcss.com/video.js/6.2.1/video.min.js")
+
       link(rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.1/video-js.min.css")
 
   body
@@ -60,5 +62,5 @@ html(lang='en')
       img.loading-pic(src=require('../images/loading.svg'))
     .swiper-container.main-screen
 
-    //- WeChat JSSDK
-      script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
+    //- three.js
+    script(src="//cdn.bootcss.com/three.js/r83/three.min.js")

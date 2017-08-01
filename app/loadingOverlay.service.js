@@ -1,15 +1,13 @@
-import QueryAll from './share/QueryAll';
-
 export default class loadingOverlayService {
   constructor() {
-  }
+  };
 
   load() {
     let
-      oLoadingOverlay = new QueryAll('.loading-overlay')
+      oLoadingOverlay = document.querySelector('.loading-overlay')
     ;
 
-    oLoadingOverlay.addClass('animated').addClass('slideOutUp');
+    oLoadingOverlay.classList.add('animated', 'slideOutUp');
 
     setTimeout(() => {
       oLoadingOverlay.remove();
