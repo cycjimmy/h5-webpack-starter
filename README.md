@@ -7,6 +7,7 @@
 * [animate.css](https://github.com/daneden/animate.css)
 * [fastclick](https://github.com/ftlabs/fastclick)
 * [jsmpeg](https://github.com/phoboslab/jsmpeg)
+* [three.js](https://github.com/mrdoob/three.js)
 * [Pwa Webpack Starter](https://github.com/cycjimmy/pwa-webpack-starter)
 
 ## Installation

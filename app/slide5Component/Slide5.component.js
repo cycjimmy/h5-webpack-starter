@@ -1,22 +1,22 @@
 import Templates from '../share/Templates';
 
-import * as slide1 from './slide1.pug';
-import * as slide1Style from './slide1.scss';
+import * as slide5 from './slide5.pug';
+import * as slide5Style from './slide5.scss';
 import * as mainStyle from '../mainComponent/main.scss';
 import * as logoSvg from '../../static/images/myLogo.svg';
 
 // service
-import Slide1Service from './Slide1.service';
+import Slide1Service from './Slide5.service';
 
-export default class Slide1Component {
+export default class Slide5Component {
   constructor() {
-    this.context = document.querySelector('.' + mainStyle.slide1);
+    this.context = document.querySelector('.' + mainStyle.slide5);
   }
 
   load() {
     // load flow
     return new Promise(resolve => {
-      new Templates(slide1, this.context, {
+      new Templates(slide5, this.context, {
         _style,
         logoSvg,
       }).load();
@@ -40,5 +40,5 @@ export default class Slide1Component {
 
 // private
 let
-  _style = slide1Style
+  _style = slide5Style
 ;
