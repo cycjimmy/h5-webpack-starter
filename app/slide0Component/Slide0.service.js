@@ -2,26 +2,32 @@ import QueryAll from '../share/QueryAll';
 import * as slide0Style from './slide0.scss';
 
 export default class Slide0Service {
-  constructor(element) {
-    this.context = element;
-    this.slideIndex = 0;
-  }
-
-  load(mainSwiper) {
-    this.eventBind(mainSwiper);
+  constructor({
+                context,
+                slideIndex,
+              }) {
+    this.context = context;
+    this.slideIndex = slideIndex;
   };
 
-  eventBind(mainSwiper) {
-    let
-      oLogo = this.context.querySelector('.' + _style.logo)   // logo wrap
-      , oLogoImg = oLogo.firstElementChild                    // logo img
-    ;
+  load(mainSwiper) {
+    this.swiperCommand(mainSwiper);
+    this.eventBind();
+  };
 
+  swiperCommand(mainSwiper) {
     mainSwiper.on('slideChangeEnd', () => {
       if (mainSwiper.realIndex === this.slideIndex) {
         console.log('slide' + this.slideIndex);
       }
     });
+  };
+
+  eventBind() {
+    let
+      oLogo = this.context.querySelector('.' + _style.logo)   // logo wrap
+      , oLogoImg = oLogo.firstElementChild                    // logo img
+    ;
 
     new QueryAll(oLogoImg)
       .on('touchstart mouseover mousedown', () => {
@@ -36,7 +42,6 @@ export default class Slide0Service {
           oLogo.classList.remove(_style.enlarge);
         }
       });
-
   };
 };
 

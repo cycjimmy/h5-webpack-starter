@@ -7,17 +7,17 @@ import * as slide3Style from './slide3.scss';
 import Slide3Service from './Slide3.service';
 
 export default class Slide3Component {
-  constructor(context) {
+  constructor({
+                context,
+                slideIndex,
+              }) {
     this.context = context;
-  }
+    this.slideIndex = slideIndex;
+  };
 
   load(mainSwiper) {
     // load flow
     return new Promise(resolve => {
-      let
-        _style = slide3Style
-      ;
-
       new Templates(slide3, this.context, {
         _style,
       }).load();
@@ -29,7 +29,10 @@ export default class Slide3Component {
       .then(() => {
         return new Promise(resolve => {
           // load service
-          new Slide3Service(this.context).load(mainSwiper);
+          new Slide3Service({
+            context: this.context,
+            slideIndex: this.slideIndex,
+          }).load(mainSwiper);
 
           setTimeout(() => {
             resolve();
@@ -38,3 +41,8 @@ export default class Slide3Component {
       });
   };
 };
+
+// private
+let
+  _style = slide3Style
+;

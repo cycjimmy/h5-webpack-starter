@@ -1,15 +1,33 @@
+import * as THREE from 'three';
+
 import * as slide4Style from './slide4.scss';
 
 export default class Slide4Service {
-  constructor(context) {
+  constructor({
+                context,
+                slideIndex,
+              }) {
     this.context = context;
-    this.container = this.context.querySelector('.' + _style.container);
-    this.slideIndex = 4;
+    this.slideIndex = slideIndex;
   };
 
   load(mainSwiper) {
+    this.swiperCommand(mainSwiper);
+    this.webGlDemoShow();
+  };
+
+  swiperCommand(mainSwiper) {
+    mainSwiper.on('slideChangeEnd', () => {
+      if (mainSwiper.realIndex === this.slideIndex) {
+        console.log('slide' + this.slideIndex);
+      }
+    });
+  };
+
+  webGlDemoShow() {
     let
-      containerClientRect = this.container.getBoundingClientRect()
+      container = this.context.querySelector('.' + _style.container)
+      , containerClientRect = container.getBoundingClientRect()
       , containerW = containerClientRect.width
       , containerH = containerClientRect.height
     ;
@@ -21,7 +39,7 @@ export default class Slide4Service {
     ;
 
     renderer.setSize(containerW, containerH);
-    this.container.appendChild(renderer.domElement);
+    container.appendChild(renderer.domElement);
 
     let
       geometry = new THREE.BoxGeometry(1, 1, 1)
@@ -36,8 +54,8 @@ export default class Slide4Service {
     let render = () => {
       requestAnimationFrame(render);
 
-      cube.rotation.x += 0.1;
-      cube.rotation.y += 0.1;
+      cube.rotation.x += 0.05;
+      cube.rotation.y += 0.05;
       renderer.render(scene, camera);
     };
 

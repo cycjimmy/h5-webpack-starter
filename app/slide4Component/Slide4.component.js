@@ -8,9 +8,13 @@ import * as logoSvg from '../../static/images/myLogo.svg';
 import Slide1Service from './Slide4.service';
 
 export default class Slide4Component {
-  constructor(context) {
+  constructor({
+                context,
+                slideIndex,
+              }) {
     this.context = context;
-  }
+    this.slideIndex = slideIndex;
+  };
 
   load(mainSwiper) {
     // load flow
@@ -27,7 +31,10 @@ export default class Slide4Component {
       .then(() => {
         return new Promise(resolve => {
           // load service
-          new Slide1Service(this.context).load(mainSwiper);
+          new Slide1Service({
+            context: this.context,
+            slideIndex: this.slideIndex,
+          }).load(mainSwiper);
 
           setTimeout(() => {
             resolve();

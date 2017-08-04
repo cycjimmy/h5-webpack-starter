@@ -1,13 +1,12 @@
 import Templates from '../share/Templates';
 
-import * as slide0 from './slide0.pug';
-import * as slide0Style from './slide0.scss';
-import * as logoSvg from '../../static/images/myLogo.svg';
+import * as slideX from './slideX.pug';
+import * as slideXStyle from './slideX.scss';
 
 // service
-import Slide0Service from './Slide0.service';
+import SlideXService from './SlideX.service';
 
-export default class Slide0Component {
+export default class SlideXComponent {
   constructor({
                 context,
                 slideIndex,
@@ -19,9 +18,8 @@ export default class Slide0Component {
   load(mainSwiper) {
     // load flow
     return new Promise(resolve => {
-      new Templates(slide0, this.context, {
+      new Templates(slideX, this.context, {
         _style,
-        logoSvg,
       }).load();
 
       setTimeout(() => {
@@ -31,7 +29,7 @@ export default class Slide0Component {
       .then(() => {
         return new Promise(resolve => {
           // load service
-          new Slide0Service({
+          new SlideXService({
             context: this.context,
             slideIndex: this.slideIndex,
           }).load(mainSwiper);
@@ -46,5 +44,5 @@ export default class Slide0Component {
 
 // private
 let
-  _style = slide0Style
+  _style = slideXStyle
 ;

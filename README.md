@@ -1,5 +1,7 @@
 # h5 Webpack Starter
 ## Features
+* Perfect for loading components.
+* Easy to load animation
 * Allow video inline play in Wechat(X5) browser.
 
 ## Based on 
@@ -15,6 +17,48 @@
 $ npm install
 # or
 $ yarn install
+```
+
+## Main directory structure
+```text
+h5-webpack-starter
+ │
+ ├─app/                        # Project entry folder
+ │   └─...
+ ├─gulp/                       # Gulp tasks folder
+ │   └─...
+ ├─mock/                       # Mock data entry folder
+ │   ├─api/
+ │   └─webSocket/
+ ├─static/                     # Static folder
+ │   ├─media/                  # Media folder
+ │   ├─images/                 # Pictures folder
+ │   ├─view/                   # Static pug template folder
+ │   │   └──...
+ │   └─favicon.ico             # Icon file
+ ├─webpack/                    # Webpack configuration folder
+ │   ├─browserSync.config.js   # BrowserSync config file
+ │   ├─postcss.config.js       # Postcss config file
+ │   └─...                     # Webpack configuration files
+ ├─gulpfile.js                 # Gulp file entry
+ └─...
+```
+
+## Main Tasks
+```shell
+# Run in development
+$ npm start
+
+# Build for production
+$ npm run build
+# or
+$ npm run build:watch
+
+# svg icon
+$ npm run svg
+
+# deploy to gh-pages
+$ npm run deploy
 ```
 
 ## H5 Canvas Video Introduce(jsmpeg):

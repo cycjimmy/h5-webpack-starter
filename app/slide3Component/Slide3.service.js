@@ -11,9 +11,12 @@ import * as videoTs1 from '../../static/media/Sony_test_video.ts';
 import * as videoPoster1 from '../../static/images/screenshot_Sony_test_video.jpg';
 
 export default class Slide3Service {
-  constructor(context) {
-    this.context = context;     // 上下文
-    this.slideIndex = 3;
+  constructor({
+                context,
+                slideIndex,
+              }) {
+    this.context = context;
+    this.slideIndex = slideIndex;
   };
 
   load(mainSwiper) {
@@ -24,10 +27,19 @@ export default class Slide3Service {
     // 初始化第一个视频
     oVideoInstances[0] = initVideoIns(oVideoWrapper, oVideoUrls[0], oVideoPosters[0]);
 
-    this.eventBind(mainSwiper);
+    this.swiperCommand(mainSwiper);
+    this.eventBind();
   };
 
-  eventBind(mainSwiper) {
+  swiperCommand(mainSwiper) {
+    mainSwiper.on('slideChangeEnd', () => {
+      if (mainSwiper.realIndex === this.slideIndex) {
+        console.log('slide' + this.slideIndex);
+      }
+    });
+  };
+
+  eventBind() {
     let
       oVideoWrapper = this.context.querySelector('.' + _style.videoWrapper)
       , aVideoChooseBtns = this.context.querySelectorAll('.' + _style.videoChoose)
