@@ -8,9 +8,12 @@ import H5ImageCompressService from '../share/H5ImageCompress/H5ImageCompress.ser
 
 
 export default class Slide2Service {
-  constructor(context) {
+  constructor({
+                context,
+                slideIndex,
+              }) {
     this.context = context;     // 上下文
-    this.slideIndex = 2;
+    this.slideIndex = slideIndex;
     this.base64 = '';           // 压缩后base64图片
     this.oShowBox = null;
     this.oInfo = null;
@@ -21,10 +24,20 @@ export default class Slide2Service {
     this.oShowBox = this.context.querySelector('.' + _style.showBox);
     this.oInfo = this.context.querySelector('.' + _style.showInfo);
     this.oUploadBtn = this.context.querySelector('.' + _style.uploadBtn);
-    this.eventBind(mainSwiper);
+
+    this.swiperCommand(mainSwiper);
+    this.eventBind();
   };
 
-  eventBind(mainSwiper) {
+  swiperCommand(mainSwiper) {
+    mainSwiper.on('slideChangeEnd', () => {
+      if (mainSwiper.realIndex === this.slideIndex) {
+        console.log('slide' + this.slideIndex);
+      }
+    });
+  };
+
+  eventBind() {
     // 选择图片
     new QueryAll('.' + _style.chooseInput, this.context).on('change', e => {
       new H5ImageCompressService(e.target.files[0], {
@@ -75,7 +88,6 @@ export default class Slide2Service {
 
       alert('上传成功');
     });
-
   };
 
   /**

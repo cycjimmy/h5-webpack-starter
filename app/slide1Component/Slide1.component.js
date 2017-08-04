@@ -1,13 +1,19 @@
 import Templates from '../share/Templates';
-import Swiper from 'swiper';
 
 import * as slide1 from './slide1.pug';
 import * as slide1Style from './slide1.scss';
 
+// service
+import Slide1Service from './Slide1.service';
+
 export default class Slide1Component {
-  constructor(context) {
+  constructor({
+                context,
+                slideIndex,
+              }) {
     this.context = context;
-  }
+    this.slideIndex = slideIndex;
+  };
 
   load(mainSwiper) {
     // load flow
@@ -22,20 +28,11 @@ export default class Slide1Component {
     })
       .then(() => {
         return new Promise(resolve => {
-          let
-            slideContainer = this.context.querySelector('.' + _style.container)
-          ;
-
-          new Swiper(slideContainer, {
-            nested: true,                            // 嵌套
-            roundLengths : true,                     // 取整
-
-            pagination: '.' + _style.pagination,
-            paginationClickable: true,
-            bulletActiveClass : _style.bulletActive,
-
-            spaceBetween: 30,
-          });
+          // load service
+          new Slide1Service({
+            context: this.context,
+            slideIndex: this.slideIndex,
+          }).load(mainSwiper);
 
           setTimeout(() => {
             resolve();

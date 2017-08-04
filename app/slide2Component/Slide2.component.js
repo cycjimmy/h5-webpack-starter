@@ -7,17 +7,17 @@ import * as slide2Style from './slide2.scss';
 import Slide2Service from './Slide2.service';
 
 export default class Slide2Component {
-  constructor(context) {
+  constructor({
+                context,
+                slideIndex,
+              }) {
     this.context = context;
-  }
+    this.slideIndex = slideIndex;
+  };
 
   load(mainSwiper) {
     // load flow
     return new Promise(resolve => {
-      let
-        _style = slide2Style
-      ;
-
       new Templates(slide2, this.context, {
         _style,
       }).load();
@@ -29,7 +29,10 @@ export default class Slide2Component {
       .then(() => {
         return new Promise(resolve => {
           // load service
-          new Slide2Service(this.context).load(mainSwiper);
+          new Slide2Service({
+            context: this.context,
+            slideIndex: this.slideIndex,
+          }).load(mainSwiper);
 
           setTimeout(() => {
             resolve();
@@ -38,3 +41,8 @@ export default class Slide2Component {
       });
   };
 };
+
+// private
+let
+  _style = slide2Style
+;

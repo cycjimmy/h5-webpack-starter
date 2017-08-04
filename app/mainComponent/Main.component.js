@@ -18,6 +18,7 @@ import Slide1Component from '../slide1Component/Slide1.component';
 import Slide2Component from '../slide2Component/Slide2.component';
 import Slide3Component from '../slide3Component/Slide3.component';
 import Slide4Component from '../slide4Component/Slide4.component';
+import SlideXComponent from '../slideXComponent/SlideX.component';
 import AudioComponent from '../share/audioComponent/Audio.component';
 
 // service
@@ -27,7 +28,7 @@ export default class MainSctComponent {
   constructor() {
     this.context = document.querySelector('.main-screen');
     this.mainSwiper = null;
-  }
+  };
 
   load() {
     // load flow
@@ -77,11 +78,14 @@ export default class MainSctComponent {
       })
       .then(() => {
         return Promise.all([
-          new Slide0Component(this.context.querySelector('.' + _style.slide0)).load(this.mainSwiper),
-          new Slide1Component(this.context.querySelector('.' + _style.slide1)).load(this.mainSwiper),
-          new Slide2Component(this.context.querySelector('.' + _style.slide2)).load(this.mainSwiper),
-          new Slide3Component(this.context.querySelector('.' + _style.slide3)).load(this.mainSwiper),
-          new Slide4Component(this.context.querySelector('.' + _style.slide4)).load(this.mainSwiper),
+
+          // SlideComponentsLoader
+          SlideComponents.forEach((Component, index) => {
+            new Component({
+              context: this.context.querySelector('.' + _style.slide + ':nth-of-type(' + (index+1) + ')'),
+              slideIndex: index,
+            }).load(this.mainSwiper);
+          }),
 
           new AudioComponent({
             context: this.context,
@@ -95,4 +99,12 @@ export default class MainSctComponent {
 // private
 let
   _style = mainStyle
+  , SlideComponents = [
+    Slide0Component,
+    Slide1Component,
+    Slide2Component,
+    Slide3Component,
+    Slide4Component,
+    SlideXComponent,
+  ]
 ;

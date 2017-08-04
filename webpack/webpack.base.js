@@ -22,6 +22,7 @@ module.exports = {
     'vendor': [
       'fastclick',
       'swiper',
+      'three',
     ],
     "main": path.resolve('app', 'main.js'),
   },
@@ -37,6 +38,12 @@ module.exports = {
     //publicPath: '/'
   },
 
+  externals: {
+    three: 'THREE',
+    fastclick: 'FastClick',
+    swiper: 'Swiper',
+  },
+
   resolve: {
     modules: [
       path.resolve('app'),
@@ -46,6 +53,7 @@ module.exports = {
     'alias': {
       'fastclick': path.resolve('node_modules', 'fastclick', 'lib', 'fastclick.js'),
       'swiper': path.resolve('node_modules', 'swiper', 'dist', 'js', 'swiper.js'),
+      'three': path.resolve('node_modules', 'three', 'build', 'three.js'),
     },
     'extensions': ['.js']
   },
@@ -70,6 +78,30 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'pug-loader',
       },
+
+      // expose
+      {
+        test: require.resolve('fastclick'),
+        use: [{
+          loader: 'expose-loader',
+          options: 'Fastclick',
+        }]
+      },
+      {
+        test: require.resolve('swiper'),
+        use: [{
+          loader: 'expose-loader',
+          options: 'Swiper',
+        }]
+      },
+      {
+        test: require.resolve('three'),
+        use: [{
+          loader: 'expose-loader',
+          options: 'THREE',
+        }]
+      },
+
     ]
   },
 
