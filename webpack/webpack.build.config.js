@@ -18,6 +18,40 @@ const
 ;
 
 
+let
+  imageWebpackLoaderConfig = {
+    loader: 'image-webpack-loader',
+    options: {
+      query: {
+        mozjpeg: {
+          progressive: true,
+          quality: 65,
+        },
+        gifsicle: {
+          interlaced: false,
+        },
+        optipng: {
+          optimizationLevel: 6,
+        },
+        pngquant: {
+          quality: '65-90',
+          speed: 4,
+        },
+        svgo: {
+          plugins: [
+            {
+              removeViewBox: false
+            },
+            {
+              removeEmptyAttrs: false
+            }
+          ]
+        },
+      },
+    }
+  }
+;
+
 module.exports = webpackMerge(webpackBase, {
   bail: true,
 
@@ -47,9 +81,101 @@ module.exports = webpackMerge(webpackBase, {
           ],
         })
       },
+
+      // Pictures
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        exclude: [
+          path.resolve('node_modules'),
+          path.resolve('static', 'images', 'icons'),
+          path.resolve('static', 'images', 'logos'),
+          path.resolve('static', 'images', 'noUrl'),
+        ],
+        include: [
+          path.resolve('app'),
+          path.resolve('static'),
+        ],
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 4096,
+              name: 'images/[hash:12].[ext]',
+            }
+          },
+          imageWebpackLoaderConfig,
+        ],
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        exclude: [
+          path.resolve('node_modules'),
+        ],
+        include: [
+          path.resolve('static', 'images', 'noUrl'),
+        ],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[hash:12].[ext]',
+            }
+          },
+          imageWebpackLoaderConfig,
+        ],
+      },
+
+      // media
+      {
+        test: /\.(wav|mp3|mpeg|mp4|webm|ogv|flv|ts)$/i,
+        exclude: [
+          path.resolve('node_modules'),
+        ],
+        include: [
+          path.resolve('static', 'media'),
+        ],
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 4096,
+              name: 'media/[hash:12].[ext]',
+            }
+          },
+        ],
+      },
+
+      // Svg icons
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        include: path.resolve('static', 'images', 'icons'),
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/icons/[hash:12].[ext]',
+            }
+          }
+        ],
+      },
+
+      // Font
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: 'fonts/[hash:12].[ext]',
+            }
+          }
+        ],
+      },
     ]
   },
-
 
   plugins: [
     new HtmlWebpackPlugin({

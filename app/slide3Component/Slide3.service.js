@@ -1,121 +1,88 @@
-import QueryAll from '../share/QueryAll';
 import * as slide3Style from './slide3.scss';
 
 // service
-// import Html5ImgCompress from '../share/html5ImgCompress/html5ImgCompress';
-import H5ImageCompressService from '../share/H5ImageCompress/H5ImageCompress.service';
-import xhrData from '../share/xhrData.func';
+import JSMpeg from '../share/jsmpeg/jsmpeg';
+import touchActive from '../share/touchActiveMockClick.func';
 
+// media
+import * as videoTs0 from '../../static/media/big_buck_bunny.ts';
+import * as videoPoster0 from '../../static/images/screenshot_big_buck_bunny.jpg';
+import * as videoTs1 from '../../static/media/Sony_test_video.ts';
+import * as videoPoster1 from '../../static/images/screenshot_Sony_test_video.jpg';
 
 export default class Slide3Service {
   constructor(context) {
     this.context = context;     // 上下文
-    this.base64 = '';           // 压缩后base64图片
-    this.oShowBox = null;
-    this.oInfo = null;
-    this.oUploadBtn = null;
+    this.slideIndex = 3;
   };
 
-  load() {
-    this.oShowBox = this.context.querySelector('.' + _style.showBox);
-    this.oInfo = this.context.querySelector('.' + _style.showInfo);
-    this.oUploadBtn = this.context.querySelector('.' + _style.uploadBtn);
-    this.eventBind();
-  };
-
-  eventBind() {
-    // 选择图片
-    new QueryAll('.' + _style.chooseInput, this.context).on('change', e => {
-      new H5ImageCompressService(e.target.files[0], {
-        before: file => {
-          console.log('压缩前...');
-          this.base64 = '';
-          this._changeBtnState();
-        },
-        done: (file, base64) => {
-          console.log('压缩成功...');
-          this._insertImg(base64);  // 显示压缩后
-          this.base64 = base64;
-          this._changeBtnState();
-        },
-        fail: (file) => {
-          console.log('压缩失败...');
-          this.base64 = '';
-          this._changeBtnState();
-        },
-        complete: (file) => {
-          console.log('压缩完成...');
-        },
-        notSupport: (file) => {
-          console.error('压缩失败,浏览器不支持！');
-        },
-      }).init();
-    });
-
-    // 开始上传
-    new QueryAll(this.oUploadBtn).on('click', () => {
-      if (!this.oUploadBtn.classList.contains(_style.canUpload)) {
-        return;
-      }
-
-      /* AJAX上传
-       new xhrData({
-       url: 'http://XXX.xXX.XXX',
-       data: this.base64,
-       })
-       .then(
-       e => {
-       console.log('上传成功', e);
-       }, err => {
-       console.error('上传失败', err);
-       }
-       );
-       */
-
-      alert('上传成功');
-    });
-
-  };
-
-  /**
-   * 预览图片
-   * @param file 图片文件BASE64
-   * @private
-   */
-  _insertImg(file) {
+  load(mainSwiper) {
     let
-      img = new Image()
-      , size = file.length
-      , base = 1024
+      oVideoWrapper = this.context.querySelector('.' + _style.videoWrapper)
     ;
 
-    img.src = file;
-    img.alt = 'preUploadPic';
+    // 初始化第一个视频
+    oVideoInstances[0] = initVideoIns(oVideoWrapper, oVideoUrls[0], oVideoPosters[0]);
 
-    img.addEventListener('load', () => {
-      this.oShowBox.innerHTML = '';
-      this.oShowBox.appendChild(img);
-      this.oInfo.textContent = 'size(compressed): ' + (size / base).toFixed(2) + 'KB';
+    this.eventBind(mainSwiper);
+  };
+
+  eventBind(mainSwiper) {
+    let
+      oVideoWrapper = this.context.querySelector('.' + _style.videoWrapper)
+      , aVideoChooseBtns = this.context.querySelectorAll('.' + _style.videoChoose)
+    ;
+
+    Array.prototype.slice.call(aVideoChooseBtns).forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        // 否有本身实例正在激活
+        if (oVideoInstances[index]) {
+          console.log('The video has been activated!');
+          return;
+        }
+
+        // 销毁原有实例
+        destroyOtherVideoIns()
+          .then(() => {
+            // 创建新实例
+            oVideoInstances[index] = initVideoIns(oVideoWrapper, oVideoUrls[index], oVideoPosters[index]);
+
+            // 立即播放
+            // oVideoInstances[index].player.play();
+          });
+      });
     });
 
-    file = null;
+    touchActive(aVideoChooseBtns);
   };
-
-
-  /**
-   * 变更按钮状态
-   * @private
-   */
-  _changeBtnState() {
-    if (this.base64) {
-      this.oUploadBtn.classList.add(_style.canUpload);
-    } else {
-      this.oUploadBtn.classList.remove(_style.canUpload);
-    }
-  };
-
 };
 
+// private
 let
   _style = slide3Style
+  , oVideoInstances = []
+  , oVideoUrls = [videoTs0, videoTs1]
+  , oVideoPosters = [videoPoster0, videoPoster1]
+
+  , initVideoIns = (videoWrapper, videoUrl, videoPoster) => new JSMpeg.VideoElement(videoWrapper, videoUrl, {
+    poster: videoPoster,
+    decodeFirstFrame: false,
+    // aspectPercent: '56.25%',
+    loop: false,
+    // autoplay: true,
+    progressive: true,
+    chunkSize: 383 * 1023,
+  })
+
+  , destroyOtherVideoIns = () => new Promise(resolve => {
+    oVideoInstances.forEach((el, index) => {
+      if (el) {
+        el.destroy();
+        oVideoInstances[index] = null;
+      }
+    });
+    setTimeout(() => {
+      resolve();
+    }, 0);
+  })
 ;

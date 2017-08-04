@@ -1,20 +1,27 @@
 import QueryAll from '../share/QueryAll';
-import * as slide1Style from './slide1.scss';
+import * as slide0Style from './slide0.scss';
 
-export default class Slide1Service {
+export default class Slide0Service {
   constructor(element) {
     this.context = element;
+    this.slideIndex = 0;
   }
 
-  load() {
-    this.eventBind();
+  load(mainSwiper) {
+    this.eventBind(mainSwiper);
   };
 
-  eventBind() {
+  eventBind(mainSwiper) {
     let
       oLogo = this.context.querySelector('.' + _style.logo)   // logo wrap
       , oLogoImg = oLogo.firstElementChild                    // logo img
     ;
+
+    mainSwiper.on('slideChangeEnd', () => {
+      if (mainSwiper.realIndex === this.slideIndex) {
+        console.log('slide' + this.slideIndex);
+      }
+    });
 
     new QueryAll(oLogoImg)
       .on('touchstart mouseover mousedown', () => {
@@ -35,5 +42,5 @@ export default class Slide1Service {
 
 // private
 let
-  _style = slide1Style
+  _style = slide0Style
 ;

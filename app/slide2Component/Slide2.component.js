@@ -1,19 +1,23 @@
 import Templates from '../share/Templates';
-import Swiper from 'swiper';
 
 import * as slide2 from './slide2.pug';
 import * as slide2Style from './slide2.scss';
-import * as mainStyle from '../mainComponent/main.scss';
+
+// service
+import Slide2Service from './Slide2.service';
 
 export default class Slide2Component {
-  constructor() {
-    this.context = document.querySelector('.' + mainStyle.slide2);
+  constructor(context) {
+    this.context = context;
   }
 
-  load() {
-
+  load(mainSwiper) {
     // load flow
     return new Promise(resolve => {
+      let
+        _style = slide2Style
+      ;
+
       new Templates(slide2, this.context, {
         _style,
       }).load();
@@ -24,20 +28,8 @@ export default class Slide2Component {
     })
       .then(() => {
         return new Promise(resolve => {
-          let
-            slideContainer = this.context.querySelector('.' + _style.container)
-          ;
-
-          new Swiper(slideContainer, {
-            nested: true,                            // 嵌套
-            roundLengths : true,                     // 取整
-
-            pagination: '.' + _style.pagination,
-            paginationClickable: true,
-            bulletActiveClass : _style.bulletActive,
-
-            spaceBetween: 30,
-          });
+          // load service
+          new Slide2Service(this.context).load(mainSwiper);
 
           setTimeout(() => {
             resolve();
@@ -46,8 +38,3 @@ export default class Slide2Component {
       });
   };
 };
-
-// private
-let
-  _style = slide2Style
-;

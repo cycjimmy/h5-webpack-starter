@@ -6,31 +6,72 @@
   font-weight: bold;
 }
 
-.container {
-  position: relative;
-  width: 80vw;
-  height: 60vw;
-  max-width: 5rem;
-  max-height: 4rem;
-  margin: .2rem auto;
-  overflow: hidden;
-}
-
-.content1,
-.content2,
-.content3,
-.content4 {
+.btnsWrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: lighten($bgc, 4%);
-  text-align: center;
 }
 
-.pagination {
-  .bulletActive {
-    opacity: 1;
-    background: lighten($bgc, 10%);
+.chooseBtn,
+.uploadBtn {
+  position: relative;
+  display: flex;
+  margin: $space;
+  @include flex-box-align(center, center);
+  width: 1rem;
+  height: .4rem;
+
+  border-radius: $radius;
+}
+
+.chooseBtn {
+  background-color: lighten($bgc, 4%);
+
+  &:hover {
+    background-color: lighten($bgc, 10%);
   }
+}
+
+.chooseInput {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.uploadBtn {
+  background-color: lighten($bgc, 1%);
+  color: desaturate(lighten($bgc, 25%), 50%);
+
+  &.canUpload {
+    background-color: lighten($bgc, 4%);
+    color: $fontColor;
+
+    &:hover {
+      background-color: lighten($bgc, 10%);
+    }
+  }
+}
+
+.showBox {
+  width: 3rem;
+  height: 2rem;
+  overflow: hidden;
+  display: flex;
+  @include flex-box-align(center, center);
+
+  background-color: darken($bgc, .5%);
+  border: .01rem dashed lighten($bgc, 10%);
+
+  > img {
+    width: 100%;
+    background: 50% 50% no-repeat;
+    background-size: cover;
+  }
+}
+
+.showInfo {
+  height: .2rem;
+  padding: $space;
 }
