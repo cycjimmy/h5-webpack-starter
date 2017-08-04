@@ -9,7 +9,7 @@ export default class AudioService {
     this.audioButton = audioButton;
     this.eMusicControl = this.audioButton.querySelector('.' + _style.musicControl);
     this.oAudio = this.eMusicControl.querySelector('audio');
-  }
+  };
 
   load() {
     this.runAutoPlay();

@@ -2,25 +2,22 @@ import Templates from '../share/Templates';
 
 import * as slide4 from './slide4.pug';
 import * as slide4Style from './slide4.scss';
-import * as mainStyle from '../mainComponent/main.scss';
+import * as logoSvg from '../../static/images/myLogo.svg';
 
 // service
-import Slide4Service from './Slide4.service';
+import Slide1Service from './Slide4.service';
 
 export default class Slide4Component {
-  constructor() {
-    this.context = document.querySelector('.' + mainStyle.slide4);
+  constructor(context) {
+    this.context = context;
   }
 
-  load() {
+  load(mainSwiper) {
     // load flow
     return new Promise(resolve => {
-      let
-        _style = slide4Style
-      ;
-
       new Templates(slide4, this.context, {
         _style,
+        logoSvg,
       }).load();
 
       setTimeout(() => {
@@ -30,7 +27,7 @@ export default class Slide4Component {
       .then(() => {
         return new Promise(resolve => {
           // load service
-          new Slide4Service(this.context).load();
+          new Slide1Service(this.context).load(mainSwiper);
 
           setTimeout(() => {
             resolve();
@@ -39,3 +36,8 @@ export default class Slide4Component {
       });
   };
 };
+
+// private
+let
+  _style = slide4Style
+;

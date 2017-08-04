@@ -1,24 +1,19 @@
 import Templates from '../share/Templates';
+import Swiper from 'swiper';
 
 import * as slide1 from './slide1.pug';
 import * as slide1Style from './slide1.scss';
-import * as mainStyle from '../mainComponent/main.scss';
-import * as logoSvg from '../../static/images/myLogo.svg';
-
-// service
-import Slide1Service from './Slide1.service';
 
 export default class Slide1Component {
-  constructor() {
-    this.context = document.querySelector('.' + mainStyle.slide1);
+  constructor(context) {
+    this.context = context;
   }
 
-  load() {
+  load(mainSwiper) {
     // load flow
     return new Promise(resolve => {
       new Templates(slide1, this.context, {
         _style,
-        logoSvg,
       }).load();
 
       setTimeout(() => {
@@ -27,8 +22,20 @@ export default class Slide1Component {
     })
       .then(() => {
         return new Promise(resolve => {
-          // load service
-          new Slide1Service(this.context).load();
+          let
+            slideContainer = this.context.querySelector('.' + _style.container)
+          ;
+
+          new Swiper(slideContainer, {
+            nested: true,                            // 嵌套
+            roundLengths : true,                     // 取整
+
+            pagination: '.' + _style.pagination,
+            paginationClickable: true,
+            bulletActiveClass : _style.bulletActive,
+
+            spaceBetween: 30,
+          });
 
           setTimeout(() => {
             resolve();

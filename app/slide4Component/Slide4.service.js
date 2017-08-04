@@ -1,87 +1,51 @@
 import * as slide4Style from './slide4.scss';
 
-// service
-import JSMpeg from '../share/jsmpeg/jsmpeg';
-import touchActive from '../share/touchActiveMockClick.func';
-
-// media
-import * as videoTs0 from '../../static/media/big_buck_bunny.ts';
-import * as videoPoster0 from '../../static/images/screenshot_big_buck_bunny.jpg';
-import * as videoTs1 from '../../static/media/Sony_test_video.ts';
-import * as videoPoster1 from '../../static/images/screenshot_Sony_test_video.jpg';
-
 export default class Slide4Service {
   constructor(context) {
-    this.context = context;     // 上下文
+    this.context = context;
+    this.container = this.context.querySelector('.' + _style.container);
+    this.slideIndex = 4;
   };
 
-  load() {
+  load(mainSwiper) {
     let
-      oVideoWrapper = this.context.querySelector('.' + _style.videoWrapper)
+      containerClientRect = this.container.getBoundingClientRect()
+      , containerW = containerClientRect.width
+      , containerH = containerClientRect.height
     ;
 
-    // 初始化第一个视频
-    oVideoInstances[0] = initVideoIns(oVideoWrapper, oVideoUrls[0], oVideoPosters[0]);
-
-    this.eventBind();
-  };
-
-  eventBind() {
     let
-      oVideoWrapper = this.context.querySelector('.' + _style.videoWrapper)
-      , aVideoChooseBtns = this.context.querySelectorAll('.' + _style.videoChoose)
+      scene = new THREE.Scene()
+      , camera = new THREE.PerspectiveCamera(75, containerW / containerH, 0.1, 1000)
+      , renderer = new THREE.WebGLRenderer()
     ;
 
-    Array.prototype.slice.call(aVideoChooseBtns).forEach((btn, index) => {
-      btn.addEventListener('click', () => {
-        // 否有本身实例正在激活
-        if (oVideoInstances[index]) {
-          console.log('The video has been activated!');
-          return;
-        }
+    renderer.setSize(containerW, containerH);
+    this.container.appendChild(renderer.domElement);
 
-        // 销毁原有实例
-        destroyOtherVideoIns()
-          .then(() => {
-            // 创建新实例
-            oVideoInstances[index] = initVideoIns(oVideoWrapper, oVideoUrls[index], oVideoPosters[index]);
+    let
+      geometry = new THREE.BoxGeometry(1, 1, 1)
+      , material = new THREE.MeshBasicMaterial({
+        color: 0x00ff00,
+      })
+      , cube = new THREE.Mesh(geometry, material)
+    ;
+    scene.add(cube);
+    camera.position.z = 5;
 
-            // 立即播放
-            // oVideoInstances[index].player.play();
-          });
-      });
-    });
+    let render = () => {
+      requestAnimationFrame(render);
 
-    touchActive(aVideoChooseBtns);
+      cube.rotation.x += 0.1;
+      cube.rotation.y += 0.1;
+      renderer.render(scene, camera);
+    };
+
+    render();
   };
 };
 
 // private
 let
   _style = slide4Style
-  , oVideoInstances = []
-  , oVideoUrls = [videoTs0, videoTs1]
-  , oVideoPosters = [videoPoster0, videoPoster1]
-
-  , initVideoIns = (videoWrapper, videoUrl, videoPoster) => new JSMpeg.VideoElement(videoWrapper, videoUrl, {
-    poster: videoPoster,
-    decodeFirstFrame: false,
-    // aspectPercent: '56.25%',
-    loop: false,
-    // autoplay: true,
-    progressive: true,
-    chunkSize: 384 * 1024,
-  })
-
-  , destroyOtherVideoIns = () => new Promise(resolve => {
-    oVideoInstances.forEach((el, index) => {
-      if (el) {
-        el.destroy();
-        oVideoInstances[index] = null;
-      }
-    });
-    setTimeout(() => {
-      resolve();
-    }, 0);
-  })
 ;

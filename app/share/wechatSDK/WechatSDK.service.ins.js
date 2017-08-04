@@ -38,10 +38,32 @@ export default class WechatSDKServiceIns {
     wx.ready(() => {
       this.isReady = true;
     });
+
+    return this;
   };
 
   /**
    * onShare
+   * @param shareData
+   */
+  onShare(shareData) {
+    wx.ready(() => {
+      this.share(shareData);
+    });
+  };
+
+  /**
+   * onShareAsync
+   * @param shareData
+   */
+  onShareAsync(shareData) {
+    if (this.isReady) {
+      this.share(shareData);
+    }
+  };
+
+  /**
+   * share
    * @param shareData
    *  {
    *    imgUrl: '',
@@ -57,14 +79,11 @@ export default class WechatSDKServiceIns {
    *  }
    *
    */
-  onShare(shareData) {
-    if (this.isReady) {
-      wx.onMenuShareAppMessage(shareData);
-      wx.onMenuShareTimeline(shareData);
-      wx.onMenuShareQQ(shareData);
-      wx.onMenuShareQZone(shareData);
-      wx.onMenuShareWeibo(shareData);
-    }
+  share(shareData) {
+    wx.onMenuShareAppMessage(shareData);
+    wx.onMenuShareTimeline(shareData);
+    wx.onMenuShareQQ(shareData);
+    wx.onMenuShareQZone(shareData);
+    wx.onMenuShareWeibo(shareData);
   };
-
 };

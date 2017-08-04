@@ -1,52 +1,18 @@
-@import "../theme/_variables";
-@import "../theme/_utilities";
+@import "../theme/variables";
+@import "../theme/utilities";
 
-.videoWrapper {
-  width: 100%;
-  max-width: 6.4rem;
+.title {
+  font-size: .2rem;
+  font-weight: bold;
 }
 
-.videoChooseWrap {
-  display: flex;
-  padding: $space;
-  align-items: stretch;
-  height: .36rem;
-  width: calc(100vw - 4vh);
-  max-width: 6.4rem;
-}
-
-.videoChoose {
-  flex: 1;
-  display: flex;
-  @include flex-box-align(center, center);
-  margin-right: $space;
-  border: .01rem solid darken($fontColor, 10%);
-  border-radius: $radius;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  &:global(.touch-active) {
-    color: $bgc;
-    background-color: $fontColor;
-  }
-}
-
-.explicationWrap {
-  padding: $space;
-  max-width: 6.4rem;
-}
-
-.explicationTitle {
-  font-size: $fontL;
-}
-
-.explicationList {
-  margin: $space /2 0;
-
-  > a {
-    color: darken($fontColor, 20%);
-    text-decoration: underline;
-  }
+.container {
+  position: relative;
+  width: 80vw;
+  height: 60vw;
+  max-width: 5rem;
+  max-height: 4rem;
+  margin: .2rem auto;
+  overflow: hidden;
+  background-color: lighten($bgc, 4%);
 }

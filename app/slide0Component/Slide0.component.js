@@ -1,22 +1,21 @@
 import Templates from '../share/Templates';
 
-import * as slide5 from './slide5.pug';
-import * as slide5Style from './slide5.scss';
-import * as mainStyle from '../mainComponent/main.scss';
+import * as slide0 from './slide0.pug';
+import * as slide0Style from './slide0.scss';
 import * as logoSvg from '../../static/images/myLogo.svg';
 
 // service
-import Slide1Service from './Slide5.service';
+import Slide0Service from './Slide0.service';
 
-export default class Slide5Component {
-  constructor() {
-    this.context = document.querySelector('.' + mainStyle.slide5);
+export default class Slide0Component {
+  constructor(context) {
+    this.context = context;
   }
 
-  load() {
+  load(mainSwiper) {
     // load flow
     return new Promise(resolve => {
-      new Templates(slide5, this.context, {
+      new Templates(slide0, this.context, {
         _style,
         logoSvg,
       }).load();
@@ -28,7 +27,7 @@ export default class Slide5Component {
       .then(() => {
         return new Promise(resolve => {
           // load service
-          new Slide1Service(this.context).load();
+          new Slide0Service(this.context).load(mainSwiper);
 
           setTimeout(() => {
             resolve();
@@ -40,5 +39,5 @@ export default class Slide5Component {
 
 // private
 let
-  _style = slide5Style
+  _style = slide0Style
 ;

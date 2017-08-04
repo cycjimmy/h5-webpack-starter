@@ -13,19 +13,20 @@ import * as mainStyle from './main.scss';
 import * as audioSrc from '../../static/media/Richard Clayderman - LOVE IS BLUE.mp3';
 
 // component
+import Slide0Component from '../slide0Component/Slide0.component';
 import Slide1Component from '../slide1Component/Slide1.component';
 import Slide2Component from '../slide2Component/Slide2.component';
 import Slide3Component from '../slide3Component/Slide3.component';
 import Slide4Component from '../slide4Component/Slide4.component';
-import Slide5Component from '../slide5Component/Slide5.component';
 import AudioComponent from '../share/audioComponent/Audio.component';
 
 // service
-import loadingOverlayService from '../loadingOverlay.service';
+import loadingOverlayServiceIns from '../share/loadingOverlay.service.ins';
 
 export default class MainSctComponent {
   constructor() {
     this.context = document.querySelector('.main-screen');
+    this.mainSwiper = null;
   }
 
   load() {
@@ -42,7 +43,7 @@ export default class MainSctComponent {
       .then(() => {
         return new Promise(resolve => {
           // Swiper
-          new Swiper(this.context, {
+          this.mainSwiper = new Swiper(this.context, {
             pagination: '.' + _style.pagination,
             paginationClickable: true,
             bulletActiveClass: _style.bulletActive,
@@ -57,10 +58,12 @@ export default class MainSctComponent {
 
             onInit: (swiper) => {
               setTimeout(() => {
-                new loadingOverlayService().load();
-                swiperAnimateCache(swiper);
-                swiperAnimate(swiper);
-              }, 500);
+                new loadingOverlayServiceIns().load()
+                  .then(() => {
+                    swiperAnimateCache(swiper);
+                    swiperAnimate(swiper);
+                  });
+              }, 50);
             },
             onSlideChangeEnd: (swiper) => {
               swiperAnimate(swiper);
@@ -74,11 +77,11 @@ export default class MainSctComponent {
       })
       .then(() => {
         return Promise.all([
-          new Slide1Component().load(),
-          new Slide2Component().load(),
-          new Slide3Component().load(),
-          new Slide4Component().load(),
-          new Slide5Component().load(),
+          new Slide0Component(this.context.querySelector('.' + _style.slide0)).load(this.mainSwiper),
+          new Slide1Component(this.context.querySelector('.' + _style.slide1)).load(this.mainSwiper),
+          new Slide2Component(this.context.querySelector('.' + _style.slide2)).load(this.mainSwiper),
+          new Slide3Component(this.context.querySelector('.' + _style.slide3)).load(this.mainSwiper),
+          new Slide4Component(this.context.querySelector('.' + _style.slide4)).load(this.mainSwiper),
 
           new AudioComponent({
             context: this.context,
