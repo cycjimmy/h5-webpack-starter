@@ -45,6 +45,20 @@ const isObject = o => Object.prototype.toString.call(o) === '[object Object]';
 const isNodeList = nodeList => Object.prototype.toString.call(nodeList) === '[object NodeList]';
 
 /**
+ * nodeList转变为数组
+ * @param nodeList
+ * @returns {Array}
+ */
+const nodeListToArray = nodeList => {
+
+  if (!isNodeList(nodeList)) {
+    nodeList = new Array(nodeList);
+  }
+
+  return Array.from ? Array.from(nodeList) : Array.prototype.slice.call(nodeList);
+};
+
+/**
  * 取得url相对路径根目录
  * @returns {string|*}
  */
@@ -132,6 +146,7 @@ export {
   isString,
   isObject,
   isNodeList,
+  nodeListToArray,
   getUrlRelativeDir,
   dispatch,
   siblingFilter,

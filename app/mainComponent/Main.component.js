@@ -1,11 +1,6 @@
 import Templates from '../share/Templates';
 import Swiper from 'swiper';
 
-import {
-  swiperAnimateCache,
-  swiperAnimate,
-} from '../share/Swiper/swiper.animate';
-
 import * as main from './main.pug';
 import * as mainStyle from './main.scss';
 
@@ -23,6 +18,7 @@ import AudioComponent from '../share/audioComponent/Audio.component';
 
 // service
 import loadingOverlayServiceIns from '../share/loadingOverlay.service.ins';
+import SwiperAnimateServiceIns from '../share/Swiper/SwiperAnimate.service.ins';
 
 export default class MainSctComponent {
   constructor() {
@@ -61,13 +57,13 @@ export default class MainSctComponent {
               setTimeout(() => {
                 new loadingOverlayServiceIns().load()
                   .then(() => {
-                    swiperAnimateCache(swiper);
-                    swiperAnimate(swiper);
+                    new SwiperAnimateServiceIns().cache(swiper);
+                    new SwiperAnimateServiceIns().animate(swiper);
                   });
               }, 50);
             },
             onSlideChangeEnd: (swiper) => {
-              swiperAnimate(swiper);
+              new SwiperAnimateServiceIns().animate(swiper);
             },
           });
 

@@ -12,7 +12,7 @@
 
 import {
   isString,
-  isNodeList,
+  nodeListToArray,
 } from './awesome.func';
 
 export default class QueryAll {
@@ -27,15 +27,7 @@ export default class QueryAll {
       elements = selectorOrEls;
     }
 
-    if (!isNodeList(elements)) {
-      elements = new Array(elements);
-    }
-
-    if (Array.from) {
-      this.nodeList = Array.from(elements);
-    } else {
-      this.nodeList = Array.prototype.slice.call(elements);
-    }
+    this.nodeList = nodeListToArray(elements);
   };
 
   // 事件绑定
