@@ -1,33 +1,42 @@
-import * as THREE from 'three';
+import SlideComponent from '../Slide.component';
 
+import * as slide4 from './slide4.pug';
 import * as slide4Style from './slide4.scss';
 
-export default class Slide4Service {
+// service
+import * as THREE from 'three';
+
+export default class Slide4Component extends SlideComponent {
   constructor({
                 context,
                 slideIndex,
               }) {
-    this.context = context;
-    this.slideIndex = slideIndex;
-  };
-
-  load(mainSwiper) {
-    this.swiperCommand(mainSwiper);
-    this.webGlDemoShow();
-  };
-
-  swiperCommand(mainSwiper) {
-    mainSwiper.on('slideChangeEnd', () => {
-      if (mainSwiper.realIndex === this.slideIndex) {
-        console.log('slide' + this.slideIndex);
-      }
+    super({
+      context,
+      slideIndex,
     });
+  };
+
+  load() {
+    return this.init({
+      pugTemplate: slide4,
+      wrapperElement: this.context,
+      insetParam: {
+        _style,
+      },
+    })
+      .then(() => {
+        this.webGlDemoShow();
+      });
+  };
+
+  paramInit(){
+    this.container = this.context.querySelector('.' + _style.container);
   };
 
   webGlDemoShow() {
     let
-      container = this.context.querySelector('.' + _style.container)
-      , containerClientRect = container.getBoundingClientRect()
+      containerClientRect = this.container.getBoundingClientRect()
       , containerW = containerClientRect.width
       , containerH = containerClientRect.height
     ;
@@ -39,7 +48,7 @@ export default class Slide4Service {
     ;
 
     renderer.setSize(containerW, containerH);
-    container.appendChild(renderer.domElement);
+    this.container.appendChild(renderer.domElement);
 
     let
       geometry = new THREE.BoxGeometry(1, 1, 1)

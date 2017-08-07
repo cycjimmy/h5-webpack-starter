@@ -51,8 +51,12 @@ const isNodeList = nodeList => Object.prototype.toString.call(nodeList) === '[ob
  */
 const nodeListToArray = nodeList => {
 
+  if (Array.isArray(nodeList)) {
+    return nodeList;
+  }
+
   if (!isNodeList(nodeList)) {
-    nodeList = new Array(nodeList);
+    return new Array(nodeList);
   }
 
   return Array.from ? Array.from(nodeList) : Array.prototype.slice.call(nodeList);
