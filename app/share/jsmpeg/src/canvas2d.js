@@ -1,4 +1,4 @@
-import JSMpeg from '../jsmpeg';
+import JSMpeg from './jsmpeg';
 
 let CanvasRenderer = function(options) {
 	this.canvas = options.canvas || document.createElement('canvas');

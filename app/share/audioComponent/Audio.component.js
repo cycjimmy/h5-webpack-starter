@@ -1,4 +1,4 @@
-import Templates from '../Templates';
+import Component from '../Component';
 
 import * as audio from './audio.pug';
 import * as audioStyle from './audio.scss';
@@ -6,11 +6,14 @@ import * as audioStyle from './audio.scss';
 // service
 import AudioService from './Audio.service';
 
-export default class AudioComponent {
+export default class AudioComponent extends Component {
   constructor({
                 context,
                 audioSrc,
               }) {
+    super({
+      context,
+    });
     this.context = context;
     this.audioSrc = audioSrc;
     this.oMusicControlWrapper = document.createElement('a');
@@ -21,16 +24,13 @@ export default class AudioComponent {
   }
 
   load() {
-    // load flow
-    return new Promise(resolve => {
-      new Templates(audio, this.oMusicControlWrapper, {
+    return this.render({
+      pugTemplate: audio,
+      wrapperElement: this.oMusicControlWrapper,
+      insetParam: {
         _style,
         audioSrc: this.audioSrc,
-      }).load();
-
-      setTimeout(() => {
-        resolve();
-      }, 0);
+      },
     })
       .then(() => {
         return new Promise(resolve => {

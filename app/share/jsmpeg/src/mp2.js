@@ -1,7 +1,7 @@
 // Based on kjmp2 by Martin J. Fiedler
 // http://keyj.emphy.de/kjmp2/
 
-import JSMpeg from '../jsmpeg';
+import JSMpeg from './jsmpeg';
 import BitBuffer from './buffer';
 import BaseDecoder from './decoder';
 

@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "H5 webpack starter for webpack, gulp, es6/7, sass, pug, swiper, jsmpeg...",
   "main": "index.js",
   "scripts": {

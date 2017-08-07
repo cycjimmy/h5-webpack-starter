@@ -1,4 +1,4 @@
-import JSMpeg from '../jsmpeg';
+import JSMpeg from './jsmpeg';
 
 let TS = function(options) {
 	this.bits = null;

@@ -4,19 +4,19 @@
 // doc: https://github.com/phoboslab/jsmpeg
 
 // import 组件
-import Player from './src/player';
-import VideoElement from './src/video-element'
-import BitBuffer from './src/buffer';
-import AjaxSource from './src/ajax';
-import AjaxProgressiveSource from './src/ajax-progressive';
-import WSSource from './src/websocket';
-import TS from './src/ts';
-import BaseDecoder from './src/decoder';
-import MPEG1 from './src/mpeg1';
-import MP2 from './src/mp2';
-import WebGLRenderer from './src/webgl';
-import CanvasRenderer from './src/canvas2d';
-import WebAudioOut from './src/webaudio';
+import Player from './player';
+import VideoElement from './video-element'
+import BitBuffer from './buffer';
+import AjaxSource from './ajax';
+import AjaxProgressiveSource from './ajax-progressive';
+import WSSource from './websocket';
+import TS from './ts';
+import BaseDecoder from './decoder';
+import MPEG1 from './mpeg1';
+import MP2 from './mp2';
+import WebGLRenderer from './webgl';
+import CanvasRenderer from './canvas2d';
+import WebAudioOut from './webaudio';
 
 
 // This sets up the JSMpeg "Namespace". The object is empty apart from the Now()

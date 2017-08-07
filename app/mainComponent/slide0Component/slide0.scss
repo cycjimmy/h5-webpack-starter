@@ -1,5 +1,5 @@
-@import "../theme/variables";
-@import "../theme/utilities";
+@import "../../theme/variables";
+@import "../../theme/utilities";
 
 @keyframes rotation {
   0% {
@@ -43,7 +43,7 @@ $picH: 1.2rem;
 }
 
 .logoImg {
-  background: url(../../static/images/myLogo.svg) no-repeat;
+  background: url(../../../static/images/myLogo.svg) no-repeat;
   background-size: 100% 100%;
 
   perspective: $picH / 6;

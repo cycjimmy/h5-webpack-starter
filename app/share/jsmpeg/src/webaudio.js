@@ -1,4 +1,4 @@
-import JSMpeg from '../jsmpeg';
+import JSMpeg from './jsmpeg';
 
 let WebAudioOut = function(options) {
 	this.context = WebAudioOut.CachedContext =

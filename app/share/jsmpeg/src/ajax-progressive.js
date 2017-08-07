@@ -1,4 +1,4 @@
-import JSMpeg from '../jsmpeg';
+import JSMpeg from './jsmpeg';
 
 let AjaxProgressiveSource = function(url, options) {
 	this.url = url;

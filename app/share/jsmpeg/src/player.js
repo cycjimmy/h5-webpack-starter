@@ -1,4 +1,4 @@
-import JSMpeg from '../jsmpeg';
+import JSMpeg from './jsmpeg';
 import TS from './ts';
 
 /**

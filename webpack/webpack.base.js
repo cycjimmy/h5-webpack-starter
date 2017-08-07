@@ -35,7 +35,7 @@ module.exports = {
     chunkFilename: DEVELOPMENT
       ? 'scripts/[name].chunk.[chunkhash:4].js'
       : 'scripts/[name].chunk.[chunkhash:8].min.js',
-    //publicPath: '/'
+    publicPath: './',
   },
 
   externals: {

@@ -1,5 +1,8 @@
+import EXIF from './exif';
+
 /**
  * h5图片压缩
+ * doc https://github.com/mhbseal/html5ImgCompress
  */
 export default class H5ImageCompressService {
   constructor(file, options) {
@@ -104,23 +107,12 @@ export default class H5ImageCompressService {
             this._handler('done', canvas, img, fileURL, base64, file);
           }
         }
-
-
       };
 
-      if (!isAndroid) {
-        // 非安卓需要引入exif获取orientation来drawImage
-        // doc: https://github.com/exif-js/exif-js
-        // import('exif-js')
-        import('./exif')
-          .then(EXIF => {
-            EXIF.getData(img, function () {
-              handler(EXIF.getTag(this, "Orientation"));
-            });
-          });
-      } else {
-        handler();
-      }
+      EXIF.getData(img, function () {
+        handler(EXIF.getTag(this, "Orientation"));
+      });
+
     });
 
     img.addEventListener('error', () => {

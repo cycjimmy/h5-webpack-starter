@@ -1,7 +1,7 @@
 // Inspired by Java MPEG-1 Video Decoder and Player by Zoltan Korandi
 // https://sourceforge.net/projects/javampeg1video/
 
-import JSMpeg from '../jsmpeg';
+import JSMpeg from './jsmpeg';
 import BaseDecoder from './decoder';
 
 let MPEG1 = function(options) {

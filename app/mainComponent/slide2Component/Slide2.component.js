@@ -1,40 +1,39 @@
-import QueryAll from '../share/QueryAll';
+import QueryAll from '../../share/QueryAll';
+import SlideComponent from '../Slide.component';
+
+import * as slide2 from './slide2.pug';
 import * as slide2Style from './slide2.scss';
 
 // service
-// import Html5ImgCompress from '../share/html5ImgCompress/html5ImgCompress';
-import H5ImageCompressService from '../share/H5ImageCompress/H5ImageCompress.service';
+import H5ImageCompressService from '../../share/H5ImageCompress/H5ImageCompress.service';
 // import xhrData from '../share/xhrData.func';
 
-
-export default class Slide2Service {
+export default class Slide2Component extends SlideComponent {
   constructor({
                 context,
                 slideIndex,
               }) {
-    this.context = context;     // 上下文
-    this.slideIndex = slideIndex;
+    super({
+      context,
+      slideIndex,
+    });
     this.base64 = '';           // 压缩后base64图片
-    this.oShowBox = null;
-    this.oInfo = null;
-    this.oUploadBtn = null;
   };
 
   load(mainSwiper) {
+    return this.init({
+      pugTemplate: slide2,
+      wrapperElement: this.context,
+      insetParam: {
+        _style,
+      },
+    });
+  };
+
+  paramInit() {
     this.oShowBox = this.context.querySelector('.' + _style.showBox);
     this.oInfo = this.context.querySelector('.' + _style.showInfo);
     this.oUploadBtn = this.context.querySelector('.' + _style.uploadBtn);
-
-    this.swiperCommand(mainSwiper);
-    this.eventBind();
-  };
-
-  swiperCommand(mainSwiper) {
-    mainSwiper.on('slideChangeEnd', () => {
-      if (mainSwiper.realIndex === this.slideIndex) {
-        console.log('slide' + this.slideIndex);
-      }
-    });
   };
 
   eventBind() {
@@ -126,9 +125,9 @@ export default class Slide2Service {
       this.oUploadBtn.classList.remove(_style.canUpload);
     }
   };
-
 };
 
+// private
 let
   _style = slide2Style
 ;
