@@ -1,3 +1,9 @@
+@import "variables";
+
+/*---------------------------
+ * mixin
+ *---------------------------*/
+
 /**
  * 中央居中
  * $offset
@@ -67,13 +73,28 @@
   max-height: $max + vh;
 }
 
+/*---------------------------
+ * %placeholder
+ *---------------------------*/
 /**
  * 硬件加速
  */
-@mixin gpu-speedUp() {
+%gpu-speedUp {
   position: relative;
   z-index: 1;
   backface-visibility: hidden;
   perspective: 1px;
   transform: translate3d(0, 0, 0);
+}
+
+
+/*---------------------------
+ * function
+ *---------------------------*/
+/**
+ * 计算vw
+ * $designDrawingLength 设计图长度
+ */
+@function calcVW($designDrawingLength){
+  @return $designDrawingLength / $designDrawingWidth * 100 vw;
 }

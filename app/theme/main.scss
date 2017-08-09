@@ -23,7 +23,7 @@ body {
     height: 100%;
     overflow: hidden;
 
-    @include gpu-speedUp();
+    @extend %gpu-speedUp;
   }
 }
 
