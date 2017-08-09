@@ -2,6 +2,7 @@ import Component from '../share/Component';
 import Swiper from 'swiper';
 
 import * as main from './main.pug';
+import * as slides from './sildes.pug';
 import * as mainStyle from './main.scss';
 
 // audio
@@ -37,6 +38,16 @@ export default class MainSctComponent extends Component {
         _style,
       },
     })
+      .then(() => {
+        return this.render({
+          pugTemplate: slides,
+          wrapperElement: this.context.querySelector('.' + _style.wrapper),
+          insetParam: {
+            _style,
+            length: SlideComponents.length,
+          },
+        });
+      })
       .then(() => {
         return new Promise(resolve => {
           // Swiper
