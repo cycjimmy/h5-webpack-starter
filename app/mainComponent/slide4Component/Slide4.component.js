@@ -1,7 +1,7 @@
 import SlideComponent from '../Slide.component';
 
-import * as slide4 from './slide4.pug';
-import * as slide4Style from './slide4.scss';
+import * as slide from './slide4.pug';
+import * as _style from './slide4.scss';
 
 // service
 import * as THREE from 'three';
@@ -10,16 +10,18 @@ export default class Slide4Component extends SlideComponent {
   constructor({
                 context,
                 slideIndex,
+                audioComponent,
               }) {
     super({
       context,
       slideIndex,
+      audioComponent,
     });
   };
 
   load() {
     return this.init({
-      pugTemplate: slide4,
+      pugTemplate: slide,
       wrapperElement: this.context,
       insetParam: {
         _style,
@@ -72,7 +74,3 @@ export default class Slide4Component extends SlideComponent {
   };
 };
 
-// private
-let
-  _style = slide4Style
-;

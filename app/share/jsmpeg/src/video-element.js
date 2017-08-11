@@ -48,6 +48,10 @@ let VideoElement = function (wrapper, videoUrl, options) {
     opacity: '0.7',
     cursor: 'pointer'
   });
+  if (options.picMode) {
+    this.playButton.style.visibility = 'hidden';
+  }
+
   this.container.appendChild(this.playButton);
 
   // Parse the data-options - we try to decode the values as json. This way
@@ -64,13 +68,22 @@ let VideoElement = function (wrapper, videoUrl, options) {
       if (this.poster) {
         this.poster.style.display = 'none';
       }
+      if (options.hookInPlay) {
+        options.hookInPlay();
+      }
     },
     pause: () => {
       this.playButton.style.display = 'block';
+      if (options.hookInPause) {
+        options.hookInPause();
+      }
     },
     stop: () => {
       if (this.poster) {
         this.poster.style.display = 'block';
+      }
+      if (options.hookInStop) {
+        options.hookInStop();
       }
     },
   });

@@ -1,34 +1,28 @@
 import SlideComponent from '../Slide.component';
 
-import * as slideX from './slideX.pug';
-import * as slideXStyle from './slideX.scss';
-
+import * as slide from './slideX.pug';
+import * as _style from './slideX.scss';
 
 export default class SlideXComponent extends SlideComponent {
   constructor({
                 context,
                 slideIndex,
+                audioComponent,
               }) {
     super({
       context,
       slideIndex,
+      audioComponent,
     });
   };
 
   load() {
     return this.init({
-      pugTemplate: slideX,
+      pugTemplate: slide,
       wrapperElement: this.context,
       insetParam: {
         _style,
       },
     });
   };
-
-
 };
-
-// private
-let
-  _style = slideXStyle
-;

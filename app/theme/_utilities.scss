@@ -96,5 +96,5 @@
  * $designDrawingLength 设计图长度
  */
 @function calcVW($designDrawingLength){
-  @return $designDrawingLength / $designDrawingWidth * 100 vw;
+  @return $designDrawingLength / $designDrawingWidth * 100vw;
 }

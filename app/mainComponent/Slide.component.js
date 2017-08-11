@@ -5,11 +5,13 @@ export default class SlideComponent extends Component {
   constructor({
                 context,
                 slideIndex,
+                audioComponent,
               }) {
     super({
       context,
     });
     this.slideIndex = slideIndex;
+    this.audioComponent = audioComponent;
   };
 
   init({
@@ -17,8 +19,9 @@ export default class SlideComponent extends Component {
          wrapperElement,
          insetParam,
          isAddToEl = false,
-         doSlideChangeEnd = () => {
+         doSlideChangeEnd = (mainSwiper) => {
          },
+         doLeaveSlide = (mainSwiper)=>{},
        }) {
     return this.render({
       pugTemplate,
@@ -29,7 +32,10 @@ export default class SlideComponent extends Component {
       .then(() => {
         this.paramInit();
         this.eventBind();
-        this.swiperCommand(doSlideChangeEnd);
+        this.swiperCommand({
+          doSlideChangeEnd,
+          doLeaveSlide,
+        });
       })
   };
 
@@ -39,8 +45,12 @@ export default class SlideComponent extends Component {
   eventBind() {
   };
 
-  swiperCommand(doSlideChangeEnd = () => {
-  }) {
+  swiperCommand({
+                  doSlideChangeEnd = (mainSwiper) => {
+                  },
+                  doLeaveSlide = (mainSwiper) => {
+                  },
+                }) {
     let
       mainSwiper = new MainSwiperIns().getMainSwiper()
     ;
@@ -49,8 +59,12 @@ export default class SlideComponent extends Component {
       mainSwiper.on('slideChangeEnd', () => {
         if (mainSwiper.realIndex === this.slideIndex) {
           console.log('Slide' + this.slideIndex);
-          doSlideChangeEnd();
+          doSlideChangeEnd(mainSwiper);
         }
+        if (mainSwiper.previousIndex === this.slideIndex) {
+          doLeaveSlide(mainSwiper);
+        }
+
       });
     }
   };

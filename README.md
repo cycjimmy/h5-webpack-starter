@@ -60,13 +60,13 @@ $ npm run svg
 # deploy to gh-pages
 $ npm run deploy
 ```
-
-## H5 Canvas Video Introduce(jsmpeg):
+## Some Functional Instructions
+### H5 Canvas Video Introduce(jsmpeg):
 * The player is based on [jsmpeg](https://github.com/phoboslab/jsmpeg).([my source](https://github.com/cycjimmy/h5-webpack-starter/tree/master/app/share/jsmpeg))
 * The video must be compressed into the TS format of MPEG1 / MP2.
 * Apple device automatically plays without sound, you need to guide the user to click on the video in the lower right corner of the video icon to unlock the sound.(no similar problem in non-autoplay mode)
 
-### Encoding Video/Audio for [jsmpeg](https://github.com/phoboslab/jsmpeg) by [ffmpeg](https://ffmpeg.org/)
+#### Encoding Video/Audio for [jsmpeg](https://github.com/phoboslab/jsmpeg) by [ffmpeg](https://ffmpeg.org/)
 ```shell
 $ ffmpeg -i input.mp4 -f mpegts
          -codec:v mpeg1video -s 640x360 -b:v 440k -r 25 -bf 0
@@ -82,7 +82,7 @@ $ ffmpeg -i input.mp4 -f mpegts
   * `-ac`: number of audio channels
   * `-b:a`: audio bit rate
 
-### How to use my jsmpeg by ES6
+#### How to use my jsmpeg by ES6
 1. Copy [my jsmpeg source](https://github.com/cycjimmy/h5-webpack-starter/tree/master/app/share/jsmpeg) to your own project.
 
 2. Use ES6 import. E.g:
@@ -107,7 +107,32 @@ $ ffmpeg -i input.mp4 -f mpegts
     // default: '56.25%'
     aspectPercent: '56.25%',
 
+    // picture node (no playButton)
+    // default: false
+    picMode: true,
+
+    // The player sets the hook when playing/pause/stop
+    hookInPlay: () => {},
+    hookInPause: () => {},
+    hookInStop: () => {},
+
     // other options are the same as JSMpeg.Player
     // https://github.com/phoboslab/jsmpeg
   })
   ```
+
+### [Audio Component](./app/share/audioComponent)
+* Properties:
+  * `context`
+  * `audioSrc`
+  * `audioElement`
+    * `audioButton`
+    * `audio`
+    * `audioPic`
+
+* Function:
+  * `play()`: audio play
+  * `pause()`: audio pause
+  * `changeUIToPlay()`: UI changes when audio playing
+  * `changeUIToPause()`: UI changes when audio paused
+  * `isPlaying()`: return Whether audio is playing
