@@ -1,8 +1,8 @@
 import QueryAll from '../../share/QueryAll';
 import SlideComponent from '../Slide.component';
 
-import * as slide2 from './slide2.pug';
-import * as slide2Style from './slide2.scss';
+import * as slide from './slide2.pug';
+import * as _style from './slide2.scss';
 
 // service
 import H5ImageCompressService from '../../share/H5ImageCompress/H5ImageCompress.service';
@@ -12,17 +12,19 @@ export default class Slide2Component extends SlideComponent {
   constructor({
                 context,
                 slideIndex,
+                audioComponent,
               }) {
     super({
       context,
       slideIndex,
+      audioComponent,
     });
     this.base64 = '';           // 压缩后base64图片
   };
 
   load(mainSwiper) {
     return this.init({
-      pugTemplate: slide2,
+      pugTemplate: slide,
       wrapperElement: this.context,
       insetParam: {
         _style,
@@ -127,7 +129,3 @@ export default class Slide2Component extends SlideComponent {
   };
 };
 
-// private
-let
-  _style = slide2Style
-;

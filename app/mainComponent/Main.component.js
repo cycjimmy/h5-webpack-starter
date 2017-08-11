@@ -28,6 +28,10 @@ export default class MainSctComponent extends Component {
       context: document.querySelector('.main-screen'),
     });
     this.mainSwiper = null;
+    this.audioComponent = new AudioComponent({
+      context: this.context,
+      audioSrc: audioSrc,
+    });
   };
 
   load() {
@@ -68,7 +72,10 @@ export default class MainSctComponent extends Component {
               setTimeout(() => {
                 this.renderSlideComponents()
                   .then(() => {
-                    return new loadingOverlayServiceIns().load()
+                    return this.audioComponent.load();
+                  })
+                  .then(() => {
+                    return new loadingOverlayServiceIns().load();
                   })
                   .then(() => {
                     new SwiperAnimateServiceIns().cache(swiper);
@@ -98,13 +105,9 @@ export default class MainSctComponent extends Component {
         new Component({
           context: this.context.querySelector('.' + _style.slide + ':nth-of-type(' + (index + 1) + ')'),
           slideIndex: index,
+          audioComponent: this.audioComponent,
         }).load();
       }),
-
-      new AudioComponent({
-        context: this.context,
-        audioSrc: audioSrc,
-      }).load(),
     ]);
   };
 };

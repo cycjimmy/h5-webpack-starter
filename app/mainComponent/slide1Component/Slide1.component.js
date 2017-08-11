@@ -1,22 +1,24 @@
 import SlideComponent from '../Slide.component';
 
-import * as slide1 from './slide1.pug';
-import * as slide1Style from './slide1.scss';
+import * as slide from './slide1.pug';
+import * as _style from './slide1.scss';
 
 export default class Slide1Component extends SlideComponent {
   constructor({
                 context,
                 slideIndex,
+                audioComponent,
               }) {
     super({
       context,
       slideIndex,
+      audioComponent,
     });
   };
 
   load(mainSwiper) {
     return this.init({
-      pugTemplate: slide1,
+      pugTemplate: slide,
       wrapperElement: this.context,
       insetParam: {
         _style,
@@ -45,7 +47,3 @@ export default class Slide1Component extends SlideComponent {
   };
 };
 
-// private
-let
-  _style = slide1Style
-;

@@ -1,24 +1,26 @@
 import QueryAll from '../../share/QueryAll';
 import SlideComponent from '../Slide.component';
 
-import * as slide0 from './slide0.pug';
-import * as slide0Style from './slide0.scss';
+import * as slide from './slide0.pug';
+import * as _style from './slide0.scss';
 import * as logoSvg from '../../../static/images/myLogo.svg';
 
 export default class Slide0Component extends SlideComponent {
   constructor({
                 context,
                 slideIndex,
+                audioComponent,
               }) {
     super({
       context,
       slideIndex,
+      audioComponent,
     });
   };
 
   load() {
     return this.init({
-      pugTemplate: slide0,
+      pugTemplate: slide,
       wrapperElement: this.context,
       insetParam: {
         _style,
@@ -49,8 +51,3 @@ export default class Slide0Component extends SlideComponent {
       });
   };
 };
-
-// private
-let
-  _style = slide0Style
-;

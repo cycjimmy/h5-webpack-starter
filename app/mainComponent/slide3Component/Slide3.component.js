@@ -1,7 +1,7 @@
 import SlideComponent from '../Slide.component';
 
-import * as slide3 from './slide3.pug';
-import * as slide3Style from './slide3.scss';
+import * as slide from './slide3.pug';
+import * as _style from './slide3.scss';
 
 import {
   nodeListToArray,
@@ -21,26 +21,37 @@ export default class Slide3Component extends SlideComponent {
   constructor({
                 context,
                 slideIndex,
+                audioComponent,
               }) {
     super({
       context,
       slideIndex,
+      audioComponent,
     });
 
     this.oVideoWrapper = null;
+    this.needContinuePlay = false;
   };
 
   load() {
     return this.init({
-      pugTemplate: slide3,
+      pugTemplate: slide,
       wrapperElement: this.context,
       insetParam: {
         _style,
       },
+      doLeaveSlide: () => {
+        // this.videoEl.player.stop();
+        oVideoInstances.forEach((videoEl) => {
+          if (videoEl) {
+            videoEl.player.stop();
+          }
+        });
+      },
     })
       .then(() => {
         // 初始化第一个视频
-        oVideoInstances[0] = initVideoIns(this.oVideoWrapper, oVideoUrls[0], oVideoPosters[0]);
+        oVideoInstances[0] = this.initVideoIns(oVideoUrls[0], oVideoPosters[0]);
       });
   };
 
@@ -62,7 +73,7 @@ export default class Slide3Component extends SlideComponent {
         destroyOtherVideoIns()
           .then(() => {
             // 创建新实例
-            oVideoInstances[index] = initVideoIns(this.oVideoWrapper, oVideoUrls[index], oVideoPosters[index]);
+            oVideoInstances[index] = this.initVideoIns(oVideoUrls[index], oVideoPosters[index]);
 
             // 立即播放
             // oVideoInstances[index].player.play();
@@ -74,24 +85,40 @@ export default class Slide3Component extends SlideComponent {
   };
 
 
+  initVideoIns(videoUrl, videoPoster) {
+    return new JSMpeg.VideoElement(this.oVideoWrapper, videoUrl, {
+      poster: videoPoster,
+      decodeFirstFrame: false,
+      // aspectPercent: '56.25%',
+      loop: false,
+      // autoplay: true,
+      progressive: true,
+      chunkSize: 383 * 1023,
+      hookInPlay: () => {
+        console.log('hookInPlay');
+
+        if (this.audioComponent.isPlaying()) {
+          this.needContinuePlay = true;
+          this.audioComponent.pause();
+        } else {
+          this.needContinuePlay = false;
+        }
+      },
+      hookInPause: () => {
+        console.log('hookInPause');
+        if (this.needContinuePlay) {
+          this.audioComponent.play();
+        }
+      },
+    });
+  };
 };
 
 // private
 let
-  _style = slide3Style
-  , oVideoInstances = []
+  oVideoInstances = []
   , oVideoUrls = [videoTs0, videoTs1]
   , oVideoPosters = [videoPoster0, videoPoster1]
-
-  , initVideoIns = (videoWrapper, videoUrl, videoPoster) => new JSMpeg.VideoElement(videoWrapper, videoUrl, {
-    poster: videoPoster,
-    decodeFirstFrame: false,
-    // aspectPercent: '56.25%',
-    loop: false,
-    // autoplay: true,
-    progressive: true,
-    chunkSize: 383 * 1023,
-  })
 
   , destroyOtherVideoIns = () => new Promise(resolve => {
     oVideoInstances.forEach((el, index) => {
