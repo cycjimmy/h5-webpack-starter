@@ -24,6 +24,7 @@ module.exports = {
       'swiper',
       'three',
     ],
+    "load": path.resolve('app', 'load.js'),
     "main": path.resolve('app', 'main.js'),
   },
 
@@ -107,7 +108,7 @@ module.exports = {
 
   plugins: [
     new CommonsChunkPlugin({
-      names: ['main', 'vendor'],
+      names: ['main', 'load', 'vendor'],
       minChunks: Infinity,
     }),
 

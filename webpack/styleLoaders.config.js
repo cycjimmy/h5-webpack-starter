@@ -5,12 +5,12 @@
 const
   autoprefixer = require('autoprefixer')
   , PRODUCTION = process.env.NODE_ENV === 'production'       // 生产模式
-  ;
+;
 
 
 let
   cssIdentifier = PRODUCTION ? '[hash:base64:10]' : '[path][name]__[local]'
-  ;
+;
 
 
 module.exports = options => {
@@ -21,13 +21,21 @@ module.exports = options => {
         importLoaders: 2,
         modules: true,
         localIdentName: cssIdentifier,
-      }
+      },
+    },
+    postLoader: {
+      loader: 'postcss-loader',
+      options: {
+        config: {
+          path: 'webpack/postcss.config.js'
+        },
+      },
     },
     sassLoader: {
       loader: 'sass-loader',
       options: {
         outputStyle: 'expanded',
-      }
+      },
     },
   }, options);
 };

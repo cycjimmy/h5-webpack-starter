@@ -39,6 +39,12 @@ const isString = (str) => {
 const isObject = o => Object.prototype.toString.call(o) === '[object Object]';
 
 /**
+ * 判断是否function
+ * @param func
+ */
+const isFunc = (func) => typeof func === 'function';
+
+/**
  * 判断是否nodeList
  * @param nodeList
  */
@@ -149,6 +155,7 @@ export {
   strToCamel,
   isString,
   isObject,
+  isFunc,
   isNodeList,
   nodeListToArray,
   getUrlRelativeDir,

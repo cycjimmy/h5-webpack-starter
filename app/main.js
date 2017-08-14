@@ -1,14 +1,5 @@
-// global css
-import './theme/main.scss';
-
 import FastClick from 'fastclick';
 import webInitialize from './webInitialize.afunc';
-
-// service
-import loadingOverlayServiceIns from './share/loadingOverlay.service.ins';
-
-// loading
-new loadingOverlayServiceIns().init(document.querySelector('.loading-overlay'));
 
 // wechatShare
 // import './weChatShare';

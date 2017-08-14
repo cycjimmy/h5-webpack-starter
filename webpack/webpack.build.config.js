@@ -2,7 +2,7 @@ const
   path = require('path')
   , webpack = require('webpack')
   , webpackMerge = require('webpack-merge')
-  , webpackBase = require("./webpack.base.js")
+  , webpackBase = require('./webpack.base.js')
   , browserSyncConfig = require('./browserSync.config')
   , styleLoadersConfig = require('./styleLoaders.config')()
 
@@ -64,19 +64,17 @@ module.exports = webpackMerge(webpackBase, {
       // Style
       {
         test: /\.scss$/,
-        exclude: /node_modules/,
+        exclude: [
+          path.resolve('node_modules'),
+        ],
+        include: [
+          path.resolve('app'),
+        ],
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             styleLoadersConfig.cssLoader,
-            {
-              loader: 'postcss-loader',
-              options: {
-                config: {
-                  path: 'webpack/postcss.config.js'
-                },
-              },
-            },
+            styleLoadersConfig.postLoader,
             styleLoadersConfig.sassLoader,
           ],
         })

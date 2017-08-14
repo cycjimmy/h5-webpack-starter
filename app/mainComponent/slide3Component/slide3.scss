@@ -8,10 +8,10 @@
 
 .videoChooseWrap {
   display: flex;
-  padding: $space;
+  padding: $space *1.5;
   align-items: stretch;
   height: .36rem;
-  width: calc(100vw - 4vh);
+  width: 100vw - $space *3;
   max-width: 6.4rem;
 }
 
@@ -19,7 +19,7 @@
   flex: 1;
   display: flex;
   @include flex-box-align(center, center);
-  margin-right: $space;
+  margin-right: $space * 1.5;
   border: .01rem solid darken($fontColor, 10%);
   border-radius: $radius;
 
@@ -34,7 +34,7 @@
 }
 
 .explicationWrap {
-  padding: $space;
+  padding: $space*1.5;
   max-width: 6.4rem;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .explicationList {
-  margin: $space /2 0;
+  margin: $space 0;
 
   > a {
     color: darken($fontColor, 20%);
