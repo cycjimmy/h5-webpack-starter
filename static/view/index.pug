@@ -5,14 +5,18 @@ html(lang='en')
     title H5 Webpack Starter
     base(href="./")
 
+    //- webpack style
+    each _style in htmlWebpackPlugin.files.css
+      link(href=_style, rel="stylesheet")
+
     //- animate css
-    link(rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css")
+    link(href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css", rel="stylesheet")
 
     //- swiper global style
-    link(rel="stylesheet" href="//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css")
+    link(href="//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css", rel="stylesheet")
 
     //- videoJs global style
-      link(rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.1/video-js.min.css")
+      link(href="//cdn.bootcss.com/video.js/6.2.1/video-js.min.css", rel="stylesheet")
 
   body
     .loading-overlay
@@ -52,6 +56,10 @@ html(lang='en')
 
     //- video.js
       script(src="//cdn.bootcss.com/video.js/6.2.1/video.min.js")
+
+    //- webpack script
+    each _chunk in htmlWebpackPlugin.files.chunks
+      script(src=_chunk.entry)
 
     //- statistics
       span(style="display:none;")

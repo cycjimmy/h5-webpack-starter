@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "H5 webpack starter for webpack, gulp, es6/7, sass, pug, swiper, jsmpeg...",
   "main": "index.js",
   "scripts": {
@@ -44,7 +44,7 @@
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
     "clean-webpack-plugin": "^0.1.16",
-    "cross-env": "^5.0.3",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.28.4",
     "del": "^3.0.0",
     "expose-loader": "^0.7.3",
@@ -70,7 +70,7 @@
     "uglify-js": "^3.0.27",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.9",
-    "webpack": "^3.4.1",
+    "webpack": "^3.5.4",
     "webpack-chunk-hash": "^0.4.0",
     "webpack-md5-hash": "^0.0.5",
     "webpack-merge": "^4.1.0",

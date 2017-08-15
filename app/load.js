@@ -1,13 +1,14 @@
 // global css
 import './theme/main.scss';
 
-// component
-import LoadingProgressComponentIns from './loadingProgressComponent/LoadingProgress.component.ins';
-
 // service
-import ResLoaderService from './share/resLoader/ResLoader.service';
-import loadingOverlayServiceIns from './share/loadingOverlay.service.ins';
+import ResLoaderService from './share/loading/ResLoader.service';
+import loadingOverlayServiceIns from './share/loading/loadingOverlay.service.ins';
 
+
+document.addEventListener('readystatechange', () => {
+  console.log('documentReadyState: ' + document.readyState);
+});
 
 // loading
 new ResLoaderService({
@@ -17,23 +18,32 @@ new ResLoaderService({
   ],
   onStart: (total) => {
     console.log('loadStart: ' + total);
-    new LoadingProgressComponentIns().setProgress(5);  // 5%
+    let
+      oLoadingOverlay = document.querySelector('.loading-overlay')
+      , progressBar = oLoadingOverlay.querySelector('.loading-progressbar')
+      , progressPercentText = oLoadingOverlay.querySelector('.loading-text-percent')
+    ;
+
+    new loadingOverlayServiceIns()
+      .init({
+        oLoadingOverlay,
+        progressBar,
+        progressPercentText,
+      })
+      .setProgress(4);      // 4%
   },
   onProgress: (currentIndex, total) => {
     let
-      percent = Number.parseInt(currentIndex / total * 90, 10) + 5
+      percent = Number(currentIndex / total * 92) + 4
     ;
 
     console.log(currentIndex + ' / ' + total, 'percent:' + percent + '%');
 
-    new LoadingProgressComponentIns().setProgress(percent);  // 5% ~ 95%
+    new loadingOverlayServiceIns().setProgress(percent);  // 4% ~ 96%
   },
   onComplete: (total) => {
     console.log('loadComplete: ' + total + ' resources');
-    new LoadingProgressComponentIns().complete();  // 100%
-    setTimeout(() => {
-      new loadingOverlayServiceIns().init(document.querySelector('.loading-overlay'));
-    }, 200)
+    new loadingOverlayServiceIns().progressComplete();    // 98%
   },
 }).start();
 
