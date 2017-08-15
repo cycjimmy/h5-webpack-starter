@@ -177,7 +177,7 @@ module.exports = webpackMerge(webpackBase, {
 
   plugins: [
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: path.resolve('./static', 'view', 'index.pug'),
       //filename: '../index.html',
       favicon: path.resolve('./static', 'favicon.ico'),

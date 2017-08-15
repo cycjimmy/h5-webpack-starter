@@ -103,7 +103,7 @@ module.exports = webpackMerge(webpackBase, {
     }),
 
     new HtmlWebpackPlugin({
-      //inject: true,
+      inject: false,
       template: path.resolve('static', 'view', 'index.pug'),
       favicon: path.resolve('static', 'favicon.ico'),
       //filename: '../index.html',

@@ -18,7 +18,7 @@ import SlideXComponent from './slideXComponent/SlideX.component';
 import AudioComponent from '../share/audioComponent/Audio.component';
 
 // service
-import loadingOverlayServiceIns from '../share/loadingOverlay.service.ins';
+import loadingOverlayServiceIns from '../share/loading/loadingOverlay.service.ins';
 import SwiperAnimateServiceIns from '../share/Swiper/SwiperAnimate.service.ins';
 import MainSwiperIns from './MainSwiper.ins';
 
@@ -75,7 +75,7 @@ export default class MainSctComponent extends Component {
                     return this.audioComponent.load();
                   })
                   .then(() => {
-                    return new loadingOverlayServiceIns().load();
+                    return new loadingOverlayServiceIns().doRemove();
                   })
                   .then(() => {
                     new SwiperAnimateServiceIns().cache(swiper);

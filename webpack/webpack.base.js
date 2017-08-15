@@ -23,8 +23,8 @@ module.exports = {
       'fastclick',
       'swiper',
       'three',
+      path.resolve('app', 'load.js'),
     ],
-    "load": path.resolve('app', 'load.js'),
     "main": path.resolve('app', 'main.js'),
   },
 
@@ -108,7 +108,7 @@ module.exports = {
 
   plugins: [
     new CommonsChunkPlugin({
-      names: ['main', 'load', 'vendor'],
+      names: ['main', 'vendor'],
       minChunks: Infinity,
     }),
 
