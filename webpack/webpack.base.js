@@ -80,6 +80,25 @@ module.exports = {
         loader: 'pug-loader',
       },
 
+      // ico
+      {
+        test: /\.ico$/i,
+        exclude: [
+          path.resolve('node_modules'),
+        ],
+        include: [
+          path.resolve('static'),
+        ],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
+
       // expose
       {
         test: require.resolve('fastclick'),

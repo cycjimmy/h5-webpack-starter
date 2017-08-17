@@ -6,7 +6,6 @@
 export default class ResLoaderService {
   /**
    *
-   * @param resourceType 资源类型，默认为图片
    * @param baseUrl 基准url
    * @param resources 资源路径数组
    * @param onStart 加载开始回调函数，传入参数total
