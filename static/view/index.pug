@@ -5,62 +5,76 @@ html(lang='en')
     title H5 Webpack Starter
     base(href="./")
 
+    //- icon
+    link(rel="shortcut icon", href=require('../favicon.ico'))
+
     //- webpack style
-    each _style in htmlWebpackPlugin.files.css
-      link(href=_style, rel="stylesheet")
-
-    //- animate css
-    link(href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css", rel="stylesheet")
-
-    //- swiper global style
-    link(href="//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css", rel="stylesheet")
-
-    //- videoJs global style
-      link(href="//cdn.bootcss.com/video.js/6.2.1/video-js.min.css", rel="stylesheet")
+    each _style,index in htmlWebpackPlugin.files.css
+      if index === 0
+        link(href=_style, rel="stylesheet")
 
   body
     .loading-overlay
       img.loading-pic(src=require('../images/loading.svg'))
-      .loading-progress
-        .loading-progressbar
+      .loading-progress-wrapper
+        .loading-progressbar-wrapper
+          .loading-progressbar
       .loading-text
         span.loading-text-percent 0
         | %
 
     .swiper-container.main-screen
 
-    //- WeChat JSSDK
-      script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
 
-    //- WeChat JSSDK config
-      script.
-        (function () {
-          wx.config({
-            debug: false,
-            appId: '<%=signPackage("appId")%>',
-            timestamp: '<%=signPackage("timestamp")%>',
-            nonceStr: '<%=signPackage("nonceStr")%>',
-            signature: '<%=signPackage("signature")%>',
-            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareQZone', 'onMenuShareWeibo']
-          });
-        })();
+    //- styles and scripts
+    span(style="display:none;")
+      //- styles
+      //------------------------------------
+      //- webpack style
+      each _style,index in htmlWebpackPlugin.files.css
+        if index !== 0
+          link(href=_style, rel="stylesheet")
+      //- animate css
+      link(href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css", rel="stylesheet")
+      //- swiper global style
+      link(href="//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css", rel="stylesheet")
+      //- videoJs global style
+        link(href="//cdn.bootcss.com/video.js/6.2.1/video-js.min.css", rel="stylesheet")
 
-    //- fastclick
-    script(src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js")
 
-    //- swiper
-    script(src="//cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js")
+      //- scripts
+      //------------------------------------
+      //- WeChat JSSDK
+        script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
 
-    //- three.js
-    script(src="//cdn.bootcss.com/three.js/r83/three.min.js")
+      //- WeChat JSSDK config
+        script.
+          (function () {
+            wx.config({
+              debug: false,
+              appId: '<%=signPackage("appId")%>',
+              timestamp: '<%=signPackage("timestamp")%>',
+              nonceStr: '<%=signPackage("nonceStr")%>',
+              signature: '<%=signPackage("signature")%>',
+              jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareQZone', 'onMenuShareWeibo']
+            });
+          })();
 
-    //- video.js
-      script(src="//cdn.bootcss.com/video.js/6.2.1/video.min.js")
+      //- fastclick
+      script(src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js")
 
-    //- webpack script
-    each _chunk in htmlWebpackPlugin.files.chunks
-      script(src=_chunk.entry)
+      //- swiper
+      script(src="//cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js")
 
-    //- statistics
-      span(style="display:none;")
+      //- three.js
+      script(src="//cdn.bootcss.com/three.js/r83/three.min.js")
+
+      //- video.js
+        script(src="//cdn.bootcss.com/video.js/6.2.1/video.min.js")
+
+      //- webpack script
+      each _chunk in htmlWebpackPlugin.files.chunks
+        script(src=_chunk.entry)
+
+      //- statistics
         script(src="", language="JavaScript")

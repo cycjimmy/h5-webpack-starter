@@ -105,8 +105,8 @@ module.exports = webpackMerge(webpackBase, {
     new HtmlWebpackPlugin({
       inject: false,
       template: path.resolve('static', 'view', 'index.pug'),
-      favicon: path.resolve('static', 'favicon.ico'),
-      //filename: '../index.html',
+      // favicon: path.resolve('static', 'favicon.ico'),
+      // filename: '../index.html',
     }),
 
     new BrowserSyncPlugin(browserSyncConfig({

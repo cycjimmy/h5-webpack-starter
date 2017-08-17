@@ -1,7 +1,7 @@
 # h5 Webpack Starter
 ## Features
-* Perfect for loading components.
-* Easy to load animation
+* Perfect for loading service.
+* Easy to load animation.
 * Allow video inline play in Wechat(X5) browser.
 
 ## Based on 
@@ -60,7 +60,31 @@ $ npm run svg
 # deploy to gh-pages
 $ npm run deploy
 ```
+
 ## Some Functional Instructions
+### [Loading Service](./app/share/loading)
+#### ResLoaderService(Easy picture resource preloading progress service)
+* Properties:
+  * `baseUrl`
+  * `resources`: Resource path array
+  * `onStart`: The callback function for start, passing in the parameters `total`.
+  * `onProgress`: The callback function for an image being loaded, passing in the parameters `currentIndex`, `total`.
+  * `onComplete`: The callback function for all images load complete, passing in the parameters `total`.
+
+#### loadingOverlayService
+* Properties:
+  * `oLoadingOverlay`
+  * `progressBar`
+  * `progressPercentText`
+  * `percent`
+
+* Functions:
+  * `init()` Initialize service
+  * `setProgress()` Set the progress
+  * `progressComplete()`: All images loaded
+  * `doRemove()`: Remove oLoadingOverlay
+
+
 ### H5 Canvas Video Introduce(jsmpeg):
 * The player is based on [jsmpeg](https://github.com/phoboslab/jsmpeg).([my source](https://github.com/cycjimmy/h5-webpack-starter/tree/master/app/share/jsmpeg))
 * The video must be compressed into the TS format of MPEG1 / MP2.
@@ -69,8 +93,8 @@ $ npm run deploy
 #### Encoding Video/Audio for [jsmpeg](https://github.com/phoboslab/jsmpeg) by [ffmpeg](https://ffmpeg.org/)
 ```shell
 $ ffmpeg -i input.mp4 -f mpegts
-         -codec:v mpeg1video -s 640x360 -b:v 440k -r 25 -bf 0
-         -codec:a mp2 -ar 32000 -ac 1 -b:a 48k
+         -codec:v mpeg1video -s 640x360 -b:v 600k -r 25 -bf 0
+         -codec:a mp2 -ar 44100 -ac 1 -b:a 64k
          output.ts
 ```
 
@@ -130,7 +154,7 @@ $ ffmpeg -i input.mp4 -f mpegts
     * `audio`
     * `audioPic`
 
-* Function:
+* Functions:
   * `play()`: audio play
   * `pause()`: audio pause
   * `changeUIToPlay()`: UI changes when audio playing
