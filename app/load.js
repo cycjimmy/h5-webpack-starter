@@ -34,7 +34,7 @@ new ResLoaderService({
   },
   onProgress: (currentIndex, total) => {
     let
-      percent = Number(currentIndex / total * 92) + 4
+      percent = Number.parseInt(currentIndex / total * 92, 10) + 4
     ;
 
     console.log(currentIndex + ' / ' + total, 'percent:' + percent + '%');
