@@ -44,15 +44,18 @@ export default class SwiperAnimateServiceIns {
         () => {
           return Promise.all(
             this.allBoxes.map(el => {
-              if (el.attributes["swiper-animate-style-cache"]) {
-                el.setAttribute("style", el.attributes["swiper-animate-style-cache"].value);
-                el.style.visibility = "hidden";
-                el.classList.remove('animated');
+              return new Promise(resolve => {
+                if (el.attributes["swiper-animate-style-cache"]) {
+                  el.setAttribute("style", el.attributes["swiper-animate-style-cache"].value);
+                  el.style.visibility = "hidden";
+                  el.classList.remove('animated');
 
-                if (el.attributes["swiper-animate-effect"]) {
-                  el.classList.remove(el.attributes["swiper-animate-effect"].value);
+                  if (el.attributes["swiper-animate-effect"]) {
+                    el.classList.remove(el.attributes["swiper-animate-effect"].value);
+                  }
                 }
-              }
+                setTimeout(() => resolve(), 0);
+              });
             }),
           );
         },
