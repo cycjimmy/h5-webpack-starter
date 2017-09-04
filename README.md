@@ -1,4 +1,7 @@
 # h5 Webpack Starter
+
+[![Build Status](https://travis-ci.org/cycjimmy/h5-webpack-starter.svg?branch=master)](https://travis-ci.org/cycjimmy/h5-webpack-starter)
+
 ## Features
 * Perfect for loading service.
 * Easy to load animation.
