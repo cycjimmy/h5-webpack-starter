@@ -21,4 +21,4 @@ before_script:
   - npm install -g gulp-cli
 
 script:
-  - npm run build:watch
+  - npm run build
