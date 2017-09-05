@@ -56,7 +56,7 @@ module.exports = webpackMerge(webpackBase, {
   bail: true,
 
   output: {
-    path: path.resolve('./build'),
+    path: path.resolve('build'),
   },
 
   module: {
@@ -146,8 +146,12 @@ module.exports = webpackMerge(webpackBase, {
       // Svg icons
       {
         test: /\.svg$/,
-        exclude: /node_modules/,
-        include: path.resolve('static', 'images', 'icons'),
+        exclude: [
+          path.resolve('node_modules'),
+        ],
+        include: [
+          path.resolve('static', 'images', 'icons')
+        ],
         use: [
           {
             loader: 'file-loader',
@@ -161,7 +165,9 @@ module.exports = webpackMerge(webpackBase, {
       // Font
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        exclude: /node_modules/,
+        exclude: [
+          path.resolve('node_modules'),
+        ],
         use: [
           {
             loader: 'url-loader',

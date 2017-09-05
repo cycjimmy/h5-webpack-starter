@@ -16,7 +16,7 @@ module.exports = webpackMerge(webpackBase, {
   devtool: 'eval-source-map',
 
   output: {
-    path: path.resolve('./dist'),
+    path: path.resolve('dist'),
   },
 
   module: {
@@ -24,7 +24,9 @@ module.exports = webpackMerge(webpackBase, {
       // Style
       {
         test: /\.scss$/,
-        exclude: /node_modules/,
+        exclude: [
+          path.resolve('node_modules'),
+        ],
         use: [
           {
             loader: 'style-loader'
@@ -76,7 +78,9 @@ module.exports = webpackMerge(webpackBase, {
       // Font
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        exclude: /node_modules/,
+        exclude: [
+          path.resolve('node_modules'),
+        ],
         use: [
           {
             loader: 'file-loader',
