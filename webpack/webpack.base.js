@@ -64,8 +64,12 @@ module.exports = {
       // Scripts
       {
         test: /\.js$/,
-        include: path.resolve('app'),
-        exclude: /node_modules/,
+        include: [
+          path.resolve('app')
+        ],
+        exclude: [
+          path.resolve('node_modules'),
+        ],
         loader: 'babel-loader',
       },
 
@@ -76,7 +80,9 @@ module.exports = {
           path.resolve('app'),
           path.resolve('static'),
         ],
-        exclude: /node_modules/,
+        exclude: [
+          path.resolve('node_modules'),
+        ],
         loader: 'pug-loader',
       },
 
