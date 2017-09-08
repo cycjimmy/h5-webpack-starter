@@ -16,14 +16,16 @@ import * as _style from './audio.scss';
  * }
  *
  * Function:
+ * runAutoPlay
  * play
  * pause
+ * changeUI
  * changeUIToPlay
  * changeUIToPause
  * isPlaying
  */
 
-export default class AudioComponent extends Component {
+export default class extends Component {
   constructor({
                 context,
                 audioSrc,
@@ -63,28 +65,13 @@ export default class AudioComponent extends Component {
           this.runAutoPlay();
           this.eventBind();
 
-          setTimeout(() => {
-            resolve();
-          }, 50);
-        });
-      })
-      .then(() => {
-        return new Promise(resolve => {
-          // Does not support auto play
-          if (!this.isPlaying()) {
-            this.audioElement.audio.pause();
-            this.changeUIToPause();
-          }
-
-          setTimeout(() => {
-            resolve();
-          }, 0);
+          setTimeout(() => resolve(), 0);
         });
       });
   };
 
   eventBind() {
-    this.audioElement.audioButton.addEventListener('click', (e) => {
+    this.audioElement.audioButton.addEventListener('click', e => {
       e.stopPropagation();
 
       if (this.audioElement.audioPic.classList.contains(_style.play)) {
@@ -97,24 +84,24 @@ export default class AudioComponent extends Component {
     });
   };
 
+  runAutoPlay() {
+    this.play();
+    document.addEventListener("WeixinJSBridgeReady", () => {
+      this.play();
+    }, false);
+    document.addEventListener('YixinJSBridgeReady', () => {
+      this.play();
+    }, false);
+  };
+
   play() {
     this.audioElement.audio.play();
-    this.changeUIToPlay();
+    setTimeout(() => this.changeUI(), 0);
   };
 
   pause() {
     this.audioElement.audio.pause();
-    this.changeUIToPause();
-  };
-
-  runAutoPlay() {
-    this.audioElement.audio.play();
-    document.addEventListener("WeixinJSBridgeReady", () => {
-      this.audioElement.audio.play();
-    }, false);
-    document.addEventListener('YixinJSBridgeReady', () => {
-      this.audioElement.audio.play();
-    }, false);
+    setTimeout(() => this.changeUI(), 0);
   };
 
   changeUIToPlay() {
@@ -125,6 +112,14 @@ export default class AudioComponent extends Component {
   changeUIToPause() {
     this.audioElement.audioPic.classList.remove(_style.play);
     this.audioElement.audioPic.classList.add(_style.pause);
+  };
+
+  changeUI() {
+    if (this.isPlaying()) {
+      this.changeUIToPlay();
+    } else {
+      this.changeUIToPause();
+    }
   };
 
   isPlaying() {
