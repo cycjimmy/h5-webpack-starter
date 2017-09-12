@@ -8,7 +8,7 @@ import {
 } from '../../share/awesome.func.js';
 
 // service
-import JSMpeg from '../../share/jsmpeg/index';
+import JSMpeg from 'jsmpeg-player';
 import touchActive from '../../share/touchActiveMockClick.func';
 
 // media
