@@ -1,14 +1,14 @@
 import QueryAll from '../../share/QueryAll';
 import SlideComponent from '../Slide.component';
 
-import * as slide from './slide2.pug';
-import * as _style from './slide2.scss';
+import * as slide from './imageCompressUploadDemo.pug';
+import * as _style from './imageCompressUploadDemo.scss';
 
 // service
 import H5ImageCompressService from '../../share/H5ImageCompress/H5ImageCompress.service';
 // import xhrData from '../share/xhrData.func';
 
-export default class Slide2Component extends SlideComponent {
+export default class extends SlideComponent {
   constructor({
                 context,
                 slideIndex,

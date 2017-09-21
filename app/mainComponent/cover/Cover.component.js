@@ -1,11 +1,11 @@
 import QueryAll from '../../share/QueryAll';
 import SlideComponent from '../Slide.component';
 
-import * as slide from './slide0.pug';
-import * as _style from './slide0.scss';
+import * as slide from './cover.pug';
+import * as _style from './cover.scss';
 import * as logoSvg from '../../../static/images/myLogo.svg';
 
-export default class Slide0Component extends SlideComponent {
+export default class extends SlideComponent {
   constructor({
                 context,
                 slideIndex,

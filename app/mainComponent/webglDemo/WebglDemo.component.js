@@ -1,12 +1,12 @@
 import SlideComponent from '../Slide.component';
 
-import * as slide from './slide4.pug';
-import * as _style from './slide4.scss';
+import * as slide from './webglDemo.pug';
+import * as _style from './webglDemo.scss';
 
 // service
 import * as THREE from 'three';
 
-export default class Slide4Component extends SlideComponent {
+export default class extends SlideComponent {
   constructor({
                 context,
                 slideIndex,
