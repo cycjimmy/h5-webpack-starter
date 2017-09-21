@@ -1,6 +1,10 @@
 @import "../../theme/variables";
 @import "../../theme/utilities";
 
+.wrapper {
+  justify-content: flex-start;
+}
+
 .videoWrapper {
   width: 100%;
   max-width: 6.4rem;

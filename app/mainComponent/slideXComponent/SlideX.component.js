@@ -3,7 +3,7 @@ import SlideComponent from '../Slide.component';
 import * as slide from './slideX.pug';
 import * as _style from './slideX.scss';
 
-export default class SlideXComponent extends SlideComponent {
+export default class extends SlideComponent {
   constructor({
                 context,
                 slideIndex,

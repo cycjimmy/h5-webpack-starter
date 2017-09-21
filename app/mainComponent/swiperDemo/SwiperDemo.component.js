@@ -1,9 +1,9 @@
 import SlideComponent from '../Slide.component';
 
-import * as slide from './slide1.pug';
-import * as _style from './slide1.scss';
+import * as slide from './swiperDemo.pug';
+import * as _style from './swiperDemo.scss';
 
-export default class Slide1Component extends SlideComponent {
+export default class extends SlideComponent {
   constructor({
                 context,
                 slideIndex,

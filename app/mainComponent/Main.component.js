@@ -6,14 +6,18 @@ import * as slides from './sildes.pug';
 import * as mainStyle from './main.scss';
 
 // audio
-import * as audioSrc from '../../static/media/Richard Clayderman - LOVE IS BLUE.mp3';
+// import * as audioSrc from '../../static/media/Richard Clayderman - LOVE IS BLUE.mp3';
+
+let audioSrc = 'https://raw.githubusercontent.com/cycjimmy/staticFiles/storage/media/Richard_Clayderman-LOVE_IS_BLUE.mp3';
+
 
 // component
-import Slide0Component from './slide0Component/Slide0.component';
-import Slide1Component from './slide1Component/Slide1.component';
-import Slide2Component from './slide2Component/Slide2.component';
-import Slide3Component from './slide3Component/Slide3.component';
-import Slide4Component from './slide4Component/Slide4.component';
+import CoverComponent from './cover/Cover.component';
+import SwiperDemoComponent from './swiperDemo/SwiperDemo.component';
+import ImageCompressUploadDemoComponent from './imageCompressUploadDemo/ImageCompressUploadDemo.component';
+import JsmpegDemoComponent from './jsmpegDemo/JsmpegDemo.component';
+import H5videoPlayerDemoComponent from './h5videoPlayerDemo/H5videoPlayerDemo.component';
+import WebglDemoComponent from './webglDemo/WebglDemo.component';
 import SlideXComponent from './slideXComponent/SlideX.component';
 import AudioComponent from '../share/audioComponent/Audio.component';
 
@@ -116,11 +120,12 @@ export default class MainSctComponent extends Component {
 let
   _style = mainStyle
   , SlideComponents = [
-    Slide0Component,
-    Slide1Component,
-    Slide2Component,
-    Slide3Component,
-    Slide4Component,
+    CoverComponent,
+    SwiperDemoComponent,
+    ImageCompressUploadDemoComponent,
+    JsmpegDemoComponent,
+    H5videoPlayerDemoComponent,
+    WebglDemoComponent,
     SlideXComponent,
   ]
 ;
