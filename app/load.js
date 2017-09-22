@@ -13,8 +13,7 @@ document.addEventListener('readystatechange', () => {
 // loading
 new ResLoaderService({
   resources: [
-    require('../static/images/screenshot_Sony_test_video.jpg'),
-    require('../static/images/screenshot_big_buck_bunny.jpg'),
+    // require(''),
   ],
   onStart: (total) => {
     console.log('loadStart: ' + total);
