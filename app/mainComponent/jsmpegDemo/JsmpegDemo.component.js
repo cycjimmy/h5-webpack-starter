@@ -12,14 +12,9 @@ import JSMpeg from 'jsmpeg-player';
 import touchActive from '../../share/touchActiveMockClick.func';
 
 // media
-// import * as videoTs0 from '../../../static/media/big_buck_bunny.ts';
-// import * as videoPoster0 from '../../../static/images/screenshot_big_buck_bunny.jpg';
-// import * as videoTs1 from '../../../static/media/Sony_test_video.ts';
-// import * as videoPoster1 from '../../../static/images/screenshot_Sony_test_video.jpg';
-
 let
-  videoTs0 = 'https://raw.githubusercontent.com/cycjimmy/staticFiles/storage/media/big_buck_bunny_640x360.ts'
-  , videoTs1 = 'https://raw.githubusercontent.com/cycjimmy/staticFiles/storage/media/Sony_test_video_640x360.ts'
+  videoTs0 = 'https://cycjimmy.github.io/jsmpeg-player/media/big_buck_bunny_640x360.ts'
+  , videoTs1 = 'https://cycjimmy.github.io/jsmpeg-player/media/Sony_test_video_640x360.ts'
   , videoPoster0 = 'https://raw.githubusercontent.com/cycjimmy/staticFiles/storage/images/screenshot/big_buck_bunny_640x360.jpg'
   , videoPoster1 = 'https://raw.githubusercontent.com/cycjimmy/staticFiles/storage/images/screenshot/Sony_test_video_640x360.jpg'
 ;
