@@ -2,7 +2,11 @@ import FastClick from 'fastclick';
 import webInitialize from './webInitialize.afunc';
 
 // wechatShare
-// import './weChatShare';
+// import {
+//   defaultShare,
+// } from './weChatShare';
+
+// defaultShare();
 
 if (DEVELOPMENT) {
   console.log('Development Mode');

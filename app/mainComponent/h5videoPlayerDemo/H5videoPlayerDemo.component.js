@@ -1,7 +1,7 @@
 import SlideComponent from '../Slide.component';
 
-import * as slide from './h5videoPlayerDemo.pug';
-import * as _style from './h5videoPlayerDemo.scss';
+import slide from './h5videoPlayerDemo.pug';
+import _style from './h5videoPlayerDemo.scss';
 
 // service
 import touchActive from '../../share/touchActiveMockClick.func';
@@ -10,11 +10,13 @@ import H5VideoPlayer from 'h5-video-player';
 export default class extends SlideComponent {
   constructor({
                 context,
+                mainSwiper,
                 slideIndex,
                 audioComponent,
               }) {
     super({
       context,
+      mainSwiper,
       slideIndex,
       audioComponent,
     });

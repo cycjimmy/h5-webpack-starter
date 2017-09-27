@@ -1,7 +1,7 @@
 import SlideComponent from '../Slide.component';
 
-import * as slide from './webglDemo.pug';
-import * as _style from './webglDemo.scss';
+import slide from './webglDemo.pug';
+import _style from './webglDemo.scss';
 
 // service
 import * as THREE from 'three';

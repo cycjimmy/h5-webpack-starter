@@ -1,15 +1,16 @@
 import Component from '../share/Component/index';
-import MainSwiperIns from './MainSwiper.ins';
 
 export default class SlideComponent extends Component {
   constructor({
                 context,
+                mainSwiper,
                 slideIndex,
                 audioComponent,
               }) {
     super({
       context,
     });
+    this.mainSwiper = mainSwiper;
     this.slideIndex = slideIndex;
     this.audioComponent = audioComponent;
   };
@@ -21,7 +22,8 @@ export default class SlideComponent extends Component {
          isAddToEl = false,
          doSlideChangeEnd = (mainSwiper) => {
          },
-         doLeaveSlide = (mainSwiper)=>{},
+         doLeaveSlide = (mainSwiper) => {
+         },
        }) {
     return this.render({
       pugTemplate,
@@ -36,6 +38,8 @@ export default class SlideComponent extends Component {
           doSlideChangeEnd,
           doLeaveSlide,
         });
+
+        return this.extraRender();
       })
   };
 
@@ -45,27 +49,26 @@ export default class SlideComponent extends Component {
   eventBind() {
   };
 
+  extraRender() {
+  };
+
   swiperCommand({
                   doSlideChangeEnd = (mainSwiper) => {
                   },
                   doLeaveSlide = (mainSwiper) => {
                   },
                 }) {
-    let
-      mainSwiper = new MainSwiperIns().getMainSwiper()
-    ;
-
-    if (mainSwiper) {
-      mainSwiper.on('slideChangeEnd', () => {
-        if (mainSwiper.realIndex === this.slideIndex) {
+    if (this.mainSwiper) {
+      this.mainSwiper.on('slideChangeEnd', () => {
+        if (this.mainSwiper.realIndex === this.slideIndex) {
           console.log('Slide' + this.slideIndex);
-          doSlideChangeEnd(mainSwiper);
+          doSlideChangeEnd(this.mainSwiper);
         }
-        if (mainSwiper.previousIndex === this.slideIndex) {
-          doLeaveSlide(mainSwiper);
+        if (this.mainSwiper.previousIndex === this.slideIndex) {
+          doLeaveSlide(this.mainSwiper);
         }
-
       });
     }
   };
 };
+

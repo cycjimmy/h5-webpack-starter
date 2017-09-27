@@ -19,13 +19,13 @@ const
 
 module.exports = {
   entry: {
+    'load': path.resolve('app', 'load.js'),
     'vendor': [
       'fastclick',
       'swiper',
       'three',
-      path.resolve('app', 'load.js'),
     ],
-    "main": path.resolve('app', 'main.js'),
+    'main': path.resolve('app', 'main.js'),
   },
 
   output: {
@@ -133,7 +133,7 @@ module.exports = {
 
   plugins: [
     new CommonsChunkPlugin({
-      names: ['main', 'vendor'],
+      names: ['main', 'vendor', 'load'],
       minChunks: Infinity,
     }),
 

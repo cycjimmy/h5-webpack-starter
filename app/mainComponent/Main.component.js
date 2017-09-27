@@ -1,15 +1,14 @@
 import Component from '../share/Component';
 import Swiper from 'swiper';
 
-import * as main from './main.pug';
-import * as slides from './sildes.pug';
-import * as mainStyle from './main.scss';
+import main from './main.pug';
+import slides from './sildes.pug';
+import mainStyle from './main.scss';
 
 // audio
-// import * as audioSrc from '../../static/media/Richard Clayderman - LOVE IS BLUE.mp3';
+// import audioSrc from '../../static/media/Richard Clayderman - LOVE IS BLUE.mp3';
 
 let audioSrc = 'https://raw.githubusercontent.com/cycjimmy/staticFiles/storage/media/Richard_Clayderman-LOVE_IS_BLUE.mp3';
-
 
 // component
 import CoverComponent from './cover/Cover.component';
@@ -24,9 +23,8 @@ import AudioComponent from '../share/audioComponent/Audio.component';
 // service
 import loadingOverlayServiceIns from '../share/loading/loadingOverlay.service.ins';
 import SwiperAnimateServiceIns from '../share/Swiper/SwiperAnimate.service.ins';
-import MainSwiperIns from './MainSwiper.ins';
 
-export default class MainSctComponent extends Component {
+export default class extends Component {
   constructor() {
     super({
       context: document.querySelector('.main-screen'),
@@ -92,9 +90,6 @@ export default class MainSctComponent extends Component {
             },
           });
 
-          // setMainSwiper
-          new MainSwiperIns().setMainSwiper(this.mainSwiper);
-
           setTimeout(() => {
             resolve();
           }, 0);
@@ -108,6 +103,7 @@ export default class MainSctComponent extends Component {
       SlideComponents.forEach((Component, index) => {
         new Component({
           context: this.context.querySelector('.' + _style.slide + ':nth-of-type(' + (index + 1) + ')'),
+          mainSwiper: this.mainSwiper,
           slideIndex: index,
           audioComponent: this.audioComponent,
         }).load();
