@@ -35,9 +35,12 @@ export default class WechatSDKServiceIns {
   };
 
   ready() {
-    wx.ready(() => {
-      this.isReady = true;
-    });
+    if(!this.isReady){
+      wx.ready(() => {
+        this.isReady = true;
+      });
+    }
+    console.log(this.isReady);
 
     return this;
   };
@@ -48,6 +51,7 @@ export default class WechatSDKServiceIns {
    */
   onShare(shareData) {
     wx.ready(() => {
+      this.isReady = true;
       this.share(shareData);
     });
   };

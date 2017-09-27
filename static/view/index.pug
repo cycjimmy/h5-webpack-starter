@@ -15,19 +15,15 @@ html(lang='en')
 
   body
     .loading-overlay
-      img.loading-pic(src=require('../images/loading.svg'))
-      .loading-progress-wrapper
-        .loading-progressbar-wrapper
-          .loading-progressbar
-      .loading-text
-        span.loading-text-percent 0
-        | %
-
     .swiper-container.main-screen
-
 
     //- styles and scripts
     span(style="display:none;")
+      //- webpack loading js
+      each _js,index in htmlWebpackPlugin.files.js
+        if index === 0
+          script(src=_js)
+
       //- styles
       //------------------------------------
       //- webpack style
@@ -72,9 +68,10 @@ html(lang='en')
       //- video.js
         script(src="//cdn.bootcss.com/video.js/6.2.1/video.min.js")
 
-      //- webpack script
-      each _chunk in htmlWebpackPlugin.files.chunks
-        script(src=_chunk.entry)
+      //- webpack main script
+      each _js,index in htmlWebpackPlugin.files.js
+        if index !== 0
+          script(src=_js)
 
       //- statistics
         script(src="", language="JavaScript")

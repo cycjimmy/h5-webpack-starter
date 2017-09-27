@@ -1,7 +1,7 @@
 import SlideComponent from '../Slide.component';
 
-import * as slide from './jsmpegDemo.pug';
-import * as _style from './jsmpegDemo.scss';
+import slide from './jsmpegDemo.pug';
+import _style from './jsmpegDemo.scss';
 
 import {
   nodeListToArray,
@@ -22,11 +22,13 @@ let
 export default class extends SlideComponent {
   constructor({
                 context,
+                mainSwiper,
                 slideIndex,
                 audioComponent,
               }) {
     super({
       context,
+      mainSwiper,
       slideIndex,
       audioComponent,
     });

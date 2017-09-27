@@ -99,6 +99,7 @@ module.exports = webpackMerge(webpackBase, {
             options: {
               limit: 4096,
               name: 'images/[hash:12].[ext]',
+              // name: 'images/[name].[ext]',
             }
           },
           imageWebpackLoaderConfig,
@@ -117,6 +118,7 @@ module.exports = webpackMerge(webpackBase, {
             loader: 'file-loader',
             options: {
               name: 'images/[hash:12].[ext]',
+              // name: 'images/[name].[ext]',
             }
           },
           imageWebpackLoaderConfig,
@@ -185,9 +187,6 @@ module.exports = webpackMerge(webpackBase, {
     new HtmlWebpackPlugin({
       inject: false,
       template: path.resolve('./static', 'view', 'index.pug'),
-      // filename: '../index.html',
-      // favicon: path.resolve('./static', 'favicon.ico'),
-      // chunks: ['manifest', 'main', 'vendor'],
       minify: {
         removeComments: true,
         collapseWhitespace: true,

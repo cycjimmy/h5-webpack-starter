@@ -1,0 +1,63 @@
+@import '../theme/variables';
+@import '../theme/utilities';
+
+$loadingBgc: #ece3d7;
+$colorRed: #e50012;
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  @include flex-box-align(center, center);
+  width: 100%;
+  height: 100%;
+  background: darken($bgc, 2%);
+}
+
+.loadingPic {
+  display: block;
+  width: 20vw;
+  height: 20vw;
+}
+
+$progressH: 2vw;
+$progressW: 48vw;
+$progressPadding: $progressH / 4;
+.loadingProgressWrapper {
+  display: flex;
+  width: $progressW - $progressPadding * 2;
+  height: $progressH - $progressPadding * 2;
+  padding: $progressPadding;
+  margin: $space * 2 0 $space;
+  background-color: darken($bgc, 10%);
+  border-radius: $progressH / 2;
+  box-shadow: inset calcVW(1.5) calcVW(-1.5) calcVW(1.5) desaturate(lighten($bgc, 20%), 30%);
+}
+
+.loadingProgressbarWrapper {
+  flex: 1;
+  width: $progressW - $progressPadding * 2;
+  height: $progressH - $progressPadding * 2;
+  border-radius: ($progressH - $progressPadding * 2) / 2;
+
+  overflow: hidden;
+}
+
+.loadingProgressbar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0, $bgc, desaturate(lighten($bgc, 10%), 30%));
+
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform .2s;
+}
+
+.loadingText {
+  color: desaturate(lighten($bgc, 30%), 60%);
+  font-size: $fontS;
+}
+
+.loadingTextPercent {
+  font-size: $fontM;
+}

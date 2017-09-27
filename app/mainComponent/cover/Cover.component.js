@@ -1,18 +1,20 @@
 import QueryAll from '../../share/QueryAll';
 import SlideComponent from '../Slide.component';
 
-import * as slide from './cover.pug';
-import * as _style from './cover.scss';
-import * as logoSvg from '../../../static/images/myLogo.svg';
+import slide from './cover.pug';
+import _style from './cover.scss';
+import logoSvg from '../../../static/images/myLogo.svg';
 
 export default class extends SlideComponent {
   constructor({
                 context,
+                mainSwiper,
                 slideIndex,
                 audioComponent,
               }) {
     super({
       context,
+      mainSwiper,
       slideIndex,
       audioComponent,
     });

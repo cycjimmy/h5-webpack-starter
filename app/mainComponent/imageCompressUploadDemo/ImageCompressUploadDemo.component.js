@@ -1,8 +1,8 @@
 import QueryAll from '../../share/QueryAll';
 import SlideComponent from '../Slide.component';
 
-import * as slide from './imageCompressUploadDemo.pug';
-import * as _style from './imageCompressUploadDemo.scss';
+import slide from './imageCompressUploadDemo.pug';
+import _style from './imageCompressUploadDemo.scss';
 
 // service
 import H5ImageCompressService from '../../share/H5ImageCompress/H5ImageCompress.service';
@@ -11,11 +11,13 @@ import H5ImageCompressService from '../../share/H5ImageCompress/H5ImageCompress.
 export default class extends SlideComponent {
   constructor({
                 context,
+                mainSwiper,
                 slideIndex,
                 audioComponent,
               }) {
     super({
       context,
+      mainSwiper,
       slideIndex,
       audioComponent,
     });
