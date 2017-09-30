@@ -21,7 +21,7 @@ import SlideXComponent from './slideXComponent/SlideX.component';
 import AudioComponent from '../share/audioComponent/Audio.component';
 
 // service
-import loadingOverlayServiceIns from '../share/loading/loadingOverlay.service.ins';
+import loadingOverlayServiceIns from '../loadingComponent/loadingOverlay.service.ins';
 import SwiperAnimateServiceIns from '../share/Swiper/SwiperAnimate.service.ins';
 
 export default class extends Component {

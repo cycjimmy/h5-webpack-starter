@@ -1,7 +1,7 @@
 // constructor
 import {
   CreateInstance
-} from '../awesome.func';
+} from '../share/awesome.func';
 
 let
   _instance = new CreateInstance()

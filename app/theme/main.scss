@@ -39,11 +39,6 @@ body {
 
     @extend %gpu-speedUp;
   }
-
-  .loading-overlay {
-    position: absolute;
-    z-index: 9999;
-  }
 }
 
 

@@ -1,33 +1,47 @@
-import Component from '../share/Component';
+// image
+import loadingImg from '../../static/images/loading.svg';
 
-import * as loading from './loading.pug';
-import * as _style from './loading.scss';
+// style
+import _style from './loading.scss';
 
 // service
-import ResLoaderService from '../share/loading/ResLoader.service';
-import loadingOverlayServiceIns from '../share/loading/loadingOverlay.service.ins';
+import ResLoaderService from './ResLoader.service';
+import loadingOverlayServiceIns from './loadingOverlay.service.ins';
 
-export default class extends Component {
+export default class {
   constructor() {
-    super({
-      context: document.querySelector('.loading-overlay'),
-    });
-
+    this.context = document.createElement('div');
     this.context.classList.add(_style.wrapper);
   };
 
   load() {
-    return this.render({
-      pugTemplate: loading,
-      wrapperElement: this.context,
-      insetParam: {
-        _style,
-      },
-    })
+    return this.render()
       .then(() => {
         this.paramInit();
         this.runLoading();
       });
+  };
+
+  render() {
+    return new Promise(resolve => {
+      this.context.innerHTML = `
+        <img class=${_style.loadingPic} src=${loadingImg}>
+        
+        <div class=${_style.loadingProgressWrapper}>
+          <div class=${_style.loadingProgressbarWrapper}>
+            <div class=${_style.loadingProgressbar}></div>
+          </div>
+        </div>
+        
+        <div class=${_style.loadingText}>
+          <span class=${_style.loadingTextPercent}>0</span>&nbsp;%
+        </div>
+      `;
+
+      document.body.appendChild(this.context);
+
+      setTimeout(() => resolve(), 0);
+    });
   };
 
   paramInit() {
