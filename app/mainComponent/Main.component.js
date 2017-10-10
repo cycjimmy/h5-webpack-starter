@@ -18,7 +18,8 @@ import JsmpegDemoComponent from './jsmpegDemo/JsmpegDemo.component';
 import H5videoPlayerDemoComponent from './h5videoPlayerDemo/H5videoPlayerDemo.component';
 import WebglDemoComponent from './webglDemo/WebglDemo.component';
 import SlideXComponent from './slideXComponent/SlideX.component';
-import AudioComponent from '../share/audioComponent/Audio.component';
+
+import H5AudioControls from 'h5-audio-controls';
 
 // service
 import loadingOverlayServiceIns from '../loadingComponent/loadingOverlay.service.ins';
@@ -30,9 +31,8 @@ export default class extends Component {
       context: document.querySelector('.main-screen'),
     });
     this.mainSwiper = null;
-    this.audioComponent = new AudioComponent({
+    this.audioComponent = new H5AudioControls(audioSrc, {
       context: this.context,
-      audioSrc: audioSrc,
     });
   };
 
