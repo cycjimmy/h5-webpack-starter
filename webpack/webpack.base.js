@@ -124,6 +124,13 @@ module.exports = {
           options: 'Swiper',
         }]
       },
+      // {
+      //   test: require.resolve('hammerjs'),
+      //   use: [{
+      //     loader: 'expose-loader',
+      //     options: 'Hammer',
+      //   }]
+      // },
       {
         test: require.resolve('three'),
         use: [{

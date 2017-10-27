@@ -1,7 +1,6 @@
 const
   gulp = require('gulp')
   , shell = require('gulp-shell')
-  , webpack = require('webpack')
   ;
 
 

@@ -72,6 +72,7 @@ module.exports = webpackMerge(webpackBase, {
         ],
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
+          publicPath: '../',  // fix images url bug
           use: [
             styleLoadersConfig.cssLoader,
             styleLoadersConfig.postLoader,
@@ -245,7 +246,7 @@ module.exports = webpackMerge(webpackBase, {
 
     new ExtractTextPlugin({
       filename: 'style/[name].[chunkhash:8].min.css',
-      disable: false,
+      ignoreOrder: true,
       allChunks: true,
     }),
 
