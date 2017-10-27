@@ -1,6 +1,17 @@
 # h5 Webpack Starter
 
-[![Build Status](https://travis-ci.org/cycjimmy/h5-webpack-starter.svg?branch=master)](https://travis-ci.org/cycjimmy/h5-webpack-starter)
+[![build status][travis-image]][travis-url]
+[![David deps][david-image]][david-url]
+[![devDependencies Status][david-dev-image]][david-dev-url]
+
+
+[travis-image]: https://travis-ci.org/cycjimmy/h5-webpack-starter.svg?branch=master?style=flat-square
+[travis-url]: https://travis-ci.org/cycjimmy/h5-webpack-starter
+[david-image]: https://img.shields.io/david/cycjimmy/h5-webpack-starter.svg?style=flat-square
+[david-url]: https://david-dm.org/cycjimmy/h5-webpack-starter
+[david-dev-image]: https://david-dm.org/cycjimmy/h5-webpack-starter/dev-status.svg?style=flat-square
+[david-dev-url]: https://david-dm.org/cycjimmy/h5-webpack-starter?type=dev
+
 
 ## Features
 * Perfect for loading service.
@@ -66,7 +77,7 @@ $ npm run deploy
 ```
 
 ## Some Functional Instructions
-### [Loading Service](./app/share/loading)
+### Loading Service
 #### ResLoaderService(Easy picture resource preloading progress service)
 * Properties:
   * `baseUrl`
