@@ -76,12 +76,6 @@ module.exports = webpackMerge(webpackBase, {
           use: [
             styleLoadersConfig.cssLoader,
             styleLoadersConfig.postLoader,
-            {
-              loader: 'resolve-url-loader',
-              options: {
-                keepQuery: true,
-              },
-            },
             styleLoadersConfig.sassLoader,
           ],
         })
