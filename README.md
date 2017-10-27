@@ -11,9 +11,10 @@
 * [swiper](https://github.com/nolimits4web/Swiper)
 * [animate.css](https://github.com/daneden/animate.css)
 * [fastclick](https://github.com/ftlabs/fastclick)
-* [JSMpeg Player](https://github.com/cycjimmy/jsmpeg-player)
-* [three.js](https://github.com/mrdoob/three.js)
 * [Pwa Webpack Starter](https://github.com/cycjimmy/pwa-webpack-starter)
+* [JSMpeg Player](https://github.com/cycjimmy/jsmpeg-player)
+* [H5 Video Player](https://github.com/cycjimmy/h5-video-player)
+* [H5 Audio Controls](https://github.com/cycjimmy/h5-audio-controls)
 
 ## Installation
 ```shell
@@ -92,19 +93,3 @@ $ npm run deploy
 * JSMpeg player is based on [jsmpeg](https://github.com/phoboslab/jsmpeg).
 * The video must be compressed into the TS format of MPEG1 / MP2.
 * Apple device automatically plays without sound, you need to guide the user to click on the video in the lower right corner of the video icon to unlock the sound.(no similar problem in non-autoplay mode)
-
-### [Audio Component](./app/share/audioComponent)
-* Properties:
-  * `context`
-  * `audioSrc`
-  * `audioElement`
-    * `audioButton`
-    * `audio`
-    * `audioPic`
-
-* Functions:
-  * `play()`: audio play
-  * `pause()`: audio pause
-  * `changeUIToPlay()`: UI changes when audio playing
-  * `changeUIToPause()`: UI changes when audio paused
-  * `isPlaying()`: return Whether audio is playing
