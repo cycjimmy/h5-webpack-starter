@@ -24,6 +24,7 @@ module.exports = {
     'main': [
       'fastclick',
       'swiper',
+      // 'hammerjs',
       'three',
       path.resolve('app', 'main.js'),
     ],
@@ -41,9 +42,10 @@ module.exports = {
   },
 
   externals: {
-    three: 'THREE',
     fastclick: 'FastClick',
     swiper: 'Swiper',
+    // hammerjs: 'Hammer',
+    three: 'THREE',
   },
 
   resolve: {
@@ -55,6 +57,7 @@ module.exports = {
     'alias': {
       'fastclick': path.resolve('node_modules', 'fastclick', 'lib', 'fastclick.js'),
       'swiper': path.resolve('node_modules', 'swiper', 'dist', 'js', 'swiper.js'),
+      // 'hammerjs': path.resolve('node_modules', 'hammerjs', 'hammer.js'),
       'three': path.resolve('node_modules', 'three', 'build', 'three.js'),
     },
     'extensions': ['.js']
