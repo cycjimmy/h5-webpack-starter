@@ -3060,13 +3060,13 @@ gulplog@^1.0.0:
   dependencies:
     glogg "^1.0.0"
 
-h5-audio-controls@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/h5-audio-controls/-/h5-audio-controls-0.0.2.tgz#22147c4269527112b312e0326574a983c90dae99"
+h5-audio-controls@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/h5-audio-controls/-/h5-audio-controls-0.0.3.tgz#d40072c058716d21a572e3f82da8b88569db1f0e"
 
-h5-video-player@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/h5-video-player/-/h5-video-player-0.1.6.tgz#b7acb683bb5368f99beaac89984b19dbaca06729"
+h5-video-player@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/h5-video-player/-/h5-video-player-0.1.7.tgz#418a1ac4584fe8b3a872e520596b3b3eb820a64c"
 
 hammerjs@^2.0.8:
   version "2.0.8"
@@ -3827,9 +3827,9 @@ jsesc@~0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
 
-jsmpeg-player@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/jsmpeg-player/-/jsmpeg-player-1.1.1.tgz#dbb55149f141f5bcd0024b657c9a2a5ab9f7e2d7"
+jsmpeg-player@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/jsmpeg-player/-/jsmpeg-player-1.1.2.tgz#69314c47f98510f0cf6d5a10bcd89092eb914c83"
 
 json-loader@^0.5.4:
   version "0.5.7"
