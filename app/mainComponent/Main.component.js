@@ -58,36 +58,30 @@ export default class extends Component {
         return new Promise(resolve => {
           // Swiper
           this.mainSwiper = new Swiper(this.context, {
-            pagination: '.' + _style.pagination,
-            paginationClickable: true,
-            bulletActiveClass: _style.bulletActive,
+            pagination: {
+              el: '.' + _style.pagination,
+              clickable: true,
+              bulletActiveClass: _style.bulletActive,
+            },
 
             direction: 'vertical',
-            mousewheelControl: true,
             wrapperClass: _style.wrapper,
+            mousewheel: true,
 
-            hashnav: true,
-            hashnavWatchState: true,
-            replaceState: true,
+            hashNavigation: {
+              watchState: true,
+              replaceState: true,
+            },
 
-            onInit: (swiper) => {
-              setTimeout(() => {
-                this.renderSlideComponents()
-                  .then(() => {
-                    return this.audioComponent.load();
-                  })
-                  .then(() => {
-                    return new loadingOverlayServiceIns().doRemove();
-                  })
-                  .then(() => {
-                    new SwiperAnimateServiceIns().cache(swiper);
-                    new SwiperAnimateServiceIns().animate(swiper);
-                  });
-              }, 0);
+            on: {
+              init: () => this.renderSlideComponents()
+                .then(() => this.audioComponent.load())
+                .then(() => new loadingOverlayServiceIns().doRemove())
+                .then(() => setTimeout(() => new SwiperAnimateServiceIns().animate(this.mainSwiper), 0)),
+
+              slideChange: () => setTimeout(() => new SwiperAnimateServiceIns().animate(this.mainSwiper), 0),
             },
-            onSlideChangeEnd: (swiper) => {
-              new SwiperAnimateServiceIns().animate(swiper);
-            },
+
           });
 
           setTimeout(() => {
