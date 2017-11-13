@@ -1,5 +1,6 @@
-import SlideComponent from '../Slide.component';
+import Swiper from 'swiper';
 
+import SlideComponent from '../Slide.component';
 import slide from './swiperDemo.pug';
 import _style from './swiperDemo.scss';
 
@@ -38,9 +39,11 @@ export default class extends SlideComponent {
       nested: true,                           // 嵌套
       roundLengths: true,                     // 取整
 
-      pagination: '.' + _style.pagination,
-      paginationClickable: true,
-      bulletActiveClass: _style.bulletActive,
+      pagination: {
+        el: '.' + _style.pagination,
+        clickable: true,
+        bulletActiveClass: _style.bulletActive,
+      },
 
       spaceBetween: 30,
     });
