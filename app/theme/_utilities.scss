@@ -5,7 +5,7 @@
  *---------------------------*/
 
 /**
- * 中央居中
+ * Fix Align Center
  * $offset
  * $overwrite
  * $top
@@ -38,10 +38,10 @@
 }
 
 /**
- * flex容器内部元素对齐方法
+ * flex container inner elements alignment
  * $mainAxis
  * $crossAxis
- * 可选参数:false(默认), center(居中), flex-end(尾部)
+ * options: false, center, flex-end, ...
  */
 @mixin flex-box-align($mainAxis:false, $crossAxis:false) {
   @if ($mainAxis != false) {
@@ -53,7 +53,7 @@
 }
 
 /**
- * 方形容器
+ * square container
  */
 @mixin square-wrap($width:100%) {
   height: 0;
@@ -76,25 +76,42 @@
 /*---------------------------
  * %placeholder
  *---------------------------*/
-/**
- * 硬件加速
- */
-%gpu-speedUp {
+// absolute
+%abs {
+  position: absolute;
+  z-index: 1;
+}
+
+// relative
+%rel {
   position: relative;
   z-index: 1;
+}
+
+// fullContainer
+%fullContainer {
+  @extend %abs;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// gpu-speedUp
+%gpu-speedUp {
+  @extend %rel;
   backface-visibility: hidden;
   perspective: 1000px;
   transform: translate3d(0, 0, 0);
 }
 
-
 /*---------------------------
  * function
  *---------------------------*/
 /**
- * 计算vw
- * $designDrawingLength 设计图长度
+ * calc vw
+ * $designDrawingLength
  */
-@function calcVW($designDrawingLength){
+@function calcVW($designDrawingLength) {
   @return $designDrawingLength / $designDrawingWidth * 100vw;
 }
