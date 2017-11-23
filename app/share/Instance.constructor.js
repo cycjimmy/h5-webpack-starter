@@ -1,9 +1,5 @@
-/**
- * Created by cyc on 2017/3/17.
- */
-
 // constructor
-import {CreateInstance} from './awesome.func';
+import CreateInstance from 'awesome-js-funcs/designPattern/CreateInstance';
 
 let Instance = () => {
   let

@@ -1,7 +1,5 @@
 // constructor
-import {
-  CreateInstance
-} from '../share/awesome.func';
+import CreateInstance from 'awesome-js-funcs/designPattern/CreateInstance';
 
 let
   _instance = new CreateInstance()

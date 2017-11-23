@@ -244,6 +244,8 @@ module.exports = webpackMerge(webpackBase, {
       allChunks: true,
     }),
 
+    new webpack.optimize.ModuleConcatenationPlugin(),
+
     new BrowserSyncPlugin(browserSyncConfig({
       server: {
         baseDir: 'build',

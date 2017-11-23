@@ -2,10 +2,8 @@
 // doc http://www.swiper.com.cn
 
 // constructor
-import {
-  CreateInstance,
-  nodeListToArray,
-} from '../awesome.func';
+import CreateInstance from 'awesome-js-funcs/designPattern/CreateInstance';
+import nodeListToArray from 'awesome-js-funcs/typeConversion/nodeListToArray';
 
 let
   _instance = new CreateInstance()
