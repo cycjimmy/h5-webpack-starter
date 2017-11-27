@@ -3,9 +3,7 @@ import SlideComponent from '../Slide.component';
 import slide from './jsmpegDemo.pug';
 import _style from './jsmpegDemo.scss';
 
-import {
-  nodeListToArray,
-} from '../../share/awesome.func.js';
+import nodeListToArray from 'awesome-js-funcs/typeConversion/nodeListToArray';
 
 // service
 import JSMpeg from 'jsmpeg-player';

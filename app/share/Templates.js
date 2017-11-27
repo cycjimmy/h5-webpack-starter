@@ -1,4 +1,4 @@
-import {isString} from './awesome.func';
+import isString from 'awesome-js-funcs/judgeBasic/isString';
 
 export default class Templates {
 

@@ -10,10 +10,8 @@
  *
  */
 
-import {
-  isString,
-  nodeListToArray,
-} from './awesome.func';
+import isString from 'awesome-js-funcs/judgeBasic/isString';
+import nodeListToArray from 'awesome-js-funcs/typeConversion/nodeListToArray';
 
 export default class QueryAll {
   constructor(selectorOrEls, context = document) {
