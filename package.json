@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "H5 webpack starter for webpack, gulp, es6/7, sass, pug, swiper, jsmpeg...",
   "main": "index.js",
   "scripts": {
@@ -37,6 +37,7 @@
     "hammerjs": "^2.0.8",
     "jsmpeg-player": "^1.1.2",
     "swiper": "^4.0.6",
+    "swiper-animation": "^0.0.3",
     "three": "^0.88.0",
     "video.js": "^6.4.0"
   },

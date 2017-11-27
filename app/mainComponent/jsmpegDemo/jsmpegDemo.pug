@@ -1,16 +1,35 @@
 //-
    _style: 样式文件
 
-.ani(class=_style.videoWrapper, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay=".2s")
-.ani(class=_style.videoChooseWrap, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay=".5s")
+div(class=_style.videoWrapper,
+    data-swiper-animation="fadeInUp",
+    data-duration="0.5s",
+    data-delay=".2s")
+div(class=_style.videoChooseWrap,
+    data-swiper-animation="fadeInUp",
+    data-duration="0.5s",
+    data-delay=".5s")
   a(class=_style.videoChoose href="javascript:;") Video1
   a(class=_style.videoChoose href="javascript:;") Video2
 dl(class=_style.explicationWrap)
-  dt.ani(class=_style.explicationTitle, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay=".8s") H5 Canvas Video Introduce:
-  dd.ani(class=_style.explicationList, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay="1s")
+  dt(class=_style.explicationTitle,
+     data-swiper-animation="fadeInUp",
+     data-duration="0.5s",
+     data-delay=".8s") H5 Canvas Video Introduce:
+  dd(class=_style.explicationList,
+     data-swiper-animation="fadeInUp",
+     data-duration="0.5s",
+     data-delay="1s")
     a(href="https://github.com/cycjimmy/jsmpeg-player") JSMpeg player
     | &nbsp; is based on &nbsp;
     a(href="https://github.com/phoboslab/jsmpeg") jsmpeg
     | .
-  dd.ani(class=_style.explicationList, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay="1.2s") The video must be compressed into the TS format of MPEG1 / MP2.
-  dd.ani(class=_style.explicationList, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay="1.4s") Apple device automatically plays without sound, you need to guide the user to click on the video in the lower right corner of the video icon to unlock the sound.(no similar problem in non-autoplay mode)
+  dd(class=_style.explicationList,
+     data-swiper-animation="fadeInUp",
+     data-duration="0.5s",
+     data-delay="1.2s") The video must be compressed into the TS format of MPEG1 / MP2.
+  dd(class=_style.explicationList,
+     data-swiper-animation="fadeInUp",
+     data-duration="0.5s",
+     data-delay="1.4s") Apple device automatically plays without sound, you need to guide the user to click on the video in the lower right corner of the video icon to unlock the sound.(no similar problem in non-autoplay mode)
+
