@@ -1,8 +1,14 @@
-@import "../theme/_variables";
-@import "../theme/_utilities";
+@import "../theme/variables";
+@import "../theme/utilities";
 
 .wrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  box-sizing: content-box;
+  transition-property: transform;
 }
 
 .pagination {
@@ -15,6 +21,6 @@
 .slide {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-box-align(center, center);
 }
+

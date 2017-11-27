@@ -1,7 +1,12 @@
 //-
    _style: 样式文件
-   logoSvg: logo图片
 
-h2.ani(class=_style.title, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay=".2s") WebGL
+h2(class=_style.title,
+  data-swiper-animation="fadeInUp",
+  data-duration=".5s",
+  data-delay=".2s") WebGL
 
-.ani(class=_style.container, swiper-animate-effect="fadeInUp", swiper-animate-duration="0.5s", swiper-animate-delay=".4s")
+div(class=_style.container,
+  data-swiper-animation="fadeInUp",
+  data-duration=".5s",
+  data-delay=".4s")
