@@ -3,7 +3,6 @@ import SlideComponent from '../Slide.component';
 
 import slide from './cover.pug';
 import _style from './cover.scss';
-import logoSvg from '../../../static/images/myLogo.svg';
 
 export default class extends SlideComponent {
   constructor({
@@ -26,7 +25,6 @@ export default class extends SlideComponent {
       wrapperElement: this.context,
       insetParam: {
         _style,
-        logoSvg,
       },
     });
   };
