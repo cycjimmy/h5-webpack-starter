@@ -1,0 +1,40 @@
+@import '../../theme/variables';
+@import '../../theme/utilities';
+
+$promptOrientationBgc: $bgc;
+$promptOrientationFontColor: $fontColor;
+$lockOrientation: portrait;
+
+.wrapper {
+  @extend %fullContainer;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  @include flex-box-align(center, center);
+
+  background-color: $promptOrientationBgc;
+  color: $promptOrientationFontColor;
+
+  @media screen and (orientation: $lockOrientation) {
+    display: none;
+  }
+
+}
+
+.iconWrapper {
+  @extend %rel;
+  width: 8vw;
+  height: 8vw;
+  margin: $space;
+
+  @media screen and (orientation: portrait) {
+    width: 14vw;
+    height: 14vw;
+  }
+
+  > svg {
+    @extend %fullContainer;
+    fill: $promptOrientationFontColor;
+  }
+}
+
