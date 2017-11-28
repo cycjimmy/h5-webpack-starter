@@ -23,9 +23,10 @@
 * [animate.css](https://github.com/daneden/animate.css)
 * [fastclick](https://github.com/ftlabs/fastclick)
 * [Pwa Webpack Starter](https://github.com/cycjimmy/pwa-webpack-starter)
-* [JSMpeg Player](https://github.com/cycjimmy/jsmpeg-player)
-* [H5 Video Player](https://github.com/cycjimmy/h5-video-player)
-* [H5 Audio Controls](https://github.com/cycjimmy/h5-audio-controls)
+* [JSMpeg Player](https://github.com/cycdpo/jsmpeg-player)
+* [H5 Video Player](https://github.com/cycdpo/h5-video-player)
+* [H5 Audio Controls](https://github.com/cycdpo/h5-audio-controls)
+* [Swiper Animation](https://github.com/cycdpo/swiper-animation)
 
 ## Installation
 ```shell
@@ -100,7 +101,7 @@ $ npm run deploy
   * `doRemove()`: Remove oLoadingOverlay
 
 
-### H5 Canvas Video Introduce([JSMpeg Player](https://github.com/cycjimmy/jsmpeg-player)):
+### H5 Canvas Video Introduce([JSMpeg Player](https://github.com/cycdpo/jsmpeg-player)):
 * JSMpeg player is based on [jsmpeg](https://github.com/phoboslab/jsmpeg).
 * The video must be compressed into the TS format of MPEG1 / MP2.
 * Apple device automatically plays without sound, you need to guide the user to click on the video in the lower right corner of the video icon to unlock the sound.(no similar problem in non-autoplay mode)
