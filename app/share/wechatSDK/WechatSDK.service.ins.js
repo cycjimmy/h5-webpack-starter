@@ -1,9 +1,7 @@
 // jssdk Demo http://203.195.235.76/jssdk/
 
 // constructor
-import {
-  CreateInstance
-} from '../awesome.func';
+import CreateInstance from 'awesome-js-funcs/designPattern/CreateInstance';
 
 let
   _instance = new CreateInstance()
@@ -35,7 +33,7 @@ export default class WechatSDKServiceIns {
   };
 
   ready() {
-    if(!this.isReady){
+    if (!this.isReady) {
       wx.ready(() => {
         this.isReady = true;
       });
