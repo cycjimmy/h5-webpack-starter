@@ -7508,9 +7508,9 @@ webpack-chunk-hash@^0.5.0:
   dependencies:
     "@types/webpack" "^3.0.5"
 
-webpack-md5-hash@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/webpack-md5-hash/-/webpack-md5-hash-0.0.5.tgz#d9f1899ead664459dd8b6b0c926ac71cfbd7bc7a"
+webpack-md5-hash@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/webpack-md5-hash/-/webpack-md5-hash-0.0.6.tgz#317b766a0a724eb5501610b3c8f4cddc4edf70f5"
   dependencies:
     md5 "^2.0.0"
 
