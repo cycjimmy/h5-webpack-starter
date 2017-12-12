@@ -78,9 +78,9 @@ export default class extends Component {
                 .then(() => setTimeout(() => this.renderSlideComponents(), 0))
                 .then(() => this.audioComponent.load())
                 .then(() => new loadingOverlayServiceIns().doRemove())
-                .then(() => new SwiperAnimation(this.mainSwiper).animate()),
+                .then(() => swiperAnimation.init(this.mainSwiper).animate()),
 
-              slideChange: () => setTimeout(() => new SwiperAnimation(this.mainSwiper).animate(), 0),
+              slideChange: () => setTimeout(() => swiperAnimation.init(this.mainSwiper).animate(), 0),
             },
           });
 
@@ -109,6 +109,7 @@ export default class extends Component {
 // private
 let
   _style = mainStyle
+  , swiperAnimation = new SwiperAnimation()
   , SlideComponents = [
     CoverComponent,
     SwiperDemoComponent,
