@@ -20,9 +20,9 @@ export default class SlideComponent extends Component {
          wrapperElement,
          insetParam,
          isAddToEl = false,
-         doSlideChangeEnd = (mainSwiper) => {
+         doSlideChangeEnd = () => {
          },
-         doLeaveSlide = (mainSwiper) => {
+         doLeaveSlide = () => {
          },
        }) {
     return this.render({
@@ -53,13 +53,13 @@ export default class SlideComponent extends Component {
   };
 
   swiperCommand({
-                  doSlideChangeEnd = (mainSwiper) => {
+                  doSlideChangeEnd = () => {
                   },
-                  doLeaveSlide = (mainSwiper) => {
+                  doLeaveSlide = () => {
                   },
                 }) {
     if (this.mainSwiper) {
-      this.mainSwiper.on('slideChangeEnd', () => {
+      this.mainSwiper.on('slideChange', () => {
         if (this.mainSwiper.realIndex === this.slideIndex) {
           console.log('Slide' + this.slideIndex);
           doSlideChangeEnd(this.mainSwiper);
