@@ -5,7 +5,7 @@
 [![devDependencies Status][david-dev-image]][david-dev-url]
 
 
-[travis-image]: https://travis-ci.org/cycjimmy/h5-webpack-starter.svg?branch=master?style=flat-square
+[travis-image]: https://travis-ci.org/cycjimmy/h5-webpack-starter.svg?branch=master
 [travis-url]: https://travis-ci.org/cycjimmy/h5-webpack-starter
 [david-image]: https://img.shields.io/david/cycjimmy/h5-webpack-starter.svg?style=flat-square
 [david-url]: https://david-dm.org/cycjimmy/h5-webpack-starter
