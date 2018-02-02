@@ -32,48 +32,30 @@ html(lang='en')
       //- animate css
       link(href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css", rel="stylesheet")
       //- swiper global style
-      link(href="//cdn.bootcss.com/Swiper/4.0.7/css/swiper.min.css", rel="stylesheet")
+      link(href="//cdn.bootcss.com/Swiper/4.1.0/css/swiper.min.css", rel="stylesheet")
       //- videoJs global style
-        link(href="//cdn.bootcss.com/video.js/6.6.2/video-js.min.css", rel="stylesheet")
+        link(href="//cdn.bootcss.com/video.js/6.7.1/video-js.min.css", rel="stylesheet")
 
 
       //- scripts
       //------------------------------------
-      //- WeChat JSSDK
-        script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
-
-      //- WeChat JSSDK config
-        script.
-          (function () {
-            wx.config({
-              debug: false,
-              appId: '<%=signPackage("appId")%>',
-              timestamp: '<%=signPackage("timestamp")%>',
-              nonceStr: '<%=signPackage("nonceStr")%>',
-              signature: '<%=signPackage("signature")%>',
-              jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareQZone', 'onMenuShareWeibo']
-            });
-          })();
-
       //- fastclick
       script(src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js")
 
       //- swiper
-      script(src="//cdn.bootcss.com/Swiper/4.0.7/js/swiper.min.js ")
+      script(src="//cdn.bootcss.com/Swiper/4.1.0/js/swiper.min.js ")
 
       //- hammer
         script(src="//cdn.bootcss.com/hammer.js/2.0.8/hammer.min.js")
 
       //- three.js
-      script(src="//cdn.bootcss.com/three.js/r83/three.min.js")
+      script(src="//cdn.bootcss.com/three.js/89/three.min.js")
 
       //- video.js
-        script(src="//cdn.bootcss.com/video.js/6.6.2/video.min.js")
+        script(src="//cdn.bootcss.com/video.js/6.7.1/video.min.js")
 
       //- webpack main script
       each _js,index in htmlWebpackPlugin.files.js
         if index !== 0
           script(src=_js)
 
-      //- statistics
-        script(src="", language="JavaScript")

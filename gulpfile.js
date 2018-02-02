@@ -14,7 +14,7 @@ global.srcPaths = {
     from: 'static/icons/',
     to: 'static/images/icons/',
   },
-  build : 'build/**/*',                // Eventually export
+  build : 'build',                     // Eventually export
   node_modules: "node_modules"         // Node dependent packages
 };
 
