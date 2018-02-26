@@ -3,11 +3,7 @@ import webInitialize from './webInitialize.afunc';
 import preventDefault from 'awesome-js-funcs/event/preventDefault';
 
 // wechatShare
-// import {
-//   defaultShare,
-// } from './weChatShare';
-
-// defaultShare();
+// import './weChatShare';
 
 if (DEVELOPMENT) {
   console.log('Development Mode');
@@ -16,6 +12,11 @@ if (DEVELOPMENT) {
 
 if (PRODUCTION) {
   console.log('Production Mode');
+}
+
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+if (!DEVELOPMENT) {
+  OfflinePluginRuntime.install();
 }
 
 // contextMenu preventDefault
