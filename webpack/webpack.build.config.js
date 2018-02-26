@@ -15,6 +15,7 @@ const
   , LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin')
   , ExtractTextPlugin = require('extract-text-webpack-plugin')
   , WebpackChunkHash = require("webpack-chunk-hash")
+  , OfflinePlugin = require('offline-plugin')
 ;
 
 
@@ -245,6 +246,39 @@ module.exports = webpackMerge(webpackBase, {
     }),
 
     new webpack.optimize.ModuleConcatenationPlugin(),
+
+    new OfflinePlugin({
+      safeToUseOptionalCaches: true,
+
+      version: '[hash]',
+      updateStrategy: 'changed',
+      autoUpdate: true,
+
+      caches: {
+        main: [
+          'scripts/*.js',
+          'style/*.css',
+        ],
+        additional: [
+          'images/*',
+          'media/*',
+          'favicon.ico',
+        ],
+        optional: []
+      },
+
+      // excludes: ['./'],
+
+      ServiceWorker: null,
+      AppCache: {
+        caches: ['main', 'additional', 'optional'],
+        directory: './',
+        NETWORK: null,
+        events: true,
+        // FALLBACK: {'/': '/'},
+        includeCrossOrigin: true,
+      },
+    }),
 
     new BrowserSyncPlugin(browserSyncConfig({
       server: {
