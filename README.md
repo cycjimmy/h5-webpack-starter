@@ -100,8 +100,3 @@ $ npm run deploy
   * `progressComplete()`: All images loaded
   * `doRemove()`: Remove oLoadingOverlay
 
-
-### H5 Canvas Video Introduce([JSMpeg Player](https://github.com/cycdpo/jsmpeg-player)):
-* JSMpeg player is based on [jsmpeg](https://github.com/phoboslab/jsmpeg).
-* The video must be compressed into the TS format of MPEG1 / MP2.
-* Apple device automatically plays without sound, you need to guide the user to click on the video in the lower right corner of the video icon to unlock the sound.(no similar problem in non-autoplay mode)

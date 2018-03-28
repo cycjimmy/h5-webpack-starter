@@ -36,7 +36,7 @@ export default class extends SlideComponent {
 
   paramInit() {
     let
-      source = 'https://raw.githubusercontent.com/cycjimmy/staticFiles/storage/media/Sony_test_video_vertical_720x1280.mp4'
+      source = 'https://cycjimmy.github.io/staticFiles/media/Sony_test_video_vertical_720x1280.mp4'
     ;
 
     this.oPlayBtn = this.context.querySelector('.' + _style.playBtn);
