@@ -115,3 +115,11 @@
 @function calcVW($designDrawingLength) {
   @return $designDrawingLength / $designDrawingWidth * 100vw;
 }
+
+/**
+ * strip units
+ */
+@function strip-units($number){
+  @return $number / ($number * 0 + 1);
+}
+
