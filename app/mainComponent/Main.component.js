@@ -8,7 +8,7 @@ import mainStyle from './main.scss';
 // audio
 // import audioSrc from '../../static/media/Richard Clayderman - LOVE IS BLUE.mp3';
 
-let audioSrc = 'https://raw.githubusercontent.com/cycjimmy/staticFiles/storage/media/Richard_Clayderman-LOVE_IS_BLUE.mp3';
+let audioSrc = 'https://cycjimmy.github.io/staticFiles/media/Richard_Clayderman-LOVE_IS_BLUE.mp3';
 
 // component
 import CoverComponent from './cover/Cover.component';

@@ -13,8 +13,8 @@ import touchActive from '../../share/touchActiveMockClick.func';
 let
   videoTs0 = 'https://cycdpo.github.io/jsmpeg-player/media/big_buck_bunny_640x360.ts'
   , videoTs1 = 'https://cycdpo.github.io/jsmpeg-player/media/Sony_test_video_640x360.ts'
-  , videoPoster0 = 'https://raw.githubusercontent.com/cycjimmy/staticFiles/storage/images/screenshot/big_buck_bunny_640x360.jpg'
-  , videoPoster1 = 'https://raw.githubusercontent.com/cycjimmy/staticFiles/storage/images/screenshot/Sony_test_video_640x360.jpg'
+  , videoPoster0 = 'https://cycjimmy.github.io/staticFiles/images/screenshot/big_buck_bunny_640x360.jpg'
+  , videoPoster1 = 'https://cycjimmy.github.io/staticFiles/images/screenshot/Sony_test_video_640x360.jpg'
 ;
 
 export default class extends SlideComponent {
