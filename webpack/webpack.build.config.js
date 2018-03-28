@@ -12,9 +12,7 @@ const
   , DefinePlugin = require('webpack/lib/DefinePlugin')
   , UglifyJsPlugin = require('uglifyjs-webpack-plugin')
   , CleanWebpackPlugin = require('clean-webpack-plugin')
-  , LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin')
   , ExtractTextPlugin = require('extract-text-webpack-plugin')
-  , WebpackChunkHash = require("webpack-chunk-hash")
   , OfflinePlugin = require('offline-plugin')
 ;
 
@@ -204,7 +202,6 @@ module.exports = webpackMerge(webpackBase, {
     }),
 
     new webpack.HashedModuleIdsPlugin(),
-    new WebpackChunkHash(),
 
     new CleanWebpackPlugin(['build'], {
       root: path.resolve('./'),
