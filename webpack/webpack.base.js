@@ -7,7 +7,6 @@ const
   , webpack = require('webpack')
 
   // Webpack Plugin
-  , CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin')
   , DefinePlugin = require('webpack/lib/DefinePlugin')
 ;
 
@@ -68,6 +67,7 @@ module.exports = {
       // Scripts
       {
         test: /\.js$/,
+        type: 'javascript/auto',
         include: [
           path.resolve('app')
         ],
@@ -142,12 +142,27 @@ module.exports = {
     ]
   },
 
-  plugins: [
-    new CommonsChunkPlugin({
-      names: ['main', 'load'],
-      minChunks: Infinity,
-    }),
+  optimization: {
+    splitChunks: {
+      chunks: 'initial',
+      name: true,
+      cacheGroups: {
+        default: false,
+        vendors: false,
+        load: {
+          name: 'load',
+          chunks: 'initial',
+          minSize: Infinity,
+          minChunks: Infinity,
+        },
+      }
+    },
+    runtimeChunk: {
+      name: 'load'
+    }
+  },
 
+  plugins: [
     new DefinePlugin({
       DEVELOPMENT: JSON.stringify(DEVELOPMENT),
       PRODUCTION: JSON.stringify(PRODUCTION),

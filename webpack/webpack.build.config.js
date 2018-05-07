@@ -9,7 +9,6 @@ const
   // Webpack Plugin
   , BrowserSyncPlugin = require('browser-sync-webpack-plugin')
   , HtmlWebpackPlugin = require('html-webpack-plugin')
-  , DefinePlugin = require('webpack/lib/DefinePlugin')
   , UglifyJsPlugin = require('uglifyjs-webpack-plugin')
   , CleanWebpackPlugin = require('clean-webpack-plugin')
   , ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -52,6 +51,7 @@ let
 ;
 
 module.exports = webpackMerge(webpackBase, {
+  mode: 'production',
   bail: true,
 
   output: {
@@ -209,12 +209,6 @@ module.exports = webpackMerge(webpackBase, {
       dry: false,
     }),
 
-    new DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-
     // Uglify Js
     new UglifyJsPlugin({
       uglifyOptions: {
@@ -238,13 +232,14 @@ module.exports = webpackMerge(webpackBase, {
 
     new ExtractTextPlugin({
       filename: 'style/[name].[chunkhash:8].min.css',
-      ignoreOrder: true,
-      allChunks: true,
+      ignoreOrder: false,
+      allChunks: false,
     }),
 
     new webpack.optimize.ModuleConcatenationPlugin(),
 
     new OfflinePlugin({
+      appShell: './',
       safeToUseOptionalCaches: true,
 
       version: '[hash]',
@@ -264,9 +259,12 @@ module.exports = webpackMerge(webpackBase, {
         optional: []
       },
 
+      externals: [],
       // excludes: ['./'],
 
-      ServiceWorker: null,
+      ServiceWorker: {
+        events: true,
+      },
       AppCache: {
         caches: ['main', 'additional', 'optional'],
         directory: './',
