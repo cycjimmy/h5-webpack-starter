@@ -97,6 +97,12 @@
   height: 100%;
 }
 
+// flexCenter
+%flexCenter {
+  display: flex;
+  @include flex-box-align(center, center);
+}
+
 // gpu-speedUp
 %gpu-speedUp {
   @extend %rel;
@@ -119,7 +125,7 @@
 /**
  * strip units
  */
-@function strip-units($number){
+@function strip-units($number) {
   @return $number / ($number * 0 + 1);
 }
 
