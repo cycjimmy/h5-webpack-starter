@@ -20,31 +20,29 @@ let
   imageWebpackLoaderConfig = {
     loader: 'image-webpack-loader',
     options: {
-      query: {
-        mozjpeg: {
-          progressive: true,
-          quality: 65,
-        },
-        gifsicle: {
-          interlaced: false,
-        },
-        optipng: {
-          optimizationLevel: 6,
-        },
-        pngquant: {
-          quality: '65-90',
-          speed: 4,
-        },
-        svgo: {
-          plugins: [
-            {
-              removeViewBox: false
-            },
-            {
-              removeEmptyAttrs: false
-            }
-          ]
-        },
+      mozjpeg: {
+        progressive: true,
+        quality: 70,
+      },
+      gifsicle: {
+        interlaced: false,
+      },
+      optipng: {
+        optimizationLevel: 6,
+      },
+      pngquant: {
+        quality: '65-90',
+        speed: 4,
+      },
+      svgo: {
+        plugins: [
+          {
+            removeViewBox: false
+          },
+          {
+            removeEmptyAttrs: false
+          }
+        ]
       },
     }
   }
