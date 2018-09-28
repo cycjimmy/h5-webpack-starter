@@ -253,7 +253,7 @@ module.exports = webpackMerge(webpackBase, {
       AppCache: {
         caches: ['main', 'additional', 'optional'],
         directory: './',
-        NETWORK: null,
+        NETWORK: '*',
         events: true,
         // FALLBACK: {'/': '/'},
         includeCrossOrigin: true,
