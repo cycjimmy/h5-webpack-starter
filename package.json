@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "H5 webpack starter for webpack, gulp, es6/7, sass, pug, swiper, jsmpeg...",
   "main": "index.js",
   "scripts": {
@@ -41,15 +41,15 @@
     "swiper-animation": "^1.2.2",
     "three": "^0.97.0",
     "video.js": "^7.2.3",
-    "weixin-share": "^1.0.1"
+    "weixin-share": "^1.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.0",
+    "@babel/core": "^7.1.2",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "autoprefixer": "^9.1.5",
     "babel-loader": "^8.0.4",
-    "browser-sync": "^2.24.7",
+    "browser-sync": "^2.26.0",
     "browser-sync-webpack-plugin": "^2.2.2",
     "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^5.2.0",
@@ -59,7 +59,7 @@
     "expose-loader": "^0.7.5",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
-    "gh-pages": "^2.0.0",
+    "gh-pages": "^2.0.1",
     "gulp": "^3.9.1",
     "gulp-cache": "^1.0.2",
     "gulp-imagemin": "^4.1.0",
@@ -74,7 +74,7 @@
     "postcss-loader": "^3.0.0",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
-    "require-dir": "^1.0.0",
+    "require-dir": "^1.1.0",
     "run-sequence": "^2.2.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
@@ -82,7 +82,7 @@
     "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.1",
+    "webpack-cli": "^3.1.2",
     "webpack-merge": "^4.1.4"
   }
 }
