@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "H5 webpack starter for webpack, gulp, es6/7, sass, pug, swiper, jsmpeg...",
   "main": "index.js",
   "scripts": {
@@ -36,7 +36,7 @@
     "h5-video-player": "^1.1.2",
     "hammerjs": "^2.0.8",
     "jsmpeg-player": "^1.2.4",
-    "mini-xhr": "^0.1.1",
+    "mini-xhr": "^0.1.3",
     "swiper": "^4.4.1",
     "swiper-animation": "^1.2.2",
     "three": "^0.97.0",
@@ -47,9 +47,9 @@
     "@babel/core": "^7.1.2",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
-    "autoprefixer": "^9.1.5",
+    "autoprefixer": "^9.2.0",
     "babel-loader": "^8.0.4",
-    "browser-sync": "^2.26.0",
+    "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.2.2",
     "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^5.2.0",
@@ -77,12 +77,13 @@
     "require-dir": "^1.1.0",
     "run-sequence": "^2.2.1",
     "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.0",
+    "style-loader": "^0.23.1",
     "uglify-js": "^3.4.9",
     "uglifyjs-webpack-plugin": "^2.0.1",
-    "url-loader": "^1.1.1",
+    "url-loader": "^1.1.2",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.4",
+    "worker-loader": "^2.0.0"
   }
 }
