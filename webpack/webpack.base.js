@@ -64,6 +64,15 @@ module.exports = {
 
   module: {
     rules: [
+      // Web worker
+      {
+        test: /\.worker\.js$/,
+        loader: 'worker-loader',
+        options: {
+          inline: true,
+        },
+      },
+
       // Scripts
       {
         test: /\.js$/,
