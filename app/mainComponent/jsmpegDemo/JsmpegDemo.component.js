@@ -92,26 +92,25 @@ export default class extends SlideComponent {
     return new JSMpeg.VideoElement(this.oVideoWrapper, videoUrl, {
       poster: videoPoster,
       decodeFirstFrame: false,
-      // aspectPercent: '56.25%',
       loop: false,
-      // autoplay: true,
       progressive: true,
-      chunkSize: 383 * 1023,
-      hookInPlay: () => {
-        console.log('hookInPlay');
+      hooks: {
+        play: () => {
+          console.log('hookInPlay');
 
-        if (this.audioComponent.isPlaying()) {
-          this.needContinuePlay = true;
-          this.audioComponent.pause();
-        } else {
-          this.needContinuePlay = false;
-        }
-      },
-      hookInPause: () => {
-        console.log('hookInPause');
-        if (this.needContinuePlay) {
-          this.audioComponent.play();
-        }
+          if (this.audioComponent.isPlaying()) {
+            this.needContinuePlay = true;
+            this.audioComponent.pause();
+          } else {
+            this.needContinuePlay = false;
+          }
+        },
+        pause: () => {
+          console.log('hookInPause');
+          if (this.needContinuePlay) {
+            this.audioComponent.play();
+          }
+        },
       },
     });
   };
