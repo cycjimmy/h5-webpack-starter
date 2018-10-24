@@ -25,6 +25,7 @@ module.exports = {
       'swiper',
       // 'hammerjs',
       'three',
+      'jsmpeg-player',
       path.resolve('app', 'main.js'),
     ],
   },
@@ -41,10 +42,11 @@ module.exports = {
   },
 
   externals: {
-    fastclick: 'FastClick',
-    swiper: 'Swiper',
+    'fastclick': 'FastClick',
+    'swiper': 'Swiper',
     // hammerjs: 'Hammer',
-    three: 'THREE',
+    'three': 'THREE',
+    'jsmpeg-player': 'JSMpeg',
   },
 
   resolve: {
@@ -58,6 +60,7 @@ module.exports = {
       'swiper': path.resolve('node_modules', 'swiper', 'dist', 'js', 'swiper.js'),
       // 'hammerjs': path.resolve('node_modules', 'hammerjs', 'hammer.js'),
       'three': path.resolve('node_modules', 'three', 'build', 'three.js'),
+      'jsmpeg-player': path.resolve('node_modules', 'jsmpeg-player', 'build', 'JSMpeg.js'),
     },
     'extensions': ['.js']
   },
@@ -147,7 +150,13 @@ module.exports = {
           options: 'THREE',
         }]
       },
-
+      {
+        test: require.resolve('jsmpeg-player'),
+        use: [{
+          loader: 'expose-loader',
+          options: 'JSMpeg',
+        }]
+      },
     ]
   },
 
