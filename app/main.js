@@ -15,6 +15,7 @@ if (PRODUCTION) {
 }
 
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+
 if (!DEVELOPMENT) {
   OfflinePluginRuntime.install();
 }
@@ -26,7 +27,10 @@ document.addEventListener('touchmove', preventDefault, false);
 // web page init
 document.addEventListener('DOMContentLoaded', () => {
   // bind fastClick
-  FastClick.attach(document.body);
+  if (FastClick) {
+    FastClick.attach(document.body);
+  }
+
 
   // web init
   webInitialize();

@@ -1,6 +1,9 @@
 // global css
 import './theme/main.scss';
 
+// polyfill
+import './polyfill';
+
 // component
 import LoadingComponent from './loadingComponent/Loading.component';
 import PromptMobileComponentIns from './share/promptMobile/PromptMobile.component.ins';
