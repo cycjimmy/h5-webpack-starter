@@ -27,6 +27,7 @@
 * [H5 Video Player](https://github.com/cycdpo/h5-video-player)
 * [H5 Audio Controls](https://github.com/cycdpo/h5-audio-controls)
 * [Swiper Animation](https://github.com/cycdpo/swiper-animation)
+* [Weixin Share](https://github.com/cycdpo/weixin-share)
 
 ## Installation
 ```shell

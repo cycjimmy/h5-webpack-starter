@@ -24,6 +24,7 @@ let
   }
 ;
 
-new WxShare()
+export default () => new WxShare()
   .config(wxShareConfig)
-  .share(defaultData);
+  .setDefaultShare(defaultData)
+  .share();

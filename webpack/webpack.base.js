@@ -1,7 +1,3 @@
-/**
- * Created by cyc on 2017/2/4.
- */
-
 const
   path = require('path')
   , webpack = require('webpack')
@@ -26,6 +22,7 @@ module.exports = {
       // 'hammerjs',
       'three',
       'jsmpeg-player',
+      // 'weixin-share',
       path.resolve('app', 'main.js'),
     ],
   },
@@ -44,9 +41,10 @@ module.exports = {
   externals: {
     'fastclick': 'FastClick',
     'swiper': 'Swiper',
-    // hammerjs: 'Hammer',
+    // 'hammerjs': 'Hammer',
     'three': 'THREE',
     'jsmpeg-player': 'JSMpeg',
+    // 'weixin-share': 'WxShare',
   },
 
   resolve: {
@@ -61,6 +59,7 @@ module.exports = {
       // 'hammerjs': path.resolve('node_modules', 'hammerjs', 'hammer.js'),
       'three': path.resolve('node_modules', 'three', 'build', 'three.js'),
       'jsmpeg-player': path.resolve('node_modules', 'jsmpeg-player', 'build', 'JSMpeg.js'),
+      // 'weixin-share': path.resolve('node_modules', 'weixin-share', 'build', 'WxShare.js'),
     },
     'extensions': ['.js']
   },
@@ -157,6 +156,13 @@ module.exports = {
           options: 'JSMpeg',
         }]
       },
+      // {
+      //   test: require.resolve('weixin-share'),
+      //   use: [{
+      //     loader: 'expose-loader',
+      //     options: 'WxShare',
+      //   }]
+      // },
     ]
   },
 

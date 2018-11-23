@@ -2,9 +2,6 @@ import FastClick from 'fastclick';
 import webInitialize from './webInitialize.afunc';
 import preventDefault from 'awesome-js-funcs/event/preventDefault';
 
-// wechatShare
-// import './weChatShare';
-
 if (DEVELOPMENT) {
   console.log('Development Mode');
   console.log(require('awesome-js-funcs/handheld').getBrowserInfo());
@@ -30,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (FastClick) {
     FastClick.attach(document.body);
   }
-
 
   // web init
   webInitialize();

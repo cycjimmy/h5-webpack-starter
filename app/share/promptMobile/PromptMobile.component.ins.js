@@ -9,10 +9,7 @@ import _style from './promptMobile.scss'
 // image
 import QRCodeImg from '../../../static/images/QRCode.png';
 
-let
-  _createInstance = new CreateInstance()  // 构造函数实例
-;
-
+const _createInstance = new CreateInstance();    // 构造函数实例
 
 export default class PromptMobileComponentIns {
   constructor() {

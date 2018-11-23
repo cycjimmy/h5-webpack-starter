@@ -6,7 +6,7 @@ import slides from './sildes.pug';
 import mainStyle from './main.scss';
 
 // audio
-// import audioSrc from '../../static/media/Richard Clayderman - LOVE IS BLUE.mp3';
+// import audioSrc from '../../static/media/';
 
 let audioSrc = 'https://cycjimmy.github.io/staticFiles/media/Richard_Clayderman-LOVE_IS_BLUE.mp3';
 
