@@ -1,12 +1,8 @@
-/**
- * Created by cycjimmy on 2016/7/13.
- */
-
 const
   requireDir = require('require-dir')
   , gulp = require('gulp')
   , runSequence = require('run-sequence')
-  ;
+;
 
 // srcPaths
 global.srcPaths = {
@@ -14,10 +10,9 @@ global.srcPaths = {
     from: 'static/icons/',
     to: 'static/images/icons/',
   },
-  build : 'build',                     // Eventually export
+  build: 'build',                     // Eventually export
   node_modules: "node_modules"         // Node dependent packages
 };
-
 
 // Require all tasks in the 'gulp' folder.
 requireDir('./gulp', {
@@ -30,8 +25,4 @@ gulp.task('default', callback => {
     callback
   );
 });
-
-
-
-
 

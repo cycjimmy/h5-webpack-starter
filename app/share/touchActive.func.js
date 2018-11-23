@@ -1,8 +1,3 @@
-/**
- * Created by cyc on 2016/11/2.
- *
- */
-
 import QueryAll from './QueryAll';
 
 // 参数：
@@ -26,7 +21,6 @@ export default function (selectorOrEls, context = document, isMoveShowActive = f
 
 //增加效果
 let addTouchActive = function () {
-
   if (!this.classList.contains('touch-active')) {
     //console.log("touchstart");
     this.classList.add('touch-active');

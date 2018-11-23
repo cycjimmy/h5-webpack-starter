@@ -1,7 +1,6 @@
 import _style from './promptOrientation.scss';
 import promptOrientation from './promptOrientation.pug';
 
-
 export default class PromptOrientationComponent {
   constructor() {
     this.wrapper = document.createElement('div');

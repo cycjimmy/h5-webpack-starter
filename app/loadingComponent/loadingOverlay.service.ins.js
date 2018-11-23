@@ -1,9 +1,7 @@
 // constructor
 import CreateInstance from 'awesome-js-funcs/designPattern/CreateInstance';
 
-let
-  _instance = new CreateInstance()
-;
+const  _instance = new CreateInstance();
 
 export default class loadingOverlayService {
   constructor() {

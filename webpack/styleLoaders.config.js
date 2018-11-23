@@ -1,17 +1,11 @@
-/**
- * Created by cyc on 2017/2/9.
- */
-
 const
   path = require('path')
   , PRODUCTION = process.env.NODE_ENV === 'production'       // 生产模式
 ;
 
-
 let
   cssIdentifier = PRODUCTION ? '[hash:base64:10]' : '[path][name]__[local]'
 ;
-
 
 module.exports = options => {
   return Object.assign({

@@ -16,7 +16,6 @@ const
   , OfflinePlugin = require('offline-plugin')
 ;
 
-
 let
   imageWebpackLoaderConfig = {
     loader: 'image-webpack-loader',
