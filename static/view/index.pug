@@ -8,6 +8,9 @@ html(lang='en')
     //- icon
     link(rel="shortcut icon", href=require('../favicon.ico'))
 
+    //- bugMonitor
+    include includes/bugMonitor
+
     //- webpack style
     each _style,index in htmlWebpackPlugin.files.css
       if index === 0
@@ -51,6 +54,9 @@ html(lang='en')
       //- hammer
         script(src="https://cdn.jsdelivr.net/npm/hammerjs@2/hammer.min.js")
 
+      //- H5AudioControls
+      script(src="https://cdn.jsdelivr.net/npm/h5-audio-controls@1/build/H5AudioControls.min.js")
+
       //- three.js
       script(src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js")
 
@@ -59,6 +65,9 @@ html(lang='en')
 
       //- video.js
         script(src="https://cdn.jsdelivr.net/npm/video.js@6/dist/video.min.js")
+
+      //- H5VideoPlayer
+      script(src="https://cdn.jsdelivr.net/npm/h5-video-player@1/build/H5VideoPlayer.min.js")
 
       //- webpack main script
       each _js,index in htmlWebpackPlugin.files.js

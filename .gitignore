@@ -55,7 +55,6 @@ node_modules/
 npm-debug.log
 yarn-error.log
 bower_components/
-yarn.lock
 
 # project
 .publish/

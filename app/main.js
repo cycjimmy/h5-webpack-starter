@@ -19,7 +19,6 @@ if (!DEVELOPMENT) {
 
 // contextMenu preventDefault
 document.addEventListener('contextmenu', preventDefault);
-document.addEventListener('touchmove', preventDefault, false);
 
 // web page init
 document.addEventListener('DOMContentLoaded', () => {
