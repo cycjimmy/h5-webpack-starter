@@ -5,7 +5,6 @@ import _style from './h5videoPlayerDemo.scss';
 
 // service
 import touchActive from '../../share/touchActiveMockClick.func';
-import H5VideoPlayer from 'h5-video-player';
 
 export default class extends SlideComponent {
   constructor({

@@ -3,9 +3,6 @@ import SlideComponent from '../Slide.component';
 import slide from './webglDemo.pug';
 import _style from './webglDemo.scss';
 
-// service
-import * as THREE from 'three';
-
 export default class extends SlideComponent {
   constructor({
                 context,

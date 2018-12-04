@@ -19,9 +19,7 @@ module.exports = {
     'main': [
       'fastclick',
       'swiper',
-      // 'hammerjs',
-      'three',
-      'jsmpeg-player',
+      'h5-audio-controls',
       // 'weixin-share',
       path.resolve('app', 'main.js'),
     ],
@@ -41,9 +39,7 @@ module.exports = {
   externals: {
     'fastclick': 'FastClick',
     'swiper': 'Swiper',
-    // 'hammerjs': 'Hammer',
-    'three': 'THREE',
-    'jsmpeg-player': 'JSMpeg',
+    'h5-audio-controls': 'H5AudioControls',
     // 'weixin-share': 'WxShare',
   },
 
@@ -56,9 +52,7 @@ module.exports = {
     'alias': {
       'fastclick': path.resolve('node_modules', 'fastclick', 'lib', 'fastclick.js'),
       'swiper': path.resolve('node_modules', 'swiper', 'dist', 'js', 'swiper.js'),
-      // 'hammerjs': path.resolve('node_modules', 'hammerjs', 'hammer.js'),
-      'three': path.resolve('node_modules', 'three', 'build', 'three.js'),
-      'jsmpeg-player': path.resolve('node_modules', 'jsmpeg-player', 'build', 'JSMpeg.js'),
+      'h5-audio-controls': path.resolve('node_modules', 'h5-audio-controls', 'build', 'H5AudioControls'),
       // 'weixin-share': path.resolve('node_modules', 'weixin-share', 'build', 'WxShare.js'),
     },
     'extensions': ['.js']
@@ -135,25 +129,11 @@ module.exports = {
           options: 'Swiper',
         }]
       },
-      // {
-      //   test: require.resolve('hammerjs'),
-      //   use: [{
-      //     loader: 'expose-loader',
-      //     options: 'Hammer',
-      //   }]
-      // },
       {
-        test: require.resolve('three'),
+        test: require.resolve('h5-audio-controls'),
         use: [{
           loader: 'expose-loader',
-          options: 'THREE',
-        }]
-      },
-      {
-        test: require.resolve('jsmpeg-player'),
-        use: [{
-          loader: 'expose-loader',
-          options: 'JSMpeg',
+          options: 'H5AudioControls',
         }]
       },
       // {

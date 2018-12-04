@@ -6,7 +6,6 @@ import _style from './jsmpegDemo.scss';
 import nodeListToArray from 'awesome-js-funcs/typeConversion/nodeListToArray';
 
 // service
-import JSMpeg from 'jsmpeg-player';
 import touchActive from '../../share/touchActiveMockClick.func';
 
 // media
