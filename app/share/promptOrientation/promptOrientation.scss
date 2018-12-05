@@ -19,6 +19,9 @@ $lockOrientation: portrait;
     display: none;
   }
 
+  &.disable {
+    display: none;
+  }
 }
 
 .iconWrapper {
