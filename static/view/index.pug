@@ -8,9 +8,6 @@ html(lang='en')
     //- icon
     link(rel="shortcut icon", href=require('../favicon.ico'))
 
-    //- bugMonitor
-    include includes/bugMonitor
-
     //- webpack style
     each _style,index in htmlWebpackPlugin.files.css
       if index === 0
@@ -32,13 +29,15 @@ html(lang='en')
       each _style,index in htmlWebpackPlugin.files.css
         if index !== 0
           link(href=_style, rel="stylesheet")
+
       //- animate css
       link(href="https://cdn.jsdelivr.net/npm/animate.css@3/animate.min.css", rel="stylesheet")
+
       //- swiper global style
       link(href="https://cdn.jsdelivr.net/npm/swiper@4/dist/css/swiper.min.css", rel="stylesheet")
+
       //- videoJs global style
         link(href="https://cdn.jsdelivr.net/npm/video.js@6/dist/video-js.min.css", rel="stylesheet")
-
 
       //- scripts
       //------------------------------------
