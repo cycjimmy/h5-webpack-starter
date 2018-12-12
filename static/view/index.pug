@@ -8,6 +8,9 @@ html(lang='en')
     //- icon
     link(rel="shortcut icon", href=require('../favicon.ico'))
 
+    //- bugMonitor
+    include includes/bugMonitor
+
     //- webpack style
     each _style,index in htmlWebpackPlugin.files.css
       if index === 0
