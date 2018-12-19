@@ -1,7 +1,8 @@
 const
-  requireDir = require('require-dir')
-  , gulp = require('gulp')
-  , runSequence = require('run-sequence')
+  gulp = require('gulp')
+  , webpackTasks = require('./gulp/webpack')
+  , svgstoreTasks = require('./gulp/svgstore')
+  , deployTasks = require('./gulp/deploy')
 ;
 
 // srcPaths
@@ -14,15 +15,13 @@ global.srcPaths = {
   node_modules: "node_modules"         // Node dependent packages
 };
 
-// Require all tasks in the 'gulp' folder.
-requireDir('./gulp', {
-  recurse: false
-});
+// task
+gulp.task('svgstore', svgstoreTasks.svgstore);
+gulp.task('build', webpackTasks.packBuild);
+gulp.task('build:watch', webpackTasks.packBuildWatch);
+gulp.task('build:test_server:watch', webpackTasks.packBuildTestServerWatch);
+gulp.task('deploy', deployTasks.deploy);
 
 // default task
-gulp.task('default', callback => {
-  runSequence('pack:dev',
-    callback
-  );
-});
+gulp.task('default', webpackTasks.packDev);
 

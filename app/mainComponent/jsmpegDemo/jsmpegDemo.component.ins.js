@@ -65,7 +65,7 @@ const _instance = instanceComponent(class extends SlideComponent {
         // this.videoEl.player.stop();
         oVideoInstances.forEach((videoEl) => {
           if (videoEl) {
-            videoEl.player.stop();
+            videoEl.stop();
           }
         });
       },

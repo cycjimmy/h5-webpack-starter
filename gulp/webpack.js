@@ -1,20 +1,18 @@
-const
-  gulp = require('gulp')
-  , shell = require('gulp-shell')
-;
+const shell = require('gulp-shell');
 
-gulp.task('pack:dev', shell.task([
+exports.packDev = shell.task([
   'cross-env NODE_ENV=development webpack --config webpack/webpack.dev.config.js --display-modules --display-reasons --display-error-details --watch --color'
-]));
+]);
 
-gulp.task('pack:build', shell.task([
+exports.packBuild = shell.task([
   'cross-env NODE_ENV=production webpack --config webpack/webpack.build.config.js --progress --display-modules --display-reasons --display-error-details --optimize-minimize --color'
-]));
+]);
 
-gulp.task('pack:build:watch', shell.task([
+exports.packBuildWatch = shell.task([
   'cross-env NODE_ENV=production webpack --config webpack/webpack.build.config.js --progress --display-modules --display-reasons --display-error-details --optimize-minimize --color --watch'
-]));
+]);
 
-gulp.task('pack:build:test_server:watch', shell.task([
+exports.packBuildTestServerWatch = shell.task([
   'cross-env NODE_ENV=production_test_server webpack --config webpack/webpack.build.config.js --progress --display-error-details --optimize-minimize --color --watch'
-]));
+]);
+
