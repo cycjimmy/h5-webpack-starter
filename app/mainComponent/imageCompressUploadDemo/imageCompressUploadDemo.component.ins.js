@@ -1,14 +1,15 @@
 import QueryAll from '../../share/QueryAll';
 import SlideComponent from '../Slide.component';
+import instanceComponent from '../instanceComponent';
 
 import slide from './imageCompressUploadDemo.pug';
 import _style from './imageCompressUploadDemo.scss';
 
 // service
 import H5ImageCompressService from '../../share/H5ImageCompress/H5ImageCompress.service';
-// import xhrData from '../share/xhrData.func';
+// import miniXhr from 'mini-xhr';
 
-export default class extends SlideComponent {
+const _instance = instanceComponent(class extends SlideComponent {
   constructor({
                 context,
                 mainSwiper,
@@ -24,7 +25,7 @@ export default class extends SlideComponent {
     this.base64 = '';           // 压缩后base64图片
   };
 
-  load(mainSwiper) {
+  load() {
     return this.init({
       pugTemplate: slide,
       wrapperElement: this.context,
@@ -76,18 +77,8 @@ export default class extends SlideComponent {
       }
 
       /* AJAX上传
-       new xhrData({
-       url: 'http://XXX.xXX.XXX',
-       data: this.base64,
-       })
-       .then(
-       e => {
-       console.log('上传成功', e);
-       }, err => {
-       console.error('上传失败', err);
-       }
-       );
-       */
+       miniXhr(...);
+      */
 
       alert('上传成功');
     });
@@ -129,5 +120,7 @@ export default class extends SlideComponent {
       this.oUploadBtn.classList.remove(_style.canUpload);
     }
   };
-};
+});
+
+export default (param) => _instance(param);
 

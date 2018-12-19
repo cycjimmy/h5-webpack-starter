@@ -1,9 +1,10 @@
 import SlideComponent from '../Slide.component';
+import instanceComponent from '../instanceComponent';
 
 import slide from './webglDemo.pug';
 import _style from './webglDemo.scss';
 
-export default class extends SlideComponent {
+const _instance = instanceComponent(class extends SlideComponent {
   constructor({
                 context,
                 slideIndex,
@@ -29,7 +30,7 @@ export default class extends SlideComponent {
       });
   };
 
-  paramInit(){
+  paramInit() {
     this.container = this.context.querySelector('.' + _style.container);
   };
 
@@ -69,5 +70,7 @@ export default class extends SlideComponent {
 
     render();
   };
-};
+});
+
+export default (param) => _instance(param);
 

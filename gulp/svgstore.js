@@ -1,7 +1,3 @@
-/**
- * Created by cyc on 16/10/19.
- */
-
 const
   fs = require('fs')
   , path = require('path')
@@ -10,10 +6,9 @@ const
   , merge = require('merge-stream')
   , svgstore = require('gulp-svgstore')
   , imagemin = require('gulp-imagemin')
-  ;
+;
 
-
-let getFolders = dir => {
+const getFolders = dir => {
   return fs
     .readdirSync(dir)
     .filter(file => {
@@ -23,11 +18,9 @@ let getFolders = dir => {
     });
 };
 
-
 // Svg sprite
 gulp.task('svgstore:noClean', () => {
-
-  let
+  const
     iconPath = srcPaths.icons.from
     , folders = getFolders(iconPath)
     , tasks = folders.map(folder => {

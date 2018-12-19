@@ -1,22 +1,41 @@
 import SlideComponent from '../Slide.component';
+import instanceComponent from '../instanceComponent';
 
 import slide from './jsmpegDemo.pug';
 import _style from './jsmpegDemo.scss';
 
-import nodeListToArray from 'awesome-js-funcs/typeConversion/nodeListToArray';
-
 // service
+import nodeListToArray from 'awesome-js-funcs/typeConversion/nodeListToArray';
 import touchActive from '../../share/touchActiveMockClick.func';
 
 // media
-let
+const
   videoTs0 = 'https://cycjimmy.github.io/staticFiles/media/big_buck_bunny_640x360.ts'
   , videoTs1 = 'https://cycjimmy.github.io/staticFiles/media/Sony_test_video_640x360.ts'
   , videoPoster0 = 'https://cycjimmy.github.io/staticFiles/images/screenshot/big_buck_bunny_640x360.jpg'
   , videoPoster1 = 'https://cycjimmy.github.io/staticFiles/images/screenshot/Sony_test_video_640x360.jpg'
 ;
 
-export default class extends SlideComponent {
+// private
+const
+  oVideoInstances = []
+  , oVideoUrls = [videoTs0, videoTs1]
+  , oVideoPosters = [videoPoster0, videoPoster1]
+
+  , destroyOtherVideoIns = () => new Promise(resolve => {
+    oVideoInstances.forEach((el, index) => {
+      if (el) {
+        el.destroy();
+        oVideoInstances[index] = null;
+      }
+    });
+    setTimeout(() => {
+      resolve();
+    }, 0);
+  })
+;
+
+const _instance = instanceComponent(class extends SlideComponent {
   constructor({
                 context,
                 mainSwiper,
@@ -113,23 +132,7 @@ export default class extends SlideComponent {
       },
     });
   };
-};
+});
 
-// private
-let
-  oVideoInstances = []
-  , oVideoUrls = [videoTs0, videoTs1]
-  , oVideoPosters = [videoPoster0, videoPoster1]
+export default (param) => _instance(param);
 
-  , destroyOtherVideoIns = () => new Promise(resolve => {
-    oVideoInstances.forEach((el, index) => {
-      if (el) {
-        el.destroy();
-        oVideoInstances[index] = null;
-      }
-    });
-    setTimeout(() => {
-      resolve();
-    }, 0);
-  })
-;

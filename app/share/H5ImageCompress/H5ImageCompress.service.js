@@ -98,8 +98,7 @@ export default class H5ImageCompressService {
             // https://github.com/fex-team/webuploader/blob/master/src/runtime/html5/jpegencoder.js
             import('./jpegencoder')
               .then(JPEGEncoder => {
-                encoder = new JPEGEncoder();
-                base64 = encoder.encode(ctx.getImageData(0, 0, canvas.width, canvas.height), this.options.quality * 100);
+                base64 = JPEGEncoder.encode(ctx.getImageData(0, 0, canvas.width, canvas.height), this.options.quality * 100);
                 this._handler('done', canvas, img, fileURL, base64, file);
               });
           } else {

@@ -1,8 +1,7 @@
 const
   gulp = require('gulp')
   , shell = require('gulp-shell')
-  ;
-
+;
 
 gulp.task('pack:dev', shell.task([
   'cross-env NODE_ENV=development webpack --config webpack/webpack.dev.config.js --display-modules --display-reasons --display-error-details --watch --color'

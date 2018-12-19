@@ -1,9 +1,10 @@
 import SlideComponent from '../Slide.component';
+import instanceComponent from '../instanceComponent';
 
 import slide from './slideX.pug';
 import _style from './slideX.scss';
 
-export default class extends SlideComponent {
+const _instance = instanceComponent(class extends SlideComponent {
   constructor({
                 context,
                 mainSwiper,
@@ -27,4 +28,7 @@ export default class extends SlideComponent {
       },
     });
   };
-};
+});
+
+export default (param) => _instance(param);
+
