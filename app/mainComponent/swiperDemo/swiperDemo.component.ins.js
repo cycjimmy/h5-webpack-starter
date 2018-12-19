@@ -1,10 +1,13 @@
-import Swiper from 'swiper';
-
 import SlideComponent from '../Slide.component';
+import instanceComponent from '../instanceComponent';
+
 import slide from './swiperDemo.pug';
 import _style from './swiperDemo.scss';
 
-export default class extends SlideComponent {
+// service
+import Swiper from 'swiper';
+
+const _instance = instanceComponent(class extends SlideComponent {
   constructor({
                 context,
                 slideIndex,
@@ -17,7 +20,7 @@ export default class extends SlideComponent {
     });
   };
 
-  load(mainSwiper) {
+  load() {
     return this.init({
       pugTemplate: slide,
       wrapperElement: this.context,
@@ -36,8 +39,8 @@ export default class extends SlideComponent {
 
   nestedSwiperInit() {
     this.nestedSwiper = new Swiper(this.slideContainer, {
-      nested: true,                           // 嵌套
-      roundLengths: true,                     // 取整
+      nested: true,
+      roundLengths: true,
 
       pagination: {
         el: '.' + _style.pagination,
@@ -48,5 +51,7 @@ export default class extends SlideComponent {
       spaceBetween: 30,
     });
   };
-};
+});
+
+export default (param) => _instance(param);
 

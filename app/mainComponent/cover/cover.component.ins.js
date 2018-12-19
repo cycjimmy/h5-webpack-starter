@@ -1,10 +1,11 @@
 import QueryAll from '../../share/QueryAll';
 import SlideComponent from '../Slide.component';
+import instanceComponent from '../instanceComponent';
 
 import slide from './cover.pug';
 import _style from './cover.scss';
 
-export default class extends SlideComponent {
+const _instance = instanceComponent(class extends SlideComponent {
   constructor({
                 context,
                 mainSwiper,
@@ -35,7 +36,6 @@ export default class extends SlideComponent {
   };
 
   eventBind() {
-
     new QueryAll(this.oLogoImg)
       .on('touchstart mouseover mousedown', () => {
         this.oLogoImg.classList.add(_style.animationPaused);
@@ -50,4 +50,7 @@ export default class extends SlideComponent {
         }
       });
   };
-};
+});
+
+export default (param) => _instance(param);
+

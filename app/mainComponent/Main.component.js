@@ -11,13 +11,13 @@ import mainStyle from './main.scss';
 let audioSrc = 'https://cycjimmy.github.io/staticFiles/media/Richard_Clayderman-LOVE_IS_BLUE.mp3';
 
 // component
-import CoverComponent from './cover/Cover.component';
-import SwiperDemoComponent from './swiperDemo/SwiperDemo.component';
-import ImageCompressUploadDemoComponent from './imageCompressUploadDemo/ImageCompressUploadDemo.component';
-import JsmpegDemoComponent from './jsmpegDemo/JsmpegDemo.component';
-import H5videoPlayerDemoComponent from './h5videoPlayerDemo/H5videoPlayerDemo.component';
-import WebglDemoComponent from './webglDemo/WebglDemo.component';
-import SlideXComponent from './slideXComponent/SlideX.component';
+import coverComponent from './cover/cover.component.ins';
+import swiperDemoComponent from './swiperDemo/swiperDemo.component.ins';
+import imageCompressUploadDemoComponent from './imageCompressUploadDemo/imageCompressUploadDemo.component.ins';
+import jsmpegDemoComponent from './jsmpegDemo/jsmpegDemo.component.ins';
+import h5videoPlayerDemoComponent from './h5videoPlayerDemo/h5videoPlayerDemo.component.ins';
+import webglDemoComponent from './webglDemo/webglDemo.component.ins';
+import slideXComponent from './slideX/slideX.component.ins';
 
 import H5AudioControls from 'h5-audio-controls';
 
@@ -50,7 +50,7 @@ export default class extends Component {
           wrapperElement: this.context.querySelector('.' + _style.wrapper),
           insetParam: {
             _style,
-            length: SlideComponents.length,
+            length: slideComponents.length,
           },
         });
       })
@@ -94,8 +94,8 @@ export default class extends Component {
   renderSlideComponents() {
     return Promise.all([
       // SlideComponentsLoader
-      SlideComponents.forEach((Component, index) => {
-        new Component({
+      slideComponents.forEach((component, index) => {
+        component({
           context: this.context.querySelector('.' + _style.slide + ':nth-of-type(' + (index + 1) + ')'),
           mainSwiper: this.mainSwiper,
           slideIndex: index,
@@ -110,13 +110,13 @@ export default class extends Component {
 let
   _style = mainStyle
   , swiperAnimation = new SwiperAnimation()
-  , SlideComponents = [
-    CoverComponent,
-    SwiperDemoComponent,
-    ImageCompressUploadDemoComponent,
-    JsmpegDemoComponent,
-    H5videoPlayerDemoComponent,
-    WebglDemoComponent,
-    SlideXComponent,
+  , slideComponents = [
+    coverComponent,
+    swiperDemoComponent,
+    imageCompressUploadDemoComponent,
+    jsmpegDemoComponent,
+    h5videoPlayerDemoComponent,
+    webglDemoComponent,
+    slideXComponent,
   ]
 ;

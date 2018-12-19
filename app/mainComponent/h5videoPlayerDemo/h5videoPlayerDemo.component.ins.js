@@ -1,4 +1,5 @@
 import SlideComponent from '../Slide.component';
+import instanceComponent from '../instanceComponent';
 
 import slide from './h5videoPlayerDemo.pug';
 import _style from './h5videoPlayerDemo.scss';
@@ -6,7 +7,7 @@ import _style from './h5videoPlayerDemo.scss';
 // service
 import touchActive from '../../share/touchActiveMockClick.func';
 
-export default class extends SlideComponent {
+const _instance = instanceComponent(class extends SlideComponent {
   constructor({
                 context,
                 mainSwiper,
@@ -34,9 +35,7 @@ export default class extends SlideComponent {
   };
 
   paramInit() {
-    let
-      source = 'https://cycjimmy.github.io/staticFiles/media/Sony_test_video_vertical_720x1280.mp4'
-    ;
+    const source = 'https://cycjimmy.github.io/staticFiles/media/Sony_test_video_vertical_720x1280.mp4';
 
     this.oPlayBtn = this.context.querySelector('.' + _style.playBtn);
     this.video = new H5VideoPlayer(source, {
@@ -79,4 +78,7 @@ export default class extends SlideComponent {
       this.context.querySelector('.' + _style.codeBtn),
     ]);
   };
-};
+});
+
+export default (param) => _instance(param);
+
