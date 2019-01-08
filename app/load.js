@@ -12,8 +12,7 @@ document.addEventListener('readystatechange', () => {
   console.log('documentReadyState: ' + document.readyState);
 });
 
-new PromptMobileComponentIns().load()
+Promise.resolve()
+  .then(() => new PromptMobileComponentIns().load())
   .then(() => new LoadingComponent().load())
-  .catch((err) => {
-    console.log(err);
-  });
+  .catch(e => console.error(e));
