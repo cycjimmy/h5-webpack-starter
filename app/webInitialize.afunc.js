@@ -6,14 +6,15 @@ import PromptOrientationComponentIns from './share/promptOrientation/PromptOrien
 // service
 // import weChatShare from './weChatShare';
 
-export default () => {
-  if (new PromptMobileComponentIns().getIsMobile()) {
-    return Promise.all([
-      // weChatShare(),
-      new MainComponent().load(),
-      new PromptOrientationComponentIns().load(),
-    ])
-      .catch(err => console.error('Failed to init', err));
-  }
-};
+export default () => Promise.resolve()
+  .then(() => new PromptMobileComponentIns().getIsMobile()
+    ? Promise.resolve()
+    : Promise.reject())
+  .then(() => Promise.all([
+    // weChatShare(),
+    new MainComponent().load(),
+    new PromptOrientationComponentIns().load(),
+  ]))
+  .catch(err => console.error('Failed to init', err));
+
 

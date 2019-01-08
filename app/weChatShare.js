@@ -1,7 +1,3 @@
-/**
- * wechatShare
- */
-
 // service
 import WxShare from 'weixin-share';
 
@@ -27,4 +23,5 @@ let
 export default () => new WxShare()
   .config(wxShareConfig)
   .setDefaultShare(defaultData)
-  .share();
+  .share()
+  .catch(e => console.error(e));
