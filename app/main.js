@@ -20,6 +20,9 @@ if (!DEVELOPMENT) {
 // contextMenu preventDefault
 document.addEventListener('contextmenu', preventDefault);
 
+// fix ios native scrolling
+document.body.addEventListener('touchmove', preventDefault, {passive: false});
+
 // web page init
 document.addEventListener('DOMContentLoaded', () => {
   // bind fastClick
