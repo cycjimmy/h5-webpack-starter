@@ -4,6 +4,7 @@ const
 
   // Webpack Plugin
   , DefinePlugin = require('webpack/lib/DefinePlugin')
+  , CleanWebpackPlugin = require('clean-webpack-plugin')
 ;
 
 const
@@ -172,6 +173,11 @@ module.exports = {
       PRODUCTION: JSON.stringify(PRODUCTION),
       PRODUCTION_TEST_SERVER: JSON.stringify(PRODUCTION_TEST_SERVER),
       TEST_SERVER_ADDRESS: '',
+    }),
+
+    new CleanWebpackPlugin({
+      verbose: true,
+      dry: false
     }),
   ],
 };

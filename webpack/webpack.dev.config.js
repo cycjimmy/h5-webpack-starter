@@ -8,7 +8,6 @@
   // Webpack Plugin
   , BrowserSyncPlugin = require('browser-sync-webpack-plugin')
   , HtmlWebpackPlugin = require('html-webpack-plugin')
-  , CleanWebpackPlugin = require('clean-webpack-plugin')
 ;
 
 module.exports = webpackMerge(webpackBase, {
@@ -94,12 +93,6 @@ module.exports = webpackMerge(webpackBase, {
   },
 
   plugins: [
-    new CleanWebpackPlugin(['dist'], {
-      root: path.resolve('./'),
-      verbose: true,
-      dry: false,
-    }),
-
     new HtmlWebpackPlugin({
       inject: false,
       template: path.resolve('static', 'view', 'index.pug'),

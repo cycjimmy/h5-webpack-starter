@@ -126,7 +126,7 @@
  * calc vw
  * $designDrawingLength
  */
-@function calcVW($designDrawingLength) {
+@function calcVW($designDrawingLength:0) {
   @return $designDrawingLength / $designDrawingWidth * 100vw;
 }
 
