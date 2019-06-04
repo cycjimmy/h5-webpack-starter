@@ -4,7 +4,7 @@ const
 
   // Webpack Plugin
   , DefinePlugin = require('webpack/lib/DefinePlugin')
-  , CleanWebpackPlugin = require('clean-webpack-plugin')
+  , {CleanWebpackPlugin} = require('clean-webpack-plugin')
 ;
 
 const
