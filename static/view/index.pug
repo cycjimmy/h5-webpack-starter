@@ -11,6 +11,9 @@ html(lang='en')
     //- bugMonitor
     include includes/bugMonitor
 
+    //- vconsole
+      include includes/vconsole
+
     //- webpack style
     each _style,index in htmlWebpackPlugin.files.css
       if index === 0

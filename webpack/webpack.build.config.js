@@ -36,13 +36,19 @@ let
       svgo: {
         plugins: [
           {
-            removeViewBox: false
+            removeViewBox: false,
           },
           {
-            removeEmptyAttrs: false
-          }
-        ]
+            removeEmptyAttrs: false,
+          },
+          {
+            moveGroupAttrsToElems: false,
+          },
+        ],
       },
+      // webp: {
+      //   quality: 75
+      // },
     }
   }
 ;
