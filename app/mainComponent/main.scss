@@ -19,8 +19,7 @@
 }
 
 .slide {
-  display: flex;
+  @extend %flexCenter;
   flex-direction: column;
-  @include flex-box-align(center, center);
 }
 

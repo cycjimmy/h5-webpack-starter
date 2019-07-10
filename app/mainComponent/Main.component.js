@@ -4,12 +4,6 @@ import Swiper from 'swiper';
 import main from './main.pug';
 import slides from './sildes.pug';
 import mainStyle from './main.scss';
-
-// audio
-// import audioSrc from '../../static/media/';
-
-let audioSrc = 'https://cycjimmy.github.io/staticFiles/media/Richard_Clayderman-LOVE_IS_BLUE.mp3';
-
 // component
 import coverComponent from './cover/cover.component.ins';
 import swiperDemoComponent from './swiperDemo/swiperDemo.component.ins';
@@ -20,10 +14,14 @@ import webglDemoComponent from './webglDemo/webglDemo.component.ins';
 import slideXComponent from './slideX/slideX.component.ins';
 
 import H5AudioControls from 'h5-audio-controls';
-
 // service
-import loadingOverlayServiceIns from '../loadingComponent/loadingOverlay.service.ins';
 import SwiperAnimation from 'swiper-animation';
+import h5Preloader from 'h5-preloader';
+
+// audio
+// import audioSrc from '../../static/media/';
+
+let audioSrc = 'https://cycjimmy.github.io/staticFiles/media/Richard_Clayderman-LOVE_IS_BLUE.mp3';
 
 export default class extends Component {
   constructor() {
@@ -77,7 +75,7 @@ export default class extends Component {
               init: () => Promise.resolve()
                 .then(() => setTimeout(() => this.renderSlideComponents(), 0))
                 .then(() => this.audioComponent.load())
-                .then(() => new loadingOverlayServiceIns().doRemove())
+                .then(() => h5Preloader().progressComplete())
                 .then(() => swiperAnimation.init(this.mainSwiper).animate()),
 
               slideChange: () => setTimeout(() => swiperAnimation.init(this.mainSwiper).animate(), 0),
