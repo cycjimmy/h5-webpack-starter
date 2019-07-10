@@ -215,7 +215,7 @@ module.exports = webpackMerge(webpackBase, {
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.min\.css$/g,
       cssProcessor: require('cssnano'),
-      cssProcessorOptions: { discardComments: { removeAll: true } },
+      cssProcessorOptions: {discardComments: {removeAll: true}},
       canPrint: true
     }),
 

@@ -1,12 +1,10 @@
-// image
-import loadingImg from '../../static/images/loading.svg';
-
-// style
+import templateLoading from './loading.pug';
 import _style from './loading.scss';
+import h5Preloader from 'h5-preloader';
 
-// service
-import ResLoaderService from './ResLoader.service';
-import loadingOverlayServiceIns from './loadingOverlay.service.ins';
+const resources = [
+  // require('../../static/images/'),
+];
 
 export default class {
   constructor() {
@@ -18,67 +16,33 @@ export default class {
     return this.render()
       .then(() => {
         this.paramInit();
-        this.runLoading();
+        this.h5Preloader.load();
       });
   };
 
   render() {
     return new Promise(resolve => {
-      this.context.innerHTML = `
-        <img class=${_style.loadingPic} src=${loadingImg}>
-        
-        <div class=${_style.loadingProgressWrapper}>
-          <div class=${_style.loadingProgressbarWrapper}>
-            <div class=${_style.loadingProgressbar}></div>
-          </div>
-        </div>
-        
-        <div class=${_style.loadingText}>
-          <span class=${_style.loadingTextPercent}>0</span>&nbsp;%
-        </div>
-      `;
-
+      this.context.innerHTML = templateLoading({_style});
       document.body.appendChild(this.context);
 
-      setTimeout(() => resolve(), 0);
+      setTimeout(resolve, 0);
     });
   };
 
   paramInit() {
     this.progressBar = this.context.querySelector('.' + _style.loadingProgressbar);
     this.progressPercentText = this.context.querySelector('.' + _style.loadingTextPercent);
-  };
-
-  runLoading() {
-    // loading
-    new ResLoaderService({
-      resources: [
-        // require('../../static/images/'),
-      ],
-      onStart: (total) => {
-        console.log('loadStart: ' + total);
-
-        new loadingOverlayServiceIns()
-          .init({
-            oLoadingOverlay: this.context,
-            progressBar: this.progressBar,
-            progressPercentText: this.progressPercentText,
-          })
-          .setProgress(4);      // 4%
+    this.h5Preloader = h5Preloader({
+      progressBar: {
+        eProgressBar: this.progressBar,
+        eProgressBarPercent: this.progressPercentText,
       },
-      onProgress: (currentIndex, total) => {
-        let
-          percent = Number.parseInt(currentIndex / total * 92, 10) + 4
-        ;
-
-        console.log(currentIndex + ' / ' + total, 'percent:' + percent + '%');
-
-        new loadingOverlayServiceIns().setProgress(percent);  // 4% ~ 96%
+      resources,
+      hookWhenProgressComplete: () => {
+        this.context.classList.add('animated', 'slideOutUp');
+        setTimeout(() => this.context.remove(), 2e3);
       },
-      onComplete: (total) => {
-        console.log('loadComplete: ' + total + ' resources');
-        new loadingOverlayServiceIns().progressComplete();    // 98%
-      },
-    }).start();
+      autoComplete: false,
+    });
   };
 };

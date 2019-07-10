@@ -4,7 +4,7 @@ const
 ;
 
 let
-  cssIdentifier = PRODUCTION ? '[hash:base64:10]' : '[path][name]__[local]'
+  cssIdentifier = PRODUCTION ? '[hash:base64:10]' : '[name]__[local]'
 ;
 
 module.exports = options => {
@@ -13,8 +13,9 @@ module.exports = options => {
       loader: 'css-loader',
       options: {
         importLoaders: 2,
-        modules: true,
-        localIdentName: cssIdentifier,
+        modules: {
+          localIdentName: cssIdentifier,
+        },
       },
     },
     postLoader: {
