@@ -1,11 +1,31 @@
 import QueryAll from './QueryAll';
 
-// 参数：
-// 选择器或元素，上下文，移动时是否要显示touchActive
+/**
+ * addTouchActive
+ */
+const addTouchActive = function () {
+  if (!this.classList.contains('touch-active')) {
+    this.classList.add('touch-active');
+  }
+};
 
-export default function (selectorOrEls, context = document, isMoveShowActive = false) {
+/**
+ * removeTouchActive
+ */
+const removeTouchActive = function () {
+  if (this.classList.contains('touch-active')) {
+    this.classList.remove('touch-active');
+  }
+};
 
-  let element = new QueryAll(selectorOrEls, context);
+/**
+ * touchActive
+ * @param selectorOrEls
+ * @param context
+ * @param isMoveShowActive
+ */
+export default (selectorOrEls, context = document, isMoveShowActive = false) => {
+  const element = new QueryAll(selectorOrEls, context);
 
   element.on('touchstart', addTouchActive);
 
@@ -18,19 +38,3 @@ export default function (selectorOrEls, context = document, isMoveShowActive = f
   element.on('touchcancel', removeTouchActive);
 };
 
-
-//增加效果
-let addTouchActive = function () {
-  if (!this.classList.contains('touch-active')) {
-    //console.log("touchstart");
-    this.classList.add('touch-active');
-  }
-};
-
-//删除效果
-let removeTouchActive = function () {
-  if (this.classList.contains('touch-active')) {
-    //console.log("endtouch");
-    this.classList.remove('touch-active');
-  }
-};
