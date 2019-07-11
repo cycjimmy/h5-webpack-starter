@@ -1,21 +1,14 @@
-/**
- * 仿JQ选择器
- * 使用方法：
- * new QueryAll(选择器或元素，上下文(可选)).on(事件类别，回调函数)
- * new QueryAll(选择器或元素，上下文(可选)).addClass(样式名)
- * new QueryAll(选择器或元素，上下文(可选)).removeClass(样式名)
- * new QueryAll(选择器或元素，上下文(可选)).hasClass(样式名)
- *
- */
-
 import isString from 'awesome-js-funcs/judgeBasic/isString';
 import nodeListToArray from 'awesome-js-funcs/typeConversion/nodeListToArray';
 
 export default class QueryAll {
+  /**
+   * QueryAll
+   * @param selectorOrEls
+   * @param context
+   */
   constructor(selectorOrEls, context = document) {
-    let
-      elements = null
-    ;
+    let elements = null;
 
     if (isString(selectorOrEls)) {
       elements = context.querySelectorAll(selectorOrEls);
@@ -26,11 +19,14 @@ export default class QueryAll {
     this.nodeList = nodeListToArray(elements);
   };
 
-  // 事件绑定
+  /**
+   * event bind
+   * @param eventType
+   * @param fn
+   * @returns {QueryAll}
+   */
   on(eventType, fn) {
-    let
-      aEvents = eventType.split(' ')
-    ;
+    const aEvents = eventType.split(' ');
 
     this.nodeList.forEach(el => {
       for (let event of aEvents) {
@@ -41,8 +37,11 @@ export default class QueryAll {
     return this;
   };
 
-
-  // 添加样式
+  /**
+   * addClass
+   * @param className
+   * @returns {QueryAll}
+   */
   addClass(className) {
     this.nodeList.forEach((el) => {
       if (el.classList) {
@@ -55,7 +54,11 @@ export default class QueryAll {
     return this;
   };
 
-  // 删除样式
+  /**
+   * removeClass
+   * @param className
+   * @returns {QueryAll}
+   */
   removeClass(className) {
     this.nodeList.forEach((el) => {
       if (el.classList) {
@@ -68,7 +71,11 @@ export default class QueryAll {
     return this;
   };
 
-  // 是否存在样式
+  /**
+   * hasClass
+   * @param className
+   * @returns {QueryAll}
+   */
   hasClass(className) {
     this.nodeList.forEach((el) => {
       if (el.classList) {
@@ -81,7 +88,9 @@ export default class QueryAll {
     return this;
   };
 
-  // 元素删除
+  /**
+   * remove element
+   */
   remove() {
     this.nodeList.forEach(el => {
       el.parentNode.removeChild(el);

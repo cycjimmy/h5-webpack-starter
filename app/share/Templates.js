@@ -1,10 +1,13 @@
 import isString from 'awesome-js-funcs/judgeBasic/isString';
 
 export default class Templates {
-
-  //参数：模板名，选择器，data
+  /**
+   * Templates
+   * @param template
+   * @param selectorOrEl
+   * @param data
+   */
   constructor(template, selectorOrEl, data) {
-
     if (isString(selectorOrEl)) {
       this.element = document.querySelector(selectorOrEl);
     } else {
@@ -15,7 +18,10 @@ export default class Templates {
     this.jsonData = data;
   }
 
-  //参数：是否为追加内容
+  /**
+   * load
+   * @param isAddToEl
+   */
   load(isAddToEl = false) {
     if (!isAddToEl) {
       //不是追加内容，先清空innerHTML
