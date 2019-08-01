@@ -51,9 +51,11 @@ module.exports = {
       path.resolve('static'),
     ],
     'alias': {
+      'h5-preloader': path.resolve('node_modules', 'h5-preloader', 'build', 'h5-preloader.js'),
+      'swiper-animation': path.resolve('node_modules', 'swiper-animation', 'build', 'swiper-animation.js'),
       'fastclick': path.resolve('node_modules', 'fastclick', 'lib', 'fastclick.js'),
       'swiper': path.resolve('node_modules', 'swiper', 'dist', 'js', 'swiper.js'),
-      'h5-audio-controls': path.resolve('node_modules', 'h5-audio-controls', 'build', 'H5AudioControls'),
+      'h5-audio-controls': path.resolve('node_modules', 'h5-audio-controls', 'build', 'H5AudioControls.js'),
       // 'weixin-share': path.resolve('node_modules', 'weixin-share', 'build', 'WxShare.js'),
     },
     'extensions': ['.js']
