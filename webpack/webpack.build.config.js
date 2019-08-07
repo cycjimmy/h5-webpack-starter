@@ -66,12 +66,6 @@ module.exports = webpackMerge(webpackBase, {
       // Style
       {
         test: /\.scss$/,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
-        include: [
-          path.resolve('app'),
-        ],
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           publicPath: '../',  // fix images url bug

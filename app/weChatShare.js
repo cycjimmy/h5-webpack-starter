@@ -4,7 +4,7 @@ import WxShare from 'weixin-share';
 // picture
 import weChatSharePic from '../static/images/noUrl/weChatSharePic.png';
 
-let
+const
   defaultData = {
     imgUrl: window.location.href.replace(/\/[^/]*$/g, '') + '/' + weChatSharePic,
     link: window.location.href.replace(/(\?|#).*/g, ''),
