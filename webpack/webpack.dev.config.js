@@ -23,9 +23,6 @@ module.exports = webpackMerge(webpackBase, {
       // Style
       {
         test: /\.scss$/,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         use: [
           {
             loader: 'style-loader'

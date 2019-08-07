@@ -1,6 +1,6 @@
 import Component from '../share/Component/index';
 
-export default class SlideComponent extends Component {
+export default class extends Component {
   constructor({
                 context,
                 mainSwiper,

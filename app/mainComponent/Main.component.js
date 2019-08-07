@@ -17,11 +17,12 @@ import H5AudioControls from 'h5-audio-controls';
 // service
 import SwiperAnimation from 'swiper-animation';
 import h5Preloader from 'h5-preloader';
+import functionToPromise from 'awesome-js-funcs/typeConversion/functionToPromise';
 
 // audio
 // import audioSrc from '../../static/media/';
 
-let audioSrc = 'https://cycjimmy.github.io/staticFiles/media/Richard_Clayderman-LOVE_IS_BLUE.mp3';
+const audioSrc = 'https://cycjimmy.github.io/staticFiles/media/Richard_Clayderman-LOVE_IS_BLUE.mp3';
 
 export default class extends Component {
   constructor() {
@@ -35,58 +36,51 @@ export default class extends Component {
   };
 
   load() {
-    return this.render({
-      pugTemplate: main,
-      wrapperElement: this.context,
-      insetParam: {
-        _style,
-      },
-    })
-      .then(() => {
-        return this.render({
-          pugTemplate: slides,
-          wrapperElement: this.context.querySelector('.' + _style.wrapper),
-          insetParam: {
-            _style,
-            length: slideComponents.length,
+    return Promise.resolve()
+      .then(() => this.render({
+        pugTemplate: main,
+        wrapperElement: this.context,
+        insetParam: {
+          _style,
+        },
+      }))
+      .then(() => this.render({
+        pugTemplate: slides,
+        wrapperElement: this.context.querySelector('.' + _style.wrapper),
+        insetParam: {
+          _style,
+          length: slideComponents.length,
+        },
+      }))
+      .then(() => functionToPromise(() => {
+        // Swiper
+        this.mainSwiper = new Swiper(this.context, {
+          pagination: {
+            el: '.' + _style.pagination,
+            clickable: true,
+            bulletActiveClass: _style.bulletActive,
+          },
+
+          direction: 'vertical',
+          wrapperClass: _style.wrapper,
+          mousewheel: true,
+
+          hashNavigation: {
+            watchState: true,
+            replaceState: true,
+          },
+
+          on: {
+            init: () => Promise.resolve()
+              .then(() => setTimeout(() => this.renderSlideComponents(), 0))
+              .then(() => this.audioComponent.load())
+              .then(() => h5Preloader().progressComplete())
+              .then(() => swiperAnimation.init(this.mainSwiper).animate()),
+
+            slideChange: () => setTimeout(() => swiperAnimation.init(this.mainSwiper).animate(), 0),
           },
         });
-      })
-      .then(() => {
-        return new Promise(resolve => {
-          // Swiper
-          this.mainSwiper = new Swiper(this.context, {
-            pagination: {
-              el: '.' + _style.pagination,
-              clickable: true,
-              bulletActiveClass: _style.bulletActive,
-            },
-
-            direction: 'vertical',
-            wrapperClass: _style.wrapper,
-            mousewheel: true,
-
-            hashNavigation: {
-              watchState: true,
-              replaceState: true,
-            },
-
-            on: {
-              init: () => Promise.resolve()
-                .then(() => setTimeout(() => this.renderSlideComponents(), 0))
-                .then(() => this.audioComponent.load())
-                .then(() => h5Preloader().progressComplete())
-                .then(() => swiperAnimation.init(this.mainSwiper).animate()),
-
-              slideChange: () => setTimeout(() => swiperAnimation.init(this.mainSwiper).animate(), 0),
-            },
-          });
-
-          setTimeout(() => {
-            resolve();
-          }, 0);
-        });
-      });
+      }));
   };
 
   renderSlideComponents() {
@@ -105,7 +99,7 @@ export default class extends Component {
 };
 
 // private
-let
+const
   _style = mainStyle
   , swiperAnimation = new SwiperAnimation()
   , slideComponents = [

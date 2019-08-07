@@ -1,4 +1,5 @@
 import Templates from '../Templates';
+import functionToPromise from 'awesome-js-funcs/typeConversion/functionToPromise';
 
 export default class Component {
   constructor({
@@ -23,13 +24,7 @@ export default class Component {
            insetParam,
            isAddToEl = false,
          }) {
-    return new Promise(resolve => {
-      new Templates(pugTemplate, wrapperElement, insetParam).load(isAddToEl);
-
-      setTimeout(() => {
-        resolve();
-      }, 0);
-    });
+    return functionToPromise(() => new Templates(pugTemplate, wrapperElement, insetParam).load(isAddToEl));
   };
 
   load() {

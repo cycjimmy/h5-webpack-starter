@@ -1,12 +1,12 @@
 import _style from './promptOrientation.scss';
 import promptOrientation from './promptOrientation.pug';
 
-// constructor
 import CreateInstance from 'awesome-js-funcs/designPattern/CreateInstance';
+import functionToPromise from 'awesome-js-funcs/typeConversion/functionToPromise';
 
 const _instance = new CreateInstance();
 
-export default class PromptOrientationComponentIns {
+export default class {
   constructor() {
     if (_instance()) {
       return _instance();
@@ -19,16 +19,13 @@ export default class PromptOrientationComponentIns {
   };
 
   load() {
-    return new Promise(resolve => {
+    return functionToPromise(() => {
       this.wrapper.innerHTML = promptOrientation({
         _style,
         suggest: 'Turn to portrait for better experience.',
       });
-
-      setTimeout(() => {
-        document.body.appendChild(this.wrapper);
-        resolve();
-      }, 0);
+    }).then(() => {
+      document.body.appendChild(this.wrapper);
     });
   };
 

@@ -3,10 +3,10 @@ import instanceComponent from '../instanceComponent';
 
 import slide from './jsmpegDemo.pug';
 import _style from './jsmpegDemo.scss';
-
 // service
 import nodeListToArray from 'awesome-js-funcs/typeConversion/nodeListToArray';
 import touchActive from '../../share/touchActiveMockClick.func';
+import functionToPromise from 'awesome-js-funcs/typeConversion/functionToPromise';
 
 // media
 const
@@ -22,17 +22,12 @@ const
   , oVideoUrls = [videoTs0, videoTs1]
   , oVideoPosters = [videoPoster0, videoPoster1]
 
-  , destroyOtherVideoIns = () => new Promise(resolve => {
-    oVideoInstances.forEach((el, index) => {
-      if (el) {
-        el.destroy();
-        oVideoInstances[index] = null;
-      }
-    });
-    setTimeout(() => {
-      resolve();
-    }, 0);
-  })
+  , destroyOtherVideoIns = () => functionToPromise(() => oVideoInstances.forEach((el, index) => {
+    if (el) {
+      el.destroy();
+      oVideoInstances[index] = null;
+    }
+  }))
 ;
 
 const _instance = instanceComponent(class extends SlideComponent {

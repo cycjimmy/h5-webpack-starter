@@ -1,6 +1,7 @@
 import templateLoading from './loading.pug';
 import _style from './loading.scss';
 import h5Preloader from 'h5-preloader';
+import functionToPromise from 'awesome-js-funcs/typeConversion/functionToPromise';
 
 const resources = [
   // require('../../static/images/'),
@@ -13,19 +14,18 @@ export default class {
   };
 
   load() {
-    return this.render()
-      .then(() => {
+    return Promise.resolve()
+      .then(() => this.render())
+      .then(() => functionToPromise(() => {
         this.paramInit();
         this.h5Preloader.load();
-      });
+      }));
   };
 
   render() {
-    return new Promise(resolve => {
+    return functionToPromise(() => {
       this.context.innerHTML = templateLoading({_style});
       document.body.appendChild(this.context);
-
-      setTimeout(resolve, 0);
     });
   };
 
