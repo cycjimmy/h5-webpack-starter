@@ -1,10 +1,10 @@
 import FastClick from 'fastclick';
 import webInitialize from './webInitialize.afunc';
-import preventDefault from 'awesome-js-funcs/event/preventDefault';
+import preventDefault from '@cycjimmy/awesome-js-funcs/event/preventDefault';
 
 if (DEVELOPMENT) {
   console.log('Development Mode');
-  console.log(require('awesome-js-funcs/handheld').getBrowserInfo());
+  console.log(require('@cycjimmy/awesome-js-funcs/handheld').getBrowserInfo());
 }
 
 if (PRODUCTION) {

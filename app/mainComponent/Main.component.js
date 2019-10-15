@@ -13,11 +13,11 @@ import h5videoPlayerDemoComponent from './h5videoPlayerDemo/h5videoPlayerDemo.co
 import webglDemoComponent from './webglDemo/webglDemo.component.ins';
 import slideXComponent from './slideX/slideX.component.ins';
 
-import H5AudioControls from 'h5-audio-controls';
+import H5AudioControls from '@cycjimmy/h5-audio-controls';
 // service
-import SwiperAnimation from 'swiper-animation';
-import h5Preloader from 'h5-preloader';
-import functionToPromise from 'awesome-js-funcs/typeConversion/functionToPromise';
+import SwiperAnimation from '@cycjimmy/swiper-animation';
+import h5Preloader from '@cycjimmy/h5-preloader';
+import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
 
 // audio
 // import audioSrc from '../../static/media/';

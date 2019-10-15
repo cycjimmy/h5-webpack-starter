@@ -1,6 +1,5 @@
 const
   path = require('path')
-  , webpack = require('webpack')
 
   // Webpack Plugin
   , DefinePlugin = require('webpack/lib/DefinePlugin')
@@ -20,8 +19,6 @@ module.exports = {
     'main': [
       'fastclick',
       'swiper',
-      'h5-audio-controls',
-      // 'weixin-share',
       path.resolve('app', 'main.js'),
     ],
   },
@@ -40,8 +37,6 @@ module.exports = {
   externals: {
     'fastclick': 'FastClick',
     'swiper': 'Swiper',
-    'h5-audio-controls': 'H5AudioControls',
-    // 'weixin-share': 'WxShare',
   },
 
   resolve: {
@@ -50,14 +45,6 @@ module.exports = {
       path.resolve('node_modules'),
       path.resolve('static'),
     ],
-    'alias': {
-      'h5-preloader': path.resolve('node_modules', 'h5-preloader', 'build', 'h5-preloader.js'),
-      'swiper-animation': path.resolve('node_modules', 'swiper-animation', 'build', 'swiper-animation.js'),
-      'fastclick': path.resolve('node_modules', 'fastclick', 'lib', 'fastclick.js'),
-      'swiper': path.resolve('node_modules', 'swiper', 'dist', 'js', 'swiper.js'),
-      'h5-audio-controls': path.resolve('node_modules', 'h5-audio-controls', 'build', 'H5AudioControls.js'),
-      // 'weixin-share': path.resolve('node_modules', 'weixin-share', 'build', 'WxShare.js'),
-    },
     'extensions': ['.js']
   },
 
@@ -76,12 +63,6 @@ module.exports = {
       {
         test: /\.js$/,
         type: 'javascript/auto',
-        include: [
-          path.resolve('app')
-        ],
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         loader: 'babel-loader',
       },
 
@@ -92,18 +73,12 @@ module.exports = {
           path.resolve('app'),
           path.resolve('static'),
         ],
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         loader: 'pug-loader',
       },
 
       // ico
       {
         test: /\.ico$/i,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         include: [
           path.resolve('static'),
         ],
@@ -132,20 +107,6 @@ module.exports = {
           options: 'Swiper',
         }]
       },
-      {
-        test: require.resolve('h5-audio-controls'),
-        use: [{
-          loader: 'expose-loader',
-          options: 'H5AudioControls',
-        }]
-      },
-      // {
-      //   test: require.resolve('weixin-share'),
-      //   use: [{
-      //     loader: 'expose-loader',
-      //     options: 'WxShare',
-      //   }]
-      // },
     ]
   },
 

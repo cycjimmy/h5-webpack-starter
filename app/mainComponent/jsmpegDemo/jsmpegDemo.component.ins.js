@@ -4,9 +4,9 @@ import instanceComponent from '../instanceComponent';
 import slide from './jsmpegDemo.pug';
 import _style from './jsmpegDemo.scss';
 // service
-import nodeListToArray from 'awesome-js-funcs/typeConversion/nodeListToArray';
+import nodeListToArray from '@cycjimmy/awesome-js-funcs/typeConversion/nodeListToArray';
 import touchActive from '../../share/touchActiveMockClick.func';
-import functionToPromise from 'awesome-js-funcs/typeConversion/functionToPromise';
+import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
 
 // media
 const

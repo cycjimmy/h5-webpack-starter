@@ -1,7 +1,7 @@
 // constructor
-import CreateInstance from 'awesome-js-funcs/designPattern/CreateInstance';
+import CreateInstance from '@cycjimmy/awesome-js-funcs/designPattern/CreateInstance';
 
-import isMobile from 'awesome-js-funcs/handheld/isMobile';
+import isMobile from '@cycjimmy/awesome-js-funcs/handheld/isMobile';
 
 import promptMobile from './promptMobile.pug'
 import _style from './promptMobile.scss'

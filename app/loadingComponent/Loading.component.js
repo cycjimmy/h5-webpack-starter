@@ -1,7 +1,7 @@
 import templateLoading from './loading.pug';
 import _style from './loading.scss';
-import h5Preloader from 'h5-preloader';
-import functionToPromise from 'awesome-js-funcs/typeConversion/functionToPromise';
+import h5Preloader from '@cycjimmy/h5-preloader';
+import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
 
 const resources = [
   // require('../../static/images/'),

@@ -19,14 +19,14 @@
 ## Based on 
 * [swiper](https://github.com/nolimits4web/Swiper)
 * [animate.css](https://github.com/daneden/animate.css)
-* [Swiper Animation](https://github.com/cycdpo/swiper-animation)
-* [h5-preloader](https://github.com/cycdpo/h5-preloader)
+* [Swiper Animation](https://github.com/cycjimmy/swiper-animation)
+* [h5-preloader](https://github.com/cycjimmy/h5-preloader)
 * [fastclick](https://github.com/ftlabs/fastclick)
 * [Pwa Webpack Starter](https://github.com/cycjimmy/pwa-webpack-starter)
-* [JSMpeg Player](https://github.com/cycdpo/jsmpeg-player)
-* [H5 Video Player](https://github.com/cycdpo/h5-video-player)
-* [H5 Audio Controls](https://github.com/cycdpo/h5-audio-controls)
-* [Weixin Share](https://github.com/cycdpo/weixin-share)
+* [JSMpeg Player](https://github.com/cycjimmy/jsmpeg-player)
+* [H5 Video Player](https://github.com/cycjimmy/h5-video-player)
+* [H5 Audio Controls](https://github.com/cycjimmy/h5-audio-controls)
+* [Weixin Share](https://github.com/cycjimmy/weixin-share)
 
 ## Installation
 ```shell
@@ -41,8 +41,6 @@ h5-webpack-starter
  │
  ├─app/                        # Project entry folder
  │   └─...
- ├─gulp/                       # Gulp tasks folder
- │   └─...
  ├─mock/                       # Mock data entry folder
  │   ├─api/
  │   └─webSocket/
@@ -56,7 +54,6 @@ h5-webpack-starter
  │   ├─browserSync.config.js   # BrowserSync config file
  │   ├─postcss.config.js       # Postcss config file
  │   └─...                     # Webpack configuration files
- ├─gulpfile.js                 # Gulp file entry
  └─...
 ```
 
@@ -69,10 +66,4 @@ $ npm start
 $ npm run build
 # or
 $ npm run build:watch
-
-# svg icon
-$ npm run svg
-
-# deploy to gh-pages
-$ npm run deploy
 ```

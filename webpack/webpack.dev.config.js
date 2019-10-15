@@ -35,9 +35,6 @@ module.exports = webpackMerge(webpackBase, {
       // Pictures
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         include: [
           path.resolve('app'),
           path.resolve('static'),
@@ -55,9 +52,6 @@ module.exports = webpackMerge(webpackBase, {
       // media
       {
         test: /\.(wav|mp3|mpeg|mp4|webm|ogv|flv|ts)$/i,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         include: [
           path.resolve('static', 'media'),
         ],
@@ -74,9 +68,6 @@ module.exports = webpackMerge(webpackBase, {
       // Font
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         use: [
           {
             loader: 'file-loader',
@@ -102,6 +93,5 @@ module.exports = webpackMerge(webpackBase, {
     }), {
       reload: true,
     }),
-
   ],
 });
