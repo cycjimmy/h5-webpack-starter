@@ -1,5 +1,5 @@
 import Templates from '../Templates';
-import functionToPromise from 'awesome-js-funcs/typeConversion/functionToPromise';
+import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
 
 export default class Component {
   constructor({

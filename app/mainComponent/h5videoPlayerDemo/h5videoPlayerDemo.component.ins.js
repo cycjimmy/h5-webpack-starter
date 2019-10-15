@@ -35,34 +35,39 @@ const _instance = instanceComponent(class extends SlideComponent {
   };
 
   paramInit() {
-    const source = 'https://cycjimmy.github.io/staticFiles/media/Sony_test_video_vertical_720x1280.mp4';
+    const source = 'https://cycjimmy.github.io/staticFiles/media/Sony_test_video_1280x720.mp4';
 
     this.oPlayBtn = this.context.querySelector('.' + _style.playBtn);
     this.video = new H5VideoPlayer(source, {
       context: this.context,
       autoPlay: true,
+      preload: true,
       control: true,
-      hookInPlay: () => {
-        console.log('hookInPlay');
+      orientation: 'landscape',
+      disableRotation: true,
+      hooks: {
+        play: () => {
+          console.log('hook: play');
 
-        if (this.audioComponent.isPlaying()) {
-          this.needContinuePlay = true;
-          this.audioComponent.pause();
-        } else {
-          this.needContinuePlay = false;
-        }
-      },
-      hookInPause: () => {
-        console.log('hookInPause');
-        if (this.needContinuePlay) {
-          this.audioComponent.play();
-        }
-      },
-      hookInStop: () => {
-        console.log('hookInStop');
-        if (this.needContinuePlay) {
-          this.audioComponent.play();
-        }
+          if (this.audioComponent.isPlaying()) {
+            this.needContinuePlay = true;
+            this.audioComponent.pause();
+          } else {
+            this.needContinuePlay = false;
+          }
+        },
+        pause: () => {
+          console.log('hook: pause');
+          if (this.needContinuePlay) {
+            this.audioComponent.play();
+          }
+        },
+        stop: () => {
+          console.log('hook: stop');
+          if (this.needContinuePlay) {
+            this.audioComponent.play();
+          }
+        },
       },
     });
   };

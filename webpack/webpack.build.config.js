@@ -9,49 +9,47 @@ const
   // Webpack Plugin
   , BrowserSyncPlugin = require('browser-sync-webpack-plugin')
   , HtmlWebpackPlugin = require('html-webpack-plugin')
-  , UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+  , TerserPlugin = require('terser-webpack-plugin')
   , ExtractTextPlugin = require('extract-text-webpack-plugin')
   , OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
   , OfflinePlugin = require('offline-plugin')
 ;
 
-let
-  imageWebpackLoaderConfig = {
-    loader: 'image-webpack-loader',
-    options: {
-      mozjpeg: {
-        progressive: true,
-        quality: 70,
-      },
-      gifsicle: {
-        interlaced: false,
-      },
-      optipng: {
-        optimizationLevel: 6,
-      },
-      pngquant: {
-        quality: '65-90',
-        speed: 4,
-      },
-      svgo: {
-        plugins: [
-          {
-            removeViewBox: false,
-          },
-          {
-            removeEmptyAttrs: false,
-          },
-          {
-            moveGroupAttrsToElems: false,
-          },
-        ],
-      },
-      // webp: {
-      //   quality: 75
-      // },
-    }
+const imageWebpackLoaderConfig = {
+  loader: 'image-webpack-loader',
+  options: {
+    mozjpeg: {
+      progressive: true,
+      quality: 70,
+    },
+    gifsicle: {
+      interlaced: false,
+    },
+    optipng: {
+      optimizationLevel: 6,
+    },
+    pngquant: {
+      quality: [.65, .9],
+      speed: 4,
+    },
+    svgo: {
+      plugins: [
+        {
+          removeViewBox: false,
+        },
+        {
+          removeEmptyAttrs: false,
+        },
+        {
+          moveGroupAttrsToElems: false,
+        },
+      ],
+    },
+    // webp: {
+    //   quality: 75
+    // },
   }
-;
+};
 
 module.exports = webpackMerge(webpackBase, {
   mode: 'production',
@@ -81,7 +79,6 @@ module.exports = webpackMerge(webpackBase, {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         exclude: [
-          path.resolve('node_modules'),
           path.resolve('static', 'images', 'icons'),
           path.resolve('static', 'images', 'logos'),
           path.resolve('static', 'images', 'noUrl'),
@@ -104,9 +101,6 @@ module.exports = webpackMerge(webpackBase, {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         include: [
           path.resolve('static', 'images', 'noUrl'),
         ],
@@ -125,9 +119,6 @@ module.exports = webpackMerge(webpackBase, {
       // media
       {
         test: /\.(wav|mp3|mpeg|mp4|webm|ogv|flv|ts)$/i,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         include: [
           path.resolve('static', 'media'),
         ],
@@ -145,9 +136,6 @@ module.exports = webpackMerge(webpackBase, {
       // Svg icons
       {
         test: /\.svg$/,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         include: [
           path.resolve('static', 'images', 'icons')
         ],
@@ -164,9 +152,6 @@ module.exports = webpackMerge(webpackBase, {
       // Font
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        exclude: [
-          path.resolve('node_modules'),
-        ],
         use: [
           {
             loader: 'url-loader',
@@ -268,27 +253,26 @@ module.exports = webpackMerge(webpackBase, {
   ],
 
   optimization: {
-    minimizer: [
-      // Uglify Js
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          ie8: false,
-          safari10: true,
-          ecma: 5,
-          output: {
-            comments: false,
-            beautify: false
-          },
-          compress: {
-            drop_debugger: true,
-            drop_console: true,
-            collapse_vars: true,
-            reduce_vars: true
-          },
-          warnings: false,
-          sourceMap: true
-        }
-      }),
-    ]
-  }
+    minimize: true,
+    minimizer: [new TerserPlugin({
+      extractComments: false,
+      terserOptions: {
+        ie8: false,
+        safari10: true,
+        ecma: 5,
+        output: {
+          comments: /^!/,
+          beautify: false
+        },
+        compress: {
+          drop_debugger: true,
+          drop_console: true,
+          collapse_vars: true,
+          reduce_vars: true
+        },
+        warnings: false,
+        sourceMap: true
+      },
+    })],
+  },
 });

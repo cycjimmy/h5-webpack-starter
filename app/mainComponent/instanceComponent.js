@@ -1,5 +1,5 @@
 // constructor
-import CreateInstance from 'awesome-js-funcs/designPattern/CreateInstance';
+import CreateInstance from '@cycjimmy/awesome-js-funcs/designPattern/CreateInstance';
 
 export default (Component) => {
   const _instance = new CreateInstance();

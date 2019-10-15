@@ -1,8 +1,8 @@
 import _style from './promptOrientation.scss';
 import promptOrientation from './promptOrientation.pug';
 
-import CreateInstance from 'awesome-js-funcs/designPattern/CreateInstance';
-import functionToPromise from 'awesome-js-funcs/typeConversion/functionToPromise';
+import CreateInstance from '@cycjimmy/awesome-js-funcs/designPattern/CreateInstance';
+import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
 
 const _instance = new CreateInstance();
 
