@@ -13,7 +13,7 @@ import h5videoPlayerDemoComponent from './h5videoPlayerDemo/h5videoPlayerDemo.co
 import webglDemoComponent from './webglDemo/webglDemo.component.ins';
 import slideXComponent from './slideX/slideX.component.ins';
 
-import H5AudioControls from '@cycjimmy/h5-audio-controls';
+import h5AudioControls from '@cycjimmy/h5-audio-controls';
 // service
 import SwiperAnimation from '@cycjimmy/swiper-animation';
 import h5Preloader from '@cycjimmy/h5-preloader';
@@ -30,7 +30,7 @@ export default class extends Component {
       context: document.querySelector('.main-screen'),
     });
     this.mainSwiper = null;
-    this.audioComponent = new H5AudioControls(audioSrc, {
+    this.audioComponent = h5AudioControls(audioSrc, {
       context: this.context,
     });
   };
