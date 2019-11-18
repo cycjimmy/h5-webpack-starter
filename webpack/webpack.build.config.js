@@ -13,6 +13,9 @@ const
   , ExtractTextPlugin = require('extract-text-webpack-plugin')
   , OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
   , OfflinePlugin = require('offline-plugin')
+
+  // configs
+  , terserConfig = require('@cycjimmy/config-lib/terserWebpackPlugin/2.x/production')
 ;
 
 const imageWebpackLoaderConfig = {
@@ -254,25 +257,6 @@ module.exports = webpackMerge(webpackBase, {
 
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin({
-      extractComments: false,
-      terserOptions: {
-        ie8: false,
-        safari10: true,
-        ecma: 5,
-        output: {
-          comments: /^!/,
-          beautify: false
-        },
-        compress: {
-          drop_debugger: true,
-          drop_console: true,
-          collapse_vars: true,
-          reduce_vars: true
-        },
-        warnings: false,
-        sourceMap: true
-      },
-    })],
+    minimizer: [new TerserPlugin(terserConfig)],
   },
 });
