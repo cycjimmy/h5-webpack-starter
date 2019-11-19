@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "H5 webpack starter for webpack, gulp, es6/7, sass, pug, swiper, jsmpeg...",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "@cycjimmy/awesome-js-funcs": "^2.1.0",
-    "@cycjimmy/h5-audio-controls": "^3.0.0",
+    "@cycjimmy/h5-audio-controls": "^3.1.0",
     "@cycjimmy/h5-preloader": "^2.0.0",
     "@cycjimmy/mini-xhr": "^3.0.0",
     "@cycjimmy/sass-lib": "^1.0.3",
@@ -42,7 +42,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.7.1",
     "@cycjimmy/config-lib": "^1.5.0",
-    "autoprefixer": "^9.7.1",
+    "autoprefixer": "^9.7.2",
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
