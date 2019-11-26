@@ -12,6 +12,9 @@ document.addEventListener('readystatechange', () => {
   console.log('documentReadyState: ' + document.readyState);
 });
 
+// preload
+// import './preload';
+
 Promise.resolve()
   .then(() => new PromptMobileComponentIns().load())
   .then(() => new LoadingComponent().load())
