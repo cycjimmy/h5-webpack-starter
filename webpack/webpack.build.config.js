@@ -230,14 +230,6 @@ module.exports = webpackMerge(webpackBase, {
       ServiceWorker: {
         events: true,
       },
-      AppCache: {
-        caches: ['main', 'additional', 'optional'],
-        directory: './',
-        NETWORK: '*',
-        events: true,
-        // FALLBACK: {'/': '/'},
-        includeCrossOrigin: true,
-      },
     }),
 
     new BrowserSyncPlugin(browserSyncConfig({
