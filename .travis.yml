@@ -23,9 +23,6 @@ cache:
   directories:
     - "node_modules"
 
-before_script:
-  - yarn global add gulp-cli
-
 script:
   - yarn --version
   - npm run build
