@@ -1,10 +1,11 @@
-import templateLoading from './loading.pug';
-import _style from './loading.scss';
 import h5Preloader from '@cycjimmy/h5-preloader';
 import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
+import templateLoading from './loading.pug';
+import _style from './loading.scss';
+import imgLoading from '../../static/images/loading.svg';
 
 const resources = [
-  // require('../../static/images/'),
+  // require('../../static/images/').default,
 ];
 
 export default class {
@@ -24,7 +25,7 @@ export default class {
 
   render() {
     return functionToPromise(() => {
-      this.context.innerHTML = templateLoading({_style});
+      this.context.innerHTML = templateLoading({_style, imgLoading});
       document.body.appendChild(this.context);
     });
   };
