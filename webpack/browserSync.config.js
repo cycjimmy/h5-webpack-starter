@@ -6,10 +6,10 @@ module.exports = options => {
       // https: true,
     },
     ghostMode: false,
-    // logLevel: "debug",
+    // logLevel: 'debug',
     middleware: [
       {
-        route: "/getData",
+        route: '/getData',
         handle: getDataAjax(),
       },
     ],
