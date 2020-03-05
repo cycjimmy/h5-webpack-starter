@@ -15,44 +15,9 @@ const
   , OfflinePlugin = require('offline-plugin')
 
   // configs
-  , terserConfig = require('@cycjimmy/config-lib/terserWebpackPlugin/2.x/production')
+  , terserConfig = require('@cycjimmy/config-lib/terserWebpackPlugin/2.x/working')
+  , imageWebpackLoaderConfig = require('@cycjimmy/config-lib/imageWebpackLoader/6.x/production')
 ;
-
-const imageWebpackLoaderConfig = {
-  loader: 'image-webpack-loader',
-  options: {
-    mozjpeg: {
-      progressive: true,
-      quality: 70,
-    },
-    gifsicle: {
-      interlaced: false,
-    },
-    optipng: {
-      optimizationLevel: 6,
-    },
-    pngquant: {
-      quality: [.65, .9],
-      speed: 4,
-    },
-    svgo: {
-      plugins: [
-        {
-          removeViewBox: false,
-        },
-        {
-          removeEmptyAttrs: false,
-        },
-        {
-          moveGroupAttrsToElems: false,
-        },
-      ],
-    },
-    // webp: {
-    //   quality: 75
-    // },
-  }
-};
 
 module.exports = webpackMerge(webpackBase, {
   mode: 'production',
