@@ -1,0 +1,12 @@
+@import "../../theme/variables";
+@import "../../theme/utilities";
+
+.backBtn {
+  padding: 0 $space * 1.6;
+  height: .4rem;
+
+  border: .01rem solid $fontColor;
+  border-radius: $radius;
+  font-size: $fontL;
+  line-height: .4rem;
+}

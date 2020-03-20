@@ -1,5 +1,5 @@
 // component
-import MainComponent from './mainComponent/Main.component';
+import root from './pages/root';
 import PromptMobileComponentIns from './share/promptMobile/PromptMobile.component.ins';
 import PromptOrientationComponentIns from './share/promptOrientation/PromptOrientation.component.ins';
 
@@ -12,7 +12,7 @@ export default () => Promise.resolve()
     : Promise.reject())
   .then(() => Promise.all([
     // weChatShare(),
-    new MainComponent().load(),
+    new root().init(),
     new PromptOrientationComponentIns().load(),
   ]))
   .catch(err => console.error('Failed to init', err));

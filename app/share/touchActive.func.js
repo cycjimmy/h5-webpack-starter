@@ -29,7 +29,7 @@ export default (selectorOrEls, context = document, isMoveShowActive = false) => 
 
   element.on('touchstart', addTouchActive);
 
-  //如移动时要显示touchActive，则不执行removeTouchActive
+  // If you want to display touchActive while moving, do not execute removeTouchActive
   if (!isMoveShowActive) {
     element.on('touchmove', removeTouchActive);
   }

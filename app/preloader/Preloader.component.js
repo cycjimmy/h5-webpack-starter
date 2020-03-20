@@ -1,12 +1,11 @@
 import h5Preloader from '@cycjimmy/h5-preloader';
+import h5Pages from '@cycjimmy/h5-pages';
 import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
-import templateLoading from './loading.pug';
-import _style from './loading.scss';
-import imgLoading from '../../static/images/loading.svg';
+import resources from './resources';
+import templateLoading from './preloader.pug';
+import _style from './preloader.scss';
 
-const resources = [
-  // require('../../static/images/').default,
-];
+import imgLoading from '../../static/images/loading.svg';
 
 export default class {
   constructor() {
@@ -26,7 +25,7 @@ export default class {
   render() {
     return functionToPromise(() => {
       this.context.innerHTML = templateLoading({_style, imgLoading});
-      document.body.appendChild(this.context);
+      h5Pages.root.appendChild(this.context);
     });
   };
 

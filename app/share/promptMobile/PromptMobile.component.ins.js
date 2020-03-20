@@ -1,7 +1,6 @@
-// constructor
 import CreateInstance from '@cycjimmy/awesome-js-funcs/designPattern/CreateInstance';
-
 import isMobile from '@cycjimmy/awesome-js-funcs/handheld/isMobile';
+import h5Pages from '@cycjimmy/h5-pages';
 
 import promptMobile from './promptMobile.pug'
 import _style from './promptMobile.scss'
@@ -37,7 +36,7 @@ export default class PromptMobileComponentIns {
           suggest: 'Scan code for better experience.'
         });
 
-        document.body.appendChild(this.wrapper);
+        h5Pages.root.appendChild(this.wrapper);
 
         reject('not mobile device');
       }

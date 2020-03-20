@@ -4,6 +4,9 @@ import './theme/main.scss';
 // services
 import preventDefault from '@cycjimmy/awesome-js-funcs/event/preventDefault';
 
+import PreloaderComponent from './preloader/Preloader.component';
+import PromptMobileComponentIns from './share/promptMobile/PromptMobile.component.ins';
+
 // polyfill
 import './polyfill';
 
@@ -28,10 +31,6 @@ document.addEventListener('contextmenu', preventDefault);
 // fix ios native scrolling
 document.body.addEventListener('touchmove', preventDefault, {passive: false});
 
-// component
-import LoadingComponent from './loadingComponent/Loading.component';
-import PromptMobileComponentIns from './share/promptMobile/PromptMobile.component.ins';
-
 document.addEventListener('readystatechange', () => {
   console.log('documentReadyState: ' + document.readyState);
 });
@@ -41,5 +40,5 @@ document.addEventListener('readystatechange', () => {
 
 Promise.resolve()
   .then(() => new PromptMobileComponentIns().load())
-  .then(() => new LoadingComponent().load())
+  .then(() => new PreloaderComponent().load())
   .catch(e => console.error(e));

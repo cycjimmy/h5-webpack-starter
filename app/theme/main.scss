@@ -7,11 +7,6 @@
  *---------------------------*/
 @import "~@cycjimmy/sass-lib/reset/h5";
 
-html, body {
-  position: relative;
-  height: 100%;
-}
-
 html {
   font-size: 100px;
   line-height: 1.4;
@@ -24,20 +19,5 @@ body {
   font-size: $fontM;
   font-family: -apple-system-font, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
-
-/*---------------------------
- * Main Frame
- *---------------------------*/
-:global {
-  .main-screen {
-    @extend %fullContainer;
-    overflow: hidden;
-
-    @extend %gpu-speedUp;
-  }
-}
-
-
-
 
 
