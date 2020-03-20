@@ -14,12 +14,12 @@
 * Allow video inline play in Wechat(X5) browser.
 
 ## Based on 
-* [swiper](https://github.com/nolimits4web/Swiper)
+* [Swiper](https://github.com/nolimits4web/Swiper)
 * [H5 Pages](https://github.com/cycjimmy/h5-pages)
-* [h5 Preloader](https://github.com/cycjimmy/h5-preloader)
+* [H5 Preloader](https://github.com/cycjimmy/h5-preloader)
 * [Swiper Animation](https://github.com/cycjimmy/swiper-animation)
-* [animate.css](https://github.com/daneden/animate.css)
-* [fastclick](https://github.com/ftlabs/fastclick)
+* [Animate.css](https://github.com/daneden/animate.css)
+* [Fastclick](https://github.com/ftlabs/fastclick)
 * [Pwa Webpack Starter](https://github.com/cycjimmy/pwa-webpack-starter)
 * [JSMpeg Player](https://github.com/cycjimmy/jsmpeg-player)
 * [H5 Video Player](https://github.com/cycjimmy/h5-video-player)
