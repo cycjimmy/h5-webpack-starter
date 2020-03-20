@@ -1,48 +1,34 @@
+import {Page, singleton} from "@cycjimmy/h5-pages";
+import H5ImageCompressService from '../../share/H5ImageCompress/H5ImageCompress.service';
 import QueryAll from '../../share/QueryAll';
-import SlideComponent from '../Slide.component';
-import instanceComponent from '../instanceComponent';
 
-import slide from './imageCompressUploadDemo.pug';
+// import miniXhr from '@cycjimmy/mini-xhr';
+
+import template from './imageCompressUploadDemo.pug';
 import _style from './imageCompressUploadDemo.scss';
 
-// service
-import H5ImageCompressService from '../../share/H5ImageCompress/H5ImageCompress.service';
-// import miniXhr from 'mini-xhr';
-
-const _instance = instanceComponent(class extends SlideComponent {
-  constructor({
-                context,
-                mainSwiper,
-                slideIndex,
-                audioComponent,
-              }) {
+export default singleton(class extends Page {
+  constructor() {
     super({
-      context,
-      mainSwiper,
-      slideIndex,
-      audioComponent,
+      name: 'imageCompressUploadDemo',
+      renderHtml: template({_style}),
     });
-    this.base64 = '';           // 压缩后base64图片
-  };
 
-  load() {
-    return this.init({
-      pugTemplate: slide,
-      wrapperElement: this.context,
-      insetParam: {
-        _style,
-      },
-    });
+    this.base64 = '';  // Base64 image after compression
   };
 
   paramInit() {
-    this.oShowBox = this.context.querySelector('.' + _style.showBox);
-    this.oInfo = this.context.querySelector('.' + _style.showInfo);
-    this.oUploadBtn = this.context.querySelector('.' + _style.uploadBtn);
+    super.paramInit();
+
+    this.oShowBox = this.page.querySelector('.' + _style.showBox);
+    this.oInfo = this.page.querySelector('.' + _style.showInfo);
+    this.oUploadBtn = this.page.querySelector('.' + _style.uploadBtn);
   };
 
   eventBind() {
-    // 选择图片
+    super.eventBind();
+
+    // Select Image
     new QueryAll('.' + _style.chooseInput, this.context).on('change', e => {
       new H5ImageCompressService(e.target.files[0], {
         before: file => {
@@ -52,7 +38,7 @@ const _instance = instanceComponent(class extends SlideComponent {
         },
         done: (file, base64) => {
           console.log('压缩成功...');
-          this._insertImg(base64);  // 显示压缩后
+          this._insertImg(base64);  // After compression
           this.base64 = base64;
           this._changeBtnState();
         },
@@ -70,13 +56,13 @@ const _instance = instanceComponent(class extends SlideComponent {
       }).init();
     });
 
-    // 开始上传
+    // Start upload
     new QueryAll(this.oUploadBtn).on('click', () => {
       if (!this.oUploadBtn.classList.contains(_style.canUpload)) {
         return;
       }
 
-      /* AJAX上传
+      /* AJAX upload
        miniXhr(...);
       */
 
@@ -85,8 +71,8 @@ const _instance = instanceComponent(class extends SlideComponent {
   };
 
   /**
-   * 预览图片
-   * @param file 图片文件BASE64
+   * _insertImg
+   * @param file img file BASE64
    * @private
    */
   _insertImg(file) {
@@ -108,9 +94,8 @@ const _instance = instanceComponent(class extends SlideComponent {
     file = null;
   };
 
-
   /**
-   * 变更按钮状态
+   * _changeBtnState
    * @private
    */
   _changeBtnState() {
@@ -121,6 +106,4 @@ const _instance = instanceComponent(class extends SlideComponent {
     }
   };
 });
-
-export default (param) => _instance(param);
 

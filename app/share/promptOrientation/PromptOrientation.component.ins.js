@@ -1,6 +1,7 @@
 import _style from './promptOrientation.scss';
 import promptOrientation from './promptOrientation.pug';
 
+import h5Pages from '@cycjimmy/h5-pages';
 import CreateInstance from '@cycjimmy/awesome-js-funcs/designPattern/CreateInstance';
 import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
 
@@ -25,7 +26,7 @@ export default class {
         suggest: 'Turn to portrait for better experience.',
       });
     }).then(() => {
-      document.body.appendChild(this.wrapper);
+      h5Pages.root.appendChild(this.wrapper);
     });
   };
 

@@ -1,47 +1,33 @@
-import SlideComponent from '../Slide.component';
-import instanceComponent from '../instanceComponent';
+import {Page, singleton} from '@cycjimmy/h5-pages';
 
-import slide from './webglDemo.pug';
+import template from './webglDemo.pug';
 import _style from './webglDemo.scss';
 
-const _instance = instanceComponent(class extends SlideComponent {
-  constructor({
-                context,
-                slideIndex,
-                audioComponent,
-              }) {
+export default singleton(class extends Page {
+  constructor() {
     super({
-      context,
-      slideIndex,
-      audioComponent,
+      name: 'webglDemo',
+      renderHtml: template({_style}),
     });
   };
 
-  load() {
-    return this.init({
-      pugTemplate: slide,
-      wrapperElement: this.context,
-      insetParam: {
-        _style,
-      },
-    })
-      .then(() => {
-        this.webGlDemoShow();
-      });
-  };
-
   paramInit() {
-    this.container = this.context.querySelector('.' + _style.container);
+    super.paramInit();
+    this.container = this.page.querySelector('.' + _style.container);
   };
 
-  webGlDemoShow() {
-    let
+  extraRender() {
+    this._webGlDemoShow();
+  };
+
+  _webGlDemoShow() {
+    const
       containerClientRect = this.container.getBoundingClientRect()
       , containerW = containerClientRect.width
       , containerH = containerClientRect.height
     ;
 
-    let
+    const
       scene = new THREE.Scene()
       , camera = new THREE.PerspectiveCamera(75, containerW / containerH, 0.1, 1000)
       , renderer = new THREE.WebGLRenderer()
@@ -50,7 +36,7 @@ const _instance = instanceComponent(class extends SlideComponent {
     renderer.setSize(containerW, containerH);
     this.container.appendChild(renderer.domElement);
 
-    let
+    const
       geometry = new THREE.BoxGeometry(1, 1, 1)
       , material = new THREE.MeshBasicMaterial({
         color: 0x00ff00,
@@ -60,7 +46,7 @@ const _instance = instanceComponent(class extends SlideComponent {
     scene.add(cube);
     camera.position.z = 5;
 
-    let render = () => {
+    const render = () => {
       requestAnimationFrame(render);
 
       cube.rotation.x += 0.05;
@@ -71,6 +57,4 @@ const _instance = instanceComponent(class extends SlideComponent {
     render();
   };
 });
-
-export default (param) => _instance(param);
 

@@ -1,0 +1,10 @@
+@import "../theme/variables";
+@import "../theme/utilities";
+
+.pagination {
+  .bulletActive {
+    opacity: 1;
+    background: lighten($bgc, 10%);
+  }
+}
+

@@ -15,9 +15,10 @@
 
 ## Based on 
 * [swiper](https://github.com/nolimits4web/Swiper)
-* [animate.css](https://github.com/daneden/animate.css)
+* [H5 Pages](https://github.com/cycjimmy/h5-pages)
+* [h5 Preloader](https://github.com/cycjimmy/h5-preloader)
 * [Swiper Animation](https://github.com/cycjimmy/swiper-animation)
-* [h5-preloader](https://github.com/cycjimmy/h5-preloader)
+* [animate.css](https://github.com/daneden/animate.css)
 * [fastclick](https://github.com/ftlabs/fastclick)
 * [Pwa Webpack Starter](https://github.com/cycjimmy/pwa-webpack-starter)
 * [JSMpeg Player](https://github.com/cycjimmy/jsmpeg-player)

@@ -1,24 +1,18 @@
-import SlideComponent from '../Slide.component';
-import instanceComponent from '../instanceComponent';
-
-import slide from './jsmpegDemo.pug';
-import _style from './jsmpegDemo.scss';
-// service
+import {Page, singleton} from '@cycjimmy/h5-pages';
+import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
 import nodeListToArray from '@cycjimmy/awesome-js-funcs/typeConversion/nodeListToArray';
 import touchActive from '../../share/touchActiveMockClick.func';
-import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
+import bgm from '../../bgm.ins';
 
-// media
+import template from './jsmpegDemo.pug';
+import _style from './jsmpegDemo.scss';
+
 const
   videoTs0 = 'https://cycjimmy.github.io/staticFiles/media/big_buck_bunny_640x360.ts'
   , videoTs1 = 'https://cycjimmy.github.io/staticFiles/media/Sony_test_video_640x360.ts'
   , videoPoster0 = 'https://cycjimmy.github.io/staticFiles/images/screenshot/big_buck_bunny_640x360.jpg'
   , videoPoster1 = 'https://cycjimmy.github.io/staticFiles/images/screenshot/Sony_test_video_640x360.jpg'
-;
-
-// private
-const
-  oVideoInstances = []
+  , oVideoInstances = []
   , oVideoUrls = [videoTs0, videoTs1]
   , oVideoPosters = [videoPoster0, videoPoster1]
 
@@ -27,71 +21,57 @@ const
       el.destroy();
       oVideoInstances[index] = null;
     }
-  }))
-;
+  }));
 
-const _instance = instanceComponent(class extends SlideComponent {
-  constructor({
-                context,
-                mainSwiper,
-                slideIndex,
-                audioComponent,
-              }) {
+export default singleton(class extends Page {
+  constructor() {
     super({
-      context,
-      mainSwiper,
-      slideIndex,
-      audioComponent,
-    });
-
-    this.oVideoWrapper = null;
-    this.needContinuePlay = false;
-    this.context.classList.add(_style.wrapper);
-  };
-
-  load() {
-    return this.init({
-      pugTemplate: slide,
-      wrapperElement: this.context,
-      insetParam: {
-        _style,
-      },
-      doLeaveSlide: () => {
-        // this.videoEl.player.stop();
+      name: 'jsmpegDemo',
+      renderHtml: template({_style}),
+      pageLeave: () => {
         oVideoInstances.forEach((videoEl) => {
           if (videoEl) {
             videoEl.stop();
           }
         });
-      },
-    })
-      .then(() => {
-        // 初始化第一个视频
-        oVideoInstances[0] = this.initVideoIns(oVideoUrls[0], oVideoPosters[0]);
-      });
+      }
+    });
+
+    this.oVideoWrapper = null;
+    this.needContinuePlay = false;
+    this.page.classList.add(_style.wrapper);
   };
 
+  extraRender() {
+    // Initialize the first video
+    oVideoInstances[0] = this.initVideoIns(oVideoUrls[0], oVideoPosters[0]);
+  }
+
   paramInit() {
-    this.oVideoWrapper = this.context.querySelector('.' + _style.videoWrapper);
-    this.aVideoChooseBtns = nodeListToArray(this.context.querySelectorAll('.' + _style.videoChoose));
+    super.paramInit();
+
+    this.oVideoWrapper = this.page.querySelector('.' + _style.videoWrapper);
+    this.aVideoChooseBtns = nodeListToArray(this.page.querySelectorAll('.' + _style.videoChoose));
   };
 
   eventBind() {
+    super.eventBind();
+
     this.aVideoChooseBtns.forEach((btn, index) => {
       btn.addEventListener('click', () => {
-        // 否有本身实例正在激活
+        // Is there an instance of itself being activated
         if (oVideoInstances[index]) {
           console.log('The video has been activated!');
           return;
         }
 
-        // 销毁原有实例
+        // Destroy the original instance
         destroyOtherVideoIns()
           .then(() => {
-            // 创建新实例
+            // create new instance
             oVideoInstances[index] = this.initVideoIns(oVideoUrls[index], oVideoPosters[index]);
 
-            // 立即播放
+            // play now
             // oVideoInstances[index].player.play();
           });
       });
@@ -111,9 +91,9 @@ const _instance = instanceComponent(class extends SlideComponent {
         play: () => {
           console.log('hookInPlay');
 
-          if (this.audioComponent.isPlaying()) {
+          if (bgm().isPlaying()) {
             this.needContinuePlay = true;
-            this.audioComponent.pause();
+            bgm().pause();
           } else {
             this.needContinuePlay = false;
           }
@@ -121,13 +101,11 @@ const _instance = instanceComponent(class extends SlideComponent {
         pause: () => {
           console.log('hookInPause');
           if (this.needContinuePlay) {
-            this.audioComponent.play();
+            bgm().play();
           }
         },
       },
     });
   };
 });
-
-export default (param) => _instance(param);
 
