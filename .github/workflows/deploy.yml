@@ -20,6 +20,7 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: release
           FOLDER: .
+          CLEAN: true
 
   deploy-gh-pages:
     runs-on: ubuntu-latest
@@ -40,3 +41,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: build
+          CLEAN: true
