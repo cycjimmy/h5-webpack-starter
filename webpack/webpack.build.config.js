@@ -42,6 +42,18 @@ module.exports = webpackMerge(webpackBase, {
           ],
         })
       },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          publicPath: '../',  // fix images url bug
+          use: [
+            {
+              loader: 'css-loader',
+            },
+          ],
+        })
+      },
 
       // Pictures
       {
@@ -84,7 +96,7 @@ module.exports = webpackMerge(webpackBase, {
         ],
       },
 
-      // media
+      // Media
       {
         test: /\.(wav|mp3|mpeg|mp4|webm|ogv|flv|ts)$/i,
         include: [
@@ -200,7 +212,6 @@ module.exports = webpackMerge(webpackBase, {
     new BrowserSyncPlugin(browserSyncConfig({
       server: {
         baseDir: 'build',
-        // https: true,
       },
       port: 4000,
       ui: {

@@ -1,9 +1,8 @@
-const
-  path = require('path')
-  , PRODUCTION = process.env.NODE_ENV === 'production'       // 生产模式
-;
-
-const cssIdentifier = PRODUCTION ? '[hash:base64:10]' : '[name]__[local]';
+const path = require('path');
+const PRODUCTION = process.env.NODE_ENV === 'production';
+const cssIdentifier = PRODUCTION
+  ? '[hash:base64:10]'
+  : '[name]__[local]';
 
 module.exports = options => {
   return Object.assign({

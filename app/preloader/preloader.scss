@@ -5,8 +5,8 @@ $loadingBgc: $bgc;
 
 .wrapper {
   @extend %fullContainer;
-  z-index: 9999;
   @extend %flexCenter;
+  z-index: 9999;
   flex-direction: column;
   background: darken($loadingBgc, 2%);
 }
@@ -26,6 +26,7 @@ $progressPadding: $progressH / 4;
   height: $progressH - $progressPadding * 2;
   padding: $progressPadding;
   margin: $space * 2 0 $space;
+
   background-color: darken($loadingBgc, 10%);
   border-radius: $progressH / 2;
   box-shadow: inset calcVW(1.5) calcVW(-1.5) calcVW(1.5) desaturate(lighten($loadingBgc, 20%), 30%);

@@ -1,17 +1,14 @@
-// component
 import root from './pages/root';
 import PromptMobileComponentIns from './share/promptMobile/PromptMobile.component.ins';
 import PromptOrientationComponentIns from './share/promptOrientation/PromptOrientation.component.ins';
-
-// service
-// import weChatShare from './weChatShare';
+import weChatShare from './weChatShare';
 
 export default () => Promise.resolve()
   .then(() => new PromptMobileComponentIns().getIsMobile()
     ? Promise.resolve()
     : Promise.reject())
   .then(() => Promise.all([
-    // weChatShare(),
+    weChatShare(),
     new root().init(),
     new PromptOrientationComponentIns().load(),
   ]))
