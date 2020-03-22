@@ -6,11 +6,10 @@ import bgm from '../bgm.ins';
 
 // pages
 import cover from './cover/cover.component.ins';
-import swiperDemo from './swiperDemo/swiperDemo.component.ins';
-import imageCompressUploadDemo from './imageCompressUploadDemo/imageCompressUploadDemo.component.ins';
-import jsmpegDemo from './jsmpegDemo/jsmpegDemo.component.ins';
-import h5videoPlayerDemo from './h5videoPlayerDemo/h5videoPlayerDemo.component.ins';
-import webglDemo from './webglDemo/webglDemo.component.ins';
+import features from './features/features.component.ins';
+import basedOn from './basedOn/basedOn.component.ins';
+import otherRecommended from './otherRecommended/otherRecommended.component.ins';
+import nestedSwiperDemo from './nestedSwiperDemo/nestedSwiperDemo.component.ins';
 import pageX from './pageX/pageX.component.ins';
 import backCover from './backCover/backCover.component.ins';
 
@@ -27,24 +26,24 @@ export default class {
       Swiper,
       pages: [
         cover,
-        swiperDemo,
-        imageCompressUploadDemo,
-        jsmpegDemo,
-        h5videoPlayerDemo,
-        webglDemo,
+        features,
+        basedOn,
+        otherRecommended,
+        nestedSwiperDemo,
         pageX,
         backCover,
       ],
       containerExtraHtml: `<div class="swiper-pagination ${_style.pagination}"></div>`,
       swiperOptions: {
+        direction: 'vertical',
+        mousewheel: true,
+        speed: 500,
+
         pagination: {
           el: `.${_style.pagination}`,
           clickable: true,
           bulletActiveClass: _style.bulletActive,
         },
-
-        direction: 'vertical',
-        mousewheel: true,
 
         hashNavigation: {
           watchState: true,

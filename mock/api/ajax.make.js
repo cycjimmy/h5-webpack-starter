@@ -5,11 +5,7 @@
  * @param timeout
  * @returns {function(*, *=, *=)}
  */
-module.exports = ({
-                    apiName,
-                    data = null,
-                    timeout = 200,
-                  }) => {
+module.exports = (apiName) => {
   return () => {
     apiName = '[' + apiName + ']';
 

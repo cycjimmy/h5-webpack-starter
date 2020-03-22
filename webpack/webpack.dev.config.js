@@ -31,6 +31,17 @@ module.exports = webpackMerge(webpackBase, {
           styleLoadersConfig.sassLoader,
         ]
       },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+          },
+        ]
+      },
 
       // Pictures
       {
@@ -49,7 +60,7 @@ module.exports = webpackMerge(webpackBase, {
         ],
       },
 
-      // media
+      // Media
       {
         test: /\.(wav|mp3|mpeg|mp4|webm|ogv|flv|ts)$/i,
         include: [

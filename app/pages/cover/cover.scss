@@ -11,58 +11,53 @@
 }
 
 .title {
-  font-size: .24rem;
+  font-size: calcVW(48);
   font-weight: bold;
 }
 
 // logo animation
-$picH: 1.2rem;
+$picH: calcVW(240);
 .logoWrap {
-  position: relative;
+  @extend %rel;
   height: $picH;
   width: $picH;
   margin-bottom: $picH / 6;
 }
 
-.logo,
-.logoImg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: $picH;
-  width: $picH;
-}
-
 .logo {
+  @extend %fullContainer;
   transform: scale(.9);
   transition: transform .4s;
 
   &.enlarge {
     transform: scale(1);
   }
-}
 
-.logoImg {
-  background: url(https://cycjimmy.github.io/staticFiles/images/cyc_logo256.png) no-repeat;
-  background-size: 100% 100%;
-
-  perspective: $picH / 6;
-  animation: rotation 4s linear 0s infinite normal both;
+  &::before {
+    @extend %fullContainer;
+    display: block;
+    content: "";
+    perspective: $picH / 6;
+    @include bg-image-full(url("https://cycjimmy.github.io/staticFiles/images/cyc_logo256.png"));
+    animation: rotation 4s linear 0s infinite normal both;
+  }
 
   &.animationPaused {
-    animation-play-state: paused;
+    &::before {
+      animation-play-state: paused;
+    }
   }
 }
 
 .gotoGithub {
   margin-top: $space * 2;
   padding: 0 $space * 1.6;
-  height: .4rem;
+  height: calcVW(80);
 
-  border: .01rem solid $fontColor;
+  border: calcVW(2) solid $fontColor;
   border-radius: $radius;
   font-size: $fontL;
-  line-height: .4rem;
+  line-height: calcVW(80);
 
   &:hover {
     color: $bgc;

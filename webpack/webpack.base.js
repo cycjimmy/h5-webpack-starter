@@ -7,15 +7,14 @@ const
 ;
 
 const
-  DEVELOPMENT = process.env.NODE_ENV === 'development'    // 开发模式
-  , PRODUCTION = process.env.NODE_ENV === 'production'    // 生产模式
-  , PRODUCTION_TEST_SERVER = process.env.NODE_ENV === 'production_test_server'    // 用测试服务器预览生产模式
+  DEVELOPMENT = process.env.NODE_ENV === 'development'    // Development mode
+  , PRODUCTION = process.env.NODE_ENV === 'production'    // Production mode
+  , PRODUCTION_TEST_SERVER = process.env.NODE_ENV === 'production_test_server'    // Preview production mode with test server
 ;
 
 module.exports = {
   entry: {
     'load': path.resolve('app', 'load.js'),
-    // 'vendor': [],
     'main': [
       'fastclick',
       'swiper',
@@ -24,7 +23,6 @@ module.exports = {
   },
 
   output: {
-    // path: 'dist',
     filename: DEVELOPMENT
       ? 'scripts/[name].bundle.[chunkhash:4].js'
       : 'scripts/[name].bundle.[chunkhash:8].min.js',
@@ -92,7 +90,7 @@ module.exports = {
         ],
       },
 
-      // expose
+      // Expose
       {
         test: require.resolve('fastclick'),
         use: [{

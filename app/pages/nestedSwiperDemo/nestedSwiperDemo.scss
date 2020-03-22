@@ -2,17 +2,15 @@
 @import "../../theme/utilities";
 
 .title {
-  font-size: .2rem;
+  font-size: calcVW(48);
   font-weight: bold;
 }
 
 .container {
-  position: relative;
-  width: 80vw;
-  height: 60vw;
-  max-width: 5rem;
-  max-height: 4rem;
-  margin: .2rem auto;
+  @extend %rel;
+  width: calcVW(600);
+  height: calcVW(450);
+  margin: calcVW(40) auto;
   overflow: hidden;
 }
 
@@ -20,11 +18,10 @@
 .content2,
 .content3,
 .content4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %flexCenter;
 
   background-color: lighten($bgc, 4%);
+  font-size: calcVW(36);
   text-align: center;
 }
 

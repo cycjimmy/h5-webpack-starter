@@ -44,8 +44,12 @@ jobs:
         uses: cycjimmy/semantic-release-action@v2
         id: semantic
         with:
-          branch: master
           extra_plugins: |
             @semantic-release/git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push updates to branch for release
+        run: "git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:refs/heads/release"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -6,9 +6,8 @@ $promptMobileFontColor: $fontColor;
 
 .wrapper {
   @extend %fullContainer;
-  display: flex;
+  @extend %flexCenter;
   flex-direction: column;
-  @include flex-box-align(center, center);
 
   background-color: $promptMobileBgc;
   color: $promptMobileFontColor;

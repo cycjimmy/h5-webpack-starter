@@ -8,7 +8,7 @@ html(lang='en')
     link(rel="shortcut icon", href=require('../favicon.ico').default)
 
     //- bugMonitor
-    include includes/bugMonitor
+      include includes/bugMonitor
 
     //- vconsole
       include includes/vconsole
@@ -39,9 +39,6 @@ html(lang='en')
       //- swiper global style
       link(href="https://cdn.jsdelivr.net/npm/swiper@5/css/swiper.min.css", rel="stylesheet")
 
-      //- videoJs global style
-        link(href="https://cdn.jsdelivr.net/npm/video.js@6/dist/video-js.min.css", rel="stylesheet")
-
       //- scripts
       //------------------------------------
 
@@ -50,21 +47,6 @@ html(lang='en')
 
       //- swiper
       script(src="https://cdn.jsdelivr.net/npm/swiper@5/js/swiper.min.js")
-
-      //- hammer
-        script(src="https://cdn.jsdelivr.net/npm/hammerjs@2/hammer.min.js")
-
-      //- three.js
-      script(src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js")
-
-      //- jsmpeg-player
-      script(src="https://cdn.jsdelivr.net/npm/@cycjimmy/jsmpeg-player@4/build/jsmpeg-player.min.js")
-
-      //- video.js
-        script(src="https://cdn.jsdelivr.net/npm/video.js@6/dist/video.min.js")
-
-      //- h5-video-player
-      script(src="https://cdn.jsdelivr.net/npm/@cycjimmy/h5-video-player@2/build/h5-video-player.min.js")
 
       //- webpack main script
       each _js,index in htmlWebpackPlugin.files.js

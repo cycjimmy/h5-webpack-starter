@@ -1,33 +1,33 @@
-import _style from './promptOrientation.scss';
-import promptOrientation from './promptOrientation.pug';
-
-import h5Pages from '@cycjimmy/h5-pages';
 import CreateInstance from '@cycjimmy/awesome-js-funcs/designPattern/CreateInstance';
 import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
+import h5Pages from '@cycjimmy/h5-pages';
 
-const _instance = new CreateInstance();
+import _style from './promptOrientation.scss';
+import template from './promptOrientation.pug';
+
+const instance = new CreateInstance();
 
 export default class {
   constructor() {
-    if (_instance()) {
-      return _instance();
+    if (instance()) {
+      return instance();
     }
 
     this.wrapper = document.createElement('div');
     this.wrapper.classList.add(_style.wrapper);
 
-    _instance(this);
+    instance(this);
   };
 
   load() {
-    return functionToPromise(() => {
-      this.wrapper.innerHTML = promptOrientation({
-        _style,
-        suggest: 'Turn to portrait for better experience.',
-      });
-    }).then(() => {
-      h5Pages.root.appendChild(this.wrapper);
-    });
+    return Promise.resolve()
+      .then(() => functionToPromise(() => {
+        this.wrapper.innerHTML = template({
+          _style,
+          suggest: 'Turn to portrait for better experience.',
+        });
+      }))
+      .then(() => h5Pages.root.appendChild(this.wrapper));
   };
 
   disable() {

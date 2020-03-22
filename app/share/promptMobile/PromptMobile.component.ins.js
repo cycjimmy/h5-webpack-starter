@@ -2,23 +2,21 @@ import CreateInstance from '@cycjimmy/awesome-js-funcs/designPattern/CreateInsta
 import isMobile from '@cycjimmy/awesome-js-funcs/handheld/isMobile';
 import h5Pages from '@cycjimmy/h5-pages';
 
-import promptMobile from './promptMobile.pug'
+import template from './promptMobile.pug'
 import _style from './promptMobile.scss'
-
-// image
 import QRCodeImg from '../../../static/images/QRCode.png';
 
-const _createInstance = new CreateInstance();    // 构造函数实例
+const instance = new CreateInstance();
 
 export default class PromptMobileComponentIns {
   constructor() {
-    if (_createInstance()) {
-      return _createInstance();
+    if (instance()) {
+      return instance();
     }
     this.isMobile = false;
     this.wrapper = document.createElement('div');
 
-    _createInstance(this);
+    instance(this);
   };
 
   load() {
@@ -30,10 +28,10 @@ export default class PromptMobileComponentIns {
         this.isMobile = false;
 
         this.wrapper.classList.add(_style.wrapper);
-        this.wrapper.innerHTML = promptMobile({
+        this.wrapper.innerHTML = template({
           _style,
           QRCodeImg,
-          suggest: 'Scan code for better experience.'
+          suggest: 'Scan code for better experience.',
         });
 
         h5Pages.root.appendChild(this.wrapper);
