@@ -1,6 +1,10 @@
 @import "../theme/variables";
 @import "../theme/utilities";
 
+.root {
+  background-color: $bgc;
+}
+
 .pagination {
   .bulletActive {
     opacity: 1;
