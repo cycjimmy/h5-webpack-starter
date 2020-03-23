@@ -19,6 +19,8 @@ export default class {
   constructor() {
     this.swiperAnimation = new SwiperAnimation();
     this.bgm = bgm();
+
+    h5Pages.root.classList.add(_style.root);
   };
 
   init() {

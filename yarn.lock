@@ -911,12 +911,12 @@
   resolved "https://registry.yarnpkg.com/@cycjimmy/config-lib/-/config-lib-1.6.1.tgz#1a681024e99e949550587931afb0ee2983ea62b8"
   integrity sha512-rgwryV7RYSmJD9JTV/ty70km4fH5pl0nGMyR6+MQrH/pMXTOK7UKNCloFxQsDQ+T6lma3zkTmJn8mX7J1P+Slg==
 
-"@cycjimmy/h5-audio-controls@^3.3.3":
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/@cycjimmy/h5-audio-controls/-/h5-audio-controls-3.3.3.tgz#fe8a4a906bc0fcd0d46f43e89f7ce5449491bd8f"
-  integrity sha512-p4/iw0/3aQWYWpxUzh/0yhZ7ME0jLWcRwfN4kil0BaT2+u6DnDgUlACGxzcUVDI97iLN9mrHYB6BoaBytUzmRQ==
+"@cycjimmy/h5-audio-controls@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@cycjimmy/h5-audio-controls/-/h5-audio-controls-3.4.0.tgz#710ee569ad4c0eaa676f54f6ab6129cfd6c94e71"
+  integrity sha512-RNqoLj/dIuWsZZLmOmLXl4VQq0dFpVdYVHlWGEi5Or4NQauFss7CmjqcKF9f8kJc6yaYLZMXfr60pgy271iZ+Q==
   dependencies:
-    "@cycjimmy/awesome-js-funcs" "^2.1.0"
+    "@cycjimmy/awesome-js-funcs" "^2.3.0"
     "@cycjimmy/sass-lib" "^1.0.3"
 
 "@cycjimmy/h5-pages@^1.2.1":

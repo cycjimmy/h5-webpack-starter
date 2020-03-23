@@ -14,6 +14,7 @@ export default () => {
 
   const bgmComponent = h5AudioControls(staticFiles.bgm, {
     context: h5Pages.root,
+    positionType: 'absolute',
   });
   instance(bgmComponent);
 

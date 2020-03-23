@@ -28,7 +28,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "@cycjimmy/awesome-js-funcs": "^2.3.0",
-    "@cycjimmy/h5-audio-controls": "^3.3.3",
+    "@cycjimmy/h5-audio-controls": "^3.4.0",
     "@cycjimmy/h5-pages": "^1.2.1",
     "@cycjimmy/h5-preloader": "^3.0.0",
     "@cycjimmy/mini-xhr": "^3.0.0",
