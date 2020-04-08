@@ -31,7 +31,7 @@ jobs:
 
       - name: Pre-built
         run: |
-          yarn install
+          npm ci
           npm run build
 
       - name: Deploy to GitHub Pages
