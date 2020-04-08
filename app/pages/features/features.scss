@@ -1,0 +1,13 @@
+@import "../../theme/variables";
+@import "../../theme/utilities";
+
+.title {
+  font-size: calcVW(48);
+  font-weight: bold;
+}
+
+.points {
+  > li {
+    list-style: decimal;
+  }
+}

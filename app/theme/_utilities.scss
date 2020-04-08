@@ -1,0 +1,11 @@
+@import "variables";
+@import "~@cycjimmy/sass-lib";
+
+@function calcVW($designDrawingLength:0) {
+  @return call(
+      get_function("designPx2VW"),
+      $designDrawingLength,
+      $designDrawingWidth
+  );
+}
+

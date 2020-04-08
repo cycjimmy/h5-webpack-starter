@@ -1,0 +1,33 @@
+@import "../../theme/variables";
+@import "../../theme/utilities";
+
+.title {
+  font-size: calcVW(48);
+  font-weight: bold;
+}
+
+.container {
+  @extend %rel;
+  width: calcVW(600);
+  height: calcVW(450);
+  margin: calcVW(40) auto;
+  overflow: hidden;
+}
+
+.content1,
+.content2,
+.content3,
+.content4 {
+  @extend %flexCenter;
+
+  background-color: lighten($bgc, 4%);
+  font-size: calcVW(36);
+  text-align: center;
+}
+
+.pagination {
+  .bulletActive {
+    opacity: 1;
+    background: lighten($bgc, 10%);
+  }
+}

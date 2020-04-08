@@ -1,0 +1,19 @@
+@import "../../theme/variables";
+@import "../../theme/utilities";
+
+.title {
+  font-size: calcVW(48);
+  font-weight: bold;
+}
+
+.points {
+  > li {
+    list-style: disc;
+  }
+}
+
+.iconCore {
+  &::before {
+    @include bg-image-full(url("../../../static/images/icon-core.svg"));
+  }
+}

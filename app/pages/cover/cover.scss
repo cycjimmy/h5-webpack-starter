@@ -1,0 +1,66 @@
+@import "../../theme/variables";
+@import "../../theme/utilities";
+
+@keyframes rotation {
+  0% {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
+}
+
+.title {
+  font-size: calcVW(48);
+  font-weight: bold;
+}
+
+// logo animation
+$picH: calcVW(240);
+.logoWrap {
+  @extend %rel;
+  height: $picH;
+  width: $picH;
+  margin-bottom: $picH / 6;
+}
+
+.logo {
+  @extend %fullContainer;
+  transform: scale(.9);
+  transition: transform .4s;
+
+  &.enlarge {
+    transform: scale(1);
+  }
+
+  &::before {
+    @extend %fullContainer;
+    display: block;
+    content: "";
+    perspective: $picH / 6;
+    @include bg-image-full(url("https://cycjimmy.github.io/staticFiles/images/cyc_logo256.png"));
+    animation: rotation 4s linear 0s infinite normal both;
+  }
+
+  &.animationPaused {
+    &::before {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.gotoGithub {
+  margin-top: $space * 2;
+  padding: 0 $space * 1.6;
+  height: calcVW(80);
+
+  border: calcVW(2) solid $fontColor;
+  border-radius: $radius;
+  font-size: $fontL;
+  line-height: calcVW(80);
+
+  &:hover {
+    color: $bgc;
+    background-color: $fontColor;
+  }
+}

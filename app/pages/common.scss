@@ -1,0 +1,39 @@
+@import "../theme/variables";
+@import "../theme/utilities";
+
+.pointsWrapper {
+  width: calcVW(500);
+  padding: calcVW(20);
+  margin-bottom: calcVW(80);
+
+  > li {
+    padding: calcVW(10);
+
+    font-size: calcVW(36);
+    text-align: justify;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  width: calcVW(36);
+  height: calcVW(36);
+  margin: 0 calcVW(10);
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    display: block;
+    content: "";
+    width: calcVW(30);
+    height: calcVW(30);
+  }
+}
+
+.link {
+  @extend .icon;
+
+  &::before {
+    @include bg-image-full(url('../../static/images/icon-link.svg'));
+  }
+}
