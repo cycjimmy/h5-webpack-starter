@@ -8,6 +8,6 @@ module.exports = makeConfig({
   git: true,
   gitAssets: [
     "package.json",
-    "yarn.lock"
+    "package-lock.json"
   ]
 });
