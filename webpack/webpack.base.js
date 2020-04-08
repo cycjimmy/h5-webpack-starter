@@ -138,7 +138,7 @@ module.exports = {
 
     new CleanWebpackPlugin({
       verbose: true,
-      dry: false
+      cleanStaleWebpackAssets: false,
     }),
   ],
 };
