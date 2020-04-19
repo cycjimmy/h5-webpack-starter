@@ -1,9 +1,6 @@
 // global css
 import './theme/main.scss';
 
-// services
-import preventDefault from '@cycjimmy/awesome-js-funcs/event/preventDefault';
-
 import PreloaderComponent from './preloader/Preloader.component';
 import PromptMobileComponentIns from './share/promptMobile/PromptMobile.component.ins';
 
@@ -24,12 +21,6 @@ if (DEVELOPMENT) {
 if (PRODUCTION) {
   console.log('Production Mode');
 }
-
-// contextMenu preventDefault
-document.addEventListener('contextmenu', preventDefault);
-
-// fix ios native scrolling
-document.body.addEventListener('touchmove', preventDefault, {passive: false});
 
 document.addEventListener('readystatechange', () => {
   console.log('documentReadyState: ' + document.readyState);
