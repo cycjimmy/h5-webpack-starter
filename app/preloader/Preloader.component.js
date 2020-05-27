@@ -39,7 +39,7 @@ export default class {
       },
       resources,
       hookWhenProgressComplete: () => {
-        this.context.classList.add('animated', 'slideOutUp');
+        this.context.classList.add('animate__animated', 'animate__slideOutUp');
         setTimeout(() => this.context.remove(), 2e3);
       },
       autoComplete: false,
