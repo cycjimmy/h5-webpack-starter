@@ -1,8 +1,8 @@
 const
   path = require('path')
-  , webpack = require('webpack')
-  , webpackMerge = require('webpack-merge')
-  , webpackBase = require('./webpack.base.js')
+  , Webpack = require('webpack')
+  , {merge} = require('webpack-merge')
+  , webpackBase = require('./webpack.base')
   , browserSyncConfig = require('./browserSync.config')
   , styleLoadersConfig = require('./styleLoaders.config')()
 
@@ -10,8 +10,8 @@ const
   , BrowserSyncPlugin = require('browser-sync-webpack-plugin')
   , HtmlWebpackPlugin = require('html-webpack-plugin')
   , TerserPlugin = require('terser-webpack-plugin')
-  , ExtractTextPlugin = require('extract-text-webpack-plugin')
-  , OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+  , MiniCssExtractPlugin = require('mini-css-extract-plugin')
+  , CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
   , OfflinePlugin = require('offline-plugin')
 
   // configs
@@ -19,7 +19,7 @@ const
   , imageWebpackLoaderConfig = require('@cycjimmy/config-lib/imageWebpackLoader/6.x/production')
 ;
 
-module.exports = webpackMerge(webpackBase, {
+module.exports = merge(webpackBase, {
   mode: 'production',
   bail: true,
 
@@ -32,27 +32,21 @@ module.exports = webpackMerge(webpackBase, {
       // Style
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          publicPath: '../',  // fix images url bug
-          use: [
-            styleLoadersConfig.cssLoader,
-            styleLoadersConfig.postLoader,
-            styleLoadersConfig.sassLoader,
-          ],
-        })
+        use: [
+          styleLoadersConfig.miniCssExtractLoader,
+          styleLoadersConfig.cssLoader,
+          styleLoadersConfig.postLoader,
+          styleLoadersConfig.sassLoader,
+        ],
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          publicPath: '../',  // fix images url bug
-          use: [
-            {
-              loader: 'css-loader',
-            },
-          ],
-        })
+        use: [
+          styleLoadersConfig.miniCssExtractLoader,
+          {
+            loader: 'css-loader',
+          },
+        ],
       },
 
       // Pictures
@@ -163,22 +157,14 @@ module.exports = webpackMerge(webpackBase, {
       },
     }),
 
-    new webpack.HashedModuleIdsPlugin(),
+    new Webpack.HashedModuleIdsPlugin(),
 
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'style/[name].[chunkhash:8].min.css',
       ignoreOrder: false,
-      allChunks: false,
     }),
 
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.min\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorOptions: {discardComments: {removeAll: true}},
-      canPrint: true
-    }),
-
-    new webpack.optimize.ModuleConcatenationPlugin(),
+    new Webpack.optimize.ModuleConcatenationPlugin(),
 
     new OfflinePlugin({
       appShell: './',
@@ -225,6 +211,9 @@ module.exports = webpackMerge(webpackBase, {
 
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin(terserConfig)],
+    minimizer: [
+      new TerserPlugin(terserConfig),
+      new CssMinimizerPlugin(),
+    ],
   },
 });

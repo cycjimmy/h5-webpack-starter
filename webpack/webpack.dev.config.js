@@ -1,7 +1,7 @@
 ﻿const
   path = require('path')
-  , webpackMerge = require('webpack-merge')
-  , webpackBase = require("./webpack.base.js")
+  , {merge} = require('webpack-merge')
+  , webpackBase = require('./webpack.base')
   , browserSyncConfig = require('./browserSync.config')
   , styleLoadersConfig = require('./styleLoaders.config')()
 
@@ -10,7 +10,7 @@
   , HtmlWebpackPlugin = require('html-webpack-plugin')
 ;
 
-module.exports = webpackMerge(webpackBase, {
+module.exports = merge(webpackBase, {
   mode: 'development',
   devtool: 'eval-source-map',
 

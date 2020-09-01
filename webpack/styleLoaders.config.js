@@ -1,4 +1,6 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const PRODUCTION = process.env.NODE_ENV === 'production';
 const cssIdentifier = PRODUCTION
   ? '[hash:base64:10]'
@@ -6,6 +8,12 @@ const cssIdentifier = PRODUCTION
 
 module.exports = options => {
   return Object.assign({
+    miniCssExtractLoader: {
+      loader: MiniCssExtractPlugin.loader,
+      options: {
+        publicPath: '../',
+      },
+    },
     cssLoader: {
       loader: 'css-loader',
       options: {
