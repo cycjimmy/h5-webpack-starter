@@ -1,11 +1,11 @@
-import {Page, singleton, changePageTo} from '@cycjimmy/h5-pages';
+import {Page, changePageTo} from '@cycjimmy/h5-pages';
 
 import template from './backCover.pug';
 import _style from './backCover.scss';
 
 import cover from '../cover/cover.component.ins';
 
-export default singleton(class extends Page {
+export default new class extends Page {
   constructor() {
     super({
       name: 'backCover',
@@ -24,5 +24,5 @@ export default singleton(class extends Page {
 
     this.backBtn.addEventListener('click', () => changePageTo(cover.name));
   };
-});
+};
 

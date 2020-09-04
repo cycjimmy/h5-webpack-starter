@@ -1,16 +1,16 @@
 import root from './pages/root';
-import PromptMobileComponentIns from './share/promptMobile/PromptMobile.component.ins';
-import PromptOrientationComponentIns from './share/promptOrientation/PromptOrientation.component.ins';
+import promptMobile from './popups/promptMobile/promptMobile.component.ins';
+import promptOrientation from './popups/promptOrientation/promptOrientation.component.ins';
 import weChatShare from './weChatShare';
 
 export default () => Promise.resolve()
-  .then(() => new PromptMobileComponentIns().getIsMobile()
+  .then(() => promptMobile.getIsMobile()
     ? Promise.resolve()
     : Promise.reject())
   .then(() => Promise.all([
     weChatShare(),
-    new root().init(),
-    new PromptOrientationComponentIns().load(),
+    root.init(),
+    promptOrientation.load(),
   ]))
   .catch(err => console.error('Failed to init', err));
 
