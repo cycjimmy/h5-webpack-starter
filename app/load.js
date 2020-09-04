@@ -1,8 +1,8 @@
 // global css
 import './theme/main.scss';
 
-import PreloaderComponent from './preloader/Preloader.component';
-import PromptMobileComponentIns from './share/promptMobile/PromptMobile.component.ins';
+import preloader from './preloader/preloader.component.ins';
+import promptMobile from './popups/promptMobile/promptMobile.component.ins';
 
 // polyfill
 import './polyfill';
@@ -26,10 +26,7 @@ document.addEventListener('readystatechange', () => {
   console.log('documentReadyState: ' + document.readyState);
 });
 
-// preload
-// import './preload';
-
 Promise.resolve()
-  .then(() => new PromptMobileComponentIns().load())
-  .then(() => new PreloaderComponent().load())
+  .then(() => promptMobile.load())
+  .then(() => preloader.load())
   .catch(e => console.error(e));

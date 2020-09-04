@@ -5,7 +5,7 @@ html(lang='en')
     title H5 Webpack Starter
 
     //- icon
-    link(rel="shortcut icon", href=require('../favicon.ico').default)
+    link(rel="shortcut icon", href=require("../favicon.ico").default)
 
     //- bugMonitor
       include includes/bugMonitor
@@ -14,7 +14,7 @@ html(lang='en')
       include includes/vconsole
 
     //- webpack style
-    each _style,index in htmlWebpackPlugin.files.css
+    each _style, index in htmlWebpackPlugin.files.css
       if index === 0
         link(href=_style, rel="stylesheet")
 
@@ -22,14 +22,14 @@ html(lang='en')
     //- styles and scripts
     span(style="display:none;")
       //- webpack loading js
-      each _js,index in htmlWebpackPlugin.files.js
+      each _js, index in htmlWebpackPlugin.files.js
         if index === 0
           script(src=_js)
 
       //- styles
       //------------------------------------
       //- webpack style
-      each _style,index in htmlWebpackPlugin.files.css
+      each _style, index in htmlWebpackPlugin.files.css
         if index !== 0
           link(href=_style, rel="stylesheet")
 
@@ -37,7 +37,7 @@ html(lang='en')
       link(href="https://cdn.jsdelivr.net/npm/animate.css@4/animate.min.css", rel="stylesheet")
 
       //- swiper global style
-      link(href="https://cdn.jsdelivr.net/npm/swiper@5/css/swiper.min.css", rel="stylesheet")
+      link(href="https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.css", rel="stylesheet")
 
       //- scripts
       //------------------------------------
@@ -46,10 +46,10 @@ html(lang='en')
       script(src="https://cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js")
 
       //- swiper
-      script(src="https://cdn.jsdelivr.net/npm/swiper@5/js/swiper.min.js")
+      script(src="https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.js")
 
       //- webpack main script
-      each _js,index in htmlWebpackPlugin.files.js
+      each _js, index in htmlWebpackPlugin.files.js
         if index !== 0
           script(src=_js)
 

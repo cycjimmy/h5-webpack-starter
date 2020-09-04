@@ -1,11 +1,11 @@
-import {Page, singleton} from '@cycjimmy/h5-pages';
+import {Page} from '@cycjimmy/h5-pages';
 
-import QueryAll from '../../share/QueryAll';
+import QueryAll from '../../shared/QueryAll';
 
 import template from './cover.pug';
 import _style from './cover.scss';
 
-export default singleton(class extends Page {
+export default new class extends Page {
   constructor() {
     super({
       name: 'cover',
@@ -38,5 +38,5 @@ export default singleton(class extends Page {
         this.logo.classList.remove(_style.enlarge);
       });
   };
-});
+};
 

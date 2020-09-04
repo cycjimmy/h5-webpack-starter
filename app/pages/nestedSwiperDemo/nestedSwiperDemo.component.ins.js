@@ -1,10 +1,10 @@
-import {Page, singleton} from '@cycjimmy/h5-pages';
+import {Page} from '@cycjimmy/h5-pages';
 import Swiper from 'swiper';
 
 import template from './nestedSwiperDemo.pug';
 import _style from './nestedSwiperDemo.scss';
 
-export default singleton(class extends Page {
+export default new class extends Page {
   constructor() {
     super({
       name: 'nestedSwiperDemo',
@@ -39,5 +39,5 @@ export default singleton(class extends Page {
       spaceBetween: 30,
     });
   };
-});
+};
 

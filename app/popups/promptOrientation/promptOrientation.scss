@@ -7,10 +7,9 @@ $lockOrientation: portrait;
 
 .wrapper {
   @extend %fullContainer;
+  @extend %flexCenter;
   z-index: 999;
-  display: flex;
   flex-direction: column;
-  @include flex-box-align(center, center);
 
   background-color: $promptOrientationBgc;
   color: $promptOrientationFontColor;
