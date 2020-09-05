@@ -1,7 +1,7 @@
 import root from './pages/root';
 import promptMobile from './popups/promptMobile/promptMobile.component.ins';
 import promptOrientation from './popups/promptOrientation/promptOrientation.component.ins';
-import weChatShare from './weChatShare';
+import weChatShare from './shared/weChatShare';
 
 export default () => Promise.resolve()
   .then(() => promptMobile.getIsMobile()

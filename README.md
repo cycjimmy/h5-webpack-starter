@@ -40,10 +40,11 @@ $ yarn install
 h5-webpack-starter
  │
  ├─app/                        # Project entry folder
- │   ├─preloader/              # Preloader component folder
  │   ├─pages/                  # Pages folder
+ │   ├─popups/                 # Popups folder
+ │   ├─preloader/              # Preloader component folder
  │   ├─theme/                  # Global and public styles
- │   ├─share/                  # Public component or method
+ │   ├─shared/                 # Public component or method
  │   └─...
  ├─mock/                       # Mock data entry folder
  │   ├─api/
