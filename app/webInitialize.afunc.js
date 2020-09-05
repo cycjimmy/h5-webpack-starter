@@ -13,5 +13,3 @@ export default () => Promise.resolve()
     promptOrientation.load(),
   ]))
   .catch(err => console.error('Failed to init', err));
-
-
