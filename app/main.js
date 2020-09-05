@@ -9,5 +9,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // web init
-  webInitialize();
+  return webInitialize();
 }, false);

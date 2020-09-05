@@ -8,7 +8,7 @@ export default class QueryAll {
    * @param context
    */
   constructor(selectorOrEls, context = document) {
-    let elements = null;
+    let elements;
 
     if (isString(selectorOrEls)) {
       elements = context.querySelectorAll(selectorOrEls);

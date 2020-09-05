@@ -2,7 +2,7 @@ import Swiper from 'swiper';
 import {h5Pages, init} from '@cycjimmy/h5-pages';
 import SwiperAnimation from '@cycjimmy/swiper-animation';
 import h5Preloader from '@cycjimmy/h5-preloader';
-import bgm from '../bgm.ins';
+import bgm from '../shared/bgm.ins';
 
 // pages
 import cover from './cover/cover.component.ins';
