@@ -1,7 +1,7 @@
 {
   "name": "h5-webpack-starter",
   "version": "1.6.1",
-  "description": "H5 webpack starter for webpack, gulp, es6/7, sass, pug, swiper, jsmpeg...",
+  "description": "H5 webpack starter for webpack, es6/7, sass, pug, swiper...",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack --config webpack/webpack.dev.config.js --display-modules --display-reasons --display-error-details --watch --color",
