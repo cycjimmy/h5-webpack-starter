@@ -26,8 +26,8 @@ module.exports = options => {
     postLoader: {
       loader: 'postcss-loader',
       options: {
-        config: {
-          path: path.resolve('webpack', 'postcss.config.js'),
+        postcssOptions: {
+          config: path.resolve('webpack', 'postcss.config.js'),
         },
       },
     },
