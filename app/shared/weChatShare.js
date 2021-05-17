@@ -1,4 +1,4 @@
-import WxShare from '@cycjimmy/weixin-share';
+import wxShare from '@cycjimmy/weixin-share';
 
 // picture
 import weChatSharePic from '../../static/images/noUrl/weChatSharePic.png';
@@ -18,7 +18,7 @@ const wxShareConfig = {
   signature: 'signature'
 };
 
-export default () => new WxShare()
+export default () => wxShare()
   .config(wxShareConfig)
   .setDefaultShare(defaultData)
   .share()
