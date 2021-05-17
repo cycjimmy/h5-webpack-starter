@@ -21,9 +21,9 @@ html(lang='en')
   body
     //- styles and scripts
     span(style="display:none;")
-      //- webpack loading js
+      //- webpack runtime.js and load.js
       each _js, index in htmlWebpackPlugin.files.js
-        if index === 0
+        if index <= 1
           script(src=_js)
 
       //- styles
@@ -50,6 +50,6 @@ html(lang='en')
 
       //- webpack main script
       each _js, index in htmlWebpackPlugin.files.js
-        if index !== 0
+        if index > 1
           script(src=_js)
 
