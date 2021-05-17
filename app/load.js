@@ -9,7 +9,7 @@ import './polyfill';
 
 // offline runtime
 if (!DEVELOPMENT) {
-  const OfflinePluginRuntime = require('offline-plugin/runtime');
+  const OfflinePluginRuntime = require('@lcdp/offline-plugin/runtime');
   OfflinePluginRuntime.install();
 }
 

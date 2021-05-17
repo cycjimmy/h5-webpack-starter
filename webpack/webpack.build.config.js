@@ -1,6 +1,5 @@
 const
   path = require('path')
-  , Webpack = require('webpack')
   , {merge} = require('webpack-merge')
   , webpackBase = require('./webpack.base')
   , browserSyncConfig = require('./browserSync.config')
@@ -12,7 +11,7 @@ const
   , TerserPlugin = require('terser-webpack-plugin')
   , MiniCssExtractPlugin = require('mini-css-extract-plugin')
   , CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-  , OfflinePlugin = require('offline-plugin')
+  , OfflinePlugin = require('@lcdp/offline-plugin')
 
   // configs
   , terserConfig = require('@cycjimmy/config-lib/terserWebpackPlugin/2.x/working')
@@ -157,14 +156,10 @@ module.exports = merge(webpackBase, {
       },
     }),
 
-    new Webpack.HashedModuleIdsPlugin(),
-
     new MiniCssExtractPlugin({
       filename: 'style/[name].[chunkhash:8].min.css',
       ignoreOrder: false,
     }),
-
-    new Webpack.optimize.ModuleConcatenationPlugin(),
 
     new OfflinePlugin({
       appShell: './',

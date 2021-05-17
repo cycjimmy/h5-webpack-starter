@@ -95,28 +95,32 @@ module.exports = {
         test: require.resolve('fastclick'),
         use: [{
           loader: 'expose-loader',
-          options: 'Fastclick',
+          options: {
+            exposes: 'Fastclick',
+          },
         }]
       },
       {
         test: require.resolve('swiper'),
         use: [{
           loader: 'expose-loader',
-          options: 'Swiper',
+          options: {
+            exposes: 'Swiper',
+          },
         }]
       },
     ]
   },
 
   optimization: {
+    moduleIds: 'deterministic',
     splitChunks: {
       chunks: 'initial',
-      name: true,
       cacheGroups: {
         default: false,
-        vendors: false,
-        load: {
-          name: 'load',
+        defaultVendors: false,
+        runtime: {
+          name: 'runtime',
           chunks: 'initial',
           minSize: Infinity,
           minChunks: Infinity,
@@ -124,7 +128,7 @@ module.exports = {
       }
     },
     runtimeChunk: {
-      name: 'load'
+      name: 'runtime'
     }
   },
 
