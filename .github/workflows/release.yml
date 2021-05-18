@@ -44,6 +44,21 @@ jobs:
         uses: cycjimmy/semantic-release-action@v2
         id: semantic
         with:
+          branches: |
+            [
+              'master',
+              'main',
+              'next',
+              'next-major',
+              {
+                name: 'beta',
+                prerelease: true
+              },
+              {
+                name: 'alpha',
+                prerelease: true
+              }
+            ]
           extra_plugins: |
             @semantic-release/git
         env:
