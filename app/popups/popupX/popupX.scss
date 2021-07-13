@@ -1,0 +1,50 @@
+@import "../../theme/variables";
+@import "../../theme/utilities";
+
+$popupXFontSize: calcVW(30);
+
+.wrapper {
+  @extend %fullContainer;
+  @extend %flexCenter;
+  flex-direction: column;
+  z-index: 99;
+
+  background-color: rgba(black, .85);
+
+  opacity: 0;
+  transition: opacity .4s;
+
+  &.fadeIn {
+    opacity: 1;
+  }
+}
+
+.box {
+  @extend %rel;
+  @extend %flexCenter;
+  flex-direction: column;
+  width: calcVW(340);
+  padding: calcVW(40);
+
+  color: $fontColor;
+  border: calcVW(2) solid $fontColor;
+  border-radius: $radius * 2;
+  font-size: $popupXFontSize;
+}
+
+.info {
+  font-weight: bold;
+  font-size: $popupXFontSize;
+  margin-bottom: $space;
+}
+
+.closeBtn {
+  @extend %flexCenter;
+  padding: $space * 1.5;
+
+  border: calcVW(2) solid $fontColor;
+  border-radius: $radius;
+  font-size: $popupXFontSize;
+  line-height: $popupXFontSize * 1.5;
+}
+
