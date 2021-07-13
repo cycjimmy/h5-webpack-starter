@@ -10,6 +10,7 @@ import features from './features/features.component.ins';
 import basedOn from './basedOn/basedOn.component.ins';
 import otherRecommended from './otherRecommended/otherRecommended.component.ins';
 import nestedSwiperDemo from './nestedSwiperDemo/nestedSwiperDemo.component.ins';
+import popupDemo from './popupDemo/popupDemo.component.ins';
 import pageX from './pageX/pageX.component.ins';
 import backCover from './backCover/backCover.component.ins';
 
@@ -31,6 +32,7 @@ export default new class {
         basedOn,
         otherRecommended,
         nestedSwiperDemo,
+        popupDemo,
         pageX,
         backCover,
       ],
