@@ -21,6 +21,7 @@ module.exports = options => {
         modules: {
           localIdentName: cssIdentifier,
         },
+        esModule: false,
       },
     },
     postLoader: {
