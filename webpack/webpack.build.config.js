@@ -207,7 +207,7 @@ module.exports = merge(webpackBase, {
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserPlugin(terserConfig),
+      compiler => new TerserPlugin(terserConfig).apply(compiler),
       new CssMinimizerPlugin(),
     ],
   },
