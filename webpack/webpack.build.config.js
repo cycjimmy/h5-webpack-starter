@@ -11,7 +11,7 @@ const
   , TerserPlugin = require('terser-webpack-plugin')
   , MiniCssExtractPlugin = require('mini-css-extract-plugin')
   , CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-  , OfflinePlugin = require('@lcdp/offline-plugin')
+  , {GenerateSW} = require('workbox-webpack-plugin')
 
   // configs
   , terserConfig = require('@cycjimmy/config-lib/terserWebpackPlugin/2.x/working')
@@ -161,34 +161,39 @@ module.exports = merge(webpackBase, {
       ignoreOrder: false,
     }),
 
-    new OfflinePlugin({
-      appShell: './',
-      safeToUseOptionalCaches: true,
-
-      version: '[hash]',
-      updateStrategy: 'changed',
-      autoUpdate: true,
-
-      caches: {
-        main: [
-          'scripts/*.js',
-          'style/*.css',
-        ],
-        additional: [
-          'images/*',
-          'media/*',
-          'favicon.ico',
-        ],
-        optional: []
-      },
-
-      externals: [],
-      // excludes: ['./'],
-
-      ServiceWorker: {
-        events: true,
-      },
+    new GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
     }),
+
+    // new OfflinePlugin({
+    //   appShell: './',
+    //   safeToUseOptionalCaches: true,
+    //
+    //   version: '[hash]',
+    //   updateStrategy: 'changed',
+    //   autoUpdate: true,
+    //
+    //   caches: {
+    //     main: [
+    //       'scripts/*.js',
+    //       'style/*.css',
+    //     ],
+    //     additional: [
+    //       'images/*',
+    //       'media/*',
+    //       'favicon.ico',
+    //     ],
+    //     optional: []
+    //   },
+    //
+    //   externals: [],
+    //   // excludes: ['./'],
+    //
+    //   ServiceWorker: {
+    //     events: true,
+    //   },
+    // }),
 
     new BrowserSyncPlugin(browserSyncConfig({
       server: {
