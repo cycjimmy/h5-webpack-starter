@@ -15,7 +15,7 @@ const
 
   // configs
   , terserConfig = require('@cycjimmy/config-lib/terserWebpackPlugin/2.x/working')
-  , imageWebpackLoaderConfig = require('@cycjimmy/config-lib/imageWebpackLoader/6.x/production')
+  , imageWebpackLoaderConfig = require('@cycjimmy/config-lib/imageWebpackLoader/8.x/production')
 ;
 
 module.exports = merge(webpackBase, {

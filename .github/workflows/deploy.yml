@@ -11,8 +11,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          persist-credentials: false
+          node-version: '16'
 
       - name: Pre-built
         run: |
@@ -20,8 +23,8 @@ jobs:
           npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build
+          branch: gh-pages
+          folder: build
+          token: ${{ secrets.ACCESS_TOKEN }}
