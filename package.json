@@ -1,12 +1,12 @@
 {
   "name": "h5-webpack-starter",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "H5 webpack starter for webpack, es6/7, sass, pug, swiper...",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack --config webpack/webpack.dev.config.js --watch --color",
-    "lint": "eslint -c .eslintrc 'app/**/*.js'",
-    "lint:fix": "eslint --fix -c .eslintrc 'app/**/*.js'",
+    "lint": "eslint -c .eslintrc './app/**/*.js'",
+    "lint:fix": "eslint --fix -c .eslintrc './app/**/*.js'",
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.build.config.js --progress --color",
     "build:watch": "cross-env NODE_ENV=production webpack --config webpack/webpack.build.config.js --progress --color --watch",
     "build:test_server:watch": "cross-env NODE_ENV=production_test_server webpack --config webpack/webpack.build.config.js --progress --color --watch"
