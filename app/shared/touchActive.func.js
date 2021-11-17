@@ -37,4 +37,3 @@ export default (selectorOrEls, context = document, isMoveShowActive = false) => 
   element.on('touchend', removeTouchActive);
   element.on('touchcancel', removeTouchActive);
 };
-

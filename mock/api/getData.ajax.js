@@ -3,6 +3,6 @@ const data = require('./data.json');
 
 module.exports = makeAjax({
   apiName: 'getData',
-  data: data,
+  data,
   timeout: 500,
 });

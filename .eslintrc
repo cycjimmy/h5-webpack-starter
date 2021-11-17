@@ -28,6 +28,16 @@
       {
         "allowEmptyReject": true
       }
+    ],
+    "func-names": [
+      "error",
+      "as-needed"
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
     ]
   }
 }

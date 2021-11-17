@@ -1,22 +1,16 @@
-const
-  path = require('path')
+const path = require('path');
+const DefinePlugin = require('webpack/lib/DefinePlugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-  // Webpack Plugin
-  , DefinePlugin = require('webpack/lib/DefinePlugin')
-  , ESLintPlugin = require('eslint-webpack-plugin')
-  , {CleanWebpackPlugin} = require('clean-webpack-plugin')
-;
-
-const
-  DEVELOPMENT = process.env.NODE_ENV === 'development'    // Development mode
-  , PRODUCTION = process.env.NODE_ENV === 'production'    // Production mode
-  , PRODUCTION_TEST_SERVER = process.env.NODE_ENV === 'production_test_server'    // Preview production mode with test server
-;
+const DEVELOPMENT = process.env.NODE_ENV === 'development'; // Development mode
+const PRODUCTION = process.env.NODE_ENV === 'production'; // Production mode
+const PRODUCTION_TEST_SERVER = process.env.NODE_ENV === 'production_test_server'; // Preview production mode with test server
 
 module.exports = {
   entry: {
-    'load': path.resolve('app', 'load.js'),
-    'main': [
+    load: path.resolve('app', 'load.js'),
+    main: [
       'fastclick',
       'swiper',
       path.resolve('app', 'main.js'),
@@ -34,8 +28,8 @@ module.exports = {
   },
 
   externals: {
-    'fastclick': 'FastClick',
-    'swiper': 'Swiper',
+    fastclick: 'FastClick',
+    swiper: 'Swiper',
   },
 
   resolve: {
@@ -44,7 +38,7 @@ module.exports = {
       path.resolve('node_modules'),
       path.resolve('static'),
     ],
-    'extensions': ['.js']
+    extensions: ['.js'],
   },
 
   module: {
@@ -99,7 +93,7 @@ module.exports = {
           options: {
             exposes: 'Fastclick',
           },
-        }]
+        }],
       },
       {
         test: require.resolve('swiper'),
@@ -108,9 +102,9 @@ module.exports = {
           options: {
             exposes: 'Swiper',
           },
-        }]
+        }],
       },
-    ]
+    ],
   },
 
   optimization: {
@@ -126,11 +120,11 @@ module.exports = {
           minSize: Infinity,
           minChunks: Infinity,
         },
-      }
+      },
     },
     runtimeChunk: {
-      name: 'runtime'
-    }
+      name: 'runtime',
+    },
   },
 
   plugins: [

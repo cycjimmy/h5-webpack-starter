@@ -6,39 +6,38 @@ const cssIdentifier = PRODUCTION
   ? '[hash:base64:10]'
   : '[name]__[local]';
 
-module.exports = options => {
-  return Object.assign({
-    miniCssExtractLoader: {
-      loader: MiniCssExtractPlugin.loader,
-      options: {
-        publicPath: '../',
+module.exports = (options) => ({
+  miniCssExtractLoader: {
+    loader: MiniCssExtractPlugin.loader,
+    options: {
+      publicPath: '../',
+    },
+  },
+  cssLoader: {
+    loader: 'css-loader',
+    options: {
+      importLoaders: 2,
+      modules: {
+        localIdentName: cssIdentifier,
+      },
+      esModule: false,
+    },
+  },
+  postLoader: {
+    loader: 'postcss-loader',
+    options: {
+      postcssOptions: {
+        config: path.resolve('webpack', 'postcss.config.js'),
       },
     },
-    cssLoader: {
-      loader: 'css-loader',
-      options: {
-        importLoaders: 2,
-        modules: {
-          localIdentName: cssIdentifier,
-        },
-        esModule: false,
+  },
+  sassLoader: {
+    loader: 'sass-loader',
+    options: {
+      sassOptions: {
+        outputStyle: 'expanded',
       },
     },
-    postLoader: {
-      loader: 'postcss-loader',
-      options: {
-        postcssOptions: {
-          config: path.resolve('webpack', 'postcss.config.js'),
-        },
-      },
-    },
-    sassLoader: {
-      loader: 'sass-loader',
-      options: {
-        sassOptions: {
-          outputStyle: 'expanded',
-        },
-      },
-    },
-  }, options);
-};
+  },
+  ...options,
+});
