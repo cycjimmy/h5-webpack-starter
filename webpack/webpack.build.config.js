@@ -1,22 +1,16 @@
-const
-  path = require('path')
-  , {merge} = require('webpack-merge')
-  , webpackBase = require('./webpack.base')
-  , browserSyncConfig = require('./browserSync.config')
-  , styleLoadersConfig = require('./styleLoaders.config')()
-
-  // Webpack Plugin
-  , BrowserSyncPlugin = require('browser-sync-webpack-plugin')
-  , HtmlWebpackPlugin = require('html-webpack-plugin')
-  , TerserPlugin = require('terser-webpack-plugin')
-  , MiniCssExtractPlugin = require('mini-css-extract-plugin')
-  , CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-  , {GenerateSW} = require('workbox-webpack-plugin')
-
-  // configs
-  , terserConfig = require('@cycjimmy/config-lib/terserWebpackPlugin/2.x/working')
-  , imageWebpackLoaderConfig = require('@cycjimmy/config-lib/imageWebpackLoader/8.x/production')
-;
+const path = require('path');
+const { merge } = require('webpack-merge');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
+const terserConfig = require('@cycjimmy/config-lib/terserWebpackPlugin/2.x/working');
+const imageWebpackLoaderConfig = require('@cycjimmy/config-lib/imageWebpackLoader/8.x/production');
+const styleLoadersConfig = require('./styleLoaders.config')();
+const browserSyncConfig = require('./browserSync.config');
+const webpackBase = require('./webpack.base');
 
 module.exports = merge(webpackBase, {
   mode: 'production',
@@ -67,7 +61,7 @@ module.exports = merge(webpackBase, {
               limit: 4096,
               name: 'images/[hash:12].[ext]',
               // name: 'images/[name].[ext]',
-            }
+            },
           },
           imageWebpackLoaderConfig,
         ],
@@ -83,7 +77,7 @@ module.exports = merge(webpackBase, {
             options: {
               name: 'images/[hash:12].[ext]',
               // name: 'images/[name].[ext]',
-            }
+            },
           },
           imageWebpackLoaderConfig,
         ],
@@ -101,7 +95,7 @@ module.exports = merge(webpackBase, {
             options: {
               limit: 4096,
               name: 'media/[hash:12].[ext]',
-            }
+            },
           },
         ],
       },
@@ -110,15 +104,15 @@ module.exports = merge(webpackBase, {
       {
         test: /\.svg$/,
         include: [
-          path.resolve('static', 'images', 'icons')
+          path.resolve('static', 'images', 'icons'),
         ],
         use: [
           {
             loader: 'file-loader',
             options: {
               name: 'images/icons/[hash:12].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
 
@@ -131,11 +125,11 @@ module.exports = merge(webpackBase, {
             options: {
               limit: 8192,
               name: 'fonts/[hash:12].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
-    ]
+    ],
   },
 
   plugins: [
@@ -183,7 +177,7 @@ module.exports = merge(webpackBase, {
   optimization: {
     minimize: true,
     minimizer: [
-      compiler => new TerserPlugin(terserConfig).apply(compiler),
+      (compiler) => new TerserPlugin(terserConfig).apply(compiler),
       new CssMinimizerPlugin(),
     ],
   },

@@ -12,7 +12,7 @@ const addTouchActive = (el) => {
 /**
  * removeTouchActive
  */
-const removeTouchActive = el => {
+const removeTouchActive = (el) => {
   if (el.classList.contains('touch-active')) {
     el.classList.remove('touch-active');
   }
@@ -26,11 +26,10 @@ const removeTouchActive = el => {
 export default (selectorOrEls, context = document) => {
   const element = new QueryAll(selectorOrEls, context);
 
-  element.on('click', function () {
-    addTouchActive(this);
+  element.on('click', () => {
+    addTouchActive(element);
     setTimeout(() => {
-      removeTouchActive(this)
+      removeTouchActive(element);
     }, 200);
   });
 };
-
