@@ -22,7 +22,7 @@ jobs:
         run: npm ci
 
       - name: Test
-        run: npm run build
+        run: npm run lint:fix && npm run build
 
   release:
     name: release

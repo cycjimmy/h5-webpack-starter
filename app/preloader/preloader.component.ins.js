@@ -1,4 +1,4 @@
-import {Popup} from '@cycjimmy/h5-pages';
+import { Popup } from '@cycjimmy/h5-pages';
 import h5Preloader from '@cycjimmy/h5-preloader';
 import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
 
@@ -11,19 +11,19 @@ export default new class extends Popup {
   constructor() {
     super();
     this.popup.classList.add(_style.wrapper);
-  };
+  }
 
   load() {
     return Promise.resolve()
       .then(() => this.render(template({
         _style,
-        imgLoading
+        imgLoading,
       })))
       .then(() => functionToPromise(() => {
         this.paramInit();
         this.h5Preloader.load();
       }));
-  };
+  }
 
   paramInit() {
     this.progressBar = this.popup.querySelector(`.${_style.loadingProgressbar}`);
@@ -40,5 +40,5 @@ export default new class extends Popup {
       },
       autoComplete: false,
     });
-  };
-};
+  }
+}();

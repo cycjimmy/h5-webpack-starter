@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import {h5Pages, init} from '@cycjimmy/h5-pages';
+import { h5Pages, init } from '@cycjimmy/h5-pages';
 import SwiperAnimation from '@cycjimmy/swiper-animation';
 import h5Preloader from '@cycjimmy/h5-preloader';
 import bgm from '../shared/bgm.ins';
@@ -21,7 +21,7 @@ export default new class {
     this.swiperAnimation = new SwiperAnimation();
 
     h5Pages.root.classList.add(_style.root);
-  };
+  }
 
   init() {
     return init({
@@ -59,10 +59,12 @@ export default new class {
             .then(() => h5Preloader().progressComplete())
             .then(() => this.swiperAnimation.init(h5Pages.swiper).animate()),
 
-          slideChange: () => setTimeout(() => this.swiperAnimation.init(h5Pages.swiper).animate(), 0),
+          slideChange: () => setTimeout(
+            () => this.swiperAnimation.init(h5Pages.swiper).animate(),
+            0,
+          ),
         },
       },
-    })
-  };
-};
-
+    });
+  }
+}();

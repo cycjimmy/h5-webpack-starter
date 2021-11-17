@@ -3,6 +3,7 @@ const
 
   // Webpack Plugin
   , DefinePlugin = require('webpack/lib/DefinePlugin')
+  , ESLintPlugin = require('eslint-webpack-plugin')
   , {CleanWebpackPlugin} = require('clean-webpack-plugin')
 ;
 
@@ -138,6 +139,10 @@ module.exports = {
       PRODUCTION: JSON.stringify(PRODUCTION),
       PRODUCTION_TEST_SERVER: JSON.stringify(PRODUCTION_TEST_SERVER),
       TEST_SERVER_ADDRESS: '',
+    }),
+
+    new ESLintPlugin({
+      fix: true,
     }),
 
     new CleanWebpackPlugin({

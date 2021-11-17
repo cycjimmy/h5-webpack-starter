@@ -4,12 +4,12 @@ import promptOrientation from './popups/promptOrientation/promptOrientation.comp
 import weChatShare from './shared/weChatShare';
 
 export default () => Promise.resolve()
-  .then(() => promptMobile.getIsMobile()
+  .then(() => (promptMobile.getIsMobile()
     ? Promise.resolve()
-    : Promise.reject())
+    : Promise.reject()))
   .then(() => Promise.all([
     weChatShare(),
     root.init(),
     promptOrientation.load(),
   ]))
-  .catch(err => console.error('Failed to init', err));
+  .catch((err) => console.error('Failed to init', err));

@@ -1,16 +1,16 @@
-import {Popup} from '@cycjimmy/h5-pages';
+import { Popup } from '@cycjimmy/h5-pages';
 import isMobile from '@cycjimmy/awesome-js-funcs/handheld/isMobile';
 import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
 
-import template from './promptMobile.pug'
-import _style from './promptMobile.scss'
+import template from './promptMobile.pug';
+import _style from './promptMobile.scss';
 import QRCodeImg from '../../../static/images/QRCode.png';
 
 export default new class extends Popup {
   constructor() {
     super();
     this.isMobile = false;
-  };
+  }
 
   load() {
     if (isMobile()) {
@@ -30,12 +30,10 @@ export default new class extends Popup {
         QRCodeImg,
         suggest: 'Scan code for better experience.',
       })))
-      .then(() => Promise.reject('not mobile device'));
-  };
+      .then(() => Promise.reject(new Error('not mobile device')));
+  }
 
   getIsMobile() {
     return this.isMobile;
-  };
-};
-
-
+  }
+}();

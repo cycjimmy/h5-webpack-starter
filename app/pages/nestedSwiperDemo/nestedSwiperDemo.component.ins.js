@@ -1,4 +1,4 @@
-import {Page} from '@cycjimmy/h5-pages';
+import { Page } from '@cycjimmy/h5-pages';
 import Swiper from 'swiper';
 
 import template from './nestedSwiperDemo.pug';
@@ -8,22 +8,22 @@ export default new class extends Page {
   constructor() {
     super({
       name: 'nestedSwiperDemo',
-      renderHtml: template({_style}),
+      renderHtml: template({ _style }),
       pageLeave() {
         this.nestedSwiper.slideTo(0, 0);
       },
     });
-  };
+  }
 
   paramInit() {
     super.paramInit();
 
     this.slideContainer = this.page.querySelector(`.${_style.container}`);
-  };
+  }
 
   extraRender() {
     this.nestedSwiperInit();
-  };
+  }
 
   nestedSwiperInit() {
     this.nestedSwiper = new Swiper(this.slideContainer, {
@@ -38,6 +38,5 @@ export default new class extends Page {
 
       spaceBetween: 30,
     });
-  };
-};
-
+  }
+}();
