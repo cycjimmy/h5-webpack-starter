@@ -4,7 +4,7 @@ import wxShare from '@cycjimmy/weixin-share';
 import weChatSharePic from '../../static/images/noUrl/weChatSharePic.png';
 
 const defaultData = {
-  imgUrl: window.location.href.replace(/\/[^/]*$/g, '') + '/' + weChatSharePic,
+  imgUrl: `${window.location.href.replace(/\/[^/]*$/g, '')}/${weChatSharePic}`,
   link: window.location.href.replace(/(\?|#).*/g, ''),
   title: 'H5 Webpack Starter',
   desc: 'H5 webpack starter for webpack, gulp, es6/7, sass, pug, swiper, jsmpeg...',
@@ -15,11 +15,11 @@ const wxShareConfig = {
   appId: 'appId',
   timestamp: 'timestamp',
   nonceStr: 'nonceStr',
-  signature: 'signature'
+  signature: 'signature',
 };
 
 export default () => wxShare()
   .config(wxShareConfig)
   .setDefaultShare(defaultData)
   .share()
-  .catch(e => console.error(e));
+  .catch((e) => console.error(e));

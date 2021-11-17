@@ -7,13 +7,13 @@ import promptMobile from './popups/promptMobile/promptMobile.component.ins';
 // polyfill
 import './polyfill';
 
-// Registering Service Worker
 if (!DEVELOPMENT) {
+  // Registering Service Worker
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./service-worker.js').then(registration => {
+      navigator.serviceWorker.register('./service-worker.js').then((registration) => {
         console.log('SW registered: ', registration);
-      }).catch(registrationError => {
+      }).catch((registrationError) => {
         console.log('SW registration failed: ', registrationError);
       });
     });
@@ -22,7 +22,10 @@ if (!DEVELOPMENT) {
 
 if (DEVELOPMENT) {
   console.log('Development Mode');
-  console.log(require('@cycjimmy/awesome-js-funcs/handheld').getBrowserInfo());
+  import('@cycjimmy/awesome-js-funcs/handheld')
+    .then((module) => {
+      console.log(module.getBrowserInfo());
+    });
 }
 
 if (PRODUCTION) {
@@ -30,10 +33,10 @@ if (PRODUCTION) {
 }
 
 document.addEventListener('readystatechange', () => {
-  console.log('documentReadyState: ' + document.readyState);
+  console.log(`documentReadyState: ${document.readyState}`);
 });
 
 Promise.resolve()
   .then(() => promptMobile.load())
   .then(() => preloader.load())
-  .catch(e => console.error(e));
+  .catch((e) => console.error(e));

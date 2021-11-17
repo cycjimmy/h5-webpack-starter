@@ -166,35 +166,6 @@ module.exports = merge(webpackBase, {
       skipWaiting: true,
     }),
 
-    // new OfflinePlugin({
-    //   appShell: './',
-    //   safeToUseOptionalCaches: true,
-    //
-    //   version: '[hash]',
-    //   updateStrategy: 'changed',
-    //   autoUpdate: true,
-    //
-    //   caches: {
-    //     main: [
-    //       'scripts/*.js',
-    //       'style/*.css',
-    //     ],
-    //     additional: [
-    //       'images/*',
-    //       'media/*',
-    //       'favicon.ico',
-    //     ],
-    //     optional: []
-    //   },
-    //
-    //   externals: [],
-    //   // excludes: ['./'],
-    //
-    //   ServiceWorker: {
-    //     events: true,
-    //   },
-    // }),
-
     new BrowserSyncPlugin(browserSyncConfig({
       server: {
         baseDir: 'build',

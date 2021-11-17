@@ -17,7 +17,7 @@ export default class QueryAll {
     }
 
     this.nodeList = nodeListToArray(elements);
-  };
+  }
 
   /**
    * event bind
@@ -28,14 +28,14 @@ export default class QueryAll {
   on(eventType, fn) {
     const aEvents = eventType.split(' ');
 
-    this.nodeList.forEach(el => {
-      for (let event of aEvents) {
+    this.nodeList.forEach((el) => {
+      aEvents.forEach((event) => {
         el.addEventListener(event, fn);
-      }
+      });
     });
 
     return this;
-  };
+  }
 
   /**
    * addClass
@@ -47,12 +47,12 @@ export default class QueryAll {
       if (el.classList) {
         el.classList.add(className);
       } else {
-        el.className += ' ' + className;
+        el.className += ` ${className}`;
       }
     });
 
     return this;
-  };
+  }
 
   /**
    * removeClass
@@ -64,12 +64,12 @@ export default class QueryAll {
       if (el.classList) {
         el.classList.remove(className);
       } else {
-        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        el.className = el.className.replace(new RegExp(`(^|\\b)${className.split(' ').join('|')}(\\b|$)`, 'gi'), ' ');
       }
     });
 
     return this;
-  };
+  }
 
   /**
    * hasClass
@@ -81,19 +81,19 @@ export default class QueryAll {
       if (el.classList) {
         el.classList.contains(className);
       } else {
-        new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+        new RegExp(`(^| )${className}( |$)`, 'gi').test(el.className);
       }
     });
 
     return this;
-  };
+  }
 
   /**
    * remove element
    */
   remove() {
-    this.nodeList.forEach(el => {
+    this.nodeList.forEach((el) => {
       el.parentNode.removeChild(el);
     });
-  };
-};
+  }
+}

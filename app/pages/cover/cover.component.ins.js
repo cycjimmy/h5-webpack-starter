@@ -1,4 +1,4 @@
-import {Page} from '@cycjimmy/h5-pages';
+import { Page } from '@cycjimmy/h5-pages';
 
 import QueryAll from '../../shared/QueryAll';
 
@@ -9,7 +9,7 @@ export default new class extends Page {
   constructor() {
     super({
       name: 'cover',
-      renderHtml: template({_style}),
+      renderHtml: template({ _style }),
       pageEnter() {
         this.logo.classList.remove(_style.animationPaused);
       },
@@ -23,7 +23,7 @@ export default new class extends Page {
     super.paramInit();
 
     this.logo = this.page.querySelector(`.${_style.logo}`);
-  };
+  }
 
   eventBind() {
     super.eventBind();
@@ -37,6 +37,5 @@ export default new class extends Page {
         this.logo.classList.remove(_style.animationPaused);
         this.logo.classList.remove(_style.enlarge);
       });
-  };
-};
-
+  }
+}();

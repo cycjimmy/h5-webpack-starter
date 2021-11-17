@@ -1,4 +1,4 @@
-import {Popup} from '@cycjimmy/h5-pages';
+import { Popup } from '@cycjimmy/h5-pages';
 import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
 
 import template from './popupX.pug';
@@ -12,7 +12,7 @@ export default new class extends Popup {
     this.state = {
       isButtonsActive: false,
     };
-  };
+  }
 
   load() {
     return Promise.resolve()
@@ -24,7 +24,7 @@ export default new class extends Popup {
         this._eventBind();
       }, 50))
       .then(() => this._fadeIn());
-  };
+  }
 
   remove() {
     return Promise.resolve()
@@ -33,12 +33,12 @@ export default new class extends Popup {
         this.state.isButtonsActive = false;
       }, 500))
       .then(() => super.remove());
-  };
+  }
 
   _paramInit() {
     this.box = this.popup.querySelector(`.${_style.box}`);
     this.closeBtn = this.box.querySelector(`.${_style.closeBtn}`);
-  };
+  }
 
   _eventBind() {
     const closePopup = () => {
@@ -54,11 +54,12 @@ export default new class extends Popup {
     this.closeBtn.addEventListener('click', closePopup);
 
     this.box.addEventListener('click', (e) => e.stopPropagation());
-  };
+  }
 
   _fadeIn() {
     this.popup.classList.add(_style.fadeIn);
-    setTimeout(() => this.state.isButtonsActive = true, 1e3);
-  };
-};
-
+    setTimeout(() => {
+      this.state.isButtonsActive = true;
+    }, 1e3);
+  }
+}();
