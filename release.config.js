@@ -13,6 +13,6 @@ module.exports = makeConfig({
   ],
   exec: true,
   execOptions: {
-    successCmd: 'git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:refs/heads/release',
+    successCmd: 'git push origin HEAD:release',
   },
 });
