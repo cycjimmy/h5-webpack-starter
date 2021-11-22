@@ -1,6 +1,6 @@
 import { Popup } from '@cycjimmy/h5-pages';
-import isMobile from '@cycjimmy/awesome-js-funcs/handheld/isMobile';
-import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
+import isMobile from '@cycjimmy/awesome-js-funcs/esm/handheld/isMobile';
+import functionToPromise from '@cycjimmy/awesome-js-funcs/esm/typeConversion/functionToPromise';
 
 import template from './promptMobile.pug';
 import _style from './promptMobile.scss';

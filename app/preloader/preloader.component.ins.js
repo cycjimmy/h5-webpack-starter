@@ -1,6 +1,6 @@
 import { Popup } from '@cycjimmy/h5-pages';
 import h5Preloader from '@cycjimmy/h5-preloader';
-import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
+import functionToPromise from '@cycjimmy/awesome-js-funcs/esm/typeConversion/functionToPromise';
 
 import resources from './resources';
 import template from './preloader.pug';

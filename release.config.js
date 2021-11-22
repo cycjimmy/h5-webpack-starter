@@ -1,5 +1,5 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-const makeConfig = require('@cycjimmy/config-lib/semanticRelease/15.x/makeConfig');
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
+const makeConfig = require('@cycjimmy/config-lib/cjs/semanticRelease/15.x/makeConfig').default;
 
 module.exports = makeConfig({
   npmOptions: {
@@ -10,4 +10,8 @@ module.exports = makeConfig({
     'package.json',
     'package-lock.json',
   ],
+  exec: true,
+  execOptions: {
+    successCmd: 'git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:refs/heads/release',
+  },
 });

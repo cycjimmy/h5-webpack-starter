@@ -1,3 +1,4 @@
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 const path = require('path');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
@@ -62,19 +63,12 @@ module.exports = {
       // Pug template
       {
         test: /\.pug$/,
-        include: [
-          path.resolve('app'),
-          path.resolve('static'),
-        ],
         loader: 'pug-loader',
       },
 
       // ico
       {
         test: /\.ico$/i,
-        include: [
-          path.resolve('static'),
-        ],
         use: [
           {
             loader: 'file-loader',

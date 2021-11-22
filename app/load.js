@@ -22,9 +22,9 @@ if (!DEVELOPMENT) {
 
 if (DEVELOPMENT) {
   console.log('Development Mode');
-  import('@cycjimmy/awesome-js-funcs/handheld')
-    .then((module) => {
-      console.log(module.getBrowserInfo());
+  import('@cycjimmy/awesome-js-funcs/esm/handheld')
+    .then((handheld) => {
+      console.log(handheld.getBrowserInfo());
     });
 }
 
