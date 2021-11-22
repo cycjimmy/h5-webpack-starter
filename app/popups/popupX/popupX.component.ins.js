@@ -1,5 +1,5 @@
 import { Popup } from '@cycjimmy/h5-pages';
-import functionToPromise from '@cycjimmy/awesome-js-funcs/typeConversion/functionToPromise';
+import functionToPromise from '@cycjimmy/awesome-js-funcs/esm/typeConversion/functionToPromise';
 
 import template from './popupX.pug';
 import _style from './popupX.scss';

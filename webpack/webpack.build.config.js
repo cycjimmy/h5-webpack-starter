@@ -1,3 +1,4 @@
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 const path = require('path');
 const { merge } = require('webpack-merge');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
@@ -6,8 +7,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
-const terserConfig = require('@cycjimmy/config-lib/terserWebpackPlugin/2.x/working');
-const imageWebpackLoaderConfig = require('@cycjimmy/config-lib/imageWebpackLoader/8.x/production');
+const terserConfig = require('@cycjimmy/config-lib/cjs/terserWebpackPlugin/2.x/working').default;
+const imageWebpackLoaderConfig = require('@cycjimmy/config-lib/cjs/imageWebpackLoader/8.x/production').default;
 const styleLoadersConfig = require('./styleLoaders.config')();
 const browserSyncConfig = require('./browserSync.config');
 const webpackBase = require('./webpack.base');

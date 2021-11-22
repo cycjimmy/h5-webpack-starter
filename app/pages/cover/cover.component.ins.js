@@ -1,6 +1,5 @@
 import { Page } from '@cycjimmy/h5-pages';
-
-import QueryAll from '../../shared/QueryAll';
+import QueryAll from '@cycjimmy/awesome-js-funcs/esm/dom/QueryAll';
 
 import template from './cover.pug';
 import _style from './cover.scss';
