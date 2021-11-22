@@ -61,6 +61,12 @@ jobs:
             ]
           extra_plugins: |
             @semantic-release/git
-            @semantic-release/exec
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push updates to release branch
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: release
+          folder: .
+          token: ${{ secrets.ACCESS_TOKEN }}

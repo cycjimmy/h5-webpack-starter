@@ -10,9 +10,5 @@ module.exports = makeConfig({
   gitAssets: [
     'package.json',
     'package-lock.json',
-  ],
-  exec: true,
-  execOptions: {
-    successCmd: 'git push origin HEAD:release',
-  },
+  ]
 });
