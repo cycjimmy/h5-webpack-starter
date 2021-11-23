@@ -47,8 +47,9 @@ export default new class extends Popup {
           return Promise.resolve();
         }
 
+        h5Pages.root.classList.add('desktop');
+
         if (needSupportDesktop) {
-          h5Pages.root.classList.add('desktop');
           return Promise.resolve();
         }
 
