@@ -37,3 +37,27 @@
     @include bg-image-full(url('../../static/images/icon-link.svg'));
   }
 }
+
+:global(.desktop) {
+  .pointsWrapper {
+    width: calcPX(500);
+    padding: calcPX(20);
+    margin-bottom: calcPX(80);
+
+    > li {
+      padding: calcPX(10);
+      font-size: calcPX(36);
+    }
+  }
+
+  .icon {
+    width: calcPX(36);
+    height: calcPX(36);
+    margin: 0 calcPX(10);
+
+    &::before {
+      width: calcPX(30);
+      height: calcPX(30);
+    }
+  }
+}

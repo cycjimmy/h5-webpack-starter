@@ -37,7 +37,7 @@
     "@cycjimmy/h5-pages": "^3.1.1",
     "@cycjimmy/h5-preloader": "^3.0.0",
     "@cycjimmy/mini-xhr": "^4.1.0",
-    "@cycjimmy/sass-lib": "^1.0.3",
+    "@cycjimmy/sass-lib": "^1.1.0",
     "@cycjimmy/swiper-animation": "^4.1.2",
     "@cycjimmy/weixin-share": "^5.1.2",
     "fastclick": "^1.0.6",

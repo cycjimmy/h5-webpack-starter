@@ -64,3 +64,35 @@ $picH: calcVW(240);
     background-color: $fontColor;
   }
 }
+
+:global(.desktop) {
+  $space: calcPX(15);
+  $radius: calcPX(7.5);
+
+  .title {
+    font-size: calcPX(48);
+  }
+
+  $picH: calcPX(240);
+  .logoWrap {
+    height: $picH;
+    width: $picH;
+    margin-bottom: $picH / 6;
+  }
+
+  .logo {
+    &::before {
+      perspective: $picH / 6;
+    }
+  }
+
+  .gotoGithub {
+    margin-top: $space * 2;
+    padding: 0 $space * 1.6;
+    height: calcPX(80);
+
+    border-width: calcPX(2);
+    border-radius: $radius;
+    line-height: calcPX(80);
+  }
+}

@@ -10,5 +10,5 @@ module.exports = makeConfig({
   gitAssets: [
     'package.json',
     'package-lock.json',
-  ]
+  ],
 });

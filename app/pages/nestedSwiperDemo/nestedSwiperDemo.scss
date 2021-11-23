@@ -31,3 +31,22 @@
     background: lighten($bgc, 10%);
   }
 }
+
+:global(.desktop) {
+  .title {
+    font-size: calcPX(48);
+  }
+
+  .container {
+    width: calcPX(600);
+    height: calcPX(450);
+    margin: calcPX(40) auto;
+  }
+
+  .content1,
+  .content2,
+  .content3,
+  .content4 {
+    font-size: calcPX(36);
+  }
+}

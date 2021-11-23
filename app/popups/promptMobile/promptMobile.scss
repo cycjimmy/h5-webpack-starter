@@ -23,3 +23,36 @@ $promptMobileFontColor: $fontColor;
   font-size: 14px;
 }
 
+$QRCodeDesktopWidth: 100px;
+
+.QRCodeDesktop {
+  @extend %abs;
+  width: 0;
+  height: 0;
+  display: none;
+  @include fix-center(0);
+
+  &::before {
+    content: "";
+    display: block;
+    @extend %abs;
+    left: round($pcRootWidth * .5 + 20);
+    top: - round($pcRootWidth * .3 + $QRCodeDesktopWidth * .5);
+    width: $QRCodeDesktopWidth;
+    height: $QRCodeDesktopWidth;
+
+    border: 2px solid darken($bgc, 5%);
+    border-radius: 12px;
+    overflow: hidden;
+    @include bg-image-full(url("../../../static/images/QRCode.png"));
+  }
+}
+
+:global(.desktop) {
+  @media screen and (min-width: $pcRootWidth * 1.5) {
+    .QRCodeDesktop {
+      display: block;
+    }
+  }
+}
+

@@ -40,3 +40,9 @@ $lockOrientation: portrait;
   }
 }
 
+:global(.desktop) {
+  .wrapper {
+    display: none;
+  }
+}
+

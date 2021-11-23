@@ -2,7 +2,21 @@
 @import "../theme/utilities";
 
 .root {
-  background-color: $bgc;
+  background-color: darken($bgc, 3%);
+
+  > :global(.swiper-container) {
+    background-color: $bgc;
+  }
+
+  &:global(.desktop) {
+    > :global(.swiper-container) {
+      width: $pcRootWidth;
+      max-height: round($pcRootWidth * $designDrawingBestHeight / $designDrawingWidth);
+      overflow: hidden;
+
+      @include fix-center(0);
+    }
+  }
 }
 
 .pagination {
