@@ -5,7 +5,15 @@
   @return call(
       get_function("designPx2VW"),
       $designDrawingLength,
-      $designDrawingWidth
+      $designDrawingWidth,
   );
 }
 
+@function calcPX($designDrawingLength:0) {
+  @return call(
+      get_function("designPx2Px"),
+      $designDrawingLength,
+      $designDrawingWidth,
+      $pcRootWidth,
+  );
+}

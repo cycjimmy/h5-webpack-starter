@@ -5,3 +5,9 @@
   font-size: calcVW(48);
   font-weight: bold;
 }
+
+:global(.desktop) {
+  .tip {
+    font-size: calcPX(48);
+  }
+}

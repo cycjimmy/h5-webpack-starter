@@ -11,3 +11,9 @@
     list-style: disc;
   }
 }
+
+:global(.desktop) {
+  .title {
+    font-size: calcPX(48);
+  }
+}

@@ -48,3 +48,31 @@ $popupXFontSize: calcVW(30);
   line-height: $popupXFontSize * 1.5;
 }
 
+:global(.desktop) {
+  $popupXFontSize: calcPX(30);
+  $radius: calcPX(7.5);
+  $space: calcPX(15);
+
+  .box {
+    width: calcPX(340);
+    padding: calcPX(40);
+
+    border-width: calcPX(2);
+    border-radius: $radius * 2;
+    font-size: $popupXFontSize;
+  }
+
+  .info {
+    font-size: $popupXFontSize;
+    margin-bottom: $space;
+  }
+
+  .closeBtn {
+    padding: $space * 1.5;
+
+    border-width: calcVW(2);
+    border-radius: $radius;
+    font-size: $popupXFontSize;
+    line-height: $popupXFontSize * 1.5;
+  }
+}

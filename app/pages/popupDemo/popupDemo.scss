@@ -16,3 +16,22 @@
   font-size: $fontL;
   line-height: calcVW(80);
 }
+
+:global(.desktop) {
+  $radius: calcPX(7.5);
+  $space: calcPX(15);
+
+  .title {
+    font-size: calcPX(48);
+  }
+
+  .popupBtn {
+    height: calcPX(80);
+    padding: 0 $space * 1.6;
+    margin: calcPX(50) 0;
+
+    border-width: calcPX(2);
+    border-radius: $radius;
+    line-height: calcPX(80);
+  }
+}

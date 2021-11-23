@@ -57,3 +57,31 @@ $progressPadding: $progressH / 4;
 .loadingTextPercent {
   font-size: $fontM;
 }
+
+:global(.desktop) {
+  .loadingPic {
+    display: block;
+    width: calcPX(100);
+    height: calcPX(100);
+  }
+
+  $progressH: 10px;
+  $progressW: 240px;
+  $progressPadding: $progressH / 4;
+  $space: 10px;
+  .loadingProgressWrapper {
+    width: $progressW - $progressPadding * 2;
+    height: $progressH - $progressPadding * 2;
+    padding: $progressPadding;
+    margin: $space * 2 0 $space;
+
+    border-radius: $progressH / 2;
+    box-shadow: inset calcPX(2) calcPX(-2) calcPX(2) desaturate(lighten($loadingBgc, 20%), 30%);
+  }
+
+  .loadingProgressbarWrapper {
+    width: $progressW - $progressPadding * 2;
+    height: $progressH - $progressPadding * 2;
+    border-radius: ($progressH - $progressPadding * 2) / 2;
+  }
+}

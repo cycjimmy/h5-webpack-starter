@@ -46,6 +46,7 @@ h5-webpack-starter
  │   ├─preloader/              # Preloader component folder
  │   ├─theme/                  # Global and public styles
  │   ├─shared/                 # Public component or method
+ │   ├─setting.config.json     # Global setting config
  │   └─...
  ├─mock/                       # Mock data entry folder
  │   ├─api/

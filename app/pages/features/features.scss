@@ -11,3 +11,9 @@
     list-style: decimal;
   }
 }
+
+:global(.desktop) {
+  .title {
+    font-size: calcPX(48);
+  }
+}

@@ -17,3 +17,9 @@
     @include bg-image-full(url("../../../static/images/icon-core.svg"));
   }
 }
+
+:global(.desktop) {
+  .title {
+    font-size: calcPX(48);
+  }
+}
