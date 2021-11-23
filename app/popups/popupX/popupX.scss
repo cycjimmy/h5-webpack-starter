@@ -70,7 +70,7 @@ $popupXFontSize: calcVW(30);
   .closeBtn {
     padding: $space * 1.5;
 
-    border-width: calcVW(2);
+    border-width: calcPX(2);
     border-radius: $radius;
     font-size: $popupXFontSize;
     line-height: $popupXFontSize * 1.5;
