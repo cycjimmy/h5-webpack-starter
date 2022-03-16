@@ -41,7 +41,7 @@
     "@cycjimmy/swiper-animation": "^4.1.2",
     "@cycjimmy/weixin-share": "^5.1.2",
     "fastclick": "^1.0.6",
-    "swiper": "^7.3.0"
+    "swiper": "^8.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
