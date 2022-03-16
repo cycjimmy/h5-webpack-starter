@@ -9,6 +9,6 @@ module.exports = makeConfig({
   git: true,
   gitAssets: [
     'package.json',
-    'package-lock.json',
+    'pnpm-lock.yaml',
   ],
 });
