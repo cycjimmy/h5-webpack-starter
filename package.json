@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "@cycjimmy/awesome-js-funcs": "^3.1.0",
+    "@cycjimmy/awesome-js-funcs": "^4.0.4",
     "@cycjimmy/h5-audio-controls": "^3.4.1",
     "@cycjimmy/h5-pages": "^3.2.0",
     "@cycjimmy/h5-preloader": "^3.0.0",
