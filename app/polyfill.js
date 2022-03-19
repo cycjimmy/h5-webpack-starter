@@ -1,5 +1,4 @@
 /**
- * @babel/polyfill
+ * polyfill
  */
-
-// import 'core-js/es6/set';
+// import 'core-js/actual/set';
