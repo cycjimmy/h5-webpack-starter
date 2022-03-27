@@ -5,14 +5,14 @@ specifiers:
   '@babel/plugin-syntax-dynamic-import': ^7.8.3
   '@babel/preset-env': ^7.16.11
   '@cycjimmy/awesome-js-funcs': ^4.0.8
-  '@cycjimmy/config-lib': ^3.2.0
-  '@cycjimmy/h5-audio-controls': ^5.0.0
-  '@cycjimmy/h5-pages': ^4.1.1
-  '@cycjimmy/h5-preloader': ^5.0.0
-  '@cycjimmy/mini-xhr': ^6.0.0
+  '@cycjimmy/config-lib': ^3.2.1
+  '@cycjimmy/h5-audio-controls': ^5.0.1
+  '@cycjimmy/h5-pages': ^4.1.2
+  '@cycjimmy/h5-preloader': ^5.0.1
+  '@cycjimmy/mini-xhr': ^6.0.1
   '@cycjimmy/sass-lib': ^2.1.1
-  '@cycjimmy/swiper-animation': ^6.0.0
-  '@cycjimmy/weixin-share': ^7.0.0
+  '@cycjimmy/swiper-animation': ^6.0.1
+  '@cycjimmy/weixin-share': ^7.0.1
   babel-loader: ^8.2.4
   browser-sync: ^2.27.9
   browser-sync-webpack-plugin: ^2.3.0
@@ -51,13 +51,13 @@ specifiers:
 
 dependencies:
   '@cycjimmy/awesome-js-funcs': 4.0.8
-  '@cycjimmy/h5-audio-controls': 5.0.0
-  '@cycjimmy/h5-pages': 4.1.1
-  '@cycjimmy/h5-preloader': 5.0.0
-  '@cycjimmy/mini-xhr': 6.0.0
+  '@cycjimmy/h5-audio-controls': 5.0.1
+  '@cycjimmy/h5-pages': 4.1.2
+  '@cycjimmy/h5-preloader': 5.0.1
+  '@cycjimmy/mini-xhr': 6.0.1
   '@cycjimmy/sass-lib': 2.1.1
-  '@cycjimmy/swiper-animation': 6.0.0
-  '@cycjimmy/weixin-share': 7.0.0
+  '@cycjimmy/swiper-animation': 6.0.1
+  '@cycjimmy/weixin-share': 7.0.1
   core-js: 3.21.1
   fastclick: 1.0.6
   swiper: 8.0.7
@@ -66,7 +66,7 @@ devDependencies:
   '@babel/core': 7.17.8
   '@babel/plugin-syntax-dynamic-import': 7.8.3_@babel+core@7.17.8
   '@babel/preset-env': 7.16.11_@babel+core@7.17.8
-  '@cycjimmy/config-lib': 3.2.0
+  '@cycjimmy/config-lib': 3.2.1
   babel-loader: 8.2.4_fa907c5a4f16ccc493e21649ccc59574
   browser-sync: 2.27.9
   browser-sync-webpack-plugin: 2.3.0_7b4571d8706d5d4d6c55b0b1a7c0b6bf
@@ -1333,36 +1333,36 @@ packages:
     resolution: {integrity: sha512-iohG5s1W7r0XwZQyjUH5KM8926CwErOHDjPW0Ae8KPnl/VqRUB6weXJn9EGu9nBHJffJEbdttLbj4HWn4dlhhg==}
     dev: false
 
-  /@cycjimmy/config-lib/3.2.0:
-    resolution: {integrity: sha512-9F4kfTIlT7QiWVexrSlKSx8zKr30e6bxZ+BUbU90Y7UpmXojmbobsoNufccf7WwSDQilA3JC6uw2JnrzkUlePg==}
+  /@cycjimmy/config-lib/3.2.1:
+    resolution: {integrity: sha512-0bO/osJj8VDCXRNJ/cUnO94UvogLonQ84M+CIqGlP5QiKbwCAwfadBThYhsVTcYl+aU/bqib9089t0JxasMXLg==}
     dev: true
 
-  /@cycjimmy/h5-audio-controls/5.0.0:
-    resolution: {integrity: sha512-CTUdj5XtY5TBpI4T7jh9GKzvqZYMYhdLvUtnBZt7C/PgAGHMuZyezph0SoPC6ddYrtqNrNbAJDm9aSA1N45gAg==}
+  /@cycjimmy/h5-audio-controls/5.0.1:
+    resolution: {integrity: sha512-YVvO9UY8BmVAMQ3kol6ZID4uTsdZai5iUObMv5X3nQFuWrTKkMA27bHbFXY7m19vGlD8HQlOmkzil4YdSFcQOA==}
     dev: false
 
-  /@cycjimmy/h5-pages/4.1.1:
-    resolution: {integrity: sha512-BJPh/5ZNxLStxNmHRqLIo7rh/LTcxOr+SfKb3YUjlSScPe/eGyTizvzPJEjV75t0QpCVSvlxHL39hHCpet6+Rw==}
+  /@cycjimmy/h5-pages/4.1.2:
+    resolution: {integrity: sha512-3b+gdl7VPxnj6yZ7jcPKP8SU9bH7d6AiwOKbgq4TxZZMowHkHvIjWad9L/uJmnfwOcRaBNnFc14dxKS6dFkYrA==}
     dev: false
 
-  /@cycjimmy/h5-preloader/5.0.0:
-    resolution: {integrity: sha512-V9PIa8vm5HGaGjvbFYrQjo5lpXa5ONY5Cep2fmTv/NWyseiR/wW/vBo/llC/yPZAe+G98vu4GvuX3Ur5ze1pVw==}
+  /@cycjimmy/h5-preloader/5.0.1:
+    resolution: {integrity: sha512-fzLJCxN6+wGPJzj6AmKoSiz18yaXgewVl9wb+rSwvPqachcNDekByOzSUku7cZJTCHeltIarISFBw4o8xmZFqQ==}
     dev: false
 
-  /@cycjimmy/mini-xhr/6.0.0:
-    resolution: {integrity: sha512-ozmtz+cIhEpZSDScPNSSecQxvGor6aihHA7KQ2IeXBiPCUUhSo2yb8WDFmtbn42DeudgfeDTCJge2n76u/MwLQ==}
+  /@cycjimmy/mini-xhr/6.0.1:
+    resolution: {integrity: sha512-mZznZcJi45UjQT+iYkhb4HWuDd5fK2MRzCYJ8/ph/VTaLLuZsSKSaB5h2f0QX09RcrvpkKj9cjCNeoeML5sgRw==}
     dev: false
 
   /@cycjimmy/sass-lib/2.1.1:
     resolution: {integrity: sha512-9F9DaWoA1JcHuGYgCOQTA/2hv7t64QsvSUVn/LpFtf0Une5cQZ7BB7VQPrIgSww6Zx9u7uJ0f+QLu6QJd+BO2A==}
     dev: false
 
-  /@cycjimmy/swiper-animation/6.0.0:
-    resolution: {integrity: sha512-x2cwcQBwxpBLDFr7kRQRmXox40oIwpYHFLEceOVIaYjgcgHQLxTZc5fzXJsQcLbbgG1H965yjeoHpuiSZ8eGHA==}
+  /@cycjimmy/swiper-animation/6.0.1:
+    resolution: {integrity: sha512-Z1kYZVli+LaEiioru4TWeT44wKqUhsFKwGSQLo/bP75ppEFscouytgwGTHJYVaZuv5xGo6ZmhO9OnHpNyYWMhw==}
     dev: false
 
-  /@cycjimmy/weixin-share/7.0.0:
-    resolution: {integrity: sha512-gaTqtWDIddPSyO1Xsw2Pv8Lb4fLQbOaoqrWBcizWKrfKMlXU5t8fnSUZOGRKkIJmYHq5LsSAK3G4unhSOSO66Q==}
+  /@cycjimmy/weixin-share/7.0.1:
+    resolution: {integrity: sha512-X0t+cWpqTDKU0gi2FgHtBs3PmLV5/ZQqpplycjyfJQI26kYPeaQrbBlmZzn6W+SlPXJQ2caa8/hY7blPp44OEw==}
     dev: false
 
   /@discoveryjs/json-ext/0.5.7:
