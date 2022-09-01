@@ -9,7 +9,7 @@ specifiers:
   '@cycjimmy/h5-audio-controls': ^5.0.2
   '@cycjimmy/h5-pages': ^4.1.3
   '@cycjimmy/h5-preloader': ^5.0.2
-  '@cycjimmy/mini-xhr': ^6.0.2
+  '@cycjimmy/mini-xhr': ^7.0.0
   '@cycjimmy/sass-lib': ^2.1.1
   '@cycjimmy/swiper-animation': ^6.0.2
   '@cycjimmy/weixin-share': ^7.0.2
@@ -54,7 +54,7 @@ dependencies:
   '@cycjimmy/h5-audio-controls': 5.0.2
   '@cycjimmy/h5-pages': 4.1.3
   '@cycjimmy/h5-preloader': 5.0.2
-  '@cycjimmy/mini-xhr': 6.0.2
+  '@cycjimmy/mini-xhr': 7.0.0
   '@cycjimmy/sass-lib': 2.1.1
   '@cycjimmy/swiper-animation': 6.0.2
   '@cycjimmy/weixin-share': 7.0.2
@@ -1410,8 +1410,8 @@ packages:
     resolution: {integrity: sha512-HxGD7a5jXiJAJmlDJBaU+fElZVevUiIhHQ6NUh2OLzaqSDHCbhX+iLHQwtIPgx3sWSKXOYhYtUQ2FcNXfjnoMQ==}
     dev: false
 
-  /@cycjimmy/mini-xhr/6.0.2:
-    resolution: {integrity: sha512-yBVA/ODvNgQMLU9epmtiDwmtsGu0/fIbMzWIkc2L/q/syQNRGZ0vWlqBxaKMBAawGk0QeduETg6JbrrcW73X3A==}
+  /@cycjimmy/mini-xhr/7.0.0:
+    resolution: {integrity: sha512-2G5phqISpA6pEevHb59CkRYheI4hgc4fb8zcBmt04W6xWr4ho0Ol1OVIvImlIblbMGKrAo2dRsh7Cvi36prz9g==}
     dev: false
 
   /@cycjimmy/sass-lib/2.1.1:
