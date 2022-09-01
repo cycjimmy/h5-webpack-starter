@@ -24,6 +24,7 @@
     "no-underscore-dangle": "off",
     "no-console": "off",
     "global-require": 0,
+    "linebreak-style": ["error", "unix"],
     "prefer-promise-reject-errors": [
       "error",
       {

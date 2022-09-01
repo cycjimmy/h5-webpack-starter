@@ -6,7 +6,7 @@ import debounce from '@cycjimmy/awesome-js-funcs/esm/event/debounce';
 import template from './promptMobile.pug';
 import _style from './promptMobile.scss';
 import QRCodeImg from '../../../static/images/QRCode.png';
-import { needSupportDesktop } from '../../setting.config.json';
+import settingConfig from '../../setting.config.json';
 
 /**
  * createQRCodeDesktop
@@ -49,7 +49,7 @@ export default new class extends Popup {
 
         h5Pages.root.classList.add('desktop');
 
-        if (needSupportDesktop) {
+        if (settingConfig.needSupportDesktop) {
           return Promise.resolve();
         }
 
