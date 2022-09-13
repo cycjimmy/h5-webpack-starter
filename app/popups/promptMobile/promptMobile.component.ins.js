@@ -9,14 +9,18 @@ import QRCodeImg from '../../../static/images/QRCode.png';
 import settingConfig from '../../setting.config.json';
 
 /**
- * createQRCodeDesktop
+ * createQRCodeAndTipDesktop
  * @returns {Promise<unknown>}
  */
-const createQRCodeDesktop = () => Promise.resolve()
+const createQRCodeAndTipDesktop = () => Promise.resolve()
   .then(() => functionToPromise(() => {
     const QRCodeEl = document.createElement('div');
     QRCodeEl.classList.add(_style.QRCodeDesktop);
     h5Pages.root.appendChild(QRCodeEl);
+
+    const tipEl = document.createElement('div');
+    tipEl.classList.add(_style.tipDesktop);
+    h5Pages.root.appendChild(tipEl);
   }));
 
 export default new class extends Popup {
@@ -27,7 +31,7 @@ export default new class extends Popup {
 
   load() {
     return Promise.resolve()
-      .then(() => createQRCodeDesktop())
+      .then(() => createQRCodeAndTipDesktop())
       .then(() => this._render())
       .then(() => this._eventBind());
   }
