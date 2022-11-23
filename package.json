@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/cycjimmy/h5-webpack-starter#readme",
   "engines": {
-    "node": ">=16"
+    "node": "18"
   },
   "dependencies": {
     "@cycjimmy/awesome-js-funcs": "^4.0.9",
