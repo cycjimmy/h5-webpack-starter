@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "3.6.0",
+  "version": "3.6.1",
   "description": "H5 webpack starter for webpack, es6/7, sass, pug, swiper...",
   "scripts": {
     "start": "npm run dev",
