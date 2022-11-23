@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "3.6.1",
+  "version": "4.0.0",
   "description": "H5 webpack starter for webpack, es6/7, sass, pug, swiper...",
   "scripts": {
     "start": "npm run dev",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/cycjimmy/h5-webpack-starter#readme",
   "engines": {
-    "node": ">=16"
+    "node": "18"
   },
   "dependencies": {
     "@cycjimmy/awesome-js-funcs": "^4.0.9",
