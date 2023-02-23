@@ -2,6 +2,9 @@ import { Popup } from '@cycjimmy/h5-pages';
 import h5Preloader from '@cycjimmy/h5-preloader';
 import functionToPromise from '@cycjimmy/awesome-js-funcs/esm/typeConversion/functionToPromise';
 
+// service
+import storage from '../dataHandling/storage.service.ins';
+// static
 import resources from './resources';
 import template from './preloader.pug';
 import _style from './preloader.scss';
@@ -22,6 +25,11 @@ export default new class extends Popup {
       .then(() => functionToPromise(() => {
         this.paramInit();
         this.h5Preloader.load();
+      }))
+      .then(() => functionToPromise(() => {
+        storage.setState({
+          isPreloaderInited: true,
+        });
       }));
   }
 
