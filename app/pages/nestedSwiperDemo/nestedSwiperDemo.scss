@@ -18,7 +18,9 @@
 .content2,
 .content3,
 .content4 {
-  @extend %flexCenter;
+  &:global(.swiper-slide) {
+    @extend %flexCenter;
+  }
 
   background-color: lighten($bgc, 4%);
   font-size: calcVW(36);
