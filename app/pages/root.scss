@@ -4,12 +4,12 @@
 .root {
   background-color: darken($bgc, 3%);
 
-  > :global(.swiper-container) {
+  > :global(.swiper) {
     background-color: $bgc;
   }
 
   &:global(.desktop) {
-    > :global(.swiper-container) {
+    > :global(.swiper) {
       width: $pcRootWidth;
       max-height: round($pcRootWidth * $designDrawingBestHeight / $designDrawingWidth);
       overflow: hidden;
