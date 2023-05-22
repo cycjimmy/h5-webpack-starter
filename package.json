@@ -65,7 +65,7 @@
     "image-webpack-loader": "^8.1.0",
     "merge-stream": "^2.0.0",
     "mini-css-extract-plugin": "^2.7.0",
-    "node-sass": "^8.0.0",
+    "node-sass": "^9.0.0",
     "postcss": "^8.4.19",
     "postcss-loader": "^7.0.1",
     "postcss-preset-env": "^8.0.1",
