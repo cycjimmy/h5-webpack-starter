@@ -18,7 +18,7 @@ specifiers:
   browser-sync-webpack-plugin: ^2.3.0
   clean-webpack-plugin: ^4.0.0
   core-js: ^3.26.1
-  css-loader: ^6.7.2
+  css-loader: ^6.8.1
   css-minimizer-webpack-plugin: ^5.0.0
   cssnano: ^6.0.0
   eslint: ^8.28.0
