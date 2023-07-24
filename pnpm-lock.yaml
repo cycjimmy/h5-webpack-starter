@@ -43,7 +43,7 @@ specifiers:
   swiper: ^10.0.4
   terser-webpack-plugin: ^5.3.9
   url-loader: ^4.1.1
-  webpack: ^5.88.1
+  webpack: ^5.88.2
   webpack-cli: ^5.1.4
   webpack-merge: ^5.9.0
   workbox-webpack-plugin: ^7.0.0
