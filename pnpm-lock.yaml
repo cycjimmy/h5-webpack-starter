@@ -21,7 +21,7 @@ specifiers:
   css-loader: ^6.8.1
   css-minimizer-webpack-plugin: ^5.0.1
   cssnano: ^6.0.1
-  eslint: ^8.45.0
+  eslint: ^8.46.0
   eslint-config-airbnb-base: ^15.0.0
   eslint-plugin-import: ^2.27.5
   eslint-webpack-plugin: ^4.0.1
@@ -40,7 +40,7 @@ specifiers:
   pug-loader: ^2.4.0
   sass-loader: ^13.3.2
   style-loader: ^3.3.3
-  swiper: ^10.0.4
+  swiper: ^10.1.0
   terser-webpack-plugin: ^5.3.9
   url-loader: ^4.1.1
   webpack: ^5.88.2
