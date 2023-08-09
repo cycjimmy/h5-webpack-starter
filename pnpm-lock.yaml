@@ -17,13 +17,13 @@ specifiers:
   browser-sync: ^2.29.3
   browser-sync-webpack-plugin: ^2.3.0
   clean-webpack-plugin: ^4.0.0
-  core-js: ^3.31.1
+  core-js: ^3.32.0
   css-loader: ^6.8.1
   css-minimizer-webpack-plugin: ^5.0.1
   cssnano: ^6.0.1
   eslint: ^8.46.0
   eslint-config-airbnb-base: ^15.0.0
-  eslint-plugin-import: ^2.27.5
+  eslint-plugin-import: ^2.28.0
   eslint-webpack-plugin: ^4.0.1
   expose-loader: ^4.1.0
   fastclick: ^1.0.6
@@ -5137,7 +5137,7 @@ packages:
       depd: 1.1.2
       inherits: 2.0.3
       setprototypeof: 1.1.0
-      statuses: 1.4.0
+      statuses: 1.5.0
     dev: true
 
   /http-errors/2.0.0:
@@ -8602,6 +8602,11 @@ packages:
 
   /statuses/1.4.0:
     resolution: {integrity: sha512-zhSCtt8v2NDrRlPQpCNtw/heZLtfUDqxBM1udqikb/Hbk52LK4nQSwr10u77iopCW5LsyHpuXS0GnEc48mLeew==}
+    engines: {node: '>= 0.6'}
+    dev: true
+
+  /statuses/1.5.0:
+    resolution: {integrity: sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==}
     engines: {node: '>= 0.6'}
     dev: true
 
