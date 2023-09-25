@@ -36,8 +36,8 @@ dependencies:
     specifier: ^1.0.6
     version: 1.0.6
   swiper:
-    specifier: ^10.2.0
-    version: 10.2.0
+    specifier: ^10.3.0
+    version: 10.3.0
 
 devDependencies:
   '@babel/core':
@@ -9130,8 +9130,8 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /swiper@10.2.0:
-    resolution: {integrity: sha512-nktQsOtBInJjr3f5DicxC8eHYGcLXDVIGPSon0QoXRaO6NjKnATCbQ8SZsD3dN1Ph1RH4EhVPwSYCcuDRFWHGQ==}
+  /swiper@10.3.0:
+    resolution: {integrity: sha512-o81KZH4phL/dJxKFWpZ/zf78QxOyFMood+c86vJJO0ZeSOoniyzV8HWDsw12KOlQdm4WRxrc/6kfGImAcxcS3w==}
     engines: {node: '>= 4.7.0'}
     dev: false
 
