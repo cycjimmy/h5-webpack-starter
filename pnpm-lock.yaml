@@ -35,7 +35,7 @@ specifiers:
   node-sass: ^9.0.0
   postcss: ^8.4.31
   postcss-loader: ^7.3.3
-  postcss-preset-env: ^9.1.4
+  postcss-preset-env: ^9.2.0
   pug: ^2.0.4
   pug-loader: ^2.4.0
   sass-loader: ^13.3.2
@@ -5174,7 +5174,7 @@ packages:
       depd: 1.1.2
       inherits: 2.0.3
       setprototypeof: 1.1.0
-      statuses: 1.4.0
+      statuses: 1.5.0
     dev: true
 
   /http-errors/2.0.0:
@@ -8653,6 +8653,11 @@ packages:
 
   /statuses/1.4.0:
     resolution: {integrity: sha512-zhSCtt8v2NDrRlPQpCNtw/heZLtfUDqxBM1udqikb/Hbk52LK4nQSwr10u77iopCW5LsyHpuXS0GnEc48mLeew==}
+    engines: {node: '>= 0.6'}
+    dev: true
+
+  /statuses/1.5.0:
+    resolution: {integrity: sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==}
     engines: {node: '>= 0.6'}
     dev: true
 
