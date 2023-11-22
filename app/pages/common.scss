@@ -1,5 +1,5 @@
-@import "../theme/variables";
-@import "../theme/utilities";
+@import "@/theme/variables";
+@import "@/theme/utilities";
 
 .pointsWrapper {
   width: calcVW(500);
@@ -34,7 +34,7 @@
   @extend .icon;
 
   &::before {
-    @include bg-image-full(url('../../static/images/icon-link.svg'));
+    @include bg-image-full(url('@static/images/icon-link.svg'));
   }
 }
 

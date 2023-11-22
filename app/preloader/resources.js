@@ -1,9 +1,9 @@
 import entries from '@cycjimmy/awesome-js-funcs/esm/object/entries';
-import staticFiles from '../staticFiles';
+import staticFiles from '@/staticFiles';
 
 export default [
-  // require('../../static/images/').default,
-  require('../../static/images/noUrl/weChatSharePic.png').default,
+  // require('@static/images/').default,
+  require('@static/images/noUrl/weChatSharePic.png').default,
 
   ...(() => {
     const aStaticFiles = [];

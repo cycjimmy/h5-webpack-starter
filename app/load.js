@@ -1,11 +1,11 @@
 // global css
-import './theme/main.scss';
+import '@/theme/main.scss';
 
-import preloader from './preloader/preloader.component.ins';
-import promptMobile from './popups/promptMobile/promptMobile.component.ins';
+import preloader from '@/preloader/preloader.component.ins';
+import promptMobile from '@/popups/promptMobile/promptMobile.component.ins';
 
 // polyfill
-import './polyfill';
+import '@/polyfill';
 
 if (!DEVELOPMENT) {
   // Registering Service Worker

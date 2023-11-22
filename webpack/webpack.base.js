@@ -39,6 +39,10 @@ module.exports = {
       path.resolve('node_modules'),
       path.resolve('static'),
     ],
+    alias: {
+      '@': path.resolve('app'),
+      '@static': path.resolve('static'),
+    },
     extensions: ['.js'],
   },
 

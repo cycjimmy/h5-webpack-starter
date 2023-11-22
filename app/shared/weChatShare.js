@@ -1,7 +1,7 @@
 import wxShare from '@cycjimmy/weixin-share';
 
 // picture
-import weChatSharePic from '../../static/images/noUrl/weChatSharePic.png';
+import weChatSharePic from '@static/images/noUrl/weChatSharePic.png';
 
 const defaultData = {
   imgUrl: `${window.location.href.replace(/\/[^/]*$/g, '')}/${weChatSharePic}`,

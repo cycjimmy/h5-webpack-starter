@@ -3,10 +3,10 @@ import isMobile from '@cycjimmy/awesome-js-funcs/esm/handheld/isMobile';
 import functionToPromise from '@cycjimmy/awesome-js-funcs/esm/typeConversion/functionToPromise';
 import debounce from '@cycjimmy/awesome-js-funcs/esm/event/debounce';
 
+import QRCodeImg from '@static/images/QRCode.png';
 import template from './promptMobile.pug';
 import _style from './promptMobile.scss';
-import QRCodeImg from '../../../static/images/QRCode.png';
-import settingConfig from '../../setting.config.json';
+import settingConfig from '@/setting.config.json';
 
 /**
  * createQRCodeAndTipDesktop

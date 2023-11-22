@@ -3,7 +3,7 @@ import { Page, changePageTo } from '@cycjimmy/h5-pages';
 import template from './backCover.pug';
 import _style from './backCover.scss';
 
-import cover from '../cover/cover.component.ins';
+import cover from '@/pages/cover/cover.component.ins';
 
 export default new class extends Page {
   constructor() {
