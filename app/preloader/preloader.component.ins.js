@@ -3,12 +3,12 @@ import h5Preloader from '@cycjimmy/h5-preloader';
 import functionToPromise from '@cycjimmy/awesome-js-funcs/esm/typeConversion/functionToPromise';
 
 // service
-import storage from '../dataHandling/storage.service.ins';
+import imgLoading from '@static/images/loading.svg';
+import storage from '@/dataHandling/storage.service.ins';
 // static
 import resources from './resources';
 import template from './preloader.pug';
 import _style from './preloader.scss';
-import imgLoading from '../../static/images/loading.svg';
 
 export default new class extends Popup {
   constructor() {

@@ -1,5 +1,5 @@
 import FastClick from 'fastclick';
-import webInitialize from './webInitialize.afunc';
+import webInitialize from '@/webInitialize.afunc';
 
 // web page init
 document.addEventListener('DOMContentLoaded', () => {

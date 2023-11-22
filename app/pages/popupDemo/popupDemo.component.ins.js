@@ -2,7 +2,7 @@ import { Page } from '@cycjimmy/h5-pages';
 
 import template from './popupDemo.pug';
 import _style from './popupDemo.scss';
-import popupX from '../../popups/popupX/popupX.component.ins';
+import popupX from '@/popups/popupX/popupX.component.ins';
 
 export default new class extends Page {
   constructor() {

@@ -1,4 +1,4 @@
-import Storage from '../shared/Storage';
+import Storage from '@/shared/Storage';
 
 export default new class extends Storage {
   constructor() {

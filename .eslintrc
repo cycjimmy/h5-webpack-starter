@@ -30,6 +30,24 @@
       {
         "allowEmptyReject": true
       }
+    ],
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": [
+          "^@/",
+          "^@static"
+        ]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "": "never",
+        "js": "never",
+        "mjs": "never"
+      }
     ]
   }
 }

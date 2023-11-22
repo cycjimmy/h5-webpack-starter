@@ -2,19 +2,19 @@ import Swiper from 'swiper';
 import { h5Pages, init } from '@cycjimmy/h5-pages';
 import SwiperAnimation from '@cycjimmy/swiper-animation';
 import h5Preloader from '@cycjimmy/h5-preloader';
-import bgm from '../shared/bgm.ins';
+import bgm from '@/shared/bgm.ins';
 
 // pages
-import cover from './cover/cover.component.ins';
-import features from './features/features.component.ins';
-import basedOn from './basedOn/basedOn.component.ins';
-import otherRecommended from './otherRecommended/otherRecommended.component.ins';
-import nestedSwiperDemo from './nestedSwiperDemo/nestedSwiperDemo.component.ins';
-import popupDemo from './popupDemo/popupDemo.component.ins';
-import pageX from './pageX/pageX.component.ins';
-import backCover from './backCover/backCover.component.ins';
+import cover from '@/pages/cover/cover.component.ins';
+import features from '@/pages/features/features.component.ins';
+import basedOn from '@/pages/basedOn/basedOn.component.ins';
+import otherRecommended from '@/pages/otherRecommended/otherRecommended.component.ins';
+import nestedSwiperDemo from '@/pages/nestedSwiperDemo/nestedSwiperDemo.component.ins';
+import popupDemo from '@/pages/popupDemo/popupDemo.component.ins';
+import pageX from '@/pages/pageX/pageX.component.ins';
+import backCover from '@/pages/backCover/backCover.component.ins';
 
-import _style from './root.scss';
+import _style from '@/pages/root.scss';
 
 export default new class {
   constructor() {

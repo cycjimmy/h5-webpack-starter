@@ -1,5 +1,5 @@
-@import "../theme/variables";
-@import "../theme/utilities";
+@import "@/theme/variables";
+@import "@/theme/utilities";
 
 .root {
   background-color: darken($bgc, 3%);
