@@ -40,7 +40,7 @@ specifiers:
   pug-loader: ^2.4.0
   sass-loader: ^13.3.2
   style-loader: ^3.3.3
-  swiper: ^11.0.4
+  swiper: ^11.0.5
   terser-webpack-plugin: ^5.3.9
   url-loader: ^4.1.1
   webpack: ^5.89.0
