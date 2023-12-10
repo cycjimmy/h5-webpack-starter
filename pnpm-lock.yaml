@@ -30,8 +30,8 @@ dependencies:
     specifier: ^7.0.2
     version: 7.0.2
   core-js:
-    specifier: ^3.33.3
-    version: 3.33.3
+    specifier: ^3.34.0
+    version: 3.34.0
   fastclick:
     specifier: ^1.0.6
     version: 1.0.6
@@ -3452,8 +3452,8 @@ packages:
     requiresBuild: true
     dev: true
 
-  /core-js@3.33.3:
-    resolution: {integrity: sha512-lo0kOocUlLKmm6kv/FswQL8zbkH7mVsLJ/FULClOhv8WRVmKLVcs6XPNQAzstfeJTCHMyButEwG+z1kHxHoDZw==}
+  /core-js@3.34.0:
+    resolution: {integrity: sha512-aDdvlDder8QmY91H88GzNi9EtQi2TjvQhpCX6B1v/dAZHU1AuLgHvRh54RiOerpEhEW46Tkf+vgAViB/CWC0ag==}
     requiresBuild: true
     dev: false
 
