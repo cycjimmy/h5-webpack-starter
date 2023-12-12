@@ -44,7 +44,7 @@
     "swiper": "^11.0.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.5",
+    "@babel/core": "^7.23.6",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.23.6",
     "@cycjimmy/config-lib": "^3.2.1",
