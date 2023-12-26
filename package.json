@@ -71,7 +71,7 @@
     "postcss-preset-env": "^9.3.0",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
-    "sass-loader": "^13.3.2",
+    "sass-loader": "^13.3.3",
     "style-loader": "^3.3.3",
     "terser-webpack-plugin": "^5.3.9",
     "url-loader": "^4.1.1",
