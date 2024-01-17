@@ -52,7 +52,7 @@
     "browser-sync": "^2.29.3",
     "browser-sync-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^6.8.1",
+    "css-loader": "^6.9.0",
     "css-minimizer-webpack-plugin": "^5.0.1",
     "cssnano": "^6.0.2",
     "eslint": "^8.56.0",
