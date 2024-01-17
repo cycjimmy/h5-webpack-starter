@@ -33,7 +33,7 @@ specifiers:
   merge-stream: ^2.0.0
   mini-css-extract-plugin: ^2.7.6
   node-sass: ^9.0.0
-  postcss: ^8.4.32
+  postcss: ^8.4.33
   postcss-loader: ^7.3.4
   postcss-preset-env: ^9.3.0
   pug: ^2.0.4
