@@ -34,7 +34,7 @@ specifiers:
   mini-css-extract-plugin: ^2.7.6
   node-sass: ^9.0.0
   postcss: ^8.4.33
-  postcss-loader: ^7.3.4
+  postcss-loader: ^8.0.0
   postcss-preset-env: ^9.3.0
   pug: ^2.0.4
   pug-loader: ^2.4.0
@@ -71,7 +71,7 @@ devDependencies:
   browser-sync: 2.29.3
   browser-sync-webpack-plugin: 2.3.0_716b3e0c97be96ad6e2aea17c3efda3f
   clean-webpack-plugin: 4.0.0_webpack@5.89.0
-  css-loader: 6.9.0_webpack@5.89.0
+  css-loader: 6.9.1_webpack@5.89.0
   css-minimizer-webpack-plugin: 5.0.1_webpack@5.89.0
   cssnano: 6.0.3_postcss@8.4.33
   eslint: 8.56.0
@@ -86,7 +86,7 @@ devDependencies:
   mini-css-extract-plugin: 2.7.7_webpack@5.89.0
   node-sass: 9.0.0
   postcss: 8.4.33
-  postcss-loader: 7.3.4_postcss@8.4.33+webpack@5.89.0
+  postcss-loader: 8.0.0_postcss@8.4.33+webpack@5.89.0
   postcss-preset-env: 9.3.0_postcss@8.4.33
   pug: 2.0.4
   pug-loader: 2.4.0_pug@2.0.4
@@ -112,7 +112,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.21
+      '@jridgewell/trace-mapping': 0.3.22
     dev: true
 
   /@apideck/better-ajv-errors/0.3.6_ajv@8.12.0:
@@ -169,7 +169,7 @@ packages:
     dependencies:
       '@babel/types': 7.23.6
       '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.21
+      '@jridgewell/trace-mapping': 0.3.22
       jsesc: 2.5.2
     dev: true
 
@@ -230,6 +230,21 @@ packages:
 
   /@babel/helper-define-polyfill-provider/0.4.4_@babel+core@7.23.7:
     resolution: {integrity: sha512-QcJMILQCu2jm5TFPGA3lCpJJTeEP+mqeXooG/NZbg/h5FTFi6V0+99ahlRsW8/kRLyb24LZVCCiclDedhLKcBA==}
+    peerDependencies:
+      '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
+    dependencies:
+      '@babel/core': 7.23.7
+      '@babel/helper-compilation-targets': 7.23.6
+      '@babel/helper-plugin-utils': 7.22.5
+      debug: 4.3.4
+      lodash.debounce: 4.0.8
+      resolve: 1.22.8
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@babel/helper-define-polyfill-provider/0.5.0_@babel+core@7.23.7:
+    resolution: {integrity: sha512-NovQquuQLAQ5HuyjCz7WQP9MjRj7dx++yspwiyUiGl9ZyadHRSql1HZh5ogRd8W8w6YM6EQ/NTB8rgjLt5W65Q==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
@@ -1225,9 +1240,9 @@ packages:
       '@babel/plugin-transform-unicode-regex': 7.23.3_@babel+core@7.23.7
       '@babel/plugin-transform-unicode-sets-regex': 7.23.3_@babel+core@7.23.7
       '@babel/preset-modules': 0.1.6-no-external-plugins_@babel+core@7.23.7
-      babel-plugin-polyfill-corejs2: 0.4.7_@babel+core@7.23.7
+      babel-plugin-polyfill-corejs2: 0.4.8_@babel+core@7.23.7
       babel-plugin-polyfill-corejs3: 0.8.7_@babel+core@7.23.7
-      babel-plugin-polyfill-regenerator: 0.5.4_@babel+core@7.23.7
+      babel-plugin-polyfill-regenerator: 0.5.5_@babel+core@7.23.7
       core-js-compat: 3.35.0
       semver: 6.3.1
     transitivePeerDependencies:
@@ -1802,7 +1817,7 @@ packages:
     dependencies:
       '@jridgewell/set-array': 1.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@jridgewell/trace-mapping': 0.3.21
+      '@jridgewell/trace-mapping': 0.3.22
     dev: true
 
   /@jridgewell/resolve-uri/3.1.1:
@@ -1819,15 +1834,15 @@ packages:
     resolution: {integrity: sha512-UTYAUj/wviwdsMfzoSJspJxbkH5o1snzwX0//0ENX1u/55kkZZkcTZP6u9bwKGkv+dkk9at4m1Cpt0uY80kcpQ==}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.21
+      '@jridgewell/trace-mapping': 0.3.22
     dev: true
 
   /@jridgewell/sourcemap-codec/1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
     dev: true
 
-  /@jridgewell/trace-mapping/0.3.21:
-    resolution: {integrity: sha512-SRfKmRe1KvYnxjEMtxEr+J4HIeMX5YBg/qhRHpxEIGjhX1rshcHlnFUE9K0GazhVKWM7B+nARSkV8LuvJdJ5/g==}
+  /@jridgewell/trace-mapping/0.3.22:
+    resolution: {integrity: sha512-Wf963MzWtA2sjrNt+g18IAln9lKnlRp+K2eH4jjIoF1wYeq3aMREpG09xhlhdzS0EjwU7qmUJYangWa+151vZw==}
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -2560,15 +2575,15 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: true
 
-  /autoprefixer/10.4.16_postcss@8.4.33:
-    resolution: {integrity: sha512-7vd3UC6xKp0HLfua5IjZlcXvGAGy7cBAXTg2lyQ/8WpNhd6SiZ8Be+xm3FyBSYJx5GKcpRCzBh7RH4/0dnY+uQ==}
+  /autoprefixer/10.4.17_postcss@8.4.33:
+    resolution: {integrity: sha512-/cpVNRLSfhOtcGflT13P2794gVSgmPgTR+erw5ifnMLZb0UnSlkK4tquLmkd3BhA+nLo5tX8Cu0upUsGKvKbmg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.22.2
-      caniuse-lite: 1.0.30001578
+      caniuse-lite: 1.0.30001579
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -2602,14 +2617,14 @@ packages:
       webpack: 5.89.0_webpack-cli@5.1.4
     dev: true
 
-  /babel-plugin-polyfill-corejs2/0.4.7_@babel+core@7.23.7:
-    resolution: {integrity: sha512-LidDk/tEGDfuHW2DWh/Hgo4rmnw3cduK6ZkOI1NPFceSK3n/yAGeOsNT7FLnSGHkXj3RHGSEVkN3FsCTY6w2CQ==}
+  /babel-plugin-polyfill-corejs2/0.4.8_@babel+core@7.23.7:
+    resolution: {integrity: sha512-OtIuQfafSzpo/LhnJaykc0R/MMnuLSSVjVYy9mHArIZ9qTCSZ6TpWCuEKZYVoN//t8HqBNScHrOtCrIK5IaGLg==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
       '@babel/compat-data': 7.23.5
       '@babel/core': 7.23.7
-      '@babel/helper-define-polyfill-provider': 0.4.4_@babel+core@7.23.7
+      '@babel/helper-define-polyfill-provider': 0.5.0_@babel+core@7.23.7
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -2627,13 +2642,13 @@ packages:
       - supports-color
     dev: true
 
-  /babel-plugin-polyfill-regenerator/0.5.4_@babel+core@7.23.7:
-    resolution: {integrity: sha512-S/x2iOCvDaCASLYsOOgWOq4bCfKYVqvO/uxjkaYyZ3rVsVE3CeAI/c84NpyuBBymEgNvHgjEot3a9/Z/kXvqsg==}
+  /babel-plugin-polyfill-regenerator/0.5.5_@babel+core@7.23.7:
+    resolution: {integrity: sha512-OJGYZlhLqBh2DDHeqAxWB1XIvr49CxiJ2gIt61/PU55CQK4Z58OzMqjDe1zwQdQk+rBYsRc+1rJmdajM3gimHg==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
       '@babel/core': 7.23.7
-      '@babel/helper-define-polyfill-provider': 0.4.4_@babel+core@7.23.7
+      '@babel/helper-define-polyfill-provider': 0.5.0_@babel+core@7.23.7
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2853,8 +2868,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001578
-      electron-to-chromium: 1.4.635
+      caniuse-lite: 1.0.30001579
+      electron-to-chromium: 1.4.640
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13_browserslist@4.22.2
     dev: true
@@ -3016,13 +3031,13 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.22.2
-      caniuse-lite: 1.0.30001578
+      caniuse-lite: 1.0.30001579
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: true
 
-  /caniuse-lite/1.0.30001578:
-    resolution: {integrity: sha512-J/jkFgsQ3NEl4w2lCoM9ZPxrD+FoBNJ7uJUpGVjIg/j0OwJosWM36EPDv+Yyi0V4twBk9pPmlFS+PLykgEvUmg==}
+  /caniuse-lite/1.0.30001579:
+    resolution: {integrity: sha512-u5AUVkixruKHJjw/pj9wISlcMpgFWzSrczLZbrqBSxukQixmg0SJ5sZTpvaFvxU0HoQKd4yoyAogyrAz9pzJnA==}
     dev: true
 
   /caw/2.0.1:
@@ -3321,8 +3336,8 @@ packages:
       vary: 1.1.2
     dev: true
 
-  /cosmiconfig/8.3.6:
-    resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
+  /cosmiconfig/9.0.0:
+    resolution: {integrity: sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg==}
     engines: {node: '>=14'}
     peerDependencies:
       typescript: '>=4.9.5'
@@ -3330,10 +3345,10 @@ packages:
       typescript:
         optional: true
     dependencies:
+      env-paths: 2.2.1
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
-      path-type: 4.0.0
     dev: true
 
   /cross-spawn/5.1.0:
@@ -3402,8 +3417,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /css-loader/6.9.0_webpack@5.89.0:
-    resolution: {integrity: sha512-3I5Nu4ytWlHvOP6zItjiHlefBNtrH+oehq8tnQa2kO305qpVyx9XNIT1CXIj5bgCJs7qICBCkgCYxQLKPANoLA==}
+  /css-loader/6.9.1_webpack@5.89.0:
+    resolution: {integrity: sha512-OzABOh0+26JKFdMzlK6PY1u5Zx8+Ck7CVRlcGNZoY9qwJjdfu2VWFuprTIpPW+Av5TZTVViYWcFQaEEQURLknQ==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -3411,8 +3426,8 @@ packages:
       icss-utils: 5.1.0_postcss@8.4.33
       postcss: 8.4.33
       postcss-modules-extract-imports: 3.0.0_postcss@8.4.33
-      postcss-modules-local-by-default: 4.0.3_postcss@8.4.33
-      postcss-modules-scope: 3.1.0_postcss@8.4.33
+      postcss-modules-local-by-default: 4.0.4_postcss@8.4.33
+      postcss-modules-scope: 3.1.1_postcss@8.4.33
       postcss-modules-values: 4.0.0_postcss@8.4.33
       postcss-value-parser: 4.2.0
       semver: 7.5.4
@@ -3444,7 +3459,7 @@ packages:
       lightningcss:
         optional: true
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.21
+      '@jridgewell/trace-mapping': 0.3.22
       cssnano: 6.0.3_postcss@8.4.33
       jest-worker: 29.7.0
       postcss: 8.4.33
@@ -3957,8 +3972,8 @@ packages:
       jake: 10.8.7
     dev: true
 
-  /electron-to-chromium/1.4.635:
-    resolution: {integrity: sha512-iu/2D0zolKU3iDGXXxdOzNf72Jnokn+K1IN6Kk4iV6l1Tr2g/qy+mvmtfAiBwZe5S3aB5r92vp+zSZ69scYRrg==}
+  /electron-to-chromium/1.4.640:
+    resolution: {integrity: sha512-z/6oZ/Muqk4BaE7P69bXhUhpJbUM9ZJeka43ZwxsDshKtePns4mhBlh8bU5+yrnOnz3fhG82XLzGUXazOmsWnA==}
     dev: true
 
   /emoji-regex/8.0.0:
@@ -7303,14 +7318,14 @@ packages:
       postcss: 8.4.33
     dev: true
 
-  /postcss-loader/7.3.4_postcss@8.4.33+webpack@5.89.0:
-    resolution: {integrity: sha512-iW5WTTBSC5BfsBJ9daFMPVrLT36MrNiC6fqOZTTaHjBNX6Pfd5p+hSBqe/fEeNd7pc13QiAyGt7VdGMw4eRC4A==}
-    engines: {node: '>= 14.15.0'}
+  /postcss-loader/8.0.0_postcss@8.4.33+webpack@5.89.0:
+    resolution: {integrity: sha512-+RiNlmYd1aXYv6QSBOAu6n9eJYy0ydyXTfjljAJ3vFU6MMo2M552zTVcBpBH+R5aAeKaYVG1K9UEyAVsLL1Qjg==}
+    engines: {node: '>= 18.12.0'}
     peerDependencies:
       postcss: ^7.0.0 || ^8.0.1
       webpack: ^5.0.0
     dependencies:
-      cosmiconfig: 8.3.6
+      cosmiconfig: 9.0.0
       jiti: 1.21.0
       postcss: 8.4.33
       semver: 7.5.4
@@ -7406,8 +7421,8 @@ packages:
       postcss: 8.4.33
     dev: true
 
-  /postcss-modules-local-by-default/4.0.3_postcss@8.4.33:
-    resolution: {integrity: sha512-2/u2zraspoACtrbFRnTijMiQtb4GW4BvatjaG/bCjYQo8kLTdevCUlwuBHx2sCnSyrI3x3qj4ZK1j5LQBgzmwA==}
+  /postcss-modules-local-by-default/4.0.4_postcss@8.4.33:
+    resolution: {integrity: sha512-L4QzMnOdVwRm1Qb8m4x8jsZzKAaPAgrUF1r/hjDR2Xj7R+8Zsf97jAlSQzWtKx5YNiNGN8QxmPFIc/sh+RQl+Q==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
@@ -7418,8 +7433,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-modules-scope/3.1.0_postcss@8.4.33:
-    resolution: {integrity: sha512-SaIbK8XW+MZbd0xHPf7kdfA/3eOt7vxJ72IRecn3EzuZVLr1r0orzf0MX/pN8m+NMDoo6X/SQd8oeKqGZd8PXg==}
+  /postcss-modules-scope/3.1.1_postcss@8.4.33:
+    resolution: {integrity: sha512-uZgqzdTleelWjzJY+Fhti6F3C9iF1JR/dODLs/JDefozYcKTBCdD8BIl6nNPbTbcLnGrk56hzwZC2DaGNvYjzA==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
@@ -7621,7 +7636,7 @@ packages:
       '@csstools/postcss-text-decoration-shorthand': 3.0.4_postcss@8.4.33
       '@csstools/postcss-trigonometric-functions': 3.0.4_postcss@8.4.33
       '@csstools/postcss-unset-value': 3.0.1_postcss@8.4.33
-      autoprefixer: 10.4.16_postcss@8.4.33
+      autoprefixer: 10.4.17_postcss@8.4.33
       browserslist: 4.22.2
       css-blank-pseudo: 6.0.1_postcss@8.4.33
       css-has-pseudo: 6.0.1_postcss@8.4.33
@@ -9038,7 +9053,7 @@ packages:
       uglify-js:
         optional: true
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.21
+      '@jridgewell/trace-mapping': 0.3.22
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
