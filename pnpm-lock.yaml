@@ -86,8 +86,8 @@ devDependencies:
     specifier: ^4.0.1
     version: 4.0.1(eslint@8.56.0)(webpack@5.89.0)
   expose-loader:
-    specifier: ^4.1.0
-    version: 4.1.0(webpack@5.89.0)
+    specifier: ^5.0.0
+    version: 5.0.0(webpack@5.89.0)
   file-loader:
     specifier: ^6.2.0
     version: 6.2.0(webpack@5.89.0)
@@ -4630,9 +4630,9 @@ packages:
     dev: true
     optional: true
 
-  /expose-loader@4.1.0(webpack@5.89.0):
-    resolution: {integrity: sha512-oLAesnzerwDGGADzBMnu0LPqqnlVz6e2V9lTa+/4X6VeW9W93x/nJpw05WBrcIdbqXm/EdnEQpiVDFFiQXuNfg==}
-    engines: {node: '>= 14.15.0'}
+  /expose-loader@5.0.0(webpack@5.89.0):
+    resolution: {integrity: sha512-BtUqYRmvx1bEY5HN6eK2I9URUZgNmN0x5UANuocaNjXSgfoDlkXt+wyEMe7i5DzDNh2BKJHPc5F4rBwEdSQX6w==}
+    engines: {node: '>= 18.12.0'}
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
