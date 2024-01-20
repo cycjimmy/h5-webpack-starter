@@ -19,7 +19,7 @@ specifiers:
   clean-webpack-plugin: ^4.0.0
   core-js: ^3.35.0
   css-loader: ^6.9.0
-  css-minimizer-webpack-plugin: ^5.0.1
+  css-minimizer-webpack-plugin: ^6.0.0
   cssnano: ^6.0.3
   eslint: ^8.56.0
   eslint-config-airbnb-base: ^15.0.0
@@ -72,7 +72,7 @@ devDependencies:
   browser-sync-webpack-plugin: 2.3.0_716b3e0c97be96ad6e2aea17c3efda3f
   clean-webpack-plugin: 4.0.0_webpack@5.89.0
   css-loader: 6.9.1_webpack@5.89.0
-  css-minimizer-webpack-plugin: 5.0.1_webpack@5.89.0
+  css-minimizer-webpack-plugin: 6.0.0_webpack@5.89.0
   cssnano: 6.0.3_postcss@8.4.33
   eslint: 8.56.0
   eslint-config-airbnb-base: 15.0.0_7ee130e7cc4617644d5d25b5ab547910
@@ -3434,9 +3434,9 @@ packages:
       webpack: 5.89.0_webpack-cli@5.1.4
     dev: true
 
-  /css-minimizer-webpack-plugin/5.0.1_webpack@5.89.0:
-    resolution: {integrity: sha512-3caImjKFQkS+ws1TGcFn0V1HyDJFq1Euy589JlD6/3rV2kj+w7r5G9WDMgSHvpvXHNZ2calVypZWuEDQd9wfLg==}
-    engines: {node: '>= 14.15.0'}
+  /css-minimizer-webpack-plugin/6.0.0_webpack@5.89.0:
+    resolution: {integrity: sha512-BLpR9CCDkKvhO3i0oZQgad6v9pCxUuhSc5RT6iUEy9M8hBXi4TJb5vqF2GQ2deqYHmRi3O6IR9hgAZQWg0EBwA==}
+    engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@parcel/css': '*'
       '@swc/css': '*'
@@ -5237,7 +5237,7 @@ packages:
       depd: 1.1.2
       inherits: 2.0.3
       setprototypeof: 1.1.0
-      statuses: 1.4.0
+      statuses: 1.5.0
     dev: true
 
   /http-errors/2.0.0:
@@ -8732,6 +8732,11 @@ packages:
 
   /statuses/1.4.0:
     resolution: {integrity: sha512-zhSCtt8v2NDrRlPQpCNtw/heZLtfUDqxBM1udqikb/Hbk52LK4nQSwr10u77iopCW5LsyHpuXS0GnEc48mLeew==}
+    engines: {node: '>= 0.6'}
+    dev: true
+
+  /statuses/1.5.0:
+    resolution: {integrity: sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==}
     engines: {node: '>= 0.6'}
     dev: true
 
