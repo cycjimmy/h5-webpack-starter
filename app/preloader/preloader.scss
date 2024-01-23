@@ -20,6 +20,7 @@ $loadingBgc: $bgc;
 $progressH: 2vw;
 $progressW: 48vw;
 $progressPadding: $progressH / 4;
+
 .loadingProgressWrapper {
   display: flex;
   width: $progressW - $progressPadding * 2;
@@ -69,6 +70,7 @@ $progressPadding: $progressH / 4;
   $progressW: 240px;
   $progressPadding: $progressH / 4;
   $space: 10px;
+
   .loadingProgressWrapper {
     width: $progressW - $progressPadding * 2;
     height: $progressH - $progressPadding * 2;
