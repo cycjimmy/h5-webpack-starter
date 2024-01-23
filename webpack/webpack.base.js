@@ -2,6 +2,7 @@
 const path = require('path');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const DEVELOPMENT = process.env.NODE_ENV === 'development'; // Development mode
@@ -135,6 +136,15 @@ module.exports = {
 
     new ESLintPlugin({
       fix: true,
+    }),
+
+    new StylelintPlugin({
+      fix: true,
+      exclude: [
+        'node_modules',
+        'dist',
+        'build',
+      ],
     }),
 
     new CleanWebpackPlugin({

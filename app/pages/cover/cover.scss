@@ -5,6 +5,7 @@
   0% {
     transform: rotate3d(1, 1, 1, 0deg);
   }
+
   100% {
     transform: rotate3d(1, 1, 1, 360deg);
   }
@@ -17,6 +18,7 @@
 
 // logo animation
 $picH: calcVW(240);
+
 .logoWrap {
   @extend %rel;
   height: $picH;
@@ -74,6 +76,7 @@ $picH: calcVW(240);
   }
 
   $picH: calcPX(240);
+
   .logoWrap {
     height: $picH;
     width: $picH;

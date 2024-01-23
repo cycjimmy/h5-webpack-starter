@@ -1,0 +1,23 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "selector-class-pattern": null,
+    "max-nesting-depth": [
+      3,
+      {
+        "ignore": [
+          "pseudo-classes"
+        ],
+        "ignoreAtRules": [
+          "each",
+          "media",
+          "supports",
+          "include"
+        ]
+      }
+    ],
+    "scss/no-global-function-names": null,
+    "scss/at-function-pattern": null,
+    "scss/dollar-variable-pattern": null
+  }
+}

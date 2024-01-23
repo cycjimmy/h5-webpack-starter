@@ -14,7 +14,7 @@
   }
 }
 
-.icon {
+%icon {
   display: inline-flex;
   width: calcVW(36);
   height: calcVW(36);
@@ -30,8 +30,12 @@
   }
 }
 
+.icon {
+  @extend %icon;
+}
+
 .link {
-  @extend .icon;
+  @extend %icon;
 
   &::before {
     @include bg-image-full(url('@static/images/icon-link.svg'));
@@ -51,6 +55,7 @@
   }
 
   .icon {
+    @extend %icon;
     width: calcPX(36);
     height: calcPX(36);
     margin: 0 calcPX(10);
