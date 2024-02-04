@@ -42,7 +42,7 @@ specifiers:
   style-loader: ^3.3.4
   stylelint: ^15.11.0
   stylelint-config-sass-guidelines: ^10.0.0
-  stylelint-webpack-plugin: ^4.1.1
+  stylelint-webpack-plugin: ^5.0.0
   swiper: ^11.0.5
   terser-webpack-plugin: ^5.3.10
   url-loader: ^4.1.1
@@ -97,7 +97,7 @@ devDependencies:
   style-loader: 3.3.4_webpack@5.90.1
   stylelint: 15.11.0
   stylelint-config-sass-guidelines: 10.0.0_postcss@8.4.33+stylelint@15.11.0
-  stylelint-webpack-plugin: 4.1.1_stylelint@15.11.0+webpack@5.90.1
+  stylelint-webpack-plugin: 5.0.0_stylelint@15.11.0+webpack@5.90.1
   terser-webpack-plugin: 5.3.10_webpack@5.90.1
   url-loader: 4.1.1_file-loader@6.2.0+webpack@5.90.1
   webpack: 5.90.1_webpack-cli@5.1.4
@@ -9170,11 +9170,11 @@ packages:
       stylelint: 15.11.0
     dev: true
 
-  /stylelint-webpack-plugin/4.1.1_stylelint@15.11.0+webpack@5.90.1:
-    resolution: {integrity: sha512-yOyd2AfrxfawxKDememazGVJX2vMq9o11E6HvBu4+SKvgK3ZulkjpYdI1muBTxItwoxH2UmfIZzQM+/M5V3kTQ==}
-    engines: {node: '>= 14.15.0'}
+  /stylelint-webpack-plugin/5.0.0_stylelint@15.11.0+webpack@5.90.1:
+    resolution: {integrity: sha512-f56OmfvIYfZpL5+TKg3LZ+Ehzoar5GAwytUtsdti+W6WhR3UpQC36vmXHsKxx9ibj7dKXCIKea6w0U+LdVSBmg==}
+    engines: {node: '>= 18.12.0'}
     peerDependencies:
-      stylelint: ^13.0.0 || ^14.0.0 || ^15.0.0
+      stylelint: ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
       webpack: ^5.0.0
     dependencies:
       globby: 11.1.0
