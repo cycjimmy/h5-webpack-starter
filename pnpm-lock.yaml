@@ -83,8 +83,8 @@ devDependencies:
     specifier: ^2.29.1
     version: 2.29.1(eslint@8.57.0)
   eslint-webpack-plugin:
-    specifier: ^4.0.1
-    version: 4.0.1(eslint@8.57.0)(webpack@5.90.3)
+    specifier: ^4.1.0
+    version: 4.1.0(eslint@8.57.0)(webpack@5.90.3)
   expose-loader:
     specifier: ^5.0.0
     version: 5.0.0(webpack@5.90.3)
@@ -2208,6 +2208,13 @@ packages:
 
   /@types/eslint@8.40.2:
     resolution: {integrity: sha512-PRVjQ4Eh9z9pmmtaq8nTjZjQwKFk7YIHIud3lRoKRBgUQjgjRmoGxxGEPXQkF+lH7QkHJRNr5F4aBgYCW0lqpQ==}
+    dependencies:
+      '@types/estree': 1.0.5
+      '@types/json-schema': 7.0.11
+    dev: true
+
+  /@types/eslint@8.56.6:
+    resolution: {integrity: sha512-ymwc+qb1XkjT/gfoQwxIeHZ6ixH23A+tCT2ADSA/DPVKzAjwYkTXBMCQ/f6fe4wEa85Lhp26VPeUxI7wMhAi7A==}
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.11
@@ -4579,16 +4586,16 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /eslint-webpack-plugin@4.0.1(eslint@8.57.0)(webpack@5.90.3):
-    resolution: {integrity: sha512-fUFcXpui/FftGx3NzvWgLZXlLbu+m74sUxGEgxgoxYcUtkIQbS6SdNNZkS99m5ycb23TfoNYrDpp1k/CK5j6Hw==}
+  /eslint-webpack-plugin@4.1.0(eslint@8.57.0)(webpack@5.90.3):
+    resolution: {integrity: sha512-C3wAG2jyockIhN0YRLuKieKj2nx/gnE/VHmoHemD5ifnAtY6ZU+jNPfzPoX4Zd6RIbUyWTiZUh/ofUlBhoAX7w==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       eslint: ^8.0.0
       webpack: ^5.0.0
     dependencies:
-      '@types/eslint': 8.40.2
+      '@types/eslint': 8.56.6
       eslint: 8.57.0
-      jest-worker: 29.5.0
+      jest-worker: 29.7.0
       micromatch: 4.0.5
       normalize-path: 3.0.0
       schema-utils: 4.2.0
@@ -6281,16 +6288,6 @@ packages:
     engines: {node: '>= 10.13.0'}
     dependencies:
       '@types/node': 18.0.0
-      merge-stream: 2.0.0
-      supports-color: 8.1.1
-    dev: true
-
-  /jest-worker@29.5.0:
-    resolution: {integrity: sha512-NcrQnevGoSp4b5kg+akIpthoAFHxPBcb5P6mYPY0fUNT+sSvmtu6jlkEle3anczUKIKEbMxFimk9oTP/tpIPgA==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-    dependencies:
-      '@types/node': 18.0.0
-      jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
