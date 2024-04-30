@@ -122,8 +122,8 @@ devDependencies:
     specifier: ^2.4.0
     version: 2.4.0(pug@2.0.4)
   sass-loader:
-    specifier: ^14.1.1
-    version: 14.1.1(node-sass@9.0.0)(webpack@5.90.3)
+    specifier: ^14.2.1
+    version: 14.2.1(node-sass@9.0.0)(webpack@5.90.3)
   style-loader:
     specifier: ^3.3.4
     version: 3.3.4(webpack@5.90.3)
@@ -8869,8 +8869,8 @@ packages:
       yargs: 17.5.1
     dev: true
 
-  /sass-loader@14.1.1(node-sass@9.0.0)(webpack@5.90.3):
-    resolution: {integrity: sha512-QX8AasDg75monlybel38BZ49JP5Z+uSKfKwF2rO7S74BywaRmGQMUBw9dtkS+ekyM/QnP+NOrRYq8ABMZ9G8jw==}
+  /sass-loader@14.2.1(node-sass@9.0.0)(webpack@5.90.3):
+    resolution: {integrity: sha512-G0VcnMYU18a4N7VoNDegg2OuMjYtxnqzQWARVWCIVSZwJeiL9kg8QMsuIZOplsJgTzZLF6jGxI3AClj8I9nRdQ==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
