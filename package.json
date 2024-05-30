@@ -45,7 +45,7 @@
     "@cycjimmy/weixin-share": "^7.0.2",
     "core-js": "^3.37.0",
     "fastclick": "^1.0.6",
-    "swiper": "^11.0.7"
+    "swiper": "^11.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.24.3",
