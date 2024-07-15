@@ -1,5 +1,5 @@
-@import "@/theme/variables";
-@import "@/theme/utilities";
+@import '@/theme/variables';
+@import '@/theme/utilities';
 
 $popupXFontSize: calcVW(30);
 
@@ -9,10 +9,10 @@ $popupXFontSize: calcVW(30);
   flex-direction: column;
   z-index: 99;
 
-  background-color: rgba($black, .85);
+  background-color: rgba($black, 0.85);
 
   opacity: 0;
-  transition: opacity .4s;
+  transition: opacity 0.4s;
 
   &.fadeIn {
     opacity: 1;

@@ -1,19 +1,19 @@
-@import "variables";
-@import "~@cycjimmy/sass-lib";
+@import 'variables';
+@import '~@cycjimmy/sass-lib';
 
 @function calcVW($designDrawingLength:0) {
   @return call(
-      get_function("designPx2VW"),
-      $designDrawingLength,
-      $designDrawingWidth,
+    get_function('designPx2VW'),
+    $designDrawingLength,
+    $designDrawingWidth,
   );
 }
 
 @function calcPX($designDrawingLength:0) {
   @return call(
-      get_function("designPx2Px"),
-      $designDrawingLength,
-      $designDrawingWidth,
-      $pcRootWidth,
+    get_function('designPx2Px'),
+    $designDrawingLength,
+    $designDrawingWidth,
+    $pcRootWidth,
   );
 }
