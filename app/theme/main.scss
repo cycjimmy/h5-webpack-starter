@@ -5,7 +5,7 @@
 /*---------------------------
  * reset style
  *---------------------------*/
-@import "~@cycjimmy/sass-lib/reset/h5";
+@import '~@cycjimmy/sass-lib/reset/h5';
 
 html {
   line-height: 1.4;
@@ -15,7 +15,7 @@ html {
 body {
   color: $fontColor;
   font-size: $fontM;
-  font-family: -apple-system-font, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-family: -apple-system-font, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 
 

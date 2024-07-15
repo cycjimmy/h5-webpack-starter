@@ -1,5 +1,5 @@
-@import "@/theme/variables";
-@import "@/theme/utilities";
+@import '@/theme/variables';
+@import '@/theme/utilities';
 
 @keyframes rotation {
   0% {
@@ -28,8 +28,8 @@ $picH: calcVW(240);
 
 .logo {
   @extend %fullContainer;
-  transform: scale(.9);
-  transition: transform .4s;
+  transform: scale(0.9);
+  transition: transform 0.4s;
 
   &.enlarge {
     transform: scale(1);
@@ -38,9 +38,9 @@ $picH: calcVW(240);
   &::before {
     @extend %fullContainer;
     display: block;
-    content: "";
+    content: '';
     perspective: $picH / 6;
-    @include bg-image-full(url("https://cycjimmy.github.io/staticFiles/images/cyc_logo256.png"));
+    @include bg-image-full(url('https://cycjimmy.github.io/staticFiles/images/cyc_logo256.png'));
     animation: rotation 4s linear 0s infinite normal both;
   }
 

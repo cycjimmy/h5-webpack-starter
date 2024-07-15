@@ -33,18 +33,18 @@ $QRCodeDesktopWidth: 100px;
   @include fix-center(0);
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     @extend %abs;
-    left: round($pcRootWidth * .5 + 20);
-    top: - round($pcRootWidth * .3 + $QRCodeDesktopWidth * .5);
+    left: round($pcRootWidth * 0.5 + 20);
+    top: - round($pcRootWidth * 0.3 + $QRCodeDesktopWidth * 0.5);
     width: $QRCodeDesktopWidth;
     height: $QRCodeDesktopWidth;
 
     border: 2px solid darken($bgc, 5%);
     border-radius: 12px;
     overflow: hidden;
-    @include bg-image-full(url("@static/images/QRCode.png"));
+    @include bg-image-full(url('@static/images/QRCode.png'));
   }
 }
 
@@ -57,14 +57,14 @@ $QRCodeDesktopWidth: 100px;
 
   &::before {
     @extend %abs;
-    content: "Modern browsers such as Chrome and Firefox are recommended";
+    content: 'Modern browsers such as Chrome and Firefox are recommended';
     display: block;
-    left: - round($pcRootWidth * .5);
-    top: round(($pcRootWidth * $designDrawingBestHeight / $designDrawingWidth) * .5) + 10;
+    left: - round($pcRootWidth * 0.5);
+    top: round(($pcRootWidth * $designDrawingBestHeight / $designDrawingWidth) * 0.5) + 10;
     width: $pcRootWidth;
 
     font-size: 12px;
-    color: rgba($fontColor, .6);
+    color: rgba($fontColor, 0.6);
     text-align: center;
   }
 }
