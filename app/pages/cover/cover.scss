@@ -23,7 +23,7 @@ $picH: calcVW(240);
   @extend %rel;
   height: $picH;
   width: $picH;
-  margin-bottom: $picH / 6;
+  margin-bottom: calc($picH / 6);
 }
 
 .logo {
@@ -39,7 +39,7 @@ $picH: calcVW(240);
     @extend %fullContainer;
     display: block;
     content: '';
-    perspective: $picH / 6;
+    perspective: calc($picH / 6);
     @include bg-image-full(url('https://cycjimmy.github.io/staticFiles/images/cyc_logo256.png'));
     animation: rotation 4s linear 0s infinite normal both;
   }
@@ -80,12 +80,12 @@ $picH: calcVW(240);
   .logoWrap {
     height: $picH;
     width: $picH;
-    margin-bottom: $picH / 6;
+    margin-bottom: calc($picH / 6);
   }
 
   .logo {
     &::before {
-      perspective: $picH / 6;
+      perspective: calc($picH / 6);
     }
   }
 
