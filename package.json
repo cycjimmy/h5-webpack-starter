@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "4.6.0",
+  "version": "4.7.0",
   "description": "H5 webpack starter for webpack, es6/7, sass, pug, swiper...",
   "scripts": {
     "start": "npm run dev",
@@ -69,12 +69,12 @@
     "image-webpack-loader": "^8.1.0",
     "merge-stream": "^2.0.0",
     "mini-css-extract-plugin": "^2.9.0",
-    "node-sass": "^9.0.0",
     "postcss": "^8.4.39",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^9.6.0",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
+    "sass": "^1.77.8",
     "sass-loader": "^14.2.1",
     "style-loader": "^4.0.0",
     "stylelint": "^16.7.0",

@@ -19,7 +19,7 @@ $loadingBgc: $bgc;
 
 $progressH: 2vw;
 $progressW: 48vw;
-$progressPadding: $progressH / 4;
+$progressPadding: calc($progressH / 4);
 
 .loadingProgressWrapper {
   display: flex;
@@ -29,7 +29,7 @@ $progressPadding: $progressH / 4;
   margin: $space * 2 0 $space;
 
   background-color: darken($loadingBgc, 10%);
-  border-radius: $progressH / 2;
+  border-radius: calc($progressH / 2);
   box-shadow: inset calcVW(1.5) calcVW(-1.5) calcVW(1.5) desaturate(lighten($loadingBgc, 20%), 30%);
 }
 
@@ -37,7 +37,7 @@ $progressPadding: $progressH / 4;
   flex: 1;
   width: $progressW - $progressPadding * 2;
   height: $progressH - $progressPadding * 2;
-  border-radius: ($progressH - $progressPadding * 2) / 2;
+  border-radius: ($progressH - $progressPadding * 2) * 0.5;
 
   overflow: hidden;
 }
@@ -68,7 +68,7 @@ $progressPadding: $progressH / 4;
 
   $progressH: 10px;
   $progressW: 240px;
-  $progressPadding: $progressH / 4;
+  $progressPadding: calc($progressH / 4);
   $space: 10px;
 
   .loadingProgressWrapper {
@@ -77,13 +77,13 @@ $progressPadding: $progressH / 4;
     padding: $progressPadding;
     margin: $space * 2 0 $space;
 
-    border-radius: $progressH / 2;
+    border-radius: calc($progressH / 2);
     box-shadow: inset calcPX(2) calcPX(-2) calcPX(2) desaturate(lighten($loadingBgc, 20%), 30%);
   }
 
   .loadingProgressbarWrapper {
     width: $progressW - $progressPadding * 2;
     height: $progressH - $progressPadding * 2;
-    border-radius: ($progressH - $progressPadding * 2) / 2;
+    border-radius: ($progressH - $progressPadding * 2) * 0.5;
   }
 }
