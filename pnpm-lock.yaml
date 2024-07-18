@@ -27,8 +27,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0
       '@cycjimmy/swiper-animation':
-        specifier: ^6.0.2
-        version: 6.0.2
+        specifier: ^6.0.3
+        version: 6.0.3
       '@cycjimmy/weixin-share':
         specifier: ^7.0.3
         version: 7.0.3
@@ -1009,8 +1009,8 @@ packages:
   '@cycjimmy/sass-lib@2.3.0':
     resolution: {integrity: sha512-cf1WdcchRz0ROUwVTbcS0AsWX3FdJI0qOTJr4NK3MMKuNF7LUDXF3LN1d8zxXjsxmyfRf30ftWj9FFzCm38dmw==}
 
-  '@cycjimmy/swiper-animation@6.0.2':
-    resolution: {integrity: sha512-KfUKdIqCbWTRDOOOV3DFlOkx1CmTVM9GrqtnrfP0sfaznN9WUQ0kBySCLW2jx5fDIHdLLSQGOtBJHkHk/GS0mw==}
+  '@cycjimmy/swiper-animation@6.0.3':
+    resolution: {integrity: sha512-l6793+HtG5E3Aips4uVNDMDzPj8pT1BUTa2EuJmdcfT32+ywWuyq4uulFs0Q3DaoHZZLBTegU3u9tvU7HNqYvw==}
 
   '@cycjimmy/weixin-share@7.0.3':
     resolution: {integrity: sha512-hsM+WQA6dNhYwvb2fDwVwSyCvhv0VKzKAHNNsJZPdzZyuR2PMZxGxVojTQu1U1N/WSfdCGSnJawGNW9guK0tCQ==}
@@ -6089,7 +6089,7 @@ snapshots:
 
   '@cycjimmy/sass-lib@2.3.0': {}
 
-  '@cycjimmy/swiper-animation@6.0.2': {}
+  '@cycjimmy/swiper-animation@6.0.3': {}
 
   '@cycjimmy/weixin-share@7.0.3': {}
 
