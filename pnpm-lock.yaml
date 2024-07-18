@@ -12,8 +12,8 @@ importers:
         specifier: ^4.0.9
         version: 4.0.9
       '@cycjimmy/h5-audio-controls':
-        specifier: ^5.0.3
-        version: 5.0.3
+        specifier: ^5.0.4
+        version: 5.0.4
       '@cycjimmy/h5-pages':
         specifier: ^4.3.2
         version: 4.3.2
@@ -994,8 +994,8 @@ packages:
   '@cycjimmy/config-lib@3.2.1':
     resolution: {integrity: sha512-0bO/osJj8VDCXRNJ/cUnO94UvogLonQ84M+CIqGlP5QiKbwCAwfadBThYhsVTcYl+aU/bqib9089t0JxasMXLg==}
 
-  '@cycjimmy/h5-audio-controls@5.0.3':
-    resolution: {integrity: sha512-g2vWzTpoq3ZYxuCf0dhC5cjBKvrRkEq6CY+blknnRcC3UuXITOUQOIPihkMpTUcc53PbY9BJRAx48P1kADpVEg==}
+  '@cycjimmy/h5-audio-controls@5.0.4':
+    resolution: {integrity: sha512-beP7O7lwer3t5953XcYem//9nsOBIHYUFB+cy1tCBuilzjO82fj1vku/JakcbKNe5kVNScQti09XuDLqbZxfDA==}
 
   '@cycjimmy/h5-pages@4.3.2':
     resolution: {integrity: sha512-UK4c15Q0rxai88UBNnZcQvVQGE33Rcyz+Ow+nULWP+d2AGYe9R663fnzCsfSdf9u3DAf95afotWl/0ks2UghGg==}
@@ -6079,7 +6079,7 @@ snapshots:
 
   '@cycjimmy/config-lib@3.2.1': {}
 
-  '@cycjimmy/h5-audio-controls@5.0.3': {}
+  '@cycjimmy/h5-audio-controls@5.0.4': {}
 
   '@cycjimmy/h5-pages@4.3.2': {}
 
