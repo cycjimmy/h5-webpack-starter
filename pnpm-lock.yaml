@@ -21,8 +21,8 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
       '@cycjimmy/mini-xhr':
-        specifier: ^7.0.0
-        version: 7.0.0
+        specifier: ^7.0.1
+        version: 7.0.1
       '@cycjimmy/sass-lib':
         specifier: ^2.3.0
         version: 2.3.0
@@ -1003,8 +1003,8 @@ packages:
   '@cycjimmy/h5-preloader@5.0.4':
     resolution: {integrity: sha512-8Rgc8sV3GI9MhsTRty+K7oynbtjKx3TH13bQb82mn6PNU6LuHafttCttdXLJ3eZqWOoZSWaAmGA4TJqKR6LCww==}
 
-  '@cycjimmy/mini-xhr@7.0.0':
-    resolution: {integrity: sha512-2G5phqISpA6pEevHb59CkRYheI4hgc4fb8zcBmt04W6xWr4ho0Ol1OVIvImlIblbMGKrAo2dRsh7Cvi36prz9g==}
+  '@cycjimmy/mini-xhr@7.0.1':
+    resolution: {integrity: sha512-GRWRmcfNa0yFajlocZZ5zSz/iHq5lvbr5j0z5cdcMbe2iDq+AyUjeULr17+CaevZM8rXoHiTLXxYC9Gs6e5o0w==}
 
   '@cycjimmy/sass-lib@2.3.0':
     resolution: {integrity: sha512-cf1WdcchRz0ROUwVTbcS0AsWX3FdJI0qOTJr4NK3MMKuNF7LUDXF3LN1d8zxXjsxmyfRf30ftWj9FFzCm38dmw==}
@@ -6085,7 +6085,7 @@ snapshots:
 
   '@cycjimmy/h5-preloader@5.0.4': {}
 
-  '@cycjimmy/mini-xhr@7.0.0': {}
+  '@cycjimmy/mini-xhr@7.0.1': {}
 
   '@cycjimmy/sass-lib@2.3.0': {}
 
