@@ -24,7 +24,7 @@ dependencies:
     specifier: ^2.3.0
     version: 2.3.0
   '@cycjimmy/swiper-animation':
-    specifier: ^6.0.2
+    specifier: ^6.0.3
     version: 6.0.3
   '@cycjimmy/weixin-share':
     specifier: ^7.0.3
