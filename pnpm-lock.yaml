@@ -30,8 +30,8 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2
       '@cycjimmy/weixin-share':
-        specifier: ^7.0.2
-        version: 7.0.2
+        specifier: ^7.0.3
+        version: 7.0.3
       core-js:
         specifier: ^3.37.1
         version: 3.37.1
@@ -1012,8 +1012,8 @@ packages:
   '@cycjimmy/swiper-animation@6.0.2':
     resolution: {integrity: sha512-KfUKdIqCbWTRDOOOV3DFlOkx1CmTVM9GrqtnrfP0sfaznN9WUQ0kBySCLW2jx5fDIHdLLSQGOtBJHkHk/GS0mw==}
 
-  '@cycjimmy/weixin-share@7.0.2':
-    resolution: {integrity: sha512-gUmM44zwl9oJu6hUZ2iZYCeHE7KBBwtmD3wSsc4wEWNBmDeBZbJMIt/AZs7wrZX1t9rXDg43A8oxCWFWLnPnJQ==}
+  '@cycjimmy/weixin-share@7.0.3':
+    resolution: {integrity: sha512-hsM+WQA6dNhYwvb2fDwVwSyCvhv0VKzKAHNNsJZPdzZyuR2PMZxGxVojTQu1U1N/WSfdCGSnJawGNW9guK0tCQ==}
 
   '@discoveryjs/json-ext@0.5.7':
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -6091,7 +6091,7 @@ snapshots:
 
   '@cycjimmy/swiper-animation@6.0.2': {}
 
-  '@cycjimmy/weixin-share@7.0.2': {}
+  '@cycjimmy/weixin-share@7.0.3': {}
 
   '@discoveryjs/json-ext@0.5.7': {}
 
