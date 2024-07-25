@@ -50,7 +50,7 @@ devDependencies:
     specifier: ^7.24.8
     version: 7.24.8(@babel/core@7.24.9)
   '@cycjimmy/config-lib':
-    specifier: ^3.2.1
+    specifier: ^3.2.2
     version: 3.2.2
   babel-loader:
     specifier: ^9.1.3
