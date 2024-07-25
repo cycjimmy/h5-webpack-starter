@@ -18,7 +18,7 @@ dependencies:
     specifier: ^5.0.4
     version: 5.0.4
   '@cycjimmy/mini-xhr':
-    specifier: ^7.0.0
+    specifier: ^7.0.1
     version: 7.0.1
   '@cycjimmy/sass-lib':
     specifier: ^2.3.0

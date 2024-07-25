@@ -39,7 +39,7 @@
     "@cycjimmy/h5-audio-controls": "^5.0.4",
     "@cycjimmy/h5-pages": "^4.3.2",
     "@cycjimmy/h5-preloader": "^5.0.4",
-    "@cycjimmy/mini-xhr": "^7.0.0",
+    "@cycjimmy/mini-xhr": "^7.0.1",
     "@cycjimmy/sass-lib": "^2.3.0",
     "@cycjimmy/swiper-animation": "^6.0.3",
     "@cycjimmy/weixin-share": "^7.0.3",
