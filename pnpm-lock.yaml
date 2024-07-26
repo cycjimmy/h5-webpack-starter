@@ -39,8 +39,8 @@ importers:
         specifier: ^1.0.6
         version: 1.0.6
       swiper:
-        specifier: ^11.1.7
-        version: 11.1.7
+        specifier: ^11.1.8
+        version: 11.1.8
     devDependencies:
       '@babel/core':
         specifier: ^7.24.8
@@ -4594,8 +4594,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  swiper@11.1.7:
-    resolution: {integrity: sha512-2EpQvhgKb+DNbi8/i9uRXhddivcMZQxca341t2NZYV1xroCR2p4YtYd3azuqRQ4OEBGcG4nv3aN24O80bMipow==}
+  swiper@11.1.8:
+    resolution: {integrity: sha512-sBFp7fA+IfZ/7BMcg8/JSEqDD1qZXBUyliT76yk3zIYVu2fMwFVAghhAJ9vBM5tJUtHW5qcD0pmeEGQs1EK14w==}
     engines: {node: '>= 4.7.0'}
 
   table@6.8.2:
@@ -10244,7 +10244,7 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.0.1
 
-  swiper@11.1.7: {}
+  swiper@11.1.8: {}
 
   table@6.8.2:
     dependencies:
