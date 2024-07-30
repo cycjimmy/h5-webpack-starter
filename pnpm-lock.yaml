@@ -130,14 +130,14 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.93.0(webpack-cli@5.1.4))
       stylelint:
-        specifier: ^16.8.0
-        version: 16.8.0
+        specifier: ^16.8.1
+        version: 16.8.1
       stylelint-config-sass-guidelines:
         specifier: ^12.0.0
-        version: 12.0.0(postcss@8.4.40)(stylelint@16.8.0)
+        version: 12.0.0(postcss@8.4.40)(stylelint@16.8.1)
       stylelint-webpack-plugin:
         specifier: ^5.0.1
-        version: 5.0.1(stylelint@16.8.0)(webpack@5.93.0(webpack-cli@5.1.4))
+        version: 5.0.1(stylelint@16.8.1)(webpack@5.93.0(webpack-cli@5.1.4))
       terser-webpack-plugin:
         specifier: ^5.3.10
         version: 5.3.10(webpack@5.93.0(webpack-cli@5.1.4))
@@ -4037,9 +4037,6 @@ packages:
     peerDependencies:
       postcss: ^8.0.3
 
-  postcss-resolve-nested-selector@0.1.1:
-    resolution: {integrity: sha512-HvExULSwLqHLgUy1rl3ANIqCsvMS0WHss2UOsXhXnQaZ9VCc2oBvIpXrl00IUFT5ZDITME0o6oiXeiHr2SAIfw==}
-
   postcss-resolve-nested-selector@0.1.4:
     resolution: {integrity: sha512-R6vHqZWgVnTAPq0C+xjyHfEZqfIYboCBVSy24MjxEDm+tIh1BU4O6o7DP7AA7kHzf136d+Qc5duI4tlpHjixDw==}
 
@@ -4629,8 +4626,8 @@ packages:
       stylelint: ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
       webpack: ^5.0.0
 
-  stylelint@16.8.0:
-    resolution: {integrity: sha512-Jjr40w3PXDiJVW6c9swLM0a1e0DgDm/XkFozc4XgAcREFas+/nchzmDmeVxazbzXgpDrwm+cW6W6iGtZqYUh+g==}
+  stylelint@16.8.1:
+    resolution: {integrity: sha512-O8aDyfdODSDNz/B3gW2HQ+8kv8pfhSu7ZR7xskQ93+vI6FhKKGUJMQ03Ydu+w3OvXXE0/u4hWU4hCPNOyld+OA==}
     engines: {node: '>=18.12.0'}
     hasBin: true
 
@@ -5236,7 +5233,7 @@ snapshots:
       '@babel/core': 7.24.9
       '@babel/helper-compilation-targets': 7.24.8
       '@babel/helper-plugin-utils': 7.24.8
-      debug: 4.3.5
+      debug: 4.3.6
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -5988,7 +5985,7 @@ snapshots:
       '@babel/parser': 7.25.0
       '@babel/template': 7.25.0
       '@babel/types': 7.25.0
-      debug: 4.3.5
+      debug: 4.3.6
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -6275,7 +6272,7 @@ snapshots:
   '@eslint/eslintrc@2.1.4':
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.5
+      debug: 4.3.6
       espree: 9.6.1
       globals: 13.24.0
       ignore: 5.3.1
@@ -6291,7 +6288,7 @@ snapshots:
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
-      debug: 4.3.5
+      debug: 4.3.6
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -6403,7 +6400,7 @@ snapshots:
 
   '@socket.io/component-emitter@3.1.2': {}
 
-  '@stylistic/stylelint-plugin@2.1.2(stylelint@16.8.0)':
+  '@stylistic/stylelint-plugin@2.1.2(stylelint@16.8.1)':
     dependencies:
       '@csstools/css-parser-algorithms': 2.7.1(@csstools/css-tokenizer@2.4.1)
       '@csstools/css-tokenizer': 2.4.1
@@ -6412,7 +6409,7 @@ snapshots:
       postcss-selector-parser: 6.1.1
       postcss-value-parser: 4.2.0
       style-search: 0.1.0
-      stylelint: 16.8.0
+      stylelint: 16.8.1
 
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     dependencies:
@@ -7607,7 +7604,7 @@ snapshots:
   engine.io-client@6.5.4:
     dependencies:
       '@socket.io/component-emitter': 3.1.2
-      debug: 4.3.5
+      debug: 4.3.6
       engine.io-parser: 5.2.3
       ws: 8.17.1
       xmlhttprequest-ssl: 2.0.0
@@ -7627,7 +7624,7 @@ snapshots:
       base64id: 2.0.0
       cookie: 0.4.2
       cors: 2.8.5
-      debug: 4.3.5
+      debug: 4.3.6
       engine.io-parser: 5.2.3
       ws: 8.17.1
     transitivePeerDependencies:
@@ -9641,8 +9638,6 @@ snapshots:
     dependencies:
       postcss: 8.4.40
 
-  postcss-resolve-nested-selector@0.1.1: {}
-
   postcss-resolve-nested-selector@0.1.4: {}
 
   postcss-safe-parser@7.0.0(postcss@8.4.40):
@@ -10118,7 +10113,7 @@ snapshots:
 
   socket.io-adapter@2.5.5:
     dependencies:
-      debug: 4.3.5
+      debug: 4.3.6
       ws: 8.17.1
     transitivePeerDependencies:
       - bufferutil
@@ -10128,7 +10123,7 @@ snapshots:
   socket.io-client@4.7.5:
     dependencies:
       '@socket.io/component-emitter': 3.1.2
-      debug: 4.3.5
+      debug: 4.3.6
       engine.io-client: 6.5.4
       socket.io-parser: 4.2.4
     transitivePeerDependencies:
@@ -10139,7 +10134,7 @@ snapshots:
   socket.io-parser@4.2.4:
     dependencies:
       '@socket.io/component-emitter': 3.1.2
-      debug: 4.3.5
+      debug: 4.3.6
     transitivePeerDependencies:
       - supports-color
 
@@ -10148,7 +10143,7 @@ snapshots:
       accepts: 1.3.8
       base64id: 2.0.0
       cors: 2.8.5
-      debug: 4.3.5
+      debug: 4.3.6
       engine.io: 6.5.5
       socket.io-adapter: 2.5.5
       socket.io-parser: 4.2.4
@@ -10304,34 +10299,34 @@ snapshots:
       postcss: 8.4.40
       postcss-selector-parser: 6.1.1
 
-  stylelint-config-sass-guidelines@12.0.0(postcss@8.4.40)(stylelint@16.8.0):
+  stylelint-config-sass-guidelines@12.0.0(postcss@8.4.40)(stylelint@16.8.1):
     dependencies:
-      '@stylistic/stylelint-plugin': 2.1.2(stylelint@16.8.0)
+      '@stylistic/stylelint-plugin': 2.1.2(stylelint@16.8.1)
       postcss: 8.4.40
       postcss-scss: 4.0.9(postcss@8.4.40)
-      stylelint: 16.8.0
-      stylelint-scss: 6.4.1(stylelint@16.8.0)
+      stylelint: 16.8.1
+      stylelint-scss: 6.4.1(stylelint@16.8.1)
 
-  stylelint-scss@6.4.1(stylelint@16.8.0):
+  stylelint-scss@6.4.1(stylelint@16.8.1):
     dependencies:
       known-css-properties: 0.34.0
       postcss-media-query-parser: 0.2.3
-      postcss-resolve-nested-selector: 0.1.1
+      postcss-resolve-nested-selector: 0.1.4
       postcss-selector-parser: 6.1.1
       postcss-value-parser: 4.2.0
-      stylelint: 16.8.0
+      stylelint: 16.8.1
 
-  stylelint-webpack-plugin@5.0.1(stylelint@16.8.0)(webpack@5.93.0(webpack-cli@5.1.4)):
+  stylelint-webpack-plugin@5.0.1(stylelint@16.8.1)(webpack@5.93.0(webpack-cli@5.1.4)):
     dependencies:
       globby: 11.1.0
       jest-worker: 29.7.0
       micromatch: 4.0.7
       normalize-path: 3.0.0
       schema-utils: 4.2.0
-      stylelint: 16.8.0
+      stylelint: 16.8.1
       webpack: 5.93.0(webpack-cli@5.1.4)
 
-  stylelint@16.8.0:
+  stylelint@16.8.1:
     dependencies:
       '@csstools/css-parser-algorithms': 2.7.1(@csstools/css-tokenizer@2.4.1)
       '@csstools/css-tokenizer': 2.4.1
