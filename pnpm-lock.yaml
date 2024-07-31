@@ -47,7 +47,7 @@ devDependencies:
     specifier: ^7.8.3
     version: 7.8.3(@babel/core@7.25.2)
   '@babel/preset-env':
-    specifier: ^7.25.0
+    specifier: ^7.25.2
     version: 7.25.2(@babel/core@7.25.2)
   '@cycjimmy/config-lib':
     specifier: ^3.2.2
@@ -129,13 +129,13 @@ devDependencies:
     version: 4.0.0(webpack@5.93.0)
   stylelint:
     specifier: ^16.8.0
-    version: 16.8.0
+    version: 16.8.1
   stylelint-config-sass-guidelines:
     specifier: ^12.0.0
-    version: 12.0.0(postcss@8.4.40)(stylelint@16.8.0)
+    version: 12.0.0(postcss@8.4.40)(stylelint@16.8.1)
   stylelint-webpack-plugin:
     specifier: ^5.0.1
-    version: 5.0.1(stylelint@16.8.0)(webpack@5.93.0)
+    version: 5.0.1(stylelint@16.8.1)(webpack@5.93.0)
   terser-webpack-plugin:
     specifier: ^5.3.10
     version: 5.3.10(webpack@5.93.0)
@@ -2130,7 +2130,7 @@ packages:
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
     dev: true
 
-  /@stylistic/stylelint-plugin@2.1.3(stylelint@16.8.0):
+  /@stylistic/stylelint-plugin@2.1.3(stylelint@16.8.1):
     resolution: {integrity: sha512-/KUcqX36AbbUk7KvNuM0dWv2XSlPa1M12CPcC//eA4MNEFsZFl+2Kf8UZCLjlIWIrDNitd591vaVkXfOwUtsFQ==}
     engines: {node: ^18.12 || >=20.9}
     peerDependencies:
@@ -2143,7 +2143,7 @@ packages:
       postcss-selector-parser: 6.1.1
       postcss-value-parser: 4.2.0
       style-search: 0.1.0
-      stylelint: 16.8.0
+      stylelint: 16.8.1
     dev: true
 
   /@surma/rollup-plugin-off-main-thread@2.2.3:
@@ -3016,7 +3016,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001644
-      electron-to-chromium: 1.5.3
+      electron-to-chromium: 1.5.4
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.2)
     dev: true
@@ -4090,8 +4090,8 @@ packages:
       jake: 10.9.2
     dev: true
 
-  /electron-to-chromium@1.5.3:
-    resolution: {integrity: sha512-QNdYSS5i8D9axWp/6XIezRObRHqaav/ur9z1VzCDUCH1XIFOr9WQk5xmgunhsTpjjgDy3oLxO/WMOVZlpUQrlA==}
+  /electron-to-chromium@1.5.4:
+    resolution: {integrity: sha512-orzA81VqLyIGUEA77YkVA1D+N+nNfl2isJVjjmOyrlxuooZ19ynb+dOlaDTqd/idKRS9lDCSBmtzM+kyCsMnkA==}
     dev: true
 
   /emoji-regex@8.0.0:
@@ -8736,21 +8736,21 @@ packages:
       postcss-selector-parser: 6.1.1
     dev: true
 
-  /stylelint-config-sass-guidelines@12.0.0(postcss@8.4.40)(stylelint@16.8.0):
+  /stylelint-config-sass-guidelines@12.0.0(postcss@8.4.40)(stylelint@16.8.1):
     resolution: {integrity: sha512-lGJml+QEVlU/nqI+awiQieyxXHkmuwhz4XsfUNkQVcNaPXBpLgefOHjZ7ZSmUm4y4YG8JhrvYNjYzUcTfe8cdg==}
     engines: {node: '>=18.12.0'}
     peerDependencies:
       postcss: ^8.4.21
       stylelint: ^16.1.0
     dependencies:
-      '@stylistic/stylelint-plugin': 2.1.3(stylelint@16.8.0)
+      '@stylistic/stylelint-plugin': 2.1.3(stylelint@16.8.1)
       postcss: 8.4.40
       postcss-scss: 4.0.9(postcss@8.4.40)
-      stylelint: 16.8.0
-      stylelint-scss: 6.4.1(stylelint@16.8.0)
+      stylelint: 16.8.1
+      stylelint-scss: 6.4.1(stylelint@16.8.1)
     dev: true
 
-  /stylelint-scss@6.4.1(stylelint@16.8.0):
+  /stylelint-scss@6.4.1(stylelint@16.8.1):
     resolution: {integrity: sha512-+clI2bQC2FPOt06ZwUlXZZ95IO2C5bKTP0GLN1LNQPVvISfSNcgMKv/VTwym1mK9vnqhHbOk8lO4rj4nY7L9pw==}
     engines: {node: '>=18.12.0'}
     peerDependencies:
@@ -8761,10 +8761,10 @@ packages:
       postcss-resolve-nested-selector: 0.1.4
       postcss-selector-parser: 6.1.1
       postcss-value-parser: 4.2.0
-      stylelint: 16.8.0
+      stylelint: 16.8.1
     dev: true
 
-  /stylelint-webpack-plugin@5.0.1(stylelint@16.8.0)(webpack@5.93.0):
+  /stylelint-webpack-plugin@5.0.1(stylelint@16.8.1)(webpack@5.93.0):
     resolution: {integrity: sha512-07lpo1uVoFctKv0EOOg/YSrUppcLMjNBSMRqgooNnlbfAOgQfMzvLK+EbXz0HQiEgZobr+XQX9md/TgwTGdzbw==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
@@ -8776,12 +8776,12 @@ packages:
       micromatch: 4.0.7
       normalize-path: 3.0.0
       schema-utils: 4.2.0
-      stylelint: 16.8.0
+      stylelint: 16.8.1
       webpack: 5.93.0(webpack-cli@5.1.4)
     dev: true
 
-  /stylelint@16.8.0:
-    resolution: {integrity: sha512-Jjr40w3PXDiJVW6c9swLM0a1e0DgDm/XkFozc4XgAcREFas+/nchzmDmeVxazbzXgpDrwm+cW6W6iGtZqYUh+g==}
+  /stylelint@16.8.1:
+    resolution: {integrity: sha512-O8aDyfdODSDNz/B3gW2HQ+8kv8pfhSu7ZR7xskQ93+vI6FhKKGUJMQ03Ydu+w3OvXXE0/u4hWU4hCPNOyld+OA==}
     engines: {node: '>=18.12.0'}
     hasBin: true
     dependencies:
