@@ -43,7 +43,7 @@
     "@cycjimmy/sass-lib": "^2.3.0",
     "@cycjimmy/swiper-animation": "^6.0.3",
     "@cycjimmy/weixin-share": "^7.0.3",
-    "core-js": "^3.37.1",
+    "core-js": "^3.38.0",
     "fastclick": "^1.0.6",
     "swiper": "^11.1.9"
   },
