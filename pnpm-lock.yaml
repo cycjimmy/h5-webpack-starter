@@ -36,7 +36,7 @@ dependencies:
     specifier: ^1.0.6
     version: 1.0.6
   swiper:
-    specifier: ^11.1.11
+    specifier: ^11.1.12
     version: 11.1.12
 
 devDependencies:
