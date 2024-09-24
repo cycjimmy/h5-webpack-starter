@@ -74,7 +74,7 @@ devDependencies:
     specifier: ^7.0.6
     version: 7.0.6(postcss@8.4.47)
   eslint:
-    specifier: ^8.57.0
+    specifier: ^8.57.1
     version: 8.57.1
   eslint-config-airbnb-base:
     specifier: ^15.0.0
