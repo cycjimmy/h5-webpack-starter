@@ -131,7 +131,7 @@ devDependencies:
     specifier: ^16.9.0
     version: 16.9.0
   stylelint-config-sass-guidelines:
-    specifier: ^12.0.0
+    specifier: ^12.1.0
     version: 12.1.0(postcss@8.4.47)(stylelint@16.9.0)
   stylelint-webpack-plugin:
     specifier: ^5.0.1
