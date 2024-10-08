@@ -3334,10 +3334,6 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  micromatch@4.0.7:
-    resolution: {integrity: sha512-LPP/3KorzCwBxfeUuZmaR6bG2kdeHSbe0P2tY3FLRU4vYrjYz5hI4QZwV0njUx3jeuKe67YukQ1LSPZBKDqO/Q==}
-    engines: {node: '>=8.6'}
-
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
@@ -6900,7 +6896,7 @@ snapshots:
       http-proxy: 1.18.1
       immutable: 3.8.2
       localtunnel: 2.0.2
-      micromatch: 4.0.7
+      micromatch: 4.0.8
       opn: 5.3.0
       portscanner: 2.2.0
       raw-body: 2.5.2
@@ -7781,7 +7777,7 @@ snapshots:
       '@types/eslint': 8.56.10
       eslint: 8.57.1
       jest-worker: 29.7.0
-      micromatch: 4.0.7
+      micromatch: 4.0.8
       normalize-path: 3.0.0
       schema-utils: 4.2.0
       webpack: 5.95.0(webpack-cli@5.1.4)
@@ -8908,11 +8904,6 @@ snapshots:
   merge-stream@2.0.0: {}
 
   merge2@1.4.1: {}
-
-  micromatch@4.0.7:
-    dependencies:
-      braces: 3.0.3
-      picomatch: 2.3.1
 
   micromatch@4.0.8:
     dependencies:
@@ -10312,7 +10303,7 @@ snapshots:
     dependencies:
       globby: 11.1.0
       jest-worker: 29.7.0
-      micromatch: 4.0.7
+      micromatch: 4.0.8
       normalize-path: 3.0.0
       schema-utils: 4.2.0
       stylelint: 16.9.0
