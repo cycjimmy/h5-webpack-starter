@@ -13,7 +13,7 @@ $promptMobileFontColor: $fontColor;
   color: $promptMobileFontColor;
 }
 
-.QRCode {
+.qrCode {
   width: 200px;
   height: 200px;
   margin: 10px;
@@ -23,9 +23,9 @@ $promptMobileFontColor: $fontColor;
   font-size: 14px;
 }
 
-$QRCodeDesktopWidth: 100px;
+$qrCodeDesktopWidth: 100px;
 
-.QRCodeDesktop {
+.qrCodeDesktop {
   @extend %abs;
   width: 0;
   height: 0;
@@ -37,9 +37,9 @@ $QRCodeDesktopWidth: 100px;
     display: block;
     @extend %abs;
     left: round($pcRootWidth * 0.5 + 20);
-    top: - round($pcRootWidth * 0.3 + $QRCodeDesktopWidth * 0.5);
-    width: $QRCodeDesktopWidth;
-    height: $QRCodeDesktopWidth;
+    top: - round($pcRootWidth * 0.3 + $qrCodeDesktopWidth * 0.5);
+    width: $qrCodeDesktopWidth;
+    height: $qrCodeDesktopWidth;
 
     border: 2px solid darken($bgc, 5%);
     border-radius: 12px;
@@ -71,7 +71,7 @@ $QRCodeDesktopWidth: 100px;
 
 :global(.desktop) {
   @media screen and (min-width: $pcRootWidth * 1.5) {
-    .QRCodeDesktop {
+    .qrCodeDesktop {
       display: block;
     }
   }
