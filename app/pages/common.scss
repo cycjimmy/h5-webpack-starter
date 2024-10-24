@@ -54,8 +54,7 @@
     }
   }
 
-  .icon {
-    @extend %icon;
+  %icon {
     width: calcPX(36);
     height: calcPX(36);
     margin: 0 calcPX(10);
@@ -64,5 +63,13 @@
       width: calcPX(30);
       height: calcPX(30);
     }
+  }
+
+  .icon {
+    @extend %icon;
+  }
+
+  .link {
+    @extend %icon;
   }
 }
