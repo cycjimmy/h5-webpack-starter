@@ -3954,6 +3954,7 @@ packages:
 
   /dom-serializer@1.4.1:
     resolution: {integrity: sha512-VHwB3KfrcOOkelEG2ZOfxqLZdfkil8PtJi4P8N2MMXucZq2yLp75ClViUlOVwyoHEDjYU433Aq+5zWP61+RGag==}
+    requiresBuild: true
     dependencies:
       domelementtype: 2.3.0
       domhandler: 4.3.1

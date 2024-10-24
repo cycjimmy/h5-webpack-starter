@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '@/theme/variables';
 @import '@/theme/utilities';
 
@@ -18,7 +19,7 @@
 .content2,
 .content3,
 .content4 {
-  background-color: lighten($bgc, 4%);
+  background-color: color.adjust($bgc, $lightness: 4%);
   font-size: calcVW(36);
   text-align: center;
 
@@ -30,7 +31,7 @@
 .pagination {
   .bulletActive {
     opacity: 1;
-    background: lighten($bgc, 10%);
+    background: color.adjust($bgc, $lightness: 10%);
   }
 }
 

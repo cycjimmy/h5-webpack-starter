@@ -1,8 +1,9 @@
+@use 'sass:color';
 @import '@/theme/variables';
 @import '@/theme/utilities';
 
 .root {
-  background-color: darken($bgc, 3%);
+  background-color: color.adjust($bgc, $lightness: -3%);
 
   > :global(.swiper) {
     background-color: $bgc;
@@ -22,7 +23,7 @@
 .pagination {
   .bulletActive {
     opacity: 1;
-    background: lighten($bgc, 10%);
+    background: color.adjust($bgc, $lightness: 10%);
   }
 }
 
