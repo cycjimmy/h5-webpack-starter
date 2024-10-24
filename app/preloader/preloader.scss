@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '@/theme/variables';
 @import '@/theme/utilities';
 
@@ -8,7 +9,7 @@ $loadingBgc: $bgc;
   @extend %flexCenter;
   z-index: 9999;
   flex-direction: column;
-  background: darken($loadingBgc, 2%);
+  background: color.adjust($loadingBgc, $lightness: -2%);
 }
 
 .loadingPic {
@@ -28,9 +29,9 @@ $progressPadding: calc($progressH / 4);
   padding: $progressPadding;
   margin: $space * 2 0 $space;
 
-  background-color: darken($loadingBgc, 10%);
+  background-color: color.adjust($loadingBgc, $lightness: -10%);
   border-radius: calc($progressH / 2);
-  box-shadow: inset calcVW(1.5) calcVW(-1.5) calcVW(1.5) desaturate(lighten($loadingBgc, 20%), 30%);
+  box-shadow: inset calcVW(1.5) calcVW(-1.5) calcVW(1.5) color.adjust(color.adjust($loadingBgc, $lightness: 20%), $saturation: -30%);
 }
 
 .loadingProgressbarWrapper {
@@ -45,13 +46,13 @@ $progressPadding: calc($progressH / 4);
 .loadingProgressbar {
   width: 100%;
   height: 100%;
-  background: linear-gradient(0, $loadingBgc, desaturate(lighten($loadingBgc, 10%), 30%));
+  background: linear-gradient(0, $loadingBgc, color.adjust(color.adjust($loadingBgc, $lightness: 10%), $saturation: -30%));
 
   transform: scaleX(0);
 }
 
 .loadingText {
-  color: desaturate(lighten($loadingBgc, 30%), 60%);
+  color: color.adjust(color.adjust($loadingBgc, $lightness: 30%), $saturation: -60%);
   font-size: $fontS;
 }
 
@@ -78,7 +79,7 @@ $progressPadding: calc($progressH / 4);
     margin: $space * 2 0 $space;
 
     border-radius: calc($progressH / 2);
-    box-shadow: inset calcPX(2) calcPX(-2) calcPX(2) desaturate(lighten($loadingBgc, 20%), 30%);
+    box-shadow: inset calcPX(2) calcPX(-2) calcPX(2) color.adjust(color.adjust($loadingBgc, $lightness: 20%), $saturation: -30%);
   }
 
   .loadingProgressbarWrapper {

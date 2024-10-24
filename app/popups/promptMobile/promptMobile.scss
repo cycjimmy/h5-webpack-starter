@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '@/theme/variables';
 @import '@/theme/utilities';
 
@@ -41,7 +42,7 @@ $qrCodeDesktopWidth: 100px;
     width: $qrCodeDesktopWidth;
     height: $qrCodeDesktopWidth;
 
-    border: 2px solid darken($bgc, 5%);
+    border: 2px solid color.adjust($bgc, $lightness: -5%);
     border-radius: 12px;
     overflow: hidden;
     @include bg-image-full(url('@static/images/QRCode.png'));
