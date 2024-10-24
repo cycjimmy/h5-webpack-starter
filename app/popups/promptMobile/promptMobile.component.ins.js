@@ -14,9 +14,9 @@ import settingConfig from '@/setting.config.json';
  */
 const createQRCodeAndTipDesktop = () => Promise.resolve()
   .then(() => functionToPromise(() => {
-    const QRCodeEl = document.createElement('div');
-    QRCodeEl.classList.add(_style.QRCodeDesktop);
-    h5Pages.root.appendChild(QRCodeEl);
+    const qrCodeEl = document.createElement('div');
+    qrCodeEl.classList.add(_style.qrCodeDesktop);
+    h5Pages.root.appendChild(qrCodeEl);
 
     const tipEl = document.createElement('div');
     tipEl.classList.add(_style.tipDesktop);
