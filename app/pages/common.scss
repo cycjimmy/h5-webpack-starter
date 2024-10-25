@@ -1,32 +1,33 @@
-@import '@/theme/variables';
-@import '@/theme/utilities';
+@use '~@cycjimmy/sass-lib' as lib;
+@use '@/theme/variables';
+@use '@/theme/utilities';
 
-.pointsWrapper {
-  width: calcVW(500);
-  padding: calcVW(20);
-  margin-bottom: calcVW(80);
+.points-wrapper {
+  width: utilities.calc-vw(500);
+  padding: utilities.calc-vw(20);
+  margin-bottom: utilities.calc-vw(80);
 
   > li {
-    padding: calcVW(10);
+    padding: utilities.calc-vw(10);
 
-    font-size: calcVW(36);
+    font-size: utilities.calc-vw(36);
     text-align: justify;
   }
 }
 
 %icon {
   display: inline-flex;
-  width: calcVW(36);
-  height: calcVW(36);
-  margin: 0 calcVW(10);
+  width: utilities.calc-vw(36);
+  height: utilities.calc-vw(36);
+  margin: 0 utilities.calc-vw(10);
   justify-content: center;
   align-items: center;
 
   &::before {
     display: block;
     content: '';
-    width: calcVW(30);
-    height: calcVW(30);
+    width: utilities.calc-vw(30);
+    height: utilities.calc-vw(30);
   }
 }
 
@@ -38,30 +39,30 @@
   @extend %icon;
 
   &::before {
-    @include bg-image-full(url('@static/images/icon-link.svg'));
+    @include lib.bg-image-full(url('@static/images/icon-link.svg'));
   }
 }
 
 :global(.desktop) {
-  .pointsWrapper {
-    width: calcPX(500);
-    padding: calcPX(20);
-    margin-bottom: calcPX(80);
+  .points-wrapper {
+    width: utilities.calc-px(500);
+    padding: utilities.calc-px(20);
+    margin-bottom: utilities.calc-px(80);
 
     > li {
-      padding: calcPX(10);
-      font-size: calcPX(36);
+      padding: utilities.calc-px(10);
+      font-size: utilities.calc-px(36);
     }
   }
 
   %icon {
-    width: calcPX(36);
-    height: calcPX(36);
-    margin: 0 calcPX(10);
+    width: utilities.calc-px(36);
+    height: utilities.calc-px(36);
+    margin: 0 utilities.calc-px(10);
 
     &::before {
-      width: calcPX(30);
-      height: calcPX(30);
+      width: utilities.calc-px(30);
+      height: utilities.calc-px(30);
     }
   }
 

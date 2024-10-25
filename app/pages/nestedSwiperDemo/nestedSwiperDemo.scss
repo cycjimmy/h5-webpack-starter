@@ -1,17 +1,18 @@
 @use 'sass:color';
-@import '@/theme/variables';
-@import '@/theme/utilities';
+@use '~@cycjimmy/sass-lib' as *;
+@use '@/theme/variables';
+@use '@/theme/utilities';
 
 .title {
-  font-size: calcVW(48);
+  font-size: utilities.calc-vw(48);
   font-weight: bold;
 }
 
 .container {
   @extend %rel;
-  width: calcVW(600);
-  height: calcVW(450);
-  margin: calcVW(40) auto;
+  width: utilities.calc-vw(600);
+  height: utilities.calc-vw(450);
+  margin: utilities.calc-vw(40) auto;
   overflow: hidden;
 }
 
@@ -19,37 +20,37 @@
 .content2,
 .content3,
 .content4 {
-  background-color: color.adjust($bgc, $lightness: 4%);
-  font-size: calcVW(36);
+  background-color: color.adjust(variables.$bgc, $lightness: 4%);
+  font-size: utilities.calc-vw(36);
   text-align: center;
 
   &:global(.swiper-slide) {
-    @extend %flexCenter;
+    @extend %flex-center;
   }
 }
 
 .pagination {
-  .bulletActive {
+  .bullet-active {
     opacity: 1;
-    background: color.adjust($bgc, $lightness: 10%);
+    background: color.adjust(variables.$bgc, $lightness: 10%);
   }
 }
 
 :global(.desktop) {
   .title {
-    font-size: calcPX(48);
+    font-size: utilities.calc-px(48);
   }
 
   .container {
-    width: calcPX(600);
-    height: calcPX(450);
-    margin: calcPX(40) auto;
+    width: utilities.calc-px(600);
+    height: utilities.calc-px(450);
+    margin: utilities.calc-px(40) auto;
   }
 
   .content1,
   .content2,
   .content3,
   .content4 {
-    font-size: calcPX(36);
+    font-size: utilities.calc-px(36);
   }
 }

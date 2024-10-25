@@ -1,29 +1,31 @@
 @use 'sass:color';
-@import '@/theme/variables';
-@import '@/theme/utilities';
+@use 'sass:math';
+@use '~@cycjimmy/sass-lib' as lib;
+@use '@/theme/variables';
 
 .root {
-  background-color: color.adjust($bgc, $lightness: -3%);
+  background-color: color.adjust(variables.$bgc, $lightness: -3%);
 
   > :global(.swiper) {
-    background-color: $bgc;
+    background-color: variables.$bgc;
   }
 
   &:global(.desktop) {
     > :global(.swiper) {
-      width: $pcRootWidth;
-      max-height: round($pcRootWidth * $designDrawingBestHeight / $designDrawingWidth);
+      width: variables.$pc-root-width;
+      max-height: math.round(math.div(variables.$pc-root-width * variables.$design-drawing-best-height,
+      variables.$design-drawing-width));
       overflow: hidden;
 
-      @include fix-center(0);
+      @include lib.fix-center(0);
     }
   }
 }
 
 .pagination {
-  .bulletActive {
+  .bullet-active {
     opacity: 1;
-    background: color.adjust($bgc, $lightness: 10%);
+    background: color.adjust(variables.$bgc, $lightness: 10%);
   }
 }
 

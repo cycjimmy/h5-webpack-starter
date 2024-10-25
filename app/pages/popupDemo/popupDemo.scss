@@ -1,37 +1,37 @@
-@import '@/theme/variables';
-@import '@/theme/utilities';
+@use '@/theme/variables';
+@use '@/theme/utilities';
 
 .title {
-  font-size: calcVW(48);
+  font-size: utilities.calc-vw(48);
   font-weight: bold;
 }
 
-.popupBtn {
-  height: calcVW(80);
-  padding: 0 $space * 1.6;
-  margin: calcVW(50) 0;
+.popup-btn {
+  height: utilities.calc-vw(80);
+  padding: 0 variables.$space * 1.6;
+  margin: utilities.calc-vw(50) 0;
 
-  border: calcVW(2) solid $fontColor;
-  border-radius: $radius;
-  font-size: $fontL;
-  line-height: calcVW(80);
+  border: utilities.calc-vw(2) solid variables.$font-color;
+  border-radius: variables.$radius;
+  font-size: variables.$font-l;
+  line-height: utilities.calc-vw(80);
 }
 
 :global(.desktop) {
-  $radius: calcPX(7.5);
-  $space: calcPX(15);
+  $radius: utilities.calc-px(7.5);
+  $space: utilities.calc-px(15);
 
   .title {
-    font-size: calcPX(48);
+    font-size: utilities.calc-px(48);
   }
 
-  .popupBtn {
-    height: calcPX(80);
+  .popup-btn {
+    height: utilities.calc-px(80);
     padding: 0 $space * 1.6;
-    margin: calcPX(50) 0;
+    margin: utilities.calc-px(50) 0;
 
-    border-width: calcPX(2);
+    border-width: utilities.calc-px(2);
     border-radius: $radius;
-    line-height: calcPX(80);
+    line-height: utilities.calc-px(80);
   }
 }

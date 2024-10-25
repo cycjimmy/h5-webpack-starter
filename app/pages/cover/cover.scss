@@ -1,5 +1,7 @@
-@import '@/theme/variables';
-@import '@/theme/utilities';
+@use '~@cycjimmy/sass-lib' as *;
+@use '~@cycjimmy/sass-lib' as lib;
+@use '@/theme/variables';
+@use '@/theme/utilities';
 
 @keyframes rotation {
   0% {
@@ -12,22 +14,22 @@
 }
 
 .title {
-  font-size: calcVW(48);
+  font-size: utilities.calc-vw(48);
   font-weight: bold;
 }
 
 // logo animation
-$picH: calcVW(240);
+$pic-height: utilities.calc-vw(240);
 
-.logoWrap {
+.logo-wrap {
   @extend %rel;
-  height: $picH;
-  width: $picH;
-  margin-bottom: calc($picH / 6);
+  height: $pic-height;
+  width: $pic-height;
+  margin-bottom: calc($pic-height / 6);
 }
 
 .logo {
-  @extend %fullContainer;
+  @extend %full-container;
   transform: scale(0.9);
   transition: transform 0.4s;
 
@@ -36,66 +38,66 @@ $picH: calcVW(240);
   }
 
   &::before {
-    @extend %fullContainer;
+    @extend %full-container;
     display: block;
     content: '';
-    perspective: calc($picH / 6);
-    @include bg-image-full(url('https://cycjimmy.github.io/staticFiles/images/cyc_logo256.png'));
+    perspective: calc($pic-height / 6);
+    @include lib.bg-image-full(url('https://cycjimmy.github.io/staticFiles/images/cyc_logo256.png'));
     animation: rotation 4s linear 0s infinite normal both;
   }
 
-  &.animationPaused {
+  &.animation-paused {
     &::before {
       animation-play-state: paused;
     }
   }
 }
 
-.gotoGithub {
-  margin-top: $space * 2;
-  padding: 0 $space * 1.6;
-  height: calcVW(80);
+.goto-github {
+  margin-top: variables.$space * 2;
+  padding: 0 variables.$space * 1.6;
+  height: utilities.calc-vw(80);
 
-  border: calcVW(2) solid $fontColor;
-  border-radius: $radius;
-  font-size: $fontL;
-  line-height: calcVW(80);
+  border: utilities.calc-vw(2) solid variables.$font-color;
+  border-radius: variables.$radius;
+  font-size: variables.$font-l;
+  line-height: utilities.calc-vw(80);
 
   &:hover {
-    color: $bgc;
-    background-color: $fontColor;
+    color: variables.$bgc;
+    background-color: variables.$font-color;
   }
 }
 
 :global(.desktop) {
-  $space: calcPX(15);
-  $radius: calcPX(7.5);
+  $space: utilities.calc-px(15);
+  $radius: utilities.calc-px(7.5);
 
   .title {
-    font-size: calcPX(48);
+    font-size: utilities.calc-px(48);
   }
 
-  $picH: calcPX(240);
+  $pic-height: utilities.calc-px(240);
 
-  .logoWrap {
-    height: $picH;
-    width: $picH;
-    margin-bottom: calc($picH / 6);
+  .logo-wrap {
+    height: $pic-height;
+    width: $pic-height;
+    margin-bottom: calc($pic-height / 6);
   }
 
   .logo {
     &::before {
-      perspective: calc($picH / 6);
+      perspective: calc($pic-height / 6);
     }
   }
 
-  .gotoGithub {
+  .goto-github {
     margin-top: $space * 2;
     padding: 0 $space * 1.6;
-    height: calcPX(80);
+    height: utilities.calc-px(80);
 
-    border-width: calcPX(2);
+    border-width: utilities.calc-px(2);
     border-radius: $radius;
-    line-height: calcPX(80);
+    line-height: utilities.calc-px(80);
   }
 }

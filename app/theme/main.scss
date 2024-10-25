@@ -1,11 +1,10 @@
 // styleInHtml
-@import 'variables';
-@import 'utilities';
+@use 'variables';
 
 /*---------------------------
  * reset style
  *---------------------------*/
-@import '~@cycjimmy/sass-lib/reset/h5';
+@use '~@cycjimmy/sass-lib/reset/h5';
 
 html {
   line-height: 1.4;
@@ -13,9 +12,7 @@ html {
 }
 
 body {
-  color: $fontColor;
-  font-size: $fontM;
+  color: variables.$font-color;
+  font-size: variables.$font-m;
   font-family: -apple-system-font, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
-
-
