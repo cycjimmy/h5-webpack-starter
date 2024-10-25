@@ -1,78 +1,79 @@
-@import '@/theme/variables';
-@import '@/theme/utilities';
+@use '~@cycjimmy/sass-lib' as *;
+@use '@/theme/variables';
+@use '@/theme/utilities';
 
-$popupXFontSize: calcVW(30);
+$popup-x-font-size: utilities.calc-vw(30);
 
 .wrapper {
-  @extend %fullContainer;
-  @extend %flexCenter;
+  @extend %full-container;
+  @extend %flex-center;
   flex-direction: column;
   z-index: 99;
 
-  background-color: rgba($black, 0.85);
+  background-color: rgba(variables.$black, 0.85);
 
   opacity: 0;
   transition: opacity 0.4s;
 
-  &.fadeIn {
+  &.fade-in {
     opacity: 1;
   }
 }
 
 .box {
   @extend %rel;
-  @extend %flexCenter;
+  @extend %flex-center;
   flex-direction: column;
-  width: calcVW(340);
-  padding: calcVW(40);
+  width: utilities.calc-vw(340);
+  padding: utilities.calc-vw(40);
 
-  color: $fontColor;
-  border: calcVW(2) solid $fontColor;
-  border-radius: $radius * 2;
-  font-size: $popupXFontSize;
+  color: variables.$font-color;
+  border: utilities.calc-vw(2) solid variables.$font-color;
+  border-radius: variables.$radius * 2;
+  font-size: $popup-x-font-size;
 }
 
 .info {
   font-weight: bold;
-  font-size: $popupXFontSize;
-  margin-bottom: $space;
+  font-size: $popup-x-font-size;
+  margin-bottom: variables.$space;
 }
 
-.closeBtn {
-  @extend %flexCenter;
-  padding: $space * 1.5;
+.close-btn {
+  @extend %flex-center;
+  padding: variables.$space * 1.5;
 
-  border: calcVW(2) solid $fontColor;
-  border-radius: $radius;
-  font-size: $popupXFontSize;
-  line-height: $popupXFontSize * 1.5;
+  border: utilities.calc-vw(2) solid variables.$font-color;
+  border-radius: variables.$radius;
+  font-size: $popup-x-font-size;
+  line-height: $popup-x-font-size * 1.5;
 }
 
 :global(.desktop) {
-  $popupXFontSize: calcPX(30);
-  $radius: calcPX(7.5);
-  $space: calcPX(15);
+  $popup-x-font-size: utilities.calc-px(30);
+  $radius: utilities.calc-px(7.5);
+  $space: utilities.calc-px(15);
 
   .box {
-    width: calcPX(340);
-    padding: calcPX(40);
+    width: utilities.calc-px(340);
+    padding: utilities.calc-px(40);
 
-    border-width: calcPX(2);
+    border-width: utilities.calc-px(2);
     border-radius: $radius * 2;
-    font-size: $popupXFontSize;
+    font-size: $popup-x-font-size;
   }
 
   .info {
-    font-size: $popupXFontSize;
+    font-size: $popup-x-font-size;
     margin-bottom: $space;
   }
 
-  .closeBtn {
+  .close-btn {
     padding: $space * 1.5;
 
-    border-width: calcPX(2);
+    border-width: utilities.calc-px(2);
     border-radius: $radius;
-    font-size: $popupXFontSize;
-    line-height: $popupXFontSize * 1.5;
+    font-size: $popup-x-font-size;
+    line-height: $popup-x-font-size * 1.5;
   }
 }

@@ -1,9 +1,9 @@
 /*---------------------------
  * font-size
  *---------------------------*/
-$fontS: 14px;
-$fontM: 15.5px;
-$fontL: 17px;
+$font-s: 14px;
+$font-m: 15.5px;
+$font-l: 17px;
 
 /*---------------------------
  * color
@@ -13,7 +13,7 @@ $black: #000;
 $white: #fff;
 
 /* default font color */
-$fontColor: #eae9e5;
+$font-color: #eae9e5;
 
 /* default background color */
 $bgc: #0a4f56;
@@ -23,13 +23,13 @@ $bgc: #0a4f56;
 /*---------------------------
  * layout
  *---------------------------*/
-$designDrawingWidth: 750;
-$designDrawingBestHeight: 1206;
-$pcRootWidth: 500px;
+$design-drawing-width: 750;
+$design-drawing-best-height: 1206;
+$pc-root-width: 500px;
 
 /* default space */
 $space: 2vw;
-$iconMarginR: 0.8vh;
+$icon-margin-r: 0.8vh;
 
 /*---------------------------
  * radius

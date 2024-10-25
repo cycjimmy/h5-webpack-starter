@@ -24,8 +24,8 @@ importers:
         specifier: ^7.0.1
         version: 7.0.1
       '@cycjimmy/sass-lib':
-        specifier: ^2.3.0
-        version: 2.3.0
+        specifier: ^3.0.1
+        version: 3.0.1
       '@cycjimmy/swiper-animation':
         specifier: ^6.0.3
         version: 6.0.3
@@ -1016,8 +1016,8 @@ packages:
   '@cycjimmy/mini-xhr@7.0.1':
     resolution: {integrity: sha512-GRWRmcfNa0yFajlocZZ5zSz/iHq5lvbr5j0z5cdcMbe2iDq+AyUjeULr17+CaevZM8rXoHiTLXxYC9Gs6e5o0w==}
 
-  '@cycjimmy/sass-lib@2.3.0':
-    resolution: {integrity: sha512-cf1WdcchRz0ROUwVTbcS0AsWX3FdJI0qOTJr4NK3MMKuNF7LUDXF3LN1d8zxXjsxmyfRf30ftWj9FFzCm38dmw==}
+  '@cycjimmy/sass-lib@3.0.1':
+    resolution: {integrity: sha512-q3KBM0RkYQyVkfGda0Mdl27gwsQCzmnGKFyW4cw8FpeAxIn2UfiIlNLtEZLLA4B71AQPD5+qRP3j6G6L+rCBEA==}
 
   '@cycjimmy/swiper-animation@6.0.3':
     resolution: {integrity: sha512-l6793+HtG5E3Aips4uVNDMDzPj8pT1BUTa2EuJmdcfT32+ywWuyq4uulFs0Q3DaoHZZLBTegU3u9tvU7HNqYvw==}
@@ -6141,7 +6141,7 @@ snapshots:
 
   '@cycjimmy/mini-xhr@7.0.1': {}
 
-  '@cycjimmy/sass-lib@2.3.0': {}
+  '@cycjimmy/sass-lib@3.0.1': {}
 
   '@cycjimmy/swiper-animation@6.0.3': {}
 

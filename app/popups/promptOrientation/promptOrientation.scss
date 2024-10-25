@@ -1,20 +1,20 @@
-@import '@/theme/variables';
-@import '@/theme/utilities';
+@use '~@cycjimmy/sass-lib' as *;
+@use '@/theme/variables';
 
-$promptOrientationBgc: $bgc;
-$promptOrientationFontColor: $fontColor;
-$lockOrientation: portrait;
+$prompt-orientation-bgc: variables.$bgc;
+$prompt-orientation-font-color: variables.$font-color;
+$lock-orientation: portrait;
 
 .wrapper {
-  @extend %fullContainer;
-  @extend %flexCenter;
+  @extend %full-container;
+  @extend %flex-center;
   z-index: 999;
   flex-direction: column;
 
-  background-color: $promptOrientationBgc;
-  color: $promptOrientationFontColor;
+  background-color: $prompt-orientation-bgc;
+  color: $prompt-orientation-font-color;
 
-  @media screen and (orientation: $lockOrientation) {
+  @media screen and (orientation: $lock-orientation) {
     display: none;
   }
 
@@ -23,11 +23,11 @@ $lockOrientation: portrait;
   }
 }
 
-.iconWrapper {
+.icon-wrapper {
   @extend %rel;
   width: 8vw;
   height: 8vw;
-  margin: $space;
+  margin: variables.$space;
 
   @media screen and (orientation: portrait) {
     width: 14vw;
@@ -35,8 +35,8 @@ $lockOrientation: portrait;
   }
 
   > svg {
-    @extend %fullContainer;
-    fill: $promptOrientationFontColor;
+    @extend %full-container;
+    fill: $prompt-orientation-font-color;
   }
 }
 

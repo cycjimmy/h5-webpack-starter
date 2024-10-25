@@ -1,20 +1,22 @@
 @use 'sass:color';
-@import '@/theme/variables';
-@import '@/theme/utilities';
+@use 'sass:math';
+@use '~@cycjimmy/sass-lib' as *;
+@use '~@cycjimmy/sass-lib' as lib;
+@use '@/theme/variables';
 
-$promptMobileBgc: $bgc;
-$promptMobileFontColor: $fontColor;
+$prompt-mobile-bgc: variables.$bgc;
+$prompt-mobile-font-color: variables.$font-color;
 
 .wrapper {
-  @extend %fullContainer;
-  @extend %flexCenter;
+  @extend %full-container;
+  @extend %flex-center;
   flex-direction: column;
 
-  background-color: $promptMobileBgc;
-  color: $promptMobileFontColor;
+  background-color: $prompt-mobile-bgc;
+  color: $prompt-mobile-font-color;
 }
 
-.qrCode {
+.qr-code {
   width: 200px;
   height: 200px;
   margin: 10px;
@@ -24,60 +26,61 @@ $promptMobileFontColor: $fontColor;
   font-size: 14px;
 }
 
-$qrCodeDesktopWidth: 100px;
+$qr-code-desktop-width: 100px;
 
-.qrCodeDesktop {
+.qr-code-desktop {
   @extend %abs;
   width: 0;
   height: 0;
   display: none;
-  @include fix-center(0);
+  @include lib.fix-center(0);
 
   &::before {
     content: '';
     display: block;
     @extend %abs;
-    left: round($pcRootWidth * 0.5 + 20);
-    top: - round($pcRootWidth * 0.3 + $qrCodeDesktopWidth * 0.5);
-    width: $qrCodeDesktopWidth;
-    height: $qrCodeDesktopWidth;
+    left: math.round(variables.$pc-root-width * 0.5 + 20);
+    top: - math.round(variables.$pc-root-width * 0.3 + $qr-code-desktop-width * 0.5);
+    width: $qr-code-desktop-width;
+    height: $qr-code-desktop-width;
 
-    border: 2px solid color.adjust($bgc, $lightness: -5%);
+    border: 2px solid color.adjust(variables.$bgc, $lightness: -5%);
     border-radius: 12px;
     overflow: hidden;
-    @include bg-image-full(url('@static/images/QRCode.png'));
+    @include lib.bg-image-full(url('@static/images/QRCode.png'));
   }
 }
 
-.tipDesktop {
+.tip-desktop {
   @extend %abs;
   width: 0;
   height: 0;
   display: none;
-  @include fix-center(0);
+  @include lib.fix-center(0);
 
   &::before {
     @extend %abs;
     content: 'Modern browsers such as Chrome and Firefox are recommended';
     display: block;
-    left: - round($pcRootWidth * 0.5);
-    top: round(($pcRootWidth * $designDrawingBestHeight / $designDrawingWidth) * 0.5) + 10;
-    width: $pcRootWidth;
+    left: - math.round(variables.$pc-root-width * 0.5);
+    top: math.round(math.div(variables.$pc-root-width * variables.$design-drawing-best-height,
+    variables.$design-drawing-width) * 0.5) + 10;
+    width: variables.$pc-root-width;
 
     font-size: 12px;
-    color: rgba($fontColor, 0.6);
+    color: rgba(variables.$font-color, 0.6);
     text-align: center;
   }
 }
 
 :global(.desktop) {
-  @media screen and (min-width: $pcRootWidth * 1.5) {
-    .qrCodeDesktop {
+  @media screen and (min-width: variables.$pc-root-width * 1.5) {
+    .qr-code-desktop {
       display: block;
     }
   }
 
-  .tipDesktop {
+  .tip-desktop {
     display: block;
   }
 }
