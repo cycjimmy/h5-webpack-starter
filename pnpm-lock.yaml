@@ -9,11 +9,11 @@ dependencies:
     specifier: ^4.0.9
     version: 4.0.9
   '@cycjimmy/h5-audio-controls':
-    specifier: ^5.0.4
-    version: 5.0.4
+    specifier: ^5.0.5
+    version: 5.0.5
   '@cycjimmy/h5-pages':
-    specifier: ^4.3.2
-    version: 4.3.2
+    specifier: ^4.3.3
+    version: 4.3.3
   '@cycjimmy/h5-preloader':
     specifier: ^5.0.4
     version: 5.0.4
@@ -1712,12 +1712,12 @@ packages:
     resolution: {integrity: sha512-DrBCK513v9QWK3bMU+dg9FTGRhi9I0xT+k3JK4bO5ZCll2YarPf2owBPoNrc/k1wN+euZ1TAmWhkrmLRljgjFQ==}
     dev: true
 
-  /@cycjimmy/h5-audio-controls@5.0.4:
-    resolution: {integrity: sha512-beP7O7lwer3t5953XcYem//9nsOBIHYUFB+cy1tCBuilzjO82fj1vku/JakcbKNe5kVNScQti09XuDLqbZxfDA==}
+  /@cycjimmy/h5-audio-controls@5.0.5:
+    resolution: {integrity: sha512-T9b6sIeCFP1QbdwcGdrJkZLO1bnOqePUzKz/oB7nQUDuy7AFmOAYEtDePzm6RLyIRu4Q7oSSNG+rMjvfIaqiqw==}
     dev: false
 
-  /@cycjimmy/h5-pages@4.3.2:
-    resolution: {integrity: sha512-UK4c15Q0rxai88UBNnZcQvVQGE33Rcyz+Ow+nULWP+d2AGYe9R663fnzCsfSdf9u3DAf95afotWl/0ks2UghGg==}
+  /@cycjimmy/h5-pages@4.3.3:
+    resolution: {integrity: sha512-w8rU9271m4o9Uszwli9KkrT0y/N4vHeohswDaiA2tBjvP3t+ygKaTavAHqW8EikD7LX6H4uZmTjIDUkQn5Ui6A==}
     dev: false
 
   /@cycjimmy/h5-preloader@5.0.4:

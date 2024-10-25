@@ -1,6 +1,6 @@
 {
   "name": "h5-webpack-starter",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "H5 webpack starter for webpack, es6/7, sass, pug, swiper...",
   "scripts": {
     "start": "npm run dev",
@@ -36,8 +36,8 @@
   },
   "dependencies": {
     "@cycjimmy/awesome-js-funcs": "^4.0.9",
-    "@cycjimmy/h5-audio-controls": "^5.0.4",
-    "@cycjimmy/h5-pages": "^4.3.2",
+    "@cycjimmy/h5-audio-controls": "^5.0.5",
+    "@cycjimmy/h5-pages": "^4.3.3",
     "@cycjimmy/h5-preloader": "^5.0.4",
     "@cycjimmy/mini-xhr": "^7.0.1",
     "@cycjimmy/sass-lib": "^3.0.1",
