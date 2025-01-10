@@ -143,7 +143,7 @@ devDependencies:
     specifier: ^4.1.1
     version: 4.1.1(file-loader@6.2.0)(webpack@5.97.1)
   webpack:
-    specifier: ^5.95.0
+    specifier: ^5.97.1
     version: 5.97.1(webpack-cli@5.1.4)
   webpack-cli:
     specifier: ^5.1.4
