@@ -101,7 +101,7 @@ devDependencies:
     specifier: ^2.0.0
     version: 2.0.0
   mini-css-extract-plugin:
-    specifier: ^2.9.1
+    specifier: ^2.9.2
     version: 2.9.2(webpack@5.97.1)
   postcss:
     specifier: ^8.4.47
@@ -3986,6 +3986,7 @@ packages:
 
   /dom-serializer@1.4.1:
     resolution: {integrity: sha512-VHwB3KfrcOOkelEG2ZOfxqLZdfkil8PtJi4P8N2MMXucZq2yLp75ClViUlOVwyoHEDjYU433Aq+5zWP61+RGag==}
+    requiresBuild: true
     dependencies:
       domelementtype: 2.3.0
       domhandler: 4.3.1
