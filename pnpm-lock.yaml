@@ -122,7 +122,7 @@ devDependencies:
     specifier: ^1.83.4
     version: 1.83.4
   sass-loader:
-    specifier: ^16.0.2
+    specifier: ^16.0.4
     version: 16.0.4(sass@1.83.4)(webpack@5.97.1)
   style-loader:
     specifier: ^4.0.0
