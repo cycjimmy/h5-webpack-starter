@@ -10,10 +10,10 @@
     "stylelint:fix": "stylelint app/**/*.scss --fix",
     "lint": "npm run eslint && npm run stylelint",
     "lint:fix": "npm run eslint:fix && npm run stylelint:fix",
-    "dev": "npx webpack-cli --define-process-env-node-env development -c webpack/webpack.dev.config.js -w --color",
-    "build": "npx webpack-cli --define-process-env-node-env production -c webpack/webpack.build.config.js --progress --color",
-    "build:watch": "npx webpack-cli --define-process-env-node-env production -c webpack/webpack.build.config.js --progress --color -w",
-    "build:test_server:watch": "npx webpack-cli --define-process-env-node-env production_test_server -c webpack/webpack.build.config.js --progress --color -w"
+    "dev": "npx webpack-cli --config-node-env development -c webpack/webpack.dev.config.js -w --color",
+    "build": "npx webpack-cli --config-node-env production -c webpack/webpack.build.config.js --progress --color",
+    "build:watch": "npx webpack-cli --config-node-env production -c webpack/webpack.build.config.js --progress --color -w",
+    "build:test_server:watch": "npx webpack-cli --config-node-env production_test_server -c webpack/webpack.build.config.js --progress --color -w"
   },
   "repository": {
     "type": "git",
@@ -83,7 +83,7 @@
     "terser-webpack-plugin": "^5.3.11",
     "url-loader": "^4.1.1",
     "webpack": "^5.97.1",
-    "webpack-cli": "^5.1.4",
+    "webpack-cli": "^6.0.1",
     "webpack-merge": "^6.0.1",
     "workbox-webpack-plugin": "^7.3.0",
     "worker-loader": "^3.0.8"
