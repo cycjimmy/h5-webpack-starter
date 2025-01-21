@@ -68,7 +68,7 @@ module.exports = {
       // Pug template
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
+        loader: '@webdiscus/pug-loader',
       },
 
       // ico
