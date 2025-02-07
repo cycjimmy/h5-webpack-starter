@@ -91,8 +91,8 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0(eslint@8.57.1)(webpack@5.97.1)
       expose-loader:
-        specifier: ^5.0.0
-        version: 5.0.0(webpack@5.97.1)
+        specifier: ^5.0.1
+        version: 5.0.1(webpack@5.97.1)
       file-loader:
         specifier: ^6.2.0
         version: 6.2.0(webpack@5.97.1)
@@ -2395,8 +2395,8 @@ packages:
     resolution: {integrity: sha512-8iA79xD3uAch729dUG8xaaBBFGaEa0wdD2VkYLFHwlqosEj/jT66AzcreRDSgV7ehnNLBW2WR5jIXwGKjVdTLg==}
     engines: {node: '>=4'}
 
-  expose-loader@5.0.0:
-    resolution: {integrity: sha512-BtUqYRmvx1bEY5HN6eK2I9URUZgNmN0x5UANuocaNjXSgfoDlkXt+wyEMe7i5DzDNh2BKJHPc5F4rBwEdSQX6w==}
+  expose-loader@5.0.1:
+    resolution: {integrity: sha512-5YPZuszN/eWND/B+xuq5nIpb/l5TV1HYmdO6SubYtHv+HenVw9/6bn33Mm5reY8DNid7AVtbARvyUD34edfCtg==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -7753,7 +7753,7 @@ snapshots:
       pify: 2.3.0
     optional: true
 
-  expose-loader@5.0.0(webpack@5.97.1):
+  expose-loader@5.0.1(webpack@5.97.1):
     dependencies:
       webpack: 5.97.1(webpack-cli@6.0.1)
 
