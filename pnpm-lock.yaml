@@ -128,7 +128,7 @@ devDependencies:
     specifier: ^4.0.0
     version: 4.0.0(webpack@5.98.0)
   stylelint:
-    specifier: ^16.13.2
+    specifier: ^16.16.0
     version: 16.16.0
   stylelint-config-sass-guidelines:
     specifier: ^12.1.0
