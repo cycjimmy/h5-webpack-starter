@@ -55,8 +55,8 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2
       '@webdiscus/pug-loader':
-        specifier: ^2.11.0
-        version: 2.11.0(enhanced-resolve@5.17.1)(pug@3.0.3)(webpack@5.97.1)
+        specifier: ^2.11.1
+        version: 2.11.1(enhanced-resolve@5.17.1)(pug@3.0.3)(webpack@5.97.1)
       babel-loader:
         specifier: ^9.2.1
         version: 9.2.1(@babel/core@7.26.7)(webpack@5.97.1)
@@ -1309,8 +1309,8 @@ packages:
   '@webassemblyjs/wast-printer@1.14.1':
     resolution: {integrity: sha512-kPSSXE6De1XOR820C90RIo2ogvZG+c3KiHzqUoO/F34Y2shGzesfqv7o57xrxovZJH/MetF5UjroJ/R/3isoiw==}
 
-  '@webdiscus/pug-loader@2.11.0':
-    resolution: {integrity: sha512-w80tBam+dzVRbsigGfrQ+i51vhr9Tcjxi1Olpoqqu437pLChlrXx4UR2SPpe0HTup8xHMbgTXa/t5t1X87cvsg==}
+  '@webdiscus/pug-loader@2.11.1':
+    resolution: {integrity: sha512-q5Uah/pThvPrUKdxEtFSKl0xELanOfgfl1ZBymgzh8tq5XqXTJXHESRuIqEIhzMotgojArVx/ZFcfpQwzbV5Ig==}
     engines: {node: '>=16.16'}
     peerDependencies:
       enhanced-resolve: '>=5.7.0'
@@ -1411,9 +1411,9 @@ packages:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
     engines: {node: '>=8'}
 
-  ansis@2.0.3:
-    resolution: {integrity: sha512-tcSGX0mhuDFHsgRrT56xnZ9v2X+TOeKhJ75YopI5OBgyT7tGaG5m6BmeC+6KHjiucfBvUHehQMecHbULIAkFPA==}
-    engines: {node: '>=12.13'}
+  ansis@3.10.0:
+    resolution: {integrity: sha512-hxDKLYT7hy3Y4sF3HxI926A3urzPxi73mZBB629m9bCVF+NyKNxbwCqqm+C/YrGPtxLwnl6d8/ZASCsz6SyvJA==}
+    engines: {node: '>=16'}
 
   anymatch@3.1.3:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
@@ -4894,10 +4894,6 @@ packages:
       webpack-dev-server:
         optional: true
 
-  webpack-merge@5.10.0:
-    resolution: {integrity: sha512-+4zXKdx7UnO+1jaN4l2lHVD+mFvnlZQP/6ljaJVb4SZiwIKeUnrT5l0gkT8z+n4hKpC+jpOv6O9R+gLtag7pSA==}
-    engines: {node: '>=10.0.0'}
-
   webpack-merge@6.0.1:
     resolution: {integrity: sha512-hXXvrjtx2PLYx4qruKl+kyRSLc52V+cCvMxRjmKwoA+CBbbF5GfIBtR6kCvl0fYGqTUPKB+1ktVmTHqMOzgCBg==}
     engines: {node: '>=18.0.0'}
@@ -6393,14 +6389,14 @@ snapshots:
       '@webassemblyjs/ast': 1.14.1
       '@xtuc/long': 4.2.2
 
-  '@webdiscus/pug-loader@2.11.0(enhanced-resolve@5.17.1)(pug@3.0.3)(webpack@5.97.1)':
+  '@webdiscus/pug-loader@2.11.1(enhanced-resolve@5.17.1)(pug@3.0.3)(webpack@5.97.1)':
     dependencies:
-      ansis: 2.0.3
+      ansis: 3.10.0
       enhanced-resolve: 5.17.1
       parse5: 7.2.1
       pug: 3.0.3
       webpack: 5.97.1(webpack-cli@6.0.1)
-      webpack-merge: 5.10.0
+      webpack-merge: 6.0.1
 
   '@webpack-cli/configtest@3.0.1(webpack-cli@6.0.1)(webpack@5.97.1)':
     dependencies:
@@ -6469,7 +6465,7 @@ snapshots:
     dependencies:
       color-convert: 2.0.1
 
-  ansis@2.0.3: {}
+  ansis@3.10.0: {}
 
   anymatch@3.1.3:
     dependencies:
@@ -10495,12 +10491,6 @@ snapshots:
       rechoir: 0.8.0
       webpack: 5.97.1(webpack-cli@6.0.1)
       webpack-merge: 6.0.1
-
-  webpack-merge@5.10.0:
-    dependencies:
-      clone-deep: 4.0.1
-      flat: 5.0.2
-      wildcard: 2.0.1
 
   webpack-merge@6.0.1:
     dependencies:
