@@ -41,7 +41,7 @@ dependencies:
 
 devDependencies:
   '@babel/core':
-    specifier: ^7.26.7
+    specifier: ^7.26.10
     version: 7.26.10
   '@babel/plugin-syntax-dynamic-import':
     specifier: ^7.8.3
