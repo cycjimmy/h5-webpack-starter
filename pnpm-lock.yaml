@@ -30,7 +30,7 @@ dependencies:
     specifier: ^7.0.3
     version: 7.0.3
   core-js:
-    specifier: ^3.40.0
+    specifier: ^3.41.0
     version: 3.41.0
   fastclick:
     specifier: ^1.0.6
