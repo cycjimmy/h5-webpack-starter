@@ -71,7 +71,7 @@ devDependencies:
     specifier: ^7.1.2
     version: 7.1.2(webpack@5.99.5)
   css-minimizer-webpack-plugin:
-    specifier: ^7.0.0
+    specifier: ^7.0.2
     version: 7.0.2(webpack@5.99.5)
   cssnano:
     specifier: ^7.0.6
